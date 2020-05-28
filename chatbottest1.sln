@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "chatbottest1\GUI.csproj", "{9DA896F4-7CA2-4500-8988-44F54E36F96E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{7FB6145A-E915-44A1-BA51-680EB0B7B623}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{0D869414-81E3-4F83-B283-C8228E8B6A6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DA896F4-7CA2-4500-8988-44F54E36F96E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DA896F4-7CA2-4500-8988-44F54E36F96E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DA896F4-7CA2-4500-8988-44F54E36F96E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DA896F4-7CA2-4500-8988-44F54E36F96E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FB6145A-E915-44A1-BA51-680EB0B7B623}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FB6145A-E915-44A1-BA51-680EB0B7B623}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FB6145A-E915-44A1-BA51-680EB0B7B623}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FB6145A-E915-44A1-BA51-680EB0B7B623}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D869414-81E3-4F83-B283-C8228E8B6A6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D869414-81E3-4F83-B283-C8228E8B6A6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D869414-81E3-4F83-B283-C8228E8B6A6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D869414-81E3-4F83-B283-C8228E8B6A6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D5CF7E4-5C4F-41D5-8BB1-D0CAC88E3C87}
+	EndGlobalSection
+EndGlobal
