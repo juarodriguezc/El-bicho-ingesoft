@@ -14,7 +14,7 @@ using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Configuration;
 using System.Drawing.Text;
-
+using Common.Cache;
 namespace chatbottest1
 {
     public partial class Chatbot_menu : Form
@@ -72,7 +72,9 @@ namespace chatbottest1
                             if (InvokeRequired)
                             {
                                 BeginInvoke(new MethodInvoker(delegate {
-                                    if (message != "Echo:  ") textBox.AppendText("Bot said: " + message + "\r\n");
+                                    if (message != "Echo:  "){
+                                        textBox.AppendText("Bot said: " + message + "\r\n");
+                                    }
                                 }));
                             }
                         }
@@ -94,7 +96,8 @@ namespace chatbottest1
                     Type = ActivityTypes.Message,
                     TextFormat = "plain"
                 };
-                textBox.AppendText("You said: " + input + "\r\n");
+                textBox.AppendText("                                         You said: " + input + "\r\n");
+                textBox.AppendText("Bot said: HOla" + UserLoginCache.Nombre + "\r\n");
                 await Client.Conversations.PostActivityAsync(this.conversation.ConversationId, userMessage);
             }
             
@@ -105,6 +108,16 @@ namespace chatbottest1
             if (e.KeyCode == Keys.Enter) {
                 bt_send.PerformClick();
             }
+        }
+
+        private void textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textsend_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void Chatbot_menu_Load(object sender, EventArgs e)

@@ -45,5 +45,13 @@ namespace chatbottest1
             }
 
         }
+
+        private void txt_contrasenia_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_ingresar.PerformClick();
+            }
+        }
     }
 }

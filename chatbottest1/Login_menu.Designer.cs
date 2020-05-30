@@ -45,9 +45,11 @@
             // txt_contrasenia
             // 
             this.txt_contrasenia.Location = new System.Drawing.Point(246, 206);
+            this.txt_contrasenia.Multiline = true;
             this.txt_contrasenia.Name = "txt_contrasenia";
             this.txt_contrasenia.Size = new System.Drawing.Size(264, 22);
             this.txt_contrasenia.TabIndex = 1;
+            this.txt_contrasenia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_contrasenia_KeyDown);
             // 
             // bt_ingresar
             // 

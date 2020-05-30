@@ -51,6 +51,7 @@
             this.textBox.ReadOnly = true;
             this.textBox.Size = new System.Drawing.Size(636, 348);
             this.textBox.TabIndex = 1;
+            this.textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // textsend
             // 
@@ -59,11 +60,12 @@
             this.textsend.Name = "textsend";
             this.textsend.Size = new System.Drawing.Size(541, 22);
             this.textsend.TabIndex = 2;
+            this.textsend.TextChanged += new System.EventHandler(this.textsend_TextChanged);
             this.textsend.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textsend_KeyDown);
             // 
             // Chatbot_menu
             // 
-            this.ClientSize = new System.Drawing.Size(683, 452);
+            this.ClientSize = new System.Drawing.Size(900, 452);
             this.Controls.Add(this.textsend);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.bt_send);

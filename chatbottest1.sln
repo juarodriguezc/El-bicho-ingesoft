@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "chatbottest1\GUI.csproj", "{9DA896F4-7CA2-4500-8988-44F54E36F96E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{7FB6145A-E915-44A1-BA51-680EB0B7B623}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{7FB6145A-E915-44A1-BA51-680EB0B7B623}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{0D869414-81E3-4F83-B283-C8228E8B6A6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{0D869414-81E3-4F83-B283-C8228E8B6A6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{02D832CC-7FA0-45E2-8CEE-3BD36D9690CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{0D869414-81E3-4F83-B283-C8228E8B6A6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D869414-81E3-4F83-B283-C8228E8B6A6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D869414-81E3-4F83-B283-C8228E8B6A6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02D832CC-7FA0-45E2-8CEE-3BD36D9690CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02D832CC-7FA0-45E2-8CEE-3BD36D9690CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02D832CC-7FA0-45E2-8CEE-3BD36D9690CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02D832CC-7FA0-45E2-8CEE-3BD36D9690CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
