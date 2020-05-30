@@ -15,9 +15,12 @@ using System.Diagnostics;
 using System.Configuration;
 using System.Drawing.Text;
 using Common.Cache;
+using Data;
+using Business;
 
 namespace chatbottest1
 {
+
     public partial class Chatbot_menu : Form
     {
 
@@ -66,14 +69,16 @@ namespace chatbottest1
             Activity userMessage = new Activity
             {
                 From = new ChannelAccount(id, fromUser),
-                Text = "Hi",
+                Text = "Inicializar_chatbot",
                 Type = ActivityTypes.Message,
                 TextFormat = "plain"
             };
             Client.Conversations.PostActivityAsync(this.conversation.ConversationId, userMessage);
             
         }
-        
+
+
+      
 
         private void InitClient() {
             Client = new DirectLineClient(directLineSecret);
@@ -82,6 +87,9 @@ namespace chatbottest1
 
             
         }
+
+
+
         private async Task ReadBotMessageAsync(DirectLineClient client, string conversationId)
         {
             String watermark = null;
@@ -95,15 +103,18 @@ namespace chatbottest1
                 foreach (Activity activity in activities) {
                     if (activity.Text != null) {
                         String message = activity.Text;
-                        if (message != "Hello and welcome!") {
-                            if (InvokeRequired)
-                            {
-                                BeginInvoke(new MethodInvoker(delegate {
-                                    if (message != "Echo:  "){
-                                        textBox.AppendText("Bot said: " + message + "\r\n");
-                                    }
-                                }));
-                            }
+                        if (InvokeRequired)
+                        {
+                            BeginInvoke(new MethodInvoker(delegate {
+                                lbl_func.Text = message;
+                                ModeloRespuesta rta = new ModeloRespuesta();
+                                string rta_fin = rta.generarRespuesta(message);
+                                string[] multiple_lines = rta_fin.Split('*');
+                                foreach (string a in multiple_lines) {
+                                    textBox.AppendText("Bot said: " + a + "\r\n");
+                                }
+                                
+                            }));
                         }
                     }
                 }
@@ -123,7 +134,7 @@ namespace chatbottest1
                     Type = ActivityTypes.Message,
                     TextFormat = "plain"
                 };
-                textBox.AppendText("                                                               You said: " + input + "\r\n");
+                textBox.AppendText("\r\n"+"                                                               You said: " + input + "\r\n"+ "\r\n");
                 await Client.Conversations.PostActivityAsync(this.conversation.ConversationId, userMessage);
             }
             
@@ -147,7 +158,7 @@ namespace chatbottest1
 
         private void textBox_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void textsend_TextChanged(object sender, EventArgs e)

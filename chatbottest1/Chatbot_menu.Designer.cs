@@ -33,12 +33,13 @@
             this.textBox = new System.Windows.Forms.TextBox();
             this.textsend = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblCargo = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblCargo = new System.Windows.Forms.Label();
+            this.lbl_func = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -83,6 +84,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lbl_func);
             this.panel1.Controls.Add(this.lblCargo);
             this.panel1.Controls.Add(this.lblName);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -93,6 +95,17 @@
             this.panel1.Size = new System.Drawing.Size(220, 288);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblCargo
+            // 
+            this.lblCargo.AutoSize = true;
+            this.lblCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCargo.Location = new System.Drawing.Point(27, 231);
+            this.lblCargo.Name = "lblCargo";
+            this.lblCargo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblCargo.Size = new System.Drawing.Size(54, 20);
+            this.lblCargo.TabIndex = 4;
+            this.lblCargo.Text = "Cargo";
             // 
             // lblName
             // 
@@ -147,16 +160,14 @@
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
-            // lblCargo
+            // lbl_func
             // 
-            this.lblCargo.AutoSize = true;
-            this.lblCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCargo.Location = new System.Drawing.Point(27, 231);
-            this.lblCargo.Name = "lblCargo";
-            this.lblCargo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCargo.Size = new System.Drawing.Size(54, 20);
-            this.lblCargo.TabIndex = 4;
-            this.lblCargo.Text = "Cargo";
+            this.lbl_func.AutoSize = true;
+            this.lbl_func.Location = new System.Drawing.Point(119, 137);
+            this.lbl_func.Name = "lbl_func";
+            this.lbl_func.Size = new System.Drawing.Size(96, 17);
+            this.lbl_func.TabIndex = 5;
+            this.lbl_func.Text = "Funcionalidad";
             // 
             // Chatbot_menu
             // 
@@ -195,6 +206,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblCargo;
+        private System.Windows.Forms.Label lbl_func;
     }
 }
 
