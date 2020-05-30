@@ -15,12 +15,39 @@ using System.Diagnostics;
 using System.Configuration;
 using System.Drawing.Text;
 using Common.Cache;
+
 namespace chatbottest1
 {
     public partial class Chatbot_menu : Form
     {
 
-        private static String directLineSecret = ConfigurationManager.AppSettings["directLineSecret"];
+        private void Chatbot_menu_Load(object sender, EventArgs e)
+        {
+            loadUserdata();
+        }
+
+
+        //Carga de datos
+
+        private void loadUserdata() {
+            lblName.Text = UserLoginCache.Nombre + " " + UserLoginCache.Apellido;
+            switch (UserLoginCache.Rol_empresa){
+                case 0:
+                    lblCargo.Text = "Empleado";
+                    break;
+                case 1:
+                    lblCargo.Text = "Jefe de área";
+                    break;
+                case 2:
+                    lblCargo.Text = "Administrador";
+                    break;
+            }
+        }
+       
+
+
+
+    private static String directLineSecret = ConfigurationManager.AppSettings["directLineSecret"];
         private static string botId = ConfigurationManager.AppSettings["BotId"];
         private static string id = "default-user";
         private static String fromUser = "User";
@@ -96,12 +123,16 @@ namespace chatbottest1
                     Type = ActivityTypes.Message,
                     TextFormat = "plain"
                 };
-                textBox.AppendText("                                         You said: " + input + "\r\n");
-                textBox.AppendText("Bot said: HOla" + UserLoginCache.Nombre + "\r\n");
+                textBox.AppendText("                                                               You said: " + input + "\r\n");
                 await Client.Conversations.PostActivityAsync(this.conversation.ConversationId, userMessage);
             }
             
         }
+
+
+        
+
+
 
         private void textsend_KeyDown(object sender, KeyEventArgs e)
         {
@@ -109,6 +140,10 @@ namespace chatbottest1
                 bt_send.PerformClick();
             }
         }
+
+
+
+
 
         private void textBox_TextChanged(object sender, EventArgs e)
         {
@@ -120,7 +155,8 @@ namespace chatbottest1
 
         }
 
-        private void Chatbot_menu_Load(object sender, EventArgs e)
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

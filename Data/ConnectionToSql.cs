@@ -7,6 +7,7 @@ namespace Business
         private readonly string connectionString;
         public ConnectionToSql() {
             connectionString = "Server=SEBASFX504;DataBase = ymca_user_control; integrated security = true";
+            //connectionString = "Server = DESKTOP-36J0QHR; DataBase = ymca-user-control; integrated security = true";
             //Acá se reemplaza con el servidor de cada uno
         }
         protected SqlConnection GetConnection() {

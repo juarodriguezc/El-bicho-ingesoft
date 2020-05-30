@@ -34,10 +34,14 @@ namespace chatbottest1
         {
             ModeloUsuario user = new ModeloUsuario();
             var validLogin = user.LoginUser(txt_correo.Text, txt_contrasenia.Text);
-            if (validLogin == true){            
-                    Chatbot_menu bot_menu = new Chatbot_menu();
-                    bot_menu.Show();
-                    this.Hide();
+            if (validLogin == true){
+                
+                Chatbot_menu bot_menu = new Chatbot_menu();
+                bot_menu.Show();
+
+                /*Principal_Menu principal_Menu = new Principal_Menu();
+                principal_Menu.Show();*/
+                this.Hide();
             }
             else {
                     txt_contrasenia.Clear();
@@ -45,6 +49,7 @@ namespace chatbottest1
             }
 
         }
+
 
         private void txt_contrasenia_KeyDown(object sender, KeyEventArgs e)
         {
