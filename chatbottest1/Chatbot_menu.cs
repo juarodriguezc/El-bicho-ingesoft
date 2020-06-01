@@ -23,10 +23,12 @@ namespace chatbottest1
 
     public partial class Chatbot_menu : Form
     {
-
+        ModeloSesion sesion;
         private void Chatbot_menu_Load(object sender, EventArgs e)
         {
             loadUserdata();
+            sesion = new ModeloSesion();
+            sesion.createSesion(UserLoginCache.Id_usuario, DateTime.Now);
         }
 
 
@@ -156,6 +158,7 @@ namespace chatbottest1
                     if (UserLoginCache.Rol_empresa == Positions.Administrador) {
                         Form_add_user add_user = new Form_add_user();
                         add_user.Show();
+                        sesion.create_reg_function(2, UserLoginCache.Id_usuario, SesionCache.Id_acceso);
                         return true;
                     }
                     return false;

@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2016                    */
-/* Created on:     29/05/2020 3:28:14 p. m.                     */
+/* Created on:     1/06/2020 4:26:17 p. m.                      */
 /*==============================================================*/
 
 
@@ -168,7 +168,7 @@ go
 /*==============================================================*/
 create table REG_ACCESO (
    ID_USUARIO           int                  not null,
-   ID_ACCESO            int                  not null,
+   ID_ACCESO            int                  not null	IDENTITY(1,1),
    FECHA_ACCESO         datetime             not null,
    constraint PK_REG_ACCESO primary key (ID_USUARIO, ID_ACCESO)
 )
@@ -181,7 +181,8 @@ create table REG_FUNCION (
    ID_FUNCION           int                  not null,
    ID_USUARIO           int                  not null,
    ID_ACCESO            int                  not null,
-   constraint PK_REG_FUNCION primary key (ID_FUNCION, ID_USUARIO, ID_ACCESO)
+   ID_REG_FUNC          int                  not null	IDENTITY(1,1),
+   constraint PK_REG_FUNCION primary key (ID_FUNCION, ID_USUARIO, ID_ACCESO, ID_REG_FUNC)
 )
 go
 
@@ -234,5 +235,6 @@ alter table REG_FUNCION
    add constraint FK_REG_FUNC_REG_FUNCI_REG_ACCE foreign key (ID_USUARIO, ID_ACCESO)
       references REG_ACCESO (ID_USUARIO, ID_ACCESO)
 go
+
 
 
