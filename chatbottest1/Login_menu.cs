@@ -1,5 +1,4 @@
 ﻿using Common.Cache;
-using Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,6 +48,7 @@ namespace chatbottest1
                 /*Principal_Menu principal_Menu = new Principal_Menu();
                 principal_Menu.Show();*/
                 this.Hide();
+                bot_menu.FormClosed += Logout;
             }
             else {
                     txt_contrasenia.Clear();
@@ -277,6 +277,7 @@ namespace chatbottest1
             panel_forgot.Visible = false;
             panel_login.Visible = true;
             lbl_mailsent.Visible = false;
+            emailTxbRecContr.Text = "";
         }
 
         private void emailTxbRecContr_KeyDown(object sender, KeyEventArgs e)
@@ -286,5 +287,14 @@ namespace chatbottest1
                 recup_datos.PerformClick();
             }
         }
+
+        private void Logout(object sender, FormClosedEventArgs e)
+        {
+            txt_correo.Clear();
+            txt_contrasenia.Clear();
+            this.Show();
+            txt_correo.Focus();
+        }
+
     }
 }

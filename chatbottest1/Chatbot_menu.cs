@@ -15,8 +15,8 @@ using System.Diagnostics;
 using System.Configuration;
 using System.Drawing.Text;
 using Common.Cache;
-using Data;
 using Business;
+using System.Reflection;
 
 namespace chatbottest1
 {
@@ -111,9 +111,18 @@ namespace chatbottest1
                                 ModeloRespuesta rta = new ModeloRespuesta();
                                 string rta_fin = rta.generarRespuesta(message);
                                 string[] multiple_lines = rta_fin.Split('*');
-                                foreach (string a in multiple_lines) {
-                                    textBox.AppendText("Bot said: " + a + "\r\n");
+                                if (realizarAccion(message))
+                                {
+                                    foreach (string a in multiple_lines)
+                                    {
+                                        textBox.AppendText("Bot said: " + a + "\r\n");
+                                    }
                                 }
+                                else {
+                                    textBox.AppendText("Bot said: " + "No tienes acceso a esta función" + "\r\n");
+                                }
+                                
+                                
                                 
                             }));
                         }
@@ -141,7 +150,19 @@ namespace chatbottest1
             
         }
 
-
+        public Boolean realizarAccion(String accion) {
+            switch (accion) {
+                case "Add_user":
+                    if (UserLoginCache.Rol_empresa == Positions.Administrador) {
+                        Form_add_user add_user = new Form_add_user();
+                        add_user.Show();
+                        return true;
+                    }
+                    return false;
+                default:
+                    return true;
+            }
+        }
         
 
 
@@ -171,6 +192,22 @@ namespace chatbottest1
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        
+
+
+        private void bt_logout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Estas seguro que quieres cerrar sesión?", "Warning",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
+                this.Close();
+            }
+        }
+
+        private void Chatbot_menu_Leave(object sender, EventArgs e)
+        {
+            
         }
     }
 }

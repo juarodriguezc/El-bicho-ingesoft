@@ -38,5 +38,28 @@ namespace Data
                 }
             }
         }
+        public void Add_user(string correo, string nombre, string apellido, DateTime fecha_nacimiento, string contrasenia, int rol_empresa)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.Parameters.AddWithValue("@correo", correo);
+                    command.Parameters.AddWithValue("@nombre", nombre);
+                    command.Parameters.AddWithValue("@apellido", apellido);
+                    command.Parameters.AddWithValue("@fecha_nacimiento", fecha_nacimiento);
+                    command.Parameters.AddWithValue("@contrasenia", contrasenia);
+                    command.Parameters.AddWithValue("@rol_empresa", rol_empresa);
+                    command.CommandText = "INSERT INTO USUARIO VALUES(@correo, @nombre, @apellido, @fecha_nacimiento, @contrasenia, @rol_empresa)";
+                    command.CommandType = CommandType.Text;
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+
     }
 }

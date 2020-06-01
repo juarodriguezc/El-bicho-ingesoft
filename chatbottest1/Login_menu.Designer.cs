@@ -50,6 +50,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.emailTxbRecContr = new System.Windows.Forms.TextBox();
             this.emailRecContraLbl = new System.Windows.Forms.Label();
+            this.version = new System.Windows.Forms.Label();
             this.panel_logo_login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_login.SuspendLayout();
@@ -328,12 +329,22 @@
             this.emailRecContraLbl.TabIndex = 27;
             this.emailRecContraLbl.Text = "E-mail";
             // 
+            // version
+            // 
+            this.version.AutoSize = true;
+            this.version.Location = new System.Drawing.Point(0, 437);
+            this.version.Name = "version";
+            this.version.Size = new System.Drawing.Size(80, 17);
+            this.version.TabIndex = 15;
+            this.version.Text = "Version 1.0";
+            // 
             // Login_menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(782, 453);
+            this.Controls.Add(this.version);
             this.Controls.Add(this.panel_logo_login);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -381,5 +392,6 @@
         private System.Windows.Forms.Button recup_datos;
         private System.Windows.Forms.Label labelInfoReccu;
         private System.Windows.Forms.Label lbl_mailsent;
+        private System.Windows.Forms.Label version;
     }
 }
