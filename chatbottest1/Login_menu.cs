@@ -296,5 +296,9 @@ namespace chatbottest1
             txt_correo.Focus();
         }
 
+        private void txt_contrasenia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

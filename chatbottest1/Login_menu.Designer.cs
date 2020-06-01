@@ -85,6 +85,7 @@
             this.txt_contrasenia.Size = new System.Drawing.Size(321, 26);
             this.txt_contrasenia.TabIndex = 1;
             this.txt_contrasenia.Text = "CONTRASEÑA";
+            this.txt_contrasenia.TextChanged += new System.EventHandler(this.txt_contrasenia_TextChanged);
             this.txt_contrasenia.Enter += new System.EventHandler(this.txt_contrasenia_Enter);
             this.txt_contrasenia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_contrasenia_KeyDown);
             this.txt_contrasenia.Leave += new System.EventHandler(this.txt_contrasenia_Leave);
@@ -348,8 +349,8 @@
             this.Controls.Add(this.panel_logo_login);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel_forgot);
             this.Controls.Add(this.panel_login);
+            this.Controls.Add(this.panel_forgot);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;

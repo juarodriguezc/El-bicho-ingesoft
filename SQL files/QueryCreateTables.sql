@@ -189,7 +189,7 @@ go
 /* Table: USUARIO                                               */
 /*==============================================================*/
 create table USUARIO (
-   ID_USUARIO           int                  not null,
+   ID_USUARIO           int                  not null	IDENTITY(1,1),
    CORREO               varchar(100)         not null,
    NOMBRE               varchar(100)         not null,
    APELLIDO             varchar(100)         not null,
@@ -234,4 +234,5 @@ alter table REG_FUNCION
    add constraint FK_REG_FUNC_REG_FUNCI_REG_ACCE foreign key (ID_USUARIO, ID_ACCESO)
       references REG_ACCESO (ID_USUARIO, ID_ACCESO)
 go
+
 

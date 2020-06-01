@@ -38,7 +38,7 @@ namespace Data
                 }
             }
         }
-        public void Add_user(string correo, string nombre, string apellido, DateTime fecha_nacimiento, string contrasenia, int rol_empresa)
+        public bool Add_user(string correo, string nombre, string apellido, DateTime fecha_nacimiento, string contrasenia, int rol_empresa)
         {
             using (var connection = GetConnection())
             {
@@ -52,9 +52,16 @@ namespace Data
                     command.Parameters.AddWithValue("@fecha_nacimiento", fecha_nacimiento);
                     command.Parameters.AddWithValue("@contrasenia", contrasenia);
                     command.Parameters.AddWithValue("@rol_empresa", rol_empresa);
+                    //Verificar la existencia del correo
+                    command.CommandText = "SELECT * FROM USUARIO WHERE correo = @correo";
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows) return false; //No se añade el usuario y se retorna false
+                    reader.Close();
                     command.CommandText = "INSERT INTO USUARIO VALUES(@correo, @nombre, @apellido, @fecha_nacimiento, @contrasenia, @rol_empresa)";
                     command.CommandType = CommandType.Text;
                     command.ExecuteNonQuery();
+                    return true; //Se añade el usuario y se retorna true
                 }
             }
         }

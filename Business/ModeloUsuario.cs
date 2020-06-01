@@ -9,8 +9,8 @@ namespace Business
             return userDao.Login(correo, contrasenia);
         }
 
-        public void Add_user(string correo, string nombre, string apellido, DateTime fecha_nacimiento, string contrasenia, int rol_empresa ) {
-            userDao.Add_user(correo, nombre, apellido, fecha_nacimiento, contrasenia, rol_empresa);
+        public bool Add_user(string correo, string nombre, string apellido, DateTime fecha_nacimiento, string contrasenia, int rol_empresa ) {
+            return userDao.Add_user(correo, nombre, apellido, fecha_nacimiento, contrasenia, rol_empresa);
         }
     }
 }

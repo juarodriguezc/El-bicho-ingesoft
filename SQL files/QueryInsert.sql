@@ -2,9 +2,9 @@
 /* Table: USUARIO                                               */
 /*==============================================================*/
 DELETE FROM USUARIO;
-INSERT INTO USUARIO VALUES(1,'juanse260726@gmail.com','Sebastian','Rodriguez','2001-07-26','Juli1804',1);
-INSERT INTO USUARIO VALUES(2,'juanse979@hotmail.com','Sebastian','Rodriguez','2001-07-26','Juli1804',2);
-INSERT INTO USUARIO VALUES(3,'@','Sebastian','Rodriguez','2001-07-26','1234',3);
+INSERT INTO USUARIO VALUES('juanse260726@gmail.com','Sebastian','Rodriguez','2001-07-26','Juli1804',1);
+INSERT INTO USUARIO VALUES('juanse979@hotmail.com','Sebastian','Rodriguez','2001-07-26','Juli1804',2);
+INSERT INTO USUARIO VALUES('@','Sebastian','Rodriguez','2001-07-26','1234',3);
 SELECT * FROM USUARIO;
 
 
