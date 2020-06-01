@@ -33,13 +33,13 @@
             this.textBox = new System.Windows.Forms.TextBox();
             this.textsend = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_func = new System.Windows.Forms.Label();
             this.lblCargo = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lbl_func = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -48,9 +48,9 @@
             // bt_send
             // 
             this.bt_send.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.bt_send.Location = new System.Drawing.Point(674, 365);
+            this.bt_send.Location = new System.Drawing.Point(695, 406);
             this.bt_send.Name = "bt_send";
-            this.bt_send.Size = new System.Drawing.Size(75, 22);
+            this.bt_send.Size = new System.Drawing.Size(75, 34);
             this.bt_send.TabIndex = 0;
             this.bt_send.Text = "Send";
             this.bt_send.UseVisualStyleBackColor = true;
@@ -65,17 +65,17 @@
             this.textBox.Name = "textBox";
             this.textBox.ReadOnly = true;
             this.textBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox.Size = new System.Drawing.Size(511, 347);
+            this.textBox.Size = new System.Drawing.Size(532, 388);
             this.textBox.TabIndex = 1;
             this.textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // textsend
             // 
             this.textsend.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textsend.Location = new System.Drawing.Point(238, 364);
+            this.textsend.Location = new System.Drawing.Point(238, 406);
             this.textsend.Multiline = true;
             this.textsend.Name = "textsend";
-            this.textsend.Size = new System.Drawing.Size(430, 23);
+            this.textsend.Size = new System.Drawing.Size(451, 35);
             this.textsend.TabIndex = 2;
             this.textsend.TextChanged += new System.EventHandler(this.textsend_TextChanged);
             this.textsend.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textsend_KeyDown);
@@ -92,9 +92,18 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 98);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(220, 288);
+            this.panel1.Size = new System.Drawing.Size(220, 343);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lbl_func
+            // 
+            this.lbl_func.AutoSize = true;
+            this.lbl_func.Location = new System.Drawing.Point(119, 137);
+            this.lbl_func.Name = "lbl_func";
+            this.lbl_func.Size = new System.Drawing.Size(96, 17);
+            this.lbl_func.TabIndex = 5;
+            this.lbl_func.Text = "Funcionalidad";
             // 
             // lblCargo
             // 
@@ -160,20 +169,11 @@
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
-            // lbl_func
-            // 
-            this.lbl_func.AutoSize = true;
-            this.lbl_func.Location = new System.Drawing.Point(119, 137);
-            this.lbl_func.Name = "lbl_func";
-            this.lbl_func.Size = new System.Drawing.Size(96, 17);
-            this.lbl_func.TabIndex = 5;
-            this.lbl_func.Text = "Funcionalidad";
-            // 
             // Chatbot_menu
             // 
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.PowderBlue;
-            this.ClientSize = new System.Drawing.Size(767, 398);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.ClientSize = new System.Drawing.Size(782, 453);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textsend);
@@ -181,6 +181,7 @@
             this.Controls.Add(this.bt_send);
             this.MaximizeBox = false;
             this.Name = "Chatbot_menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chatbot";
             this.Load += new System.EventHandler(this.Chatbot_menu_Load);
             this.panel1.ResumeLayout(false);

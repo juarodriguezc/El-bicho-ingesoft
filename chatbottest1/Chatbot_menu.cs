@@ -34,14 +34,15 @@ namespace chatbottest1
 
         private void loadUserdata() {
             lblName.Text = UserLoginCache.Nombre + " " + UserLoginCache.Apellido;
+            Console.WriteLine("Cargo_empresa: "+UserLoginCache.Rol_empresa); 
             switch (UserLoginCache.Rol_empresa){
-                case 0:
+                case 1:
                     lblCargo.Text = "Empleado";
                     break;
-                case 1:
+                case 2:
                     lblCargo.Text = "Jefe de área";
                     break;
-                case 2:
+                case 3:
                     lblCargo.Text = "Administrador";
                     break;
             }

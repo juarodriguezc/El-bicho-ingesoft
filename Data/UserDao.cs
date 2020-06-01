@@ -28,7 +28,7 @@ namespace Data
                             UserLoginCache.Apellido = reader.GetString(3);
                             UserLoginCache.Correo = reader.GetString(1);
                             UserLoginCache.Fecha_nacimiento = reader.GetDateTime(4);
-                            UserLoginCache.Id_usuario = reader.GetInt32(6);
+                            UserLoginCache.Rol_empresa = reader.GetInt32(6);
                         }
                         return true;
                     }
