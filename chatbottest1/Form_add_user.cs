@@ -44,27 +44,27 @@ namespace chatbottest1
                     && verificarEmail(txt_correo.Text) && verficarPassWordL(txt_contrasenia.Text) && verificarIgualdadContra(txt_contrasenia.Text, txt_v_contra.Text)) 
                 {
                     ModeloUsuario addUser = new ModeloUsuario();
-                    int cargo = 0;
-                    switch (comboBox_cargo.SelectedItem)
-                    {
-                        case "Empleado":
-                            cargo = 1;
-                            break;
-                        case "Jefe de área":
-                            cargo = 2;
-                            break;
-                        case "Administrador":
-                            cargo = 3;
-                            break;
-                        default:
-                            cargo = 1;
-                            break;
-                    }
-                    if (!addUser.Add_user(txt_correo.Text, txt_nombre.Text, txt_apellido.Text, Convert.ToDateTime(pick_fecha_nacimiento.Text), txt_contrasenia.Text, cargo))
+                    if (!addUser.Add_user(txt_correo.Text, txt_nombre.Text, txt_apellido.Text, Convert.ToDateTime(pick_fecha_nacimiento.Text), txt_contrasenia.Text, comboBox_cargo.SelectedItem.ToString()))
                     {
                         MessageBox.Show("El correo registrado ya se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     MessageBox.Show("El usuario ha sido registrado\n"+"Se ha enviado un correo al usuario para el acceso.\n", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    String nombre = txt_nombre.Text+" "+txt_apellido.Text;
+                    String messageB = "Hola\n\n"
+                            + nombre + "\n"
+                            + "Te damos la bienvenida a YMCA-BOTSERVICE\n"
+                            + "Recuerda tus datos:"
+                            + "\n\t- Correo de acceso:\t" + txt_correo.Text + "\n"
+                            + "\t- Contraseña:\t" + txt_contrasenia.Text + "\n\n"
+                            + "Gracias!\n"
+                            + "YMCA Colombia";
+                    String subject = "Bienvenido a YMCA-BOTSERVICE";
+
+                    String email = txt_correo.Text;
+
+                    sendEmail(email, messageB, subject);
+
                     //Reiniciar valores para otro registro
                     txt_nombre.Text = "NOMBRE";
                     txt_apellido.Text = "APELLIDO";
@@ -90,6 +90,36 @@ namespace chatbottest1
                 DialogResult datos = MessageBox.Show("Completa los campos", "Datos erroneos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             
+        }
+        public void sendEmail(string email, string message, string subj)
+        {
+            System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
+
+            msg.To.Add(email);
+            msg.Subject = subj;
+            msg.SubjectEncoding = System.Text.Encoding.UTF8;
+
+            msg.Body = message;
+
+            msg.From = new System.Net.Mail.MailAddress("chatbootymca@gmail.com");
+
+            System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
+
+            cliente.Credentials = new System.Net.NetworkCredential("chatbootymca@gmail.com", "ingesoft123");
+
+            cliente.Port = 587;
+            cliente.EnableSsl = true;
+
+            cliente.Host = "smtp.gmail.com";
+
+            try
+            {
+                cliente.Send(msg);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al enviar");
+            }
         }
         private bool verficarNombre_Apell(string nom_apell)
         {
@@ -297,6 +327,11 @@ namespace chatbottest1
         private void backHome_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txt_contrasenia_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
     

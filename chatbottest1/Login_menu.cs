@@ -21,7 +21,7 @@ namespace chatbottest1
         public Login_menu()
         {
             InitializeComponent();
-            txt_contrasenia.UseSystemPasswordChar = true;
+            
 
         }
 
@@ -34,6 +34,8 @@ namespace chatbottest1
         {
             panel_login.Visible = true;
             panel_forgot.Visible = false;
+            txt_contrasenia.UseSystemPasswordChar = false;
+
         }
 
         private void bt_ingresar_Click(object sender, EventArgs e)
@@ -88,7 +90,8 @@ namespace chatbottest1
             {
                 txt_contrasenia.Text = "";
                 txt_contrasenia.ForeColor = Color.DimGray;
-                txt_contrasenia.UseSystemPasswordChar = false;
+                Console.WriteLine("activar");
+                txt_contrasenia.UseSystemPasswordChar = true;
             }
         }
 
@@ -98,7 +101,8 @@ namespace chatbottest1
             {
                 txt_contrasenia.Text = "CONTRASEÑA";
                 txt_contrasenia.ForeColor = Color.DimGray;
-                txt_contrasenia.UseSystemPasswordChar = true;
+                Console.WriteLine("desactivar");
+                txt_contrasenia.UseSystemPasswordChar = false;
             }
         }
 
@@ -206,8 +210,8 @@ namespace chatbottest1
                 Console.WriteLine("Datos correctos "+verfE);
 
                 //Consultar en la base de datos
-                ModeloRecuperacion recupera = new ModeloRecuperacion();
-                var validLogin = recupera.VerificaDatos(emailTxbRecContr.Text);
+                ModeloUsuario recupera = new ModeloUsuario();
+                var validLogin = recupera.RecuperaContra(emailTxbRecContr.Text);
                 if (validLogin == true) verfE = true;
                 else verfE = false;
 
@@ -229,12 +233,12 @@ namespace chatbottest1
 
 
                     //enviar correo con la nueva contraseña
-                    String nombre = UserRecupera.nombre_completo;
+                    String nombre = UserRecuperaCache.nombre_completo;
                     String Menssage = "Buen día\n"
                             + nombre + "\n\n"
                             + "\tTe habla " + "YMCA-BOTSERVICE" + ", ¿haz olvidado tu contraseña?\n"
                             + "\tEl siguiente codigo es la contraseña que tienes registrada \n"
-                            + "\t\n\t ------> " + UserRecupera.contrasenia + " <------ \n\n"
+                            + "\t\n\t ------> " + UserRecuperaCache.contrasenia + " <------ \n\n"
                             + "\t\nTe aconsejamos cambiarla lo más pronto posible\n"
                             + "\tEn caso de que no seas el solicitante de \n\tla nueva contraseña, comunicate inmediatamente\n"
                             + "\tcon YMCA-BOTSERVICE.\n\n"

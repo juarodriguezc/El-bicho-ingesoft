@@ -24,6 +24,7 @@ namespace chatbottest1
     public partial class Chatbot_menu : Form
     {
         ModeloSesion sesion;
+
         private void Chatbot_menu_Load(object sender, EventArgs e)
         {
             loadUserdata();
@@ -36,18 +37,7 @@ namespace chatbottest1
 
         private void loadUserdata() {
             lblName.Text = UserLoginCache.Nombre + " " + UserLoginCache.Apellido;
-            Console.WriteLine("Cargo_empresa: "+UserLoginCache.Rol_empresa); 
-            switch (UserLoginCache.Rol_empresa){
-                case 1:
-                    lblCargo.Text = "Empleado";
-                    break;
-                case 2:
-                    lblCargo.Text = "Jefe de área";
-                    break;
-                case 3:
-                    lblCargo.Text = "Administrador";
-                    break;
-            }
+            lblCargo.Text = UserLoginCache.Rol_empresa ;
         }
        
 
@@ -159,6 +149,14 @@ namespace chatbottest1
                         Form_add_user add_user = new Form_add_user();
                         add_user.Show();
                         sesion.create_reg_function(2, UserLoginCache.Id_usuario, SesionCache.Id_acceso);
+                        return true;
+                    }
+                    return false;
+                case "Edit_user":
+                    if (UserLoginCache.Rol_empresa == Positions.Administrador) {
+                        Form_Edit_user edit_user = new Form_Edit_user();
+                        edit_user.Show();
+                        sesion.create_reg_function(3, UserLoginCache.Id_usuario, SesionCache.Id_acceso);
                         return true;
                     }
                     return false;

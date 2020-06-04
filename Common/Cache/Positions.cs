@@ -6,9 +6,9 @@ namespace Common.Cache
 {
     public struct Positions
     {
-        public const int Empleado = 1;
-        public const int Jefe_area = 2;
-        public const int Administrador = 3;
+        public const string Empleado = "Empleado";
+        public const string Jefe_area = "Jefe de área";
+        public const string Administrador = "Administrador";
 
 
     }

@@ -183,6 +183,7 @@
             this.txt_contrasenia.Size = new System.Drawing.Size(204, 25);
             this.txt_contrasenia.TabIndex = 13;
             this.txt_contrasenia.Text = "CONTRASEÑA";
+            this.txt_contrasenia.TextChanged += new System.EventHandler(this.txt_contrasenia_TextChanged);
             this.txt_contrasenia.Enter += new System.EventHandler(this.txt_contrasenia_Enter);
             this.txt_contrasenia.Leave += new System.EventHandler(this.txt_contrasenia_Leave);
             // 

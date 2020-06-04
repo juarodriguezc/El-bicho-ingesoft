@@ -79,10 +79,8 @@
             this.txt_contrasenia.ForeColor = System.Drawing.Color.DimGray;
             this.txt_contrasenia.Location = new System.Drawing.Point(103, 160);
             this.txt_contrasenia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_contrasenia.Multiline = true;
             this.txt_contrasenia.Name = "txt_contrasenia";
-            this.txt_contrasenia.PasswordChar = '*';
-            this.txt_contrasenia.Size = new System.Drawing.Size(321, 26);
+            this.txt_contrasenia.Size = new System.Drawing.Size(321, 25);
             this.txt_contrasenia.TabIndex = 1;
             this.txt_contrasenia.Text = "CONTRASEÑA";
             this.txt_contrasenia.TextChanged += new System.EventHandler(this.txt_contrasenia_TextChanged);

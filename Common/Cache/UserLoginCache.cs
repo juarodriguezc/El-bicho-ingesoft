@@ -11,6 +11,6 @@ namespace Common.Cache
         public static string Nombre { get; set; }
         public static string Apellido { get; set; }
         public static DateTime Fecha_nacimiento { get; set; }
-        public static int Rol_empresa { get; set; }
+        public static string Rol_empresa { get; set; }
     }
 }
