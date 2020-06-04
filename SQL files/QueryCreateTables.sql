@@ -4,110 +4,19 @@
 /*==============================================================*/
 
 
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('MENSAJE') and o.name = 'FK_MENSAJE_FUNC_MENS_FUNCIONE')
-alter table MENSAJE
-   drop constraint FK_MENSAJE_FUNC_MENS_FUNCIONE
-go
+drop table EVENTOS
+drop table FUNCIONES
+drop table MENSAJE
+drop table PETICIONES
+drop table P_EVENTOS
+drop table REG_ACCESO
+drop table REG_FUNCION
+drop table USUARIO
 
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('PETICIONES') and o.name = 'FK_PETICION_S_PETICIO_USUARIO')
-alter table PETICIONES
-   drop constraint FK_PETICION_S_PETICIO_USUARIO
-go
 
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('P_EVENTOS') and o.name = 'FK_P_EVENTO_P_EVENTOS_EVENTOS')
-alter table P_EVENTOS
-   drop constraint FK_P_EVENTO_P_EVENTOS_EVENTOS
-go
 
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('P_EVENTOS') and o.name = 'FK_P_EVENTO_P_EVENTOS_USUARIO')
-alter table P_EVENTOS
-   drop constraint FK_P_EVENTO_P_EVENTOS_USUARIO
-go
 
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('REG_ACCESO') and o.name = 'FK_REG_ACCE_ACCESOS_USUARIO')
-alter table REG_ACCESO
-   drop constraint FK_REG_ACCE_ACCESOS_USUARIO
-go
 
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('REG_FUNCION') and o.name = 'FK_REG_FUNC_REG_FUNCI_FUNCIONE')
-alter table REG_FUNCION
-   drop constraint FK_REG_FUNC_REG_FUNCI_FUNCIONE
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('REG_FUNCION') and o.name = 'FK_REG_FUNC_REG_FUNCI_REG_ACCE')
-alter table REG_FUNCION
-   drop constraint FK_REG_FUNC_REG_FUNCI_REG_ACCE
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('EVENTOS')
-            and   type = 'U')
-   drop table EVENTOS
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('FUNCIONES')
-            and   type = 'U')
-   drop table FUNCIONES
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('MENSAJE')
-            and   type = 'U')
-   drop table MENSAJE
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('PETICIONES')
-            and   type = 'U')
-   drop table PETICIONES
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('P_EVENTOS')
-            and   type = 'U')
-   drop table P_EVENTOS
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('REG_ACCESO')
-            and   type = 'U')
-   drop table REG_ACCESO
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('REG_FUNCION')
-            and   type = 'U')
-   drop table REG_FUNCION
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('USUARIO')
-            and   type = 'U')
-   drop table USUARIO
-go
 
 /*==============================================================*/
 /* Table: EVENTOS                                               */
@@ -196,7 +105,7 @@ create table USUARIO (
    APELLIDO             varchar(100)         not null,
    FECHA_NACIMIENTO     datetime             not null,
    CONTRASENIA          varchar(100)         not null,
-   ROL_EMPRESA          int                  not null,
+   ROL_EMPRESA          varchar(100)         not null,
    constraint PK_USUARIO primary key (ID_USUARIO)
 )
 go

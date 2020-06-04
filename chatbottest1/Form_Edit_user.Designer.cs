@@ -35,19 +35,21 @@
             this.txt_contrasenia = new System.Windows.Forms.TextBox();
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lbl_editUser = new System.Windows.Forms.Label();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lbl_editUser = new System.Windows.Forms.Label();
             this.pick_fecha_nacimiento = new System.Windows.Forms.DateTimePicker();
             this.fecha_nacimiento = new System.Windows.Forms.Label();
+            this.tipo_usuario = new System.Windows.Forms.Label();
+            this.comboBox_cargo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-77, 3);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 15);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -129,26 +131,14 @@
             this.shapeContainer1.TabIndex = 6;
             this.shapeContainer1.TabStop = false;
             // 
-            // lbl_editUser
+            // lineShape4
             // 
-            this.lbl_editUser.AutoSize = true;
-            this.lbl_editUser.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_editUser.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_editUser.Location = new System.Drawing.Point(586, 27);
-            this.lbl_editUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_editUser.Name = "lbl_editUser";
-            this.lbl_editUser.Size = new System.Drawing.Size(284, 40);
-            this.lbl_editUser.TabIndex = 8;
-            this.lbl_editUser.Text = "EDITAR USUARIO";
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 580;
-            this.lineShape1.X2 = 860;
-            this.lineShape1.Y1 = 180;
-            this.lineShape1.Y2 = 180;
+            this.lineShape4.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape4.Name = "lineShape4";
+            this.lineShape4.X1 = 580;
+            this.lineShape4.X2 = 860;
+            this.lineShape4.Y1 = 260;
+            this.lineShape4.Y2 = 260;
             // 
             // lineShape2
             // 
@@ -159,14 +149,26 @@
             this.lineShape2.Y1 = 220;
             this.lineShape2.Y2 = 220;
             // 
-            // lineShape4
+            // lineShape1
             // 
-            this.lineShape4.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = 580;
-            this.lineShape4.X2 = 860;
-            this.lineShape4.Y1 = 260;
-            this.lineShape4.Y2 = 260;
+            this.lineShape1.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 580;
+            this.lineShape1.X2 = 860;
+            this.lineShape1.Y1 = 180;
+            this.lineShape1.Y2 = 180;
+            // 
+            // lbl_editUser
+            // 
+            this.lbl_editUser.AutoSize = true;
+            this.lbl_editUser.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_editUser.ForeColor = System.Drawing.Color.DimGray;
+            this.lbl_editUser.Location = new System.Drawing.Point(586, 27);
+            this.lbl_editUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_editUser.Name = "lbl_editUser";
+            this.lbl_editUser.Size = new System.Drawing.Size(271, 39);
+            this.lbl_editUser.TabIndex = 8;
+            this.lbl_editUser.Text = "EDITAR USUARIO";
             // 
             // pick_fecha_nacimiento
             // 
@@ -191,11 +193,37 @@
             this.fecha_nacimiento.TabIndex = 17;
             this.fecha_nacimiento.Text = "FECHA DE NACIMIENTO";
             // 
+            // tipo_usuario
+            // 
+            this.tipo_usuario.AutoSize = true;
+            this.tipo_usuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tipo_usuario.ForeColor = System.Drawing.Color.DimGray;
+            this.tipo_usuario.Location = new System.Drawing.Point(576, 331);
+            this.tipo_usuario.Name = "tipo_usuario";
+            this.tipo_usuario.Size = new System.Drawing.Size(175, 23);
+            this.tipo_usuario.TabIndex = 36;
+            this.tipo_usuario.Text = "TIPO DE USUARIO";
+            // 
+            // comboBox_cargo
+            // 
+            this.comboBox_cargo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_cargo.FormattingEnabled = true;
+            this.comboBox_cargo.Items.AddRange(new object[] {
+            "Empleado",
+            "Jefe de área",
+            "Administrador"});
+            this.comboBox_cargo.Location = new System.Drawing.Point(692, 355);
+            this.comboBox_cargo.Name = "comboBox_cargo";
+            this.comboBox_cargo.Size = new System.Drawing.Size(169, 31);
+            this.comboBox_cargo.TabIndex = 37;
+            // 
             // Form_Edit_user
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(882, 453);
+            this.Controls.Add(this.comboBox_cargo);
+            this.Controls.Add(this.tipo_usuario);
             this.Controls.Add(this.fecha_nacimiento);
             this.Controls.Add(this.pick_fecha_nacimiento);
             this.Controls.Add(this.lbl_editUser);
@@ -231,5 +259,7 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
         private System.Windows.Forms.DateTimePicker pick_fecha_nacimiento;
         private System.Windows.Forms.Label fecha_nacimiento;
+        private System.Windows.Forms.Label tipo_usuario;
+        private System.Windows.Forms.ComboBox comboBox_cargo;
     }
 }
