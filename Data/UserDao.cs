@@ -62,12 +62,15 @@ namespace Data
                     UserLoginCache.Rol_empresa = reader.GetString(6);
 
                 }
+                connection.Close();
                 return true;
             }
             else
             {
+                connection.Close();
                 return false;
             }
+            
         }
 
         /*public bool Add_user(string correo, string nombre, string apellido, DateTime fecha_nacimiento, string contrasenia, string rol_empresa)
@@ -115,8 +118,8 @@ namespace Data
             reader.Close();
             command.CommandText = "INSERT INTO USUARIO (CORREO,NOMBRE,APELLIDO,FECHA_NACIMIENTO,CONTRASENIA,ROL_EMPRESA) VALUES(@correo, @nombre, @apellido, @fecha_nacimiento, @contrasenia, @rol_empresa)";
             command.ExecuteNonQuery();
-            return true;
-
+            connection.Close();
+            return true;        
         }
 
         /*public bool RecuperaContra(string correo)
@@ -170,11 +173,13 @@ namespace Data
                     UserRecuperaCache.nombre_completo += " " + reader.GetString(3);
                     UserRecuperaCache.contrasenia = reader.GetString(5);
                 }
+                connection.Close();
                 return true;
             }
             else
             {
                 Console.WriteLine("Datos correctos ");
+                connection.Close();
                 return false;
             }
         }
@@ -209,6 +214,7 @@ namespace Data
             command.CommandText = "SELECT Id_usuario as Id, Nombre, Apellido, Correo, Contrasenia as Password, Fecha_nacimiento as Nacimiento, Rol_empresa as 'Tipo usuario' FROM USUARIO WHERE CORREO != @correo;";
             MySqlDataReader reader = command.ExecuteReader();
             tabla.Load(reader);
+            connection.Close();
             return tabla;
         }
 
@@ -229,8 +235,8 @@ namespace Data
                 " FECHA_NACIMIENTO = @fecha_nacimiento, CONTRASENIA = @contrasenia, ROL_EMPRESA = @rol_empresa, CORREO = @correo where ID_USUARIO = @id";
             command.CommandType = CommandType.Text;
             command.ExecuteNonQuery();
-            
-           
+            connection.Close();
+
         }
         public DataTable MostrarRegistroConversacion()
         {
@@ -242,6 +248,7 @@ namespace Data
             command.CommandText = "SELECT nombre, apellido, correo, FECHA_ACCESO, a.ID_ACCESO, q.NOMBRE_FUNCION FROM REG_FUNCION as f, REG_ACCESO as a, USUARIO as u, FUNCIONES as q WHERE u.ID_USUARIO = a.ID_USUARIO AND a.ID_ACCESO = f.ID_ACCESO and q.ID_FUNCION = f.ID_FUNCION ORDER BY FECHA_ACCESO;";
             MySqlDataReader reader = command.ExecuteReader();
             tabla.Load(reader);
+            connection.Close();
             return tabla;
         }
 

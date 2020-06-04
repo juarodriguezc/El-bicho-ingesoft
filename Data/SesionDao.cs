@@ -64,6 +64,7 @@ namespace Data
                     Console.WriteLine("ID_acceso: " + SesionCache.Id_acceso);
                 }
             }
+            connection.Close();
         }
 
         /*public void create_reg_function(int Id_funcion, int Id_user, int Id_acceso)
@@ -95,6 +96,7 @@ namespace Data
             command.Parameters.AddWithValue("@Id_acceso", Id_acceso);
             command.CommandText = "INSERT INTO REG_FUNCION(ID_FUNCION,ID_USUARIO,ID_ACCESO) VALUES(@Id_funcion ,@Id_user ,@Id_acceso );";
             command.ExecuteNonQuery();
+            connection.Close();
         }
 
     }

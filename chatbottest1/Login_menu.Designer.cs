@@ -41,6 +41,7 @@
             this.linklbl_olvidar = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel_login = new System.Windows.Forms.Panel();
+            this.lbl_error_data = new System.Windows.Forms.Label();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.panel_forgot = new System.Windows.Forms.Panel();
             this.lbl_mailsent = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@
             this.emailTxbRecContr = new System.Windows.Forms.TextBox();
             this.emailRecContraLbl = new System.Windows.Forms.Label();
             this.version = new System.Windows.Forms.Label();
-            this.lbl_error_data = new System.Windows.Forms.Label();
             this.panel_logo_login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_login.SuspendLayout();
@@ -67,7 +67,7 @@
             this.txt_correo.Location = new System.Drawing.Point(100, 80);
             this.txt_correo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_correo.Name = "txt_correo";
-            this.txt_correo.Size = new System.Drawing.Size(321, 25);
+            this.txt_correo.Size = new System.Drawing.Size(321, 20);
             this.txt_correo.TabIndex = 0;
             this.txt_correo.Text = "CORREO";
             this.txt_correo.Enter += new System.EventHandler(this.txt_correo_Enter);
@@ -81,7 +81,7 @@
             this.txt_contrasenia.Location = new System.Drawing.Point(103, 160);
             this.txt_contrasenia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_contrasenia.Name = "txt_contrasenia";
-            this.txt_contrasenia.Size = new System.Drawing.Size(321, 25);
+            this.txt_contrasenia.Size = new System.Drawing.Size(321, 20);
             this.txt_contrasenia.TabIndex = 1;
             this.txt_contrasenia.Text = "CONTRASEÑA";
             this.txt_contrasenia.TextChanged += new System.EventHandler(this.txt_contrasenia_TextChanged);
@@ -114,7 +114,7 @@
             this.label1.Location = new System.Drawing.Point(13, 473);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 18);
+            this.label1.Size = new System.Drawing.Size(68, 15);
             this.label1.TabIndex = 5;
             this.label1.Text = "Version 1.0";
             // 
@@ -126,7 +126,7 @@
             this.label2.Location = new System.Drawing.Point(84, 25);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(341, 63);
+            this.label2.Size = new System.Drawing.Size(275, 49);
             this.label2.TabIndex = 6;
             this.label2.Text = "BIENVENIDO";
             // 
@@ -176,7 +176,7 @@
             this.linklbl_olvidar.LinkColor = System.Drawing.Color.DimGray;
             this.linklbl_olvidar.Location = new System.Drawing.Point(236, 202);
             this.linklbl_olvidar.Name = "linklbl_olvidar";
-            this.linklbl_olvidar.Size = new System.Drawing.Size(203, 20);
+            this.linklbl_olvidar.Size = new System.Drawing.Size(166, 17);
             this.linklbl_olvidar.TabIndex = 11;
             this.linklbl_olvidar.TabStop = true;
             this.linklbl_olvidar.Text = "¿Olvidaste tu contraseña?";
@@ -190,7 +190,7 @@
             this.label4.Location = new System.Drawing.Point(371, 17);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 30);
+            this.label4.Size = new System.Drawing.Size(72, 22);
             this.label4.TabIndex = 12;
             this.label4.Text = "LOGIN";
             // 
@@ -208,6 +208,18 @@
             this.panel_login.Size = new System.Drawing.Size(502, 342);
             this.panel_login.TabIndex = 13;
             this.panel_login.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_login_Paint);
+            // 
+            // lbl_error_data
+            // 
+            this.lbl_error_data.AutoSize = true;
+            this.lbl_error_data.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_error_data.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.lbl_error_data.Location = new System.Drawing.Point(99, 195);
+            this.lbl_error_data.Name = "lbl_error_data";
+            this.lbl_error_data.Size = new System.Drawing.Size(110, 19);
+            this.lbl_error_data.TabIndex = 37;
+            this.lbl_error_data.Text = "Datos erróneos";
+            this.lbl_error_data.Visible = false;
             // 
             // shapeContainer2
             // 
@@ -242,7 +254,7 @@
             this.lbl_mailsent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.lbl_mailsent.Location = new System.Drawing.Point(134, 219);
             this.lbl_mailsent.Name = "lbl_mailsent";
-            this.lbl_mailsent.Size = new System.Drawing.Size(355, 21);
+            this.lbl_mailsent.Size = new System.Drawing.Size(294, 19);
             this.lbl_mailsent.TabIndex = 35;
             this.lbl_mailsent.Text = "Se ha enviado la contraseña a tu correo.";
             this.lbl_mailsent.Visible = false;
@@ -254,7 +266,7 @@
             this.labelInfoReccu.ForeColor = System.Drawing.Color.DimGray;
             this.labelInfoReccu.Location = new System.Drawing.Point(34, 104);
             this.labelInfoReccu.Name = "labelInfoReccu";
-            this.labelInfoReccu.Size = new System.Drawing.Size(461, 42);
+            this.labelInfoReccu.Size = new System.Drawing.Size(381, 38);
             this.labelInfoReccu.TabIndex = 34;
             this.labelInfoReccu.Text = "Ingresa tu email para que se te envíe una contraseña\r\n temporal de recuperación.";
             // 
@@ -302,7 +314,7 @@
             this.label5.Location = new System.Drawing.Point(175, 32);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(320, 30);
+            this.label5.Size = new System.Drawing.Size(253, 22);
             this.label5.TabIndex = 31;
             this.label5.Text = "RECUPERAR CONTRASEÑA";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -326,7 +338,7 @@
             this.emailRecContraLbl.ForeColor = System.Drawing.Color.DimGray;
             this.emailRecContraLbl.Location = new System.Drawing.Point(56, 178);
             this.emailRecContraLbl.Name = "emailRecContraLbl";
-            this.emailRecContraLbl.Size = new System.Drawing.Size(69, 23);
+            this.emailRecContraLbl.Size = new System.Drawing.Size(56, 21);
             this.emailRecContraLbl.TabIndex = 27;
             this.emailRecContraLbl.Text = "E-mail";
             // 
@@ -335,21 +347,9 @@
             this.version.AutoSize = true;
             this.version.Location = new System.Drawing.Point(0, 437);
             this.version.Name = "version";
-            this.version.Size = new System.Drawing.Size(80, 17);
+            this.version.Size = new System.Drawing.Size(60, 13);
             this.version.TabIndex = 15;
             this.version.Text = "Version 1.0";
-            // 
-            // lbl_error_data
-            // 
-            this.lbl_error_data.AutoSize = true;
-            this.lbl_error_data.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_error_data.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.lbl_error_data.Location = new System.Drawing.Point(99, 195);
-            this.lbl_error_data.Name = "lbl_error_data";
-            this.lbl_error_data.Size = new System.Drawing.Size(136, 21);
-            this.lbl_error_data.TabIndex = 37;
-            this.lbl_error_data.Text = "Datos erróneos";
-            this.lbl_error_data.Visible = false;
             // 
             // Login_menu
             // 
@@ -369,7 +369,7 @@
             this.Name = "Login_menu";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ChatBot";
+            this.Text = "Login chatBot";
             this.Load += new System.EventHandler(this.Login_menu_Load);
             this.panel_logo_login.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

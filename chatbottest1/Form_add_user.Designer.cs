@@ -61,7 +61,7 @@
             this.lbl_addUser.Location = new System.Drawing.Point(34, 9);
             this.lbl_addUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_addUser.Name = "lbl_addUser";
-            this.lbl_addUser.Size = new System.Drawing.Size(468, 63);
+            this.lbl_addUser.Size = new System.Drawing.Size(380, 49);
             this.lbl_addUser.TabIndex = 7;
             this.lbl_addUser.Text = "AÑADIR USUARIO";
             // 
@@ -74,7 +74,7 @@
             this.txt_nombre.Location = new System.Drawing.Point(33, 150);
             this.txt_nombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(206, 25);
+            this.txt_nombre.Size = new System.Drawing.Size(206, 20);
             this.txt_nombre.TabIndex = 8;
             this.txt_nombre.Text = "NOMBRE";
             this.txt_nombre.Enter += new System.EventHandler(this.txt_nombre_Enter);
@@ -149,7 +149,7 @@
             this.txt_apellido.Location = new System.Drawing.Point(262, 150);
             this.txt_apellido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_apellido.Name = "txt_apellido";
-            this.txt_apellido.Size = new System.Drawing.Size(222, 25);
+            this.txt_apellido.Size = new System.Drawing.Size(222, 20);
             this.txt_apellido.TabIndex = 10;
             this.txt_apellido.Text = "APELLIDO";
             this.txt_apellido.Enter += new System.EventHandler(this.txt_apellido_Enter);
@@ -164,7 +164,7 @@
             this.txt_correo.Location = new System.Drawing.Point(33, 220);
             this.txt_correo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_correo.Name = "txt_correo";
-            this.txt_correo.Size = new System.Drawing.Size(434, 25);
+            this.txt_correo.Size = new System.Drawing.Size(434, 20);
             this.txt_correo.TabIndex = 11;
             this.txt_correo.Text = "CORREO";
             this.txt_correo.Enter += new System.EventHandler(this.txt_correo_Enter);
@@ -180,7 +180,7 @@
             this.txt_contrasenia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_contrasenia.MaxLength = 25;
             this.txt_contrasenia.Name = "txt_contrasenia";
-            this.txt_contrasenia.Size = new System.Drawing.Size(204, 25);
+            this.txt_contrasenia.Size = new System.Drawing.Size(204, 20);
             this.txt_contrasenia.TabIndex = 13;
             this.txt_contrasenia.Text = "CONTRASEÑA";
             this.txt_contrasenia.TextChanged += new System.EventHandler(this.txt_contrasenia_TextChanged);
@@ -197,7 +197,7 @@
             this.txt_v_contra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_v_contra.MaxLength = 25;
             this.txt_v_contra.Name = "txt_v_contra";
-            this.txt_v_contra.Size = new System.Drawing.Size(204, 25);
+            this.txt_v_contra.Size = new System.Drawing.Size(204, 20);
             this.txt_v_contra.TabIndex = 14;
             this.txt_v_contra.Text = "VERIFICACIÓN";
             this.txt_v_contra.Enter += new System.EventHandler(this.txt_v_contra_Enter);
@@ -211,7 +211,7 @@
             this.pick_fecha_nacimiento.Location = new System.Drawing.Point(302, 283);
             this.pick_fecha_nacimiento.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.pick_fecha_nacimiento.Name = "pick_fecha_nacimiento";
-            this.pick_fecha_nacimiento.Size = new System.Drawing.Size(169, 32);
+            this.pick_fecha_nacimiento.Size = new System.Drawing.Size(169, 27);
             this.pick_fecha_nacimiento.TabIndex = 15;
             this.pick_fecha_nacimiento.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.pick_fecha_nacimiento.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
@@ -223,7 +223,7 @@
             this.fecha_nacimiento.ForeColor = System.Drawing.Color.DimGray;
             this.fecha_nacimiento.Location = new System.Drawing.Point(33, 290);
             this.fecha_nacimiento.Name = "fecha_nacimiento";
-            this.fecha_nacimiento.Size = new System.Drawing.Size(238, 23);
+            this.fecha_nacimiento.Size = new System.Drawing.Size(199, 21);
             this.fecha_nacimiento.TabIndex = 16;
             this.fecha_nacimiento.Text = "FECHA DE NACIMIENTO";
             // 
@@ -270,7 +270,7 @@
             this.tipo_usuario.ForeColor = System.Drawing.Color.DimGray;
             this.tipo_usuario.Location = new System.Drawing.Point(33, 360);
             this.tipo_usuario.Name = "tipo_usuario";
-            this.tipo_usuario.Size = new System.Drawing.Size(175, 23);
+            this.tipo_usuario.Size = new System.Drawing.Size(147, 21);
             this.tipo_usuario.TabIndex = 35;
             this.tipo_usuario.Text = "TIPO DE USUARIO";
             // 
@@ -284,7 +284,7 @@
             "Administrador"});
             this.comboBox_cargo.Location = new System.Drawing.Point(243, 357);
             this.comboBox_cargo.Name = "comboBox_cargo";
-            this.comboBox_cargo.Size = new System.Drawing.Size(227, 31);
+            this.comboBox_cargo.Size = new System.Drawing.Size(227, 29);
             this.comboBox_cargo.TabIndex = 36;
             this.comboBox_cargo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -295,7 +295,7 @@
             this.dato_erroneo_nombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.dato_erroneo_nombre.Location = new System.Drawing.Point(36, 185);
             this.dato_erroneo_nombre.Name = "dato_erroneo_nombre";
-            this.dato_erroneo_nombre.Size = new System.Drawing.Size(108, 20);
+            this.dato_erroneo_nombre.Size = new System.Drawing.Size(88, 17);
             this.dato_erroneo_nombre.TabIndex = 37;
             this.dato_erroneo_nombre.Text = "Dato erróneo";
             this.dato_erroneo_nombre.Visible = false;
@@ -307,7 +307,7 @@
             this.dato_erroneo_apellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.dato_erroneo_apellido.Location = new System.Drawing.Point(260, 185);
             this.dato_erroneo_apellido.Name = "dato_erroneo_apellido";
-            this.dato_erroneo_apellido.Size = new System.Drawing.Size(108, 20);
+            this.dato_erroneo_apellido.Size = new System.Drawing.Size(88, 17);
             this.dato_erroneo_apellido.TabIndex = 38;
             this.dato_erroneo_apellido.Text = "Dato erróneo";
             this.dato_erroneo_apellido.Visible = false;
@@ -319,7 +319,7 @@
             this.dato_erroneo_email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.dato_erroneo_email.Location = new System.Drawing.Point(36, 255);
             this.dato_erroneo_email.Name = "dato_erroneo_email";
-            this.dato_erroneo_email.Size = new System.Drawing.Size(108, 20);
+            this.dato_erroneo_email.Size = new System.Drawing.Size(88, 17);
             this.dato_erroneo_email.TabIndex = 39;
             this.dato_erroneo_email.Text = "Dato erróneo";
             this.dato_erroneo_email.Visible = false;
@@ -331,7 +331,7 @@
             this.dato_erroneo_contrasenia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.dato_erroneo_contrasenia.Location = new System.Drawing.Point(41, 455);
             this.dato_erroneo_contrasenia.Name = "dato_erroneo_contrasenia";
-            this.dato_erroneo_contrasenia.Size = new System.Drawing.Size(108, 20);
+            this.dato_erroneo_contrasenia.Size = new System.Drawing.Size(88, 17);
             this.dato_erroneo_contrasenia.TabIndex = 40;
             this.dato_erroneo_contrasenia.Text = "Dato erróneo";
             this.dato_erroneo_contrasenia.Visible = false;
@@ -343,7 +343,7 @@
             this.dato_erroneo_verificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.dato_erroneo_verificar.Location = new System.Drawing.Point(270, 455);
             this.dato_erroneo_verificar.Name = "dato_erroneo_verificar";
-            this.dato_erroneo_verificar.Size = new System.Drawing.Size(227, 20);
+            this.dato_erroneo_verificar.Size = new System.Drawing.Size(184, 17);
             this.dato_erroneo_verificar.TabIndex = 41;
             this.dato_erroneo_verificar.Text = "Las contraseñas no coinciden";
             this.dato_erroneo_verificar.Visible = false;
@@ -373,7 +373,7 @@
             this.Controls.Add(this.shapeContainer1);
             this.Name = "Form_add_user";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_add_user";
+            this.Text = "Añadir usuario";
             this.Load += new System.EventHandler(this.Form_add_user_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

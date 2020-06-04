@@ -57,10 +57,12 @@ namespace Data
                 {
                     temp = reader2.GetString(0);
                 }
+                connection.Close();
                 return temp;
             }
             else
             {
+                connection.Close();
                 return "Lo siento, no tengo una respuesta programada :'(";
             }
 
