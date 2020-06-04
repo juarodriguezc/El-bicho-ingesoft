@@ -47,7 +47,7 @@ namespace Data
             var command = new MySqlCommand();
             command.Connection = connection;
             command.Parameters.AddWithValue("@azure_msg", azure_msg);
-            command.CommandText = "SELECT TOP 1 TXTMENSAJE FROM MENSAJE INNER JOIN FUNCIONES f ON f.ID_FUNCION = MENSAJE.ID_FUNCION WHERE f.NOMBRE_FUNCION = @azure_msg  ORDER BY NEWID(); ";
+            command.CommandText = "SELECT TXTMENSAJE FROM MENSAJE INNER JOIN FUNCIONES f ON f.ID_FUNCION = MENSAJE.ID_FUNCION WHERE f.NOMBRE_FUNCION = @azure_msg  ORDER BY RAND() LIMIT 1";
             command.CommandType = CommandType.Text;
             MySqlDataReader reader2 = command.ExecuteReader();
             if (reader2.HasRows)

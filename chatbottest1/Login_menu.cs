@@ -53,8 +53,9 @@ namespace chatbottest1
                 bot_menu.FormClosed += Logout;
             }
             else {
-                    txt_contrasenia.Clear();
-                    txt_correo.Clear();
+                lbl_error_data.Visible = true;
+                txt_contrasenia.Clear();
+                txt_correo.Clear();
             }
 
         }

@@ -25,5 +25,13 @@ namespace Business
         {
             return userDao.MostrarUsuarios(correo);
         }
+        public void EditarUsuario(int id, string correo, string nombre, string apellido, DateTime fecha_nacimiento, string contrasenia, string rol_empresa)
+        {
+            userDao.EditarUsuario(id, correo, nombre, apellido, fecha_nacimiento, contrasenia, rol_empresa);
+        }
+
+        public DataTable MostrarRegistroConversacion() {
+            return userDao.MostrarRegistroConversacion();
+        }
     }
 }

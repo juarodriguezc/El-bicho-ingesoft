@@ -213,6 +213,7 @@
             this.Name = "Chatbot_menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chatbot";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Chatbot_menu_FormClosed);
             this.Load += new System.EventHandler(this.Chatbot_menu_Load);
             this.Leave += new System.EventHandler(this.Chatbot_menu_Leave);
             this.panel1.ResumeLayout(false);

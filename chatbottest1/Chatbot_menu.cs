@@ -99,7 +99,8 @@ namespace chatbottest1
                         if (InvokeRequired)
                         {
                                 BeginInvoke(new MethodInvoker(delegate {
-                                lbl_func.Text = message;
+                                    lbl_func.Text = message;
+                                    ModeloRespuesta rta = new ModeloRespuesta();
                                     /*ModeloRespuesta rta = new ModeloRespuesta();
                                     string rta_fin = rta.generarRespuesta(message);
                                     string[] multiple_lines = rta_fin.Split('*');
@@ -115,18 +116,22 @@ namespace chatbottest1
                                     }
 
                                      textBox.AppendText("Bot said: " + "No tienes acceso a esta función" + "\r\n");*/
-                                   
+                                    string rta_fin = rta.GenRespuesta(message);
+                                    Console.WriteLine("Bot said: "+rta_fin);
+                                    string[] multiple_lines = rta_fin.Split('*');
                                     if (realizarAccion(message))
                                     {
-                                       textBox.AppendText("Bot said: " + message + "\r\n");
-                                      
+                                        foreach (string a in multiple_lines)
+                                        {
+                                            textBox.AppendText("Bot said: " + a + "\r\n");
+                                        }
                                     }
                                     else
                                     {
                                         textBox.AppendText("Bot said: " + "No tienes acceso a esta función" + "\r\n");
                                     }
 
-                                    textBox.AppendText("Bot said: " + "No tienes acceso a esta función" + "\r\n");
+                                
 
                                 }));
                         }
@@ -169,6 +174,16 @@ namespace chatbottest1
                         Form_Edit_user edit_user = new Form_Edit_user();
                         edit_user.Show();
                         sesion.create_reg_function(3, UserLoginCache.Id_usuario, SesionCache.Id_acceso);
+                        return true;
+                    }
+                    return false;
+                case "Reg_conversacion":
+                    if (UserLoginCache.Rol_empresa == Positions.Administrador)
+                    {
+                        Form_registro_conversacion reg_conv = new Form_registro_conversacion();
+                        sesion.create_reg_function(8, UserLoginCache.Id_usuario, SesionCache.Id_acceso);
+                        reg_conv.Show();
+                        
                         return true;
                     }
                     return false;
@@ -219,6 +234,11 @@ namespace chatbottest1
         }
 
         private void Chatbot_menu_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Chatbot_menu_FormClosed(object sender, FormClosedEventArgs e)
         {
             
         }

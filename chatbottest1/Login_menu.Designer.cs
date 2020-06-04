@@ -51,6 +51,7 @@
             this.emailTxbRecContr = new System.Windows.Forms.TextBox();
             this.emailRecContraLbl = new System.Windows.Forms.Label();
             this.version = new System.Windows.Forms.Label();
+            this.lbl_error_data = new System.Windows.Forms.Label();
             this.panel_logo_login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_login.SuspendLayout();
@@ -195,6 +196,7 @@
             // 
             // panel_login
             // 
+            this.panel_login.Controls.Add(this.lbl_error_data);
             this.panel_login.Controls.Add(this.bt_ingresar);
             this.panel_login.Controls.Add(this.linklbl_olvidar);
             this.panel_login.Controls.Add(this.txt_contrasenia);
@@ -337,6 +339,18 @@
             this.version.TabIndex = 15;
             this.version.Text = "Version 1.0";
             // 
+            // lbl_error_data
+            // 
+            this.lbl_error_data.AutoSize = true;
+            this.lbl_error_data.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_error_data.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.lbl_error_data.Location = new System.Drawing.Point(99, 195);
+            this.lbl_error_data.Name = "lbl_error_data";
+            this.lbl_error_data.Size = new System.Drawing.Size(136, 21);
+            this.lbl_error_data.TabIndex = 37;
+            this.lbl_error_data.Text = "Datos erróneos";
+            this.lbl_error_data.Visible = false;
+            // 
             // Login_menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -392,5 +406,6 @@
         private System.Windows.Forms.Label labelInfoReccu;
         private System.Windows.Forms.Label lbl_mailsent;
         private System.Windows.Forms.Label version;
+        private System.Windows.Forms.Label lbl_error_data;
     }
 }

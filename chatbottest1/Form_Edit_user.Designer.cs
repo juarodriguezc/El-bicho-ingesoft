@@ -43,6 +43,12 @@
             this.fecha_nacimiento = new System.Windows.Forms.Label();
             this.tipo_usuario = new System.Windows.Forms.Label();
             this.comboBox_cargo = new System.Windows.Forms.ComboBox();
+            this.bt_saveuser = new System.Windows.Forms.Button();
+            this.bt_editar = new System.Windows.Forms.Button();
+            this.dato_erroneo_nombre = new System.Windows.Forms.Label();
+            this.dato_erroneo_apellido = new System.Windows.Forms.Label();
+            this.dato_erroneo_email = new System.Windows.Forms.Label();
+            this.dato_erroneo_contrasenia = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +59,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(558, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(546, 426);
             this.dataGridView1.TabIndex = 0;
             // 
             // txt_nombre
@@ -173,6 +179,7 @@
             // pick_fecha_nacimiento
             // 
             this.pick_fecha_nacimiento.CustomFormat = "dd-MM-yyyy";
+            this.pick_fecha_nacimiento.Enabled = false;
             this.pick_fecha_nacimiento.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pick_fecha_nacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.pick_fecha_nacimiento.Location = new System.Drawing.Point(692, 296);
@@ -206,6 +213,7 @@
             // 
             // comboBox_cargo
             // 
+            this.comboBox_cargo.Enabled = false;
             this.comboBox_cargo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_cargo.FormattingEnabled = true;
             this.comboBox_cargo.Items.AddRange(new object[] {
@@ -217,21 +225,111 @@
             this.comboBox_cargo.Size = new System.Drawing.Size(169, 31);
             this.comboBox_cargo.TabIndex = 37;
             // 
+            // bt_saveuser
+            // 
+            this.bt_saveuser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.bt_saveuser.FlatAppearance.BorderSize = 0;
+            this.bt_saveuser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.bt_saveuser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bt_saveuser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_saveuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.bt_saveuser.ForeColor = System.Drawing.Color.LightGray;
+            this.bt_saveuser.Location = new System.Drawing.Point(728, 408);
+            this.bt_saveuser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_saveuser.Name = "bt_saveuser";
+            this.bt_saveuser.Size = new System.Drawing.Size(133, 33);
+            this.bt_saveuser.TabIndex = 39;
+            this.bt_saveuser.Text = "GUARDAR";
+            this.bt_saveuser.UseVisualStyleBackColor = false;
+            this.bt_saveuser.Click += new System.EventHandler(this.bt_saveuser_Click);
+            // 
+            // bt_editar
+            // 
+            this.bt_editar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.bt_editar.FlatAppearance.BorderSize = 0;
+            this.bt_editar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.bt_editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bt_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_editar.ForeColor = System.Drawing.Color.LightGray;
+            this.bt_editar.Location = new System.Drawing.Point(580, 411);
+            this.bt_editar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_editar.Name = "bt_editar";
+            this.bt_editar.Size = new System.Drawing.Size(85, 28);
+            this.bt_editar.TabIndex = 40;
+            this.bt_editar.Text = "EDITAR";
+            this.bt_editar.UseVisualStyleBackColor = false;
+            this.bt_editar.Click += new System.EventHandler(this.bt_editar_Click);
+            // 
+            // dato_erroneo_nombre
+            // 
+            this.dato_erroneo_nombre.AutoSize = true;
+            this.dato_erroneo_nombre.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dato_erroneo_nombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.dato_erroneo_nombre.Location = new System.Drawing.Point(562, 111);
+            this.dato_erroneo_nombre.Name = "dato_erroneo_nombre";
+            this.dato_erroneo_nombre.Size = new System.Drawing.Size(23, 30);
+            this.dato_erroneo_nombre.TabIndex = 41;
+            this.dato_erroneo_nombre.Text = "*";
+            this.dato_erroneo_nombre.Visible = false;
+            // 
+            // dato_erroneo_apellido
+            // 
+            this.dato_erroneo_apellido.AutoSize = true;
+            this.dato_erroneo_apellido.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dato_erroneo_apellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.dato_erroneo_apellido.Location = new System.Drawing.Point(562, 151);
+            this.dato_erroneo_apellido.Name = "dato_erroneo_apellido";
+            this.dato_erroneo_apellido.Size = new System.Drawing.Size(23, 30);
+            this.dato_erroneo_apellido.TabIndex = 42;
+            this.dato_erroneo_apellido.Text = "*";
+            this.dato_erroneo_apellido.Visible = false;
+            // 
+            // dato_erroneo_email
+            // 
+            this.dato_erroneo_email.AutoSize = true;
+            this.dato_erroneo_email.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dato_erroneo_email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.dato_erroneo_email.Location = new System.Drawing.Point(562, 190);
+            this.dato_erroneo_email.Name = "dato_erroneo_email";
+            this.dato_erroneo_email.Size = new System.Drawing.Size(23, 30);
+            this.dato_erroneo_email.TabIndex = 43;
+            this.dato_erroneo_email.Text = "*";
+            this.dato_erroneo_email.Visible = false;
+            // 
+            // dato_erroneo_contrasenia
+            // 
+            this.dato_erroneo_contrasenia.AutoSize = true;
+            this.dato_erroneo_contrasenia.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dato_erroneo_contrasenia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.dato_erroneo_contrasenia.Location = new System.Drawing.Point(562, 231);
+            this.dato_erroneo_contrasenia.Name = "dato_erroneo_contrasenia";
+            this.dato_erroneo_contrasenia.Size = new System.Drawing.Size(23, 30);
+            this.dato_erroneo_contrasenia.TabIndex = 44;
+            this.dato_erroneo_contrasenia.Text = "*";
+            this.dato_erroneo_contrasenia.Visible = false;
+            // 
             // Form_Edit_user
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(882, 453);
+            this.Controls.Add(this.txt_contrasenia);
+            this.Controls.Add(this.dato_erroneo_contrasenia);
+            this.Controls.Add(this.txt_correo);
+            this.Controls.Add(this.dato_erroneo_email);
+            this.Controls.Add(this.txt_apellido);
+            this.Controls.Add(this.dato_erroneo_apellido);
+            this.Controls.Add(this.txt_nombre);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dato_erroneo_nombre);
+            this.Controls.Add(this.bt_editar);
+            this.Controls.Add(this.bt_saveuser);
             this.Controls.Add(this.comboBox_cargo);
             this.Controls.Add(this.tipo_usuario);
             this.Controls.Add(this.fecha_nacimiento);
             this.Controls.Add(this.pick_fecha_nacimiento);
             this.Controls.Add(this.lbl_editUser);
-            this.Controls.Add(this.txt_contrasenia);
-            this.Controls.Add(this.txt_correo);
-            this.Controls.Add(this.txt_apellido);
-            this.Controls.Add(this.txt_nombre);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.shapeContainer1);
             this.Name = "Form_Edit_user";
             this.Opacity = 0.98D;
@@ -261,5 +359,11 @@
         private System.Windows.Forms.Label fecha_nacimiento;
         private System.Windows.Forms.Label tipo_usuario;
         private System.Windows.Forms.ComboBox comboBox_cargo;
+        private System.Windows.Forms.Button bt_saveuser;
+        private System.Windows.Forms.Button bt_editar;
+        private System.Windows.Forms.Label dato_erroneo_nombre;
+        private System.Windows.Forms.Label dato_erroneo_apellido;
+        private System.Windows.Forms.Label dato_erroneo_email;
+        private System.Windows.Forms.Label dato_erroneo_contrasenia;
     }
 }
