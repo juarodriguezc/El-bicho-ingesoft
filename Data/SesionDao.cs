@@ -5,12 +5,13 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using Common.Cache;
+using MySql.Data.MySqlClient;
 
 namespace Data
 {
     public class SesionDao:ConnectionToSql
     {
-        public void createSesion(int Id_user, DateTime Date)
+        /*public void createSesion(int Id_user, DateTime Date)
         {
             using (var connection = GetConnection())
             {
@@ -37,9 +38,35 @@ namespace Data
                     }
                 }
             }
+        }*/
+
+        public void createSesion(int Id_user, DateTime Date)
+        {
+            //System.Diagnostics.Debug.WriteLine("Id: "+Id_user);
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+
+            command.Parameters.AddWithValue("@Id_user", Id_user);
+            command.Parameters.AddWithValue("@Date", Date);
+            command.CommandText = "INSERT INTO REG_ACCESO (ID_USUARIO,FECHA_ACCESO) VALUES (@Id_user, @Date);";
+            command.ExecuteNonQuery();
+            
+            command.CommandText = "select * from REG_ACCESO where Id_usuario = @Id_user and  Fecha_acceso = @Date";
+            command.CommandType = CommandType.Text;
+            MySqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    SesionCache.Id_acceso = reader.GetInt32(1);
+                    Console.WriteLine("ID_acceso: " + SesionCache.Id_acceso);
+                }
+            }
         }
 
-        public void create_reg_function(int Id_funcion, int Id_user, int Id_acceso)
+        /*public void create_reg_function(int Id_funcion, int Id_user, int Id_acceso)
         {
             using (var connection = GetConnection())
             {
@@ -55,6 +82,20 @@ namespace Data
                     command.ExecuteNonQuery();
                 }
             }
+        }*/
+
+        public void create_reg_function(int Id_funcion, int Id_user, int Id_acceso)
+        {
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@Id_funcion", Id_funcion);
+            command.Parameters.AddWithValue("@Id_user", Id_user);
+            command.Parameters.AddWithValue("@Id_acceso", Id_acceso);
+            command.CommandText = "INSERT INTO REG_FUNCION(ID_FUNCION,ID_USUARIO,ID_ACCESO) VALUES(@Id_funcion ,@Id_user ,@Id_acceso );";
+            command.ExecuteNonQuery();
         }
+
     }
 }

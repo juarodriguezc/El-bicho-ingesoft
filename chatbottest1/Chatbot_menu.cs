@@ -98,25 +98,37 @@ namespace chatbottest1
                         String message = activity.Text;
                         if (InvokeRequired)
                         {
-                            BeginInvoke(new MethodInvoker(delegate {
+                                BeginInvoke(new MethodInvoker(delegate {
                                 lbl_func.Text = message;
-                                ModeloRespuesta rta = new ModeloRespuesta();
-                                string rta_fin = rta.generarRespuesta(message);
-                                string[] multiple_lines = rta_fin.Split('*');
-                                if (realizarAccion(message))
-                                {
-                                    foreach (string a in multiple_lines)
+                                    /*ModeloRespuesta rta = new ModeloRespuesta();
+                                    string rta_fin = rta.generarRespuesta(message);
+                                    string[] multiple_lines = rta_fin.Split('*');
+                                    if (realizarAccion(message))
                                     {
-                                        textBox.AppendText("Bot said: " + a + "\r\n");
+                                        foreach (string a in multiple_lines)
+                                        {
+                                            textBox.AppendText("Bot said: " + a + "\r\n");
+                                        }
                                     }
-                                }
-                                else {
+                                    else {
+                                        textBox.AppendText("Bot said: " + "No tienes acceso a esta función" + "\r\n");
+                                    }
+
+                                     textBox.AppendText("Bot said: " + "No tienes acceso a esta función" + "\r\n");*/
+                                   
+                                    if (realizarAccion(message))
+                                    {
+                                       textBox.AppendText("Bot said: " + message + "\r\n");
+                                      
+                                    }
+                                    else
+                                    {
+                                        textBox.AppendText("Bot said: " + "No tienes acceso a esta función" + "\r\n");
+                                    }
+
                                     textBox.AppendText("Bot said: " + "No tienes acceso a esta función" + "\r\n");
-                                }
-                                
-                                
-                                
-                            }));
+
+                                }));
                         }
                     }
                 }
