@@ -240,7 +240,7 @@ namespace chatbottest1
                 datoErro = "Ingresa el correo";
                 DialogResult datos = MessageBox.Show("Completa los campos", "Ingresa correo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);      
             }
-            emailTxbRecContr.Text = "";
+            
         }
 
         private void envioMail()
@@ -308,6 +308,7 @@ namespace chatbottest1
             {
                 panel_ver.Visible = false;
                 panel_cambio.Visible = true;
+                emailTxbRecContr.Text = "";
                 MessageBox.Show(messageData, "Tener en cuenta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
@@ -320,6 +321,10 @@ namespace chatbottest1
                 }
                 if(span.Minutes > 5)
                 {
+                    Random rnd = new Random();
+                    UserRecuperaCache.cod_verificación = rnd.Next(1000, 9999);
+                    UserRecuperaCache.fecha_envio = DateTime.Now;
+                    txt_codigo.Clear();
                     lbl_cod_exp.Visible = true;
                     envioMail();
                 }
