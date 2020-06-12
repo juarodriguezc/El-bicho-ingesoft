@@ -11,10 +11,16 @@ namespace Business
             return userDao.Login(correo, contrasenia);
         }
 
-        public bool Add_user(string correo, string nombre, string apellido, DateTime fecha_nacimiento, string contrasenia, string rol_empresa)
+        /*public bool Add_user(string correo, string nombre, string apellido, DateTime fecha_nacimiento, string contrasenia, string rol_empresa)
         {
             return userDao.Add_user(correo, nombre, apellido, fecha_nacimiento, contrasenia, rol_empresa);
+        }*/
+
+        public bool Add_user(int id_persona, string nombre, string apellido, DateTime fecha_nacimiento, string telefono, string genero, string correo, string contrasenia, string rol_empresa, string nickname)
+        {
+            return userDao.Add_user(id_persona, nombre, apellido, fecha_nacimiento, telefono, genero, correo, contrasenia, rol_empresa, nickname);
         }
+
 
         public bool RecuperaContra(string correo)
         {
@@ -25,13 +31,24 @@ namespace Business
         {
             return userDao.MostrarUsuarios(correo);
         }
-        public void EditarUsuario(int id, string correo, string nombre, string apellido, DateTime fecha_nacimiento, string contrasenia, string rol_empresa)
+        
+        /*public void EditarUsuario(int id, string correo, string nombre, string apellido, DateTime fecha_nacimiento, string contrasenia, string rol_empresa)
         {
             userDao.EditarUsuario(id, correo, nombre, apellido, fecha_nacimiento, contrasenia, rol_empresa);
+        }*/
+
+        public void EditarUsuario(int id_persona, string correo, string nombre, string apellido, DateTime fecha_nacimiento, string contrasenia, string rol_empresa, string genero, string telefono, string nickname)
+        {
+            userDao.EditarUsuario(id_persona, correo, nombre, apellido, fecha_nacimiento, contrasenia, rol_empresa, genero, telefono, nickname);
         }
 
         public DataTable MostrarRegistroConversacion() {
             return userDao.MostrarRegistroConversacion();
+        }
+
+        public void CambiarPassword(int id_persona, string contrasenia)
+        {
+            userDao.CambiarPassword(id_persona, contrasenia);
         }
     }
 }

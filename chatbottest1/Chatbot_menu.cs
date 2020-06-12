@@ -165,7 +165,7 @@ namespace chatbottest1
                     if (UserLoginCache.Rol_empresa == Positions.Administrador) {
                         Form_add_user add_user = new Form_add_user();
                         add_user.Show();
-                        sesion.create_reg_function(2, UserLoginCache.Id_usuario, SesionCache.Id_acceso);
+                        sesion.create_reg_function(2, SesionCache.Id_acceso);
                         return true;
                     }
                     return false;
@@ -173,7 +173,7 @@ namespace chatbottest1
                     if (UserLoginCache.Rol_empresa == Positions.Administrador) {
                         Form_Edit_user edit_user = new Form_Edit_user();
                         edit_user.Show();
-                        sesion.create_reg_function(3, UserLoginCache.Id_usuario, SesionCache.Id_acceso);
+                        sesion.create_reg_function(3, SesionCache.Id_acceso);
                         return true;
                     }
                     return false;
@@ -181,7 +181,7 @@ namespace chatbottest1
                     if (UserLoginCache.Rol_empresa == Positions.Administrador)
                     {
                         Form_registro_conversacion reg_conv = new Form_registro_conversacion();
-                        sesion.create_reg_function(8, UserLoginCache.Id_usuario, SesionCache.Id_acceso);
+                        sesion.create_reg_function(8, SesionCache.Id_acceso);
                         reg_conv.Show();
                         
                         return true;
@@ -191,40 +191,24 @@ namespace chatbottest1
                     return true;
             }
         }
-        
-
-
-
         private void textsend_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) {
                 bt_send.PerformClick();
             }
         }
-
-
-
-
-
         private void textBox_TextChanged(object sender, EventArgs e)
         {
             
         }
-
         private void textsend_TextChanged(object sender, EventArgs e)
         {
 
         }
-
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
-        
-
-
         private void bt_logout_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Estas seguro que quieres cerrar sesión?", "Warning",
@@ -232,12 +216,10 @@ namespace chatbottest1
                 this.Close();
             }
         }
-
         private void Chatbot_menu_Leave(object sender, EventArgs e)
         {
             
         }
-
         private void Chatbot_menu_FormClosed(object sender, FormClosedEventArgs e)
         {
             

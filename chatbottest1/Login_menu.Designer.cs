@@ -32,7 +32,6 @@
             this.txt_correo = new System.Windows.Forms.TextBox();
             this.txt_contrasenia = new System.Windows.Forms.TextBox();
             this.bt_ingresar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.line_Correo = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -51,6 +50,26 @@
             this.label5 = new System.Windows.Forms.Label();
             this.emailTxbRecContr = new System.Windows.Forms.TextBox();
             this.emailRecContraLbl = new System.Windows.Forms.Label();
+            this.panel_ver = new System.Windows.Forms.Panel();
+            this.lbl_cod_exp = new System.Windows.Forms.Label();
+            this.cod_incorrecto = new System.Windows.Forms.Label();
+            this.btn_verificar = new System.Windows.Forms.Button();
+            this.txt_codigo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_email_ver = new System.Windows.Forms.Label();
+            this.ttl_ver = new System.Windows.Forms.Label();
+            this.panel_cambio = new System.Windows.Forms.Panel();
+            this.lbl_cont_req = new System.Windows.Forms.Label();
+            this.lbl_verCon = new System.Windows.Forms.Label();
+            this.btn_cambio_cont = new System.Windows.Forms.Button();
+            this.txt_rep_cont_ver = new System.Windows.Forms.TextBox();
+            this.txt_cont_ver = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel_cambio_correcto = new System.Windows.Forms.Panel();
+            this.lbl_cambio_correcto = new System.Windows.Forms.Label();
+            this.btn_volver_login = new System.Windows.Forms.Button();
             this.panel_logo_login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_login.SuspendLayout();
@@ -105,18 +124,6 @@
             this.bt_ingresar.Text = "ACCEDER";
             this.bt_ingresar.UseVisualStyleBackColor = false;
             this.bt_ingresar.Click += new System.EventHandler(this.bt_ingresar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label1.Location = new System.Drawing.Point(13, 646);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 18);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Version 2.0";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // label2
             // 
@@ -246,6 +253,7 @@
             this.panel_forgot.Name = "panel_forgot";
             this.panel_forgot.Size = new System.Drawing.Size(818, 494);
             this.panel_forgot.TabIndex = 14;
+            this.panel_forgot.Visible = false;
             // 
             // lbl_mailsent
             // 
@@ -342,6 +350,150 @@
             this.emailRecContraLbl.TabIndex = 27;
             this.emailRecContraLbl.Text = "E-mail";
             // 
+            // panel_ver
+            // 
+            this.panel_ver.Location = new System.Drawing.Point(0, 0);
+            this.panel_ver.Name = "panel_ver";
+            this.panel_ver.Size = new System.Drawing.Size(200, 100);
+            this.panel_ver.TabIndex = 0;
+            // 
+            // lbl_cod_exp
+            // 
+            this.lbl_cod_exp.Location = new System.Drawing.Point(0, 0);
+            this.lbl_cod_exp.Name = "lbl_cod_exp";
+            this.lbl_cod_exp.Size = new System.Drawing.Size(100, 23);
+            this.lbl_cod_exp.TabIndex = 0;
+            // 
+            // cod_incorrecto
+            // 
+            this.cod_incorrecto.Location = new System.Drawing.Point(0, 0);
+            this.cod_incorrecto.Name = "cod_incorrecto";
+            this.cod_incorrecto.Size = new System.Drawing.Size(100, 23);
+            this.cod_incorrecto.TabIndex = 0;
+            // 
+            // btn_verificar
+            // 
+            this.btn_verificar.Location = new System.Drawing.Point(0, 0);
+            this.btn_verificar.Name = "btn_verificar";
+            this.btn_verificar.Size = new System.Drawing.Size(75, 23);
+            this.btn_verificar.TabIndex = 0;
+            // 
+            // txt_codigo
+            // 
+            this.txt_codigo.Location = new System.Drawing.Point(0, 0);
+            this.txt_codigo.Name = "txt_codigo";
+            this.txt_codigo.Size = new System.Drawing.Size(100, 22);
+            this.txt_codigo.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label1.Location = new System.Drawing.Point(13, 646);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 18);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Version 2.0";
+            // 
+            // lbl_email_ver
+            // 
+            this.lbl_email_ver.Location = new System.Drawing.Point(0, 0);
+            this.lbl_email_ver.Name = "lbl_email_ver";
+            this.lbl_email_ver.Size = new System.Drawing.Size(100, 23);
+            this.lbl_email_ver.TabIndex = 0;
+            // 
+            // ttl_ver
+            // 
+            this.ttl_ver.Location = new System.Drawing.Point(0, 0);
+            this.ttl_ver.Name = "ttl_ver";
+            this.ttl_ver.Size = new System.Drawing.Size(100, 23);
+            this.ttl_ver.TabIndex = 0;
+            // 
+            // panel_cambio
+            // 
+            this.panel_cambio.Location = new System.Drawing.Point(0, 0);
+            this.panel_cambio.Name = "panel_cambio";
+            this.panel_cambio.Size = new System.Drawing.Size(200, 100);
+            this.panel_cambio.TabIndex = 0;
+            // 
+            // lbl_cont_req
+            // 
+            this.lbl_cont_req.Location = new System.Drawing.Point(0, 0);
+            this.lbl_cont_req.Name = "lbl_cont_req";
+            this.lbl_cont_req.Size = new System.Drawing.Size(100, 23);
+            this.lbl_cont_req.TabIndex = 0;
+            // 
+            // lbl_verCon
+            // 
+            this.lbl_verCon.Location = new System.Drawing.Point(0, 0);
+            this.lbl_verCon.Name = "lbl_verCon";
+            this.lbl_verCon.Size = new System.Drawing.Size(100, 23);
+            this.lbl_verCon.TabIndex = 0;
+            // 
+            // btn_cambio_cont
+            // 
+            this.btn_cambio_cont.Location = new System.Drawing.Point(0, 0);
+            this.btn_cambio_cont.Name = "btn_cambio_cont";
+            this.btn_cambio_cont.Size = new System.Drawing.Size(75, 23);
+            this.btn_cambio_cont.TabIndex = 0;
+            // 
+            // txt_rep_cont_ver
+            // 
+            this.txt_rep_cont_ver.Location = new System.Drawing.Point(0, 0);
+            this.txt_rep_cont_ver.Name = "txt_rep_cont_ver";
+            this.txt_rep_cont_ver.Size = new System.Drawing.Size(100, 22);
+            this.txt_rep_cont_ver.TabIndex = 0;
+            // 
+            // txt_cont_ver
+            // 
+            this.txt_cont_ver.Location = new System.Drawing.Point(0, 0);
+            this.txt_cont_ver.Name = "txt_cont_ver";
+            this.txt_cont_ver.Size = new System.Drawing.Size(100, 22);
+            this.txt_cont_ver.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 23);
+            this.label7.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 23);
+            this.label6.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 23);
+            this.label3.TabIndex = 0;
+            // 
+            // panel_cambio_correcto
+            // 
+            this.panel_cambio_correcto.Location = new System.Drawing.Point(0, 0);
+            this.panel_cambio_correcto.Name = "panel_cambio_correcto";
+            this.panel_cambio_correcto.Size = new System.Drawing.Size(200, 100);
+            this.panel_cambio_correcto.TabIndex = 0;
+            // 
+            // lbl_cambio_correcto
+            // 
+            this.lbl_cambio_correcto.Location = new System.Drawing.Point(0, 0);
+            this.lbl_cambio_correcto.Name = "lbl_cambio_correcto";
+            this.lbl_cambio_correcto.Size = new System.Drawing.Size(100, 23);
+            this.lbl_cambio_correcto.TabIndex = 0;
+            // 
+            // btn_volver_login
+            // 
+            this.btn_volver_login.Location = new System.Drawing.Point(0, 0);
+            this.btn_volver_login.Name = "btn_volver_login";
+            this.btn_volver_login.Size = new System.Drawing.Size(75, 23);
+            this.btn_volver_login.TabIndex = 0;
+            // 
             // Login_menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -351,8 +503,8 @@
             this.Controls.Add(this.panel_logo_login);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel_forgot);
             this.Controls.Add(this.panel_login);
+            this.Controls.Add(this.panel_forgot);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
@@ -377,7 +529,6 @@
         private System.Windows.Forms.TextBox txt_correo;
         private System.Windows.Forms.TextBox txt_contrasenia;
         private System.Windows.Forms.Button bt_ingresar;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Microsoft.VisualBasic.PowerPacks.LineShape line_Correo;
         private System.Windows.Forms.Panel panel_logo_login;
@@ -396,5 +547,25 @@
         private System.Windows.Forms.Label labelInfoReccu;
         private System.Windows.Forms.Label lbl_mailsent;
         private System.Windows.Forms.Label lbl_error_data;
+        private System.Windows.Forms.Panel panel_ver;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_email_ver;
+        private System.Windows.Forms.Label ttl_ver;
+        private System.Windows.Forms.Label cod_incorrecto;
+        private System.Windows.Forms.Button btn_verificar;
+        private System.Windows.Forms.TextBox txt_codigo;
+        private System.Windows.Forms.Panel panel_cambio;
+        private System.Windows.Forms.Label lbl_verCon;
+        private System.Windows.Forms.Button btn_cambio_cont;
+        private System.Windows.Forms.TextBox txt_rep_cont_ver;
+        private System.Windows.Forms.TextBox txt_cont_ver;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_cont_req;
+        private System.Windows.Forms.Label lbl_cod_exp;
+        private System.Windows.Forms.Panel panel_cambio_correcto;
+        private System.Windows.Forms.Label lbl_cambio_correcto;
+        private System.Windows.Forms.Button btn_volver_login;
     }
 }
