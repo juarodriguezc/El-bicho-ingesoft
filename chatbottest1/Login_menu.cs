@@ -18,11 +18,12 @@ namespace chatbottest1
         //Variables a utilizar
         public String datoErro = "Verficar datos de:";
 
+        private string messageData = "1. La contraseña debe tener entre 8 y 25 caracteres,\n almenos una letra mayuscula y al menos un número\n";
+
+
         public Login_menu()
         {
             InitializeComponent();
-            
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -35,7 +36,6 @@ namespace chatbottest1
             panel_login.Visible = true;
             panel_forgot.Visible = false;
             txt_contrasenia.UseSystemPasswordChar = false;
-
         }
 
         private void bt_ingresar_Click(object sender, EventArgs e)
@@ -198,9 +198,6 @@ namespace chatbottest1
         }
 
 
-
-
-
         private void recup_datos_Click(object sender, EventArgs e)
         {
             if (emailTxbRecContr.Text.Length != 0)
@@ -219,45 +216,14 @@ namespace chatbottest1
                 Console.WriteLine("Existe en base de datos "+verfE);
                 if (verfE)
                 {
-                    /*
-                    //Contraseña nueva aleatoria
-                    Random random = new Random();
-
-
-                    int numAl = random.Next(40000, 100000);
-                    char letAl = (char)(random.Next(65, 91));
-
-                    String nuevaClav = numAl + "" + letAl;
-                    */
-
-
-
-
                     //enviar correo con la nueva contraseña
-                    String nombre = UserRecuperaCache.nombre_completo;
-                    String Menssage = "Buen día\n"
-                            + nombre + "\n\n"
-                            + "\tTe habla " + "YMCA-BOTSERVICE" + ", ¿haz olvidado tu contraseña?\n"
-                            + "\tEl siguiente codigo es la contraseña que tienes registrada \n"
-                            + "\t\n\t ------> " + UserRecuperaCache.contrasenia + " <------ \n\n"
-                            + "\t\nTe aconsejamos cambiarla lo más pronto posible\n"
-                            + "\tEn caso de que no seas el solicitante de \n\tla nueva contraseña, comunicate inmediatamente\n"
-                            + "\tcon YMCA-BOTSERVICE.\n\n"
-                            + "Gracias\n"
-                            + "YMCA COLOMBIA";
-
-                    String Subject = "Cambio contraseña YMCA";
-
-                    String email = emailTxbRecContr.Text;
-
-                    sendEmail(email, Menssage, Subject);
-
-                    //DialogResult datosE = MessageBox.Show("Verifica tu correo, por favor", "Cambio contraseña", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    envioMail();
 
                     //Limpiar TextBox
-
                     lbl_mailsent.Visible = true;
-                    
+
+                    panel_forgot.Visible = false;
+                    panel_ver.Visible = true;
 
                 }
                 else
@@ -275,6 +241,25 @@ namespace chatbottest1
                 DialogResult datos = MessageBox.Show("Completa los campos", "Ingresa correo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);      
             }
             emailTxbRecContr.Text = "";
+        }
+
+        private void envioMail()
+        {
+            String nombre = UserRecuperaCache.nombre_completo;
+            String Menssage = "Buen día: "+ nombre + "\n"
+                    + "\tTe habla " + "YMCA-BOTSERVICE" + ", ¿haz olvidado tu contraseña?\n"
+                    + "\tEl siguiente es tu codigo de recuperación \n"
+                    + "\t\n\t ---> " + UserRecuperaCache.cod_verificación + " <--- \n"
+                    + "\t\nIngresalo en la app para poder cambiar tu contraseña\n"
+                    + "\t\nEste tendra una duración de 5 minutos\n"
+                    + "Gracias\n"
+                    + "YMCA COLOMBIA";
+
+            String Subject = "Codigo de verificación YMCA";
+
+            String email = emailTxbRecContr.Text;
+
+            sendEmail(email, Menssage, Subject);
         }
 
         private void backHome_Click(object sender, EventArgs e)
@@ -297,13 +282,166 @@ namespace chatbottest1
         {
             txt_correo.Clear();
             txt_contrasenia.Clear();
+
             this.Show();
             txt_correo.Focus();
+
+            txt_correo.Text = "CORREO";
+            txt_correo.ForeColor = Color.DimGray;
+
+            txt_contrasenia.Text = "CONTRASEÑA";
+            txt_contrasenia.ForeColor = Color.DimGray;
         }
 
         private void txt_contrasenia_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_verificar_Click(object sender, EventArgs e)
+        {
+            DateTime tiempoVer = DateTime.Now;
+            TimeSpan span = tiempoVer.Subtract(UserRecuperaCache.fecha_envio);
+
+            if (Convert.ToInt32(txt_codigo.Text) == UserRecuperaCache.cod_verificación && span.Minutes<=5)
+            {
+                panel_ver.Visible = false;
+                panel_cambio.Visible = true;
+                MessageBox.Show(messageData, "Tener en cuenta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                if (Convert.ToInt32(txt_codigo.Text) != UserRecuperaCache.cod_verificación)
+                {
+                    cod_incorrecto.Visible = true;
+                    txt_codigo.Clear();
+
+                }
+                if(span.Minutes > 5)
+                {
+                    lbl_cod_exp.Visible = true;
+                    envioMail();
+                }
+            }     
+            
+
+        }
+
+        private void btn_cambio_cont_Click(object sender, EventArgs e)
+        {
+
+            if(txt_cont_ver.Text.Length!=0 && txt_rep_cont_ver.TextLength != 0)
+            {
+                if(verificarPassWordL(txt_cont_ver.Text) && verificarIgualContr(txt_cont_ver.Text, txt_rep_cont_ver.Text)){
+
+                    ModeloUsuario recupera = new ModeloUsuario();
+                    recupera.CambiarPassword(UserRecuperaCache.id_persona, txt_cont_ver.Text);
+                    panel_cambio_correcto.Visible = true;
+                    panel_cambio.Visible = false;
+                }
+                else
+                {
+                    if (!verificarPassWordL(txt_cont_ver.Text))
+                    {
+                        lbl_verCon.Visible = false;
+                        lbl_cont_req.Visible = true;
+                        txt_cont_ver.Clear();
+                        txt_rep_cont_ver.Clear();
+                    }
+
+                    if(!verificarIgualContr(txt_cont_ver.Text, txt_rep_cont_ver.Text))
+                    {
+                        lbl_verCon.Visible = true;
+                        lbl_cont_req.Visible = false;
+                        txt_cont_ver.Clear();
+                        txt_rep_cont_ver.Clear();
+                    }
+
+                }
+
+            }
+            else
+            {
+                DialogResult datos = MessageBox.Show("Completa los campos", "Datos erroneos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+
+        }
+
+        public bool verificarPassWordL(String password)
+        {
+            //Verificar password, código Felipe Riaño
+            if (password.Length >= 8 && password.Length <= 25)
+            {
+                //Contadores de mayusculas y numeros
+                int cantNum = 0, cantUper = 0;
+
+                for (int i = 0; i < password.Length; i++)
+                {
+                    //Verficiacion si la contraseña tiene algun caracter que no sea digito o letra
+                    if (Char.IsLetter(password[i]) || Char.IsDigit(password[i]))
+                    {
+                        if (Char.IsUpper(password[i]))
+                        {
+                            cantUper++;
+                        }
+                        else if (Char.IsDigit(password[i]))
+                        {
+                            cantNum++;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                }
+                //Verificacion contraseña con numeros y con mayusculas
+                if (cantNum > 0 && cantUper > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        public bool verificarIgualContr(String pass, String ver)
+        {
+            return (pass.Equals(ver));
+        }
+
+        private void btn_volver_login_Click(object sender, EventArgs e)
+        {
+            panel_cambio_correcto.Visible = false;
+            panel_login.Visible = true;
+
+            txt_correo.Text = "CORREO";
+            txt_correo.ForeColor = Color.DimGray;
+
+            txt_contrasenia.Text = "CONTRASEÑA";
+            txt_contrasenia.ForeColor = Color.DimGray;
+        }
+
+        private void txt_cont_ver_Enter(object sender, EventArgs e)
+        {
+                txt_contrasenia.Text = "";
+                txt_contrasenia.ForeColor = Color.DimGray;
+                txt_contrasenia.UseSystemPasswordChar = true;
+        }
+
+        private void txt_rep_cont_ver_TextChanged(object sender, EventArgs e)
+        {
+            txt_contrasenia.Text = "";
+            txt_contrasenia.ForeColor = Color.DimGray;
+            txt_contrasenia.UseSystemPasswordChar = true;
         }
     }
 }

@@ -37,14 +37,21 @@ namespace chatbottest1
             dato_erroneo_email.Visible = false;
             dato_erroneo_contrasenia.Visible = false;
             dato_erroneo_verificar.Visible = false;
+            dato_erroneo_cedula.Visible = false;
+            dato_erroneo_telefono.Visible = false;
+            dato_erroneo_user.Visible = false;
             if (txt_nombre.Text.Length != 0 && txt_apellido.Text.Length != 0 && txt_correo.Text.Length != 0
-                && txt_v_contra.Text.Length != 0 && comboBox_cargo.SelectedItem != null) {
+                && txt_v_contra.Text.Length != 0 && comboBox_cargo.SelectedItem != null && txt_cedula.Text.Length!=0) {
                 //Verifica que los campos no estén vacios -- Codigo traido de Felipe Riaño
                 if (verficarNombre_Apell(txt_nombre.Text) && verficarNombre_Apell(txt_apellido.Text)
                     && verificarEmail(txt_correo.Text) && verficarPassWordL(txt_contrasenia.Text) && verificarIgualdadContra(txt_contrasenia.Text, txt_v_contra.Text)) 
                 {
                     ModeloUsuario addUser = new ModeloUsuario();
-                    if (!addUser.Add_user(txt_correo.Text, txt_nombre.Text, txt_apellido.Text, Convert.ToDateTime(pick_fecha_nacimiento.Text), txt_contrasenia.Text, comboBox_cargo.SelectedItem.ToString()))
+                    /*if (!addUser.Add_user(txt_correo.Text, txt_nombre.Text, txt_apellido.Text, Convert.ToDateTime(pick_fecha_nacimiento.Text), txt_contrasenia.Text, comboBox_cargo.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("El correo registrado ya se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }*/
+                    if (!addUser.Add_user(Convert.ToInt32(txt_cedula.Text), txt_nombre.Text, txt_apellido.Text, Convert.ToDateTime(pick_fecha_nacimiento.Text), txt_telefono.Text, comboBox_genero.SelectedItem.ToString(), txt_correo.Text, txt_contrasenia.Text, comboBox_cargo.SelectedItem.ToString(), txt_usuario.Text))
                     {
                         MessageBox.Show("El correo registrado ya se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -66,14 +73,18 @@ namespace chatbottest1
                     sendEmail(email, messageB, subject);
 
                     //Reiniciar valores para otro registro
+                    
                     txt_nombre.Text = "NOMBRE";
                     txt_apellido.Text = "APELLIDO";
                     txt_correo.Text = "CORREO";
+                    txt_usuario.Text = "USUARIO";
                     pick_fecha_nacimiento.Value = DateTime.Parse("01-01-2000");
                     txt_contrasenia.UseSystemPasswordChar = false;
                     txt_v_contra.UseSystemPasswordChar = false;
                     txt_contrasenia.Text = "CONTRASEÑA";
                     txt_v_contra.Text = "VERIFICACIÓN";
+
+
                 }
                 else {
                     if (!verficarNombre_Apell(txt_nombre.Text)) dato_erroneo_nombre.Visible = true;
@@ -173,13 +184,11 @@ namespace chatbottest1
             //Verificar password, código Felipe Riaño
             if (password.Length >= 8 && password.Length <= 25)
             {
-
                 //Contadores de mayusculas y numeros
                 int cantNum = 0, cantUper = 0;
 
                 for (int i = 0; i < password.Length; i++)
                 {
-
                     //Verficiacion si la contraseña tiene algun caracter que no sea digito o letra
                     if (Char.IsLetter(password[i]) || Char.IsDigit(password[i]))
                     {
@@ -332,6 +341,60 @@ namespace chatbottest1
         private void txt_contrasenia_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_cedula_Enter(object sender, EventArgs e)
+        {
+            if (txt_apellido.Text == "CEDULA")
+            {
+                txt_apellido.Text = "";
+                txt_apellido.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txt_cedula_Leave(object sender, EventArgs e)
+        {
+            if (txt_correo.Text == "")
+            {
+                txt_correo.Text = "CEDULA";
+                txt_correo.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txt_telefono_Enter(object sender, EventArgs e)
+        {
+            if (txt_apellido.Text == "TELEFONO")
+            {
+                txt_apellido.Text = "";
+                txt_apellido.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txt_telefono_Leave(object sender, EventArgs e)
+        {
+            if (txt_correo.Text == "")
+            {
+                txt_correo.Text = "TELEFONO";
+                txt_correo.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txt_usuario_Enter(object sender, EventArgs e)
+        {
+            if (txt_apellido.Text == "USUARIO")
+            {
+                txt_apellido.Text = "";
+                txt_apellido.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txt_usuario_Leave(object sender, EventArgs e)
+        {
+            if (txt_correo.Text == "")
+            {
+                txt_correo.Text = "USUARIO";
+                txt_correo.ForeColor = Color.DimGray;
+            }
         }
     }
     

@@ -45,6 +45,7 @@ namespace chatbottest1
                 txt_correo.ReadOnly = false;
                 txt_contrasenia.ReadOnly = false;
                 pick_fecha_nacimiento.Enabled = true;
+                comboBox_genero.Enabled = true;
                 comboBox_cargo.Enabled = true;
                 editar = true;
 
@@ -54,13 +55,16 @@ namespace chatbottest1
                 dato_erroneo_contrasenia.Visible = false;
 
 
-                id_usuario = int.Parse(dataGridView1.CurrentRow.Cells["Id"].Value.ToString());
+                id_usuario = int.Parse(dataGridView1.CurrentRow.Cells["Id_persona"].Value.ToString());
                 txt_nombre.Text = dataGridView1.CurrentRow.Cells["Nombre"].Value.ToString();
                 txt_apellido.Text = dataGridView1.CurrentRow.Cells["Apellido"].Value.ToString();
                 txt_contrasenia.Text = dataGridView1.CurrentRow.Cells["Password"].Value.ToString();
                 txt_correo.Text = dataGridView1.CurrentRow.Cells["Correo"].Value.ToString();
+                txt_telefono.Text = dataGridView1.CurrentRow.Cells["Telefono"].Value.ToString();
                 pick_fecha_nacimiento.Value = DateTime.Parse(dataGridView1.CurrentRow.Cells["Nacimiento"].Value.ToString());
                 comboBox_cargo.SelectedItem = dataGridView1.CurrentRow.Cells["Tipo usuario"].Value.ToString();
+                comboBox_genero.SelectedItem = dataGridView1.CurrentRow.Cells["Genero"].Value.ToString();
+                txt_usuario.Text= dataGridView1.CurrentRow.Cells["Usuario"].Value.ToString();
             }
             else
             {
@@ -88,7 +92,8 @@ namespace chatbottest1
                     {
                         try
                         {
-                            usuario.EditarUsuario(id_usuario, txt_correo.Text, txt_nombre.Text, txt_apellido.Text, Convert.ToDateTime(pick_fecha_nacimiento.Text), txt_contrasenia.Text, comboBox_cargo.SelectedItem.ToString());
+                            //usuario.EditarUsuario(id_usuario, txt_correo.Text, txt_nombre.Text, txt_apellido.Text, Convert.ToDateTime(pick_fecha_nacimiento.Text), txt_contrasenia.Text, comboBox_cargo.SelectedItem.ToString());
+                            usuario.EditarUsuario(id_usuario, txt_correo.Text, txt_nombre.Text, txt_apellido.Text, Convert.ToDateTime(pick_fecha_nacimiento.Text), txt_contrasenia.Text, comboBox_cargo.SelectedItem.ToString(), comboBox_genero.SelectedItem.ToString(), txt_telefono.Text, txt_usuario.Text);
                             MessageBox.Show("El usuario se editó correctamente");
                             limpiarCasillas();
                             MostrarUsuarios();

@@ -32,7 +32,6 @@
             this.txt_correo = new System.Windows.Forms.TextBox();
             this.txt_contrasenia = new System.Windows.Forms.TextBox();
             this.bt_ingresar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.line_Correo = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -52,10 +51,33 @@
             this.emailTxbRecContr = new System.Windows.Forms.TextBox();
             this.emailRecContraLbl = new System.Windows.Forms.Label();
             this.version = new System.Windows.Forms.Label();
+            this.panel_ver = new System.Windows.Forms.Panel();
+            this.lbl_cod_exp = new System.Windows.Forms.Label();
+            this.cod_incorrecto = new System.Windows.Forms.Label();
+            this.btn_verificar = new System.Windows.Forms.Button();
+            this.txt_codigo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_email_ver = new System.Windows.Forms.Label();
+            this.ttl_ver = new System.Windows.Forms.Label();
+            this.panel_cambio = new System.Windows.Forms.Panel();
+            this.lbl_cont_req = new System.Windows.Forms.Label();
+            this.lbl_verCon = new System.Windows.Forms.Label();
+            this.btn_cambio_cont = new System.Windows.Forms.Button();
+            this.txt_rep_cont_ver = new System.Windows.Forms.TextBox();
+            this.txt_cont_ver = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel_cambio_correcto = new System.Windows.Forms.Panel();
+            this.lbl_cambio_correcto = new System.Windows.Forms.Label();
+            this.btn_volver_login = new System.Windows.Forms.Button();
             this.panel_logo_login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_login.SuspendLayout();
             this.panel_forgot.SuspendLayout();
+            this.panel_ver.SuspendLayout();
+            this.panel_cambio.SuspendLayout();
+            this.panel_cambio_correcto.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_correo
@@ -107,23 +129,12 @@
             this.bt_ingresar.UseVisualStyleBackColor = false;
             this.bt_ingresar.Click += new System.EventHandler(this.bt_ingresar_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label1.Location = new System.Drawing.Point(13, 473);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 15);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Version 1.0";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 31.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(84, 25);
+            this.label2.Location = new System.Drawing.Point(89, 24);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(275, 49);
@@ -153,9 +164,9 @@
             this.panel_logo_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.panel_logo_login.Controls.Add(this.pictureBox1);
             this.panel_logo_login.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel_logo_login.Location = new System.Drawing.Point(502, 0);
+            this.panel_logo_login.Location = new System.Drawing.Point(492, 0);
             this.panel_logo_login.Name = "panel_logo_login";
-            this.panel_logo_login.Size = new System.Drawing.Size(280, 453);
+            this.panel_logo_login.Size = new System.Drawing.Size(280, 448);
             this.panel_logo_login.TabIndex = 9;
             // 
             // pictureBox1
@@ -203,9 +214,9 @@
             this.panel_login.Controls.Add(this.label4);
             this.panel_login.Controls.Add(this.txt_correo);
             this.panel_login.Controls.Add(this.shapeContainer2);
-            this.panel_login.Location = new System.Drawing.Point(0, 91);
+            this.panel_login.Location = new System.Drawing.Point(1, 95);
             this.panel_login.Name = "panel_login";
-            this.panel_login.Size = new System.Drawing.Size(502, 342);
+            this.panel_login.Size = new System.Drawing.Size(488, 342);
             this.panel_login.TabIndex = 13;
             this.panel_login.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_login_Paint);
             // 
@@ -229,7 +240,7 @@
             this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1,
             this.line_Correo});
-            this.shapeContainer2.Size = new System.Drawing.Size(502, 342);
+            this.shapeContainer2.Size = new System.Drawing.Size(488, 342);
             this.shapeContainer2.TabIndex = 13;
             this.shapeContainer2.TabStop = false;
             // 
@@ -242,10 +253,11 @@
             this.panel_forgot.Controls.Add(this.label5);
             this.panel_forgot.Controls.Add(this.emailTxbRecContr);
             this.panel_forgot.Controls.Add(this.emailRecContraLbl);
-            this.panel_forgot.Location = new System.Drawing.Point(0, 94);
+            this.panel_forgot.Location = new System.Drawing.Point(0, 92);
             this.panel_forgot.Name = "panel_forgot";
-            this.panel_forgot.Size = new System.Drawing.Size(502, 339);
+            this.panel_forgot.Size = new System.Drawing.Size(491, 339);
             this.panel_forgot.TabIndex = 14;
+            this.panel_forgot.Visible = false;
             // 
             // lbl_mailsent
             // 
@@ -345,24 +357,286 @@
             // version
             // 
             this.version.AutoSize = true;
-            this.version.Location = new System.Drawing.Point(0, 437);
+            this.version.Location = new System.Drawing.Point(-2, 434);
             this.version.Name = "version";
             this.version.Size = new System.Drawing.Size(60, 13);
             this.version.TabIndex = 15;
-            this.version.Text = "Version 1.0";
+            this.version.Text = "Version 1.2";
+            // 
+            // panel_ver
+            // 
+            this.panel_ver.Controls.Add(this.lbl_cod_exp);
+            this.panel_ver.Controls.Add(this.cod_incorrecto);
+            this.panel_ver.Controls.Add(this.btn_verificar);
+            this.panel_ver.Controls.Add(this.txt_codigo);
+            this.panel_ver.Controls.Add(this.label1);
+            this.panel_ver.Controls.Add(this.lbl_email_ver);
+            this.panel_ver.Controls.Add(this.ttl_ver);
+            this.panel_ver.Location = new System.Drawing.Point(-2, 101);
+            this.panel_ver.Name = "panel_ver";
+            this.panel_ver.Size = new System.Drawing.Size(491, 338);
+            this.panel_ver.TabIndex = 16;
+            this.panel_ver.Visible = false;
+            // 
+            // lbl_cod_exp
+            // 
+            this.lbl_cod_exp.AutoSize = true;
+            this.lbl_cod_exp.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cod_exp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.lbl_cod_exp.Location = new System.Drawing.Point(133, 248);
+            this.lbl_cod_exp.Name = "lbl_cod_exp";
+            this.lbl_cod_exp.Size = new System.Drawing.Size(273, 38);
+            this.lbl_cod_exp.TabIndex = 40;
+            this.lbl_cod_exp.Text = "El codigo ha expirado. \r\nSe ha enviado uno nuevo a su correo.\r\n";
+            this.lbl_cod_exp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl_cod_exp.Visible = false;
+            // 
+            // cod_incorrecto
+            // 
+            this.cod_incorrecto.AutoSize = true;
+            this.cod_incorrecto.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cod_incorrecto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.cod_incorrecto.Location = new System.Drawing.Point(193, 248);
+            this.cod_incorrecto.Name = "cod_incorrecto";
+            this.cod_incorrecto.Size = new System.Drawing.Size(134, 19);
+            this.cod_incorrecto.TabIndex = 39;
+            this.cod_incorrecto.Text = "Codigo Incorrecto";
+            this.cod_incorrecto.Visible = false;
+            // 
+            // btn_verificar
+            // 
+            this.btn_verificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.btn_verificar.FlatAppearance.BorderSize = 0;
+            this.btn_verificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btn_verificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_verificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_verificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btn_verificar.ForeColor = System.Drawing.Color.LightGray;
+            this.btn_verificar.Location = new System.Drawing.Point(168, 208);
+            this.btn_verificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_verificar.Name = "btn_verificar";
+            this.btn_verificar.Size = new System.Drawing.Size(179, 33);
+            this.btn_verificar.TabIndex = 38;
+            this.btn_verificar.Text = "VERIFICAR";
+            this.btn_verificar.UseVisualStyleBackColor = false;
+            this.btn_verificar.Click += new System.EventHandler(this.btn_verificar_Click);
+            // 
+            // txt_codigo
+            // 
+            this.txt_codigo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_codigo.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_codigo.Location = new System.Drawing.Point(168, 142);
+            this.txt_codigo.MaxLength = 80;
+            this.txt_codigo.Multiline = true;
+            this.txt_codigo.Name = "txt_codigo";
+            this.txt_codigo.Size = new System.Drawing.Size(179, 30);
+            this.txt_codigo.TabIndex = 37;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(164, 100);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(186, 21);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Ingrese aqui el codigo:";
+            // 
+            // lbl_email_ver
+            // 
+            this.lbl_email_ver.AutoSize = true;
+            this.lbl_email_ver.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_email_ver.ForeColor = System.Drawing.Color.DimGray;
+            this.lbl_email_ver.Location = new System.Drawing.Point(46, 57);
+            this.lbl_email_ver.Name = "lbl_email_ver";
+            this.lbl_email_ver.Size = new System.Drawing.Size(372, 19);
+            this.lbl_email_ver.TabIndex = 35;
+            this.lbl_email_ver.Text = "Se ha enviado un codigo de verificación a tu correo";
+            // 
+            // ttl_ver
+            // 
+            this.ttl_ver.AutoSize = true;
+            this.ttl_ver.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ttl_ver.ForeColor = System.Drawing.Color.DimGray;
+            this.ttl_ver.Location = new System.Drawing.Point(180, 15);
+            this.ttl_ver.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ttl_ver.Name = "ttl_ver";
+            this.ttl_ver.Size = new System.Drawing.Size(147, 22);
+            this.ttl_ver.TabIndex = 13;
+            this.ttl_ver.Text = "VERIFICACIÓN";
+            // 
+            // panel_cambio
+            // 
+            this.panel_cambio.Controls.Add(this.lbl_cont_req);
+            this.panel_cambio.Controls.Add(this.lbl_verCon);
+            this.panel_cambio.Controls.Add(this.btn_cambio_cont);
+            this.panel_cambio.Controls.Add(this.txt_rep_cont_ver);
+            this.panel_cambio.Controls.Add(this.txt_cont_ver);
+            this.panel_cambio.Controls.Add(this.label7);
+            this.panel_cambio.Controls.Add(this.label6);
+            this.panel_cambio.Controls.Add(this.label3);
+            this.panel_cambio.Location = new System.Drawing.Point(3, 93);
+            this.panel_cambio.Name = "panel_cambio";
+            this.panel_cambio.Size = new System.Drawing.Size(485, 336);
+            this.panel_cambio.TabIndex = 17;
+            this.panel_cambio.Visible = false;
+            // 
+            // lbl_cont_req
+            // 
+            this.lbl_cont_req.AutoSize = true;
+            this.lbl_cont_req.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cont_req.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.lbl_cont_req.Location = new System.Drawing.Point(97, 221);
+            this.lbl_cont_req.Name = "lbl_cont_req";
+            this.lbl_cont_req.Size = new System.Drawing.Size(310, 19);
+            this.lbl_cont_req.TabIndex = 43;
+            this.lbl_cont_req.Text = "Las contraseña no cumple con los requisitos";
+            this.lbl_cont_req.Visible = false;
+            // 
+            // lbl_verCon
+            // 
+            this.lbl_verCon.AutoSize = true;
+            this.lbl_verCon.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_verCon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.lbl_verCon.Location = new System.Drawing.Point(142, 219);
+            this.lbl_verCon.Name = "lbl_verCon";
+            this.lbl_verCon.Size = new System.Drawing.Size(214, 19);
+            this.lbl_verCon.TabIndex = 42;
+            this.lbl_verCon.Text = "Las contraseñas no coinciden";
+            this.lbl_verCon.Visible = false;
+            // 
+            // btn_cambio_cont
+            // 
+            this.btn_cambio_cont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.btn_cambio_cont.FlatAppearance.BorderSize = 0;
+            this.btn_cambio_cont.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btn_cambio_cont.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_cambio_cont.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cambio_cont.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btn_cambio_cont.ForeColor = System.Drawing.Color.LightGray;
+            this.btn_cambio_cont.Location = new System.Drawing.Point(151, 261);
+            this.btn_cambio_cont.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_cambio_cont.Name = "btn_cambio_cont";
+            this.btn_cambio_cont.Size = new System.Drawing.Size(179, 33);
+            this.btn_cambio_cont.TabIndex = 41;
+            this.btn_cambio_cont.Text = "GUARDAR";
+            this.btn_cambio_cont.UseVisualStyleBackColor = false;
+            this.btn_cambio_cont.Click += new System.EventHandler(this.btn_cambio_cont_Click);
+            // 
+            // txt_rep_cont_ver
+            // 
+            this.txt_rep_cont_ver.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_rep_cont_ver.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_rep_cont_ver.Location = new System.Drawing.Point(265, 166);
+            this.txt_rep_cont_ver.MaxLength = 80;
+            this.txt_rep_cont_ver.Multiline = true;
+            this.txt_rep_cont_ver.Name = "txt_rep_cont_ver";
+            this.txt_rep_cont_ver.PasswordChar = '•';
+            this.txt_rep_cont_ver.Size = new System.Drawing.Size(201, 30);
+            this.txt_rep_cont_ver.TabIndex = 40;
+            this.txt_rep_cont_ver.TextChanged += new System.EventHandler(this.txt_rep_cont_ver_TextChanged);
+            // 
+            // txt_cont_ver
+            // 
+            this.txt_cont_ver.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_cont_ver.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_cont_ver.Location = new System.Drawing.Point(265, 110);
+            this.txt_cont_ver.MaxLength = 80;
+            this.txt_cont_ver.Multiline = true;
+            this.txt_cont_ver.Name = "txt_cont_ver";
+            this.txt_cont_ver.PasswordChar = '•';
+            this.txt_cont_ver.Size = new System.Drawing.Size(201, 30);
+            this.txt_cont_ver.TabIndex = 39;
+            this.txt_cont_ver.Enter += new System.EventHandler(this.txt_cont_ver_Enter);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(12, 169);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(233, 21);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "Repita la nueva contraseña:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(12, 113);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(161, 21);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Nueva contraseña:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(108, 40);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(253, 22);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "CAMBIO DE CONTRASEÑA";
+            // 
+            // panel_cambio_correcto
+            // 
+            this.panel_cambio_correcto.Controls.Add(this.lbl_cambio_correcto);
+            this.panel_cambio_correcto.Controls.Add(this.btn_volver_login);
+            this.panel_cambio_correcto.Location = new System.Drawing.Point(4, 94);
+            this.panel_cambio_correcto.Name = "panel_cambio_correcto";
+            this.panel_cambio_correcto.Size = new System.Drawing.Size(487, 336);
+            this.panel_cambio_correcto.TabIndex = 18;
+            this.panel_cambio_correcto.Visible = false;
+            // 
+            // lbl_cambio_correcto
+            // 
+            this.lbl_cambio_correcto.AutoSize = true;
+            this.lbl_cambio_correcto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cambio_correcto.ForeColor = System.Drawing.Color.DimGray;
+            this.lbl_cambio_correcto.Location = new System.Drawing.Point(52, 91);
+            this.lbl_cambio_correcto.Name = "lbl_cambio_correcto";
+            this.lbl_cambio_correcto.Size = new System.Drawing.Size(392, 21);
+            this.lbl_cambio_correcto.TabIndex = 43;
+            this.lbl_cambio_correcto.Text = "Su contraseña ha sido cambiada correctamente";
+            // 
+            // btn_volver_login
+            // 
+            this.btn_volver_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.btn_volver_login.FlatAppearance.BorderSize = 0;
+            this.btn_volver_login.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btn_volver_login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_volver_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_volver_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btn_volver_login.ForeColor = System.Drawing.Color.LightGray;
+            this.btn_volver_login.Location = new System.Drawing.Point(145, 171);
+            this.btn_volver_login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_volver_login.Name = "btn_volver_login";
+            this.btn_volver_login.Size = new System.Drawing.Size(179, 33);
+            this.btn_volver_login.TabIndex = 42;
+            this.btn_volver_login.Text = "VOLVER";
+            this.btn_volver_login.UseVisualStyleBackColor = false;
+            this.btn_volver_login.Click += new System.EventHandler(this.btn_volver_login_Click);
             // 
             // Login_menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(782, 453);
+            this.ClientSize = new System.Drawing.Size(772, 448);
             this.Controls.Add(this.version);
             this.Controls.Add(this.panel_logo_login);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel_login);
             this.Controls.Add(this.panel_forgot);
+            this.Controls.Add(this.panel_cambio_correcto);
+            this.Controls.Add(this.panel_cambio);
+            this.Controls.Add(this.panel_ver);
+            this.Controls.Add(this.panel_login);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
@@ -377,6 +651,12 @@
             this.panel_login.PerformLayout();
             this.panel_forgot.ResumeLayout(false);
             this.panel_forgot.PerformLayout();
+            this.panel_ver.ResumeLayout(false);
+            this.panel_ver.PerformLayout();
+            this.panel_cambio.ResumeLayout(false);
+            this.panel_cambio.PerformLayout();
+            this.panel_cambio_correcto.ResumeLayout(false);
+            this.panel_cambio_correcto.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -387,7 +667,6 @@
         private System.Windows.Forms.TextBox txt_correo;
         private System.Windows.Forms.TextBox txt_contrasenia;
         private System.Windows.Forms.Button bt_ingresar;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Microsoft.VisualBasic.PowerPacks.LineShape line_Correo;
         private System.Windows.Forms.Panel panel_logo_login;
@@ -407,5 +686,25 @@
         private System.Windows.Forms.Label lbl_mailsent;
         private System.Windows.Forms.Label version;
         private System.Windows.Forms.Label lbl_error_data;
+        private System.Windows.Forms.Panel panel_ver;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_email_ver;
+        private System.Windows.Forms.Label ttl_ver;
+        private System.Windows.Forms.Label cod_incorrecto;
+        private System.Windows.Forms.Button btn_verificar;
+        private System.Windows.Forms.TextBox txt_codigo;
+        private System.Windows.Forms.Panel panel_cambio;
+        private System.Windows.Forms.Label lbl_verCon;
+        private System.Windows.Forms.Button btn_cambio_cont;
+        private System.Windows.Forms.TextBox txt_rep_cont_ver;
+        private System.Windows.Forms.TextBox txt_cont_ver;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_cont_req;
+        private System.Windows.Forms.Label lbl_cod_exp;
+        private System.Windows.Forms.Panel panel_cambio_correcto;
+        private System.Windows.Forms.Label lbl_cambio_correcto;
+        private System.Windows.Forms.Button btn_volver_login;
     }
 }

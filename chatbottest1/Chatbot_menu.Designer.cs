@@ -123,9 +123,10 @@
             this.lbl_func.AutoSize = true;
             this.lbl_func.Location = new System.Drawing.Point(119, 137);
             this.lbl_func.Name = "lbl_func";
-            this.lbl_func.Size = new System.Drawing.Size(96, 17);
+            this.lbl_func.Size = new System.Drawing.Size(73, 13);
             this.lbl_func.TabIndex = 5;
             this.lbl_func.Text = "Funcionalidad";
+            this.lbl_func.Visible = false;
             // 
             // lblCargo
             // 
@@ -134,7 +135,7 @@
             this.lblCargo.Location = new System.Drawing.Point(27, 231);
             this.lblCargo.Name = "lblCargo";
             this.lblCargo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCargo.Size = new System.Drawing.Size(54, 20);
+            this.lblCargo.Size = new System.Drawing.Size(46, 17);
             this.lblCargo.TabIndex = 4;
             this.lblCargo.Text = "Cargo";
             // 
@@ -144,7 +145,7 @@
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(23, 177);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(68, 20);
+            this.lblName.Size = new System.Drawing.Size(58, 17);
             this.lblName.TabIndex = 3;
             this.lblName.Text = "Nombre";
             // 
@@ -165,7 +166,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(3, 203);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 24);
+            this.label2.Size = new System.Drawing.Size(49, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Cargo";
             // 
@@ -176,7 +177,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(3, 153);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 24);
+            this.label1.Size = new System.Drawing.Size(62, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
