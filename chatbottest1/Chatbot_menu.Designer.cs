@@ -41,17 +41,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel_chatbot = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel_chatbot.SuspendLayout();
             this.SuspendLayout();
             // 
             // bt_send
             // 
             this.bt_send.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.bt_send.Location = new System.Drawing.Point(457, 396);
+            this.bt_send.Location = new System.Drawing.Point(1152, 611);
             this.bt_send.Name = "bt_send";
             this.bt_send.Size = new System.Drawing.Size(75, 34);
             this.bt_send.TabIndex = 0;
@@ -63,22 +61,22 @@
             // 
             this.textBox.BackColor = System.Drawing.Color.White;
             this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textBox.Location = new System.Drawing.Point(3, 7);
+            this.textBox.Location = new System.Drawing.Point(280, 12);
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
             this.textBox.ReadOnly = true;
             this.textBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox.Size = new System.Drawing.Size(532, 383);
+            this.textBox.Size = new System.Drawing.Size(947, 578);
             this.textBox.TabIndex = 1;
             this.textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // textsend
             // 
             this.textsend.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textsend.Location = new System.Drawing.Point(3, 396);
+            this.textsend.Location = new System.Drawing.Point(280, 610);
             this.textsend.Multiline = true;
             this.textsend.Name = "textsend";
-            this.textsend.Size = new System.Drawing.Size(451, 35);
+            this.textsend.Size = new System.Drawing.Size(866, 35);
             this.textsend.TabIndex = 2;
             this.textsend.TextChanged += new System.EventHandler(this.textsend_TextChanged);
             this.textsend.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textsend_KeyDown);
@@ -96,7 +94,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 98);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(220, 342);
+            this.panel1.Size = new System.Drawing.Size(220, 547);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -109,7 +107,7 @@
             this.bt_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.bt_logout.ForeColor = System.Drawing.Color.White;
-            this.bt_logout.Location = new System.Drawing.Point(31, 296);
+            this.bt_logout.Location = new System.Drawing.Point(27, 509);
             this.bt_logout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_logout.Name = "bt_logout";
             this.bt_logout.Size = new System.Drawing.Size(137, 33);
@@ -191,22 +189,14 @@
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
-            // panel_chatbot
-            // 
-            this.panel_chatbot.Controls.Add(this.textBox);
-            this.panel_chatbot.Controls.Add(this.textsend);
-            this.panel_chatbot.Controls.Add(this.bt_send);
-            this.panel_chatbot.Location = new System.Drawing.Point(238, 6);
-            this.panel_chatbot.Name = "panel_chatbot";
-            this.panel_chatbot.Size = new System.Drawing.Size(547, 434);
-            this.panel_chatbot.TabIndex = 5;
-            // 
             // Chatbot_menu
             // 
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.ClientSize = new System.Drawing.Size(782, 453);
-            this.Controls.Add(this.panel_chatbot);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.textsend);
+            this.Controls.Add(this.textBox);
+            this.Controls.Add(this.bt_send);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
@@ -220,9 +210,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel_chatbot.ResumeLayout(false);
-            this.panel_chatbot.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -242,7 +231,6 @@
         private System.Windows.Forms.Label lblCargo;
         private System.Windows.Forms.Label lbl_func;
         private System.Windows.Forms.Button bt_logout;
-        private System.Windows.Forms.Panel panel_chatbot;
     }
 }
 
