@@ -1,6 +1,6 @@
 ﻿namespace chatbottest1
 {
-    partial class Login_menu
+    partial class Form_login_menu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_menu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_login_menu));
             this.txt_correo = new System.Windows.Forms.TextBox();
             this.txt_contrasenia = new System.Windows.Forms.TextBox();
             this.bt_ingresar = new System.Windows.Forms.Button();

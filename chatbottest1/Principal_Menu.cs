@@ -19,13 +19,13 @@ namespace chatbottest1
 
         private void imgChat_Click(object sender, EventArgs e)
         {
-            Chatbot_menu bot_menu = new Chatbot_menu();
+            Form_menu_principal bot_menu = new Form_menu_principal();
             bot_menu.Show();
         }
 
         private void txtChat_Click(object sender, EventArgs e)
         {
-            Chatbot_menu bot_menu = new Chatbot_menu();
+            Form_menu_principal bot_menu = new Form_menu_principal();
             bot_menu.Show();
         }
     }

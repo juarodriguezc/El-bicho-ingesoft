@@ -79,11 +79,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Chatbot_menu.cs">
+    <Compile Include="Chatbot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chatbot.Designer.cs">
+      <DependentUpon>Chatbot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_menu_principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chatbot_menu.Designer.cs">
-      <DependentUpon>Chatbot_menu.cs</DependentUpon>
+    <Compile Include="Form_menu_principal.Designer.cs">
+      <DependentUpon>Form_menu_principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_registro_conversacion.cs">
       <SubType>Form</SubType>
@@ -103,11 +109,11 @@
     <Compile Include="Form_add_user.Designer.cs">
       <DependentUpon>Form_add_user.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login_menu.cs">
+    <Compile Include="Form_login_menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login_menu.Designer.cs">
-      <DependentUpon>Login_menu.cs</DependentUpon>
+    <Compile Include="Form_login_menu.Designer.cs">
+      <DependentUpon>Form_login_menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal_Menu.cs">
       <SubType>Form</SubType>
@@ -117,8 +123,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Chatbot_menu.resx">
-      <DependentUpon>Chatbot_menu.cs</DependentUpon>
+    <EmbeddedResource Include="Chatbot.resx">
+      <DependentUpon>Chatbot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_menu_principal.resx">
+      <DependentUpon>Form_menu_principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_registro_conversacion.resx">
       <DependentUpon>Form_registro_conversacion.cs</DependentUpon>
@@ -129,8 +138,8 @@
     <EmbeddedResource Include="Form_add_user.resx">
       <DependentUpon>Form_add_user.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login_menu.resx">
-      <DependentUpon>Login_menu.cs</DependentUpon>
+    <EmbeddedResource Include="Form_login_menu.resx">
+      <DependentUpon>Form_login_menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal_Menu.resx">
       <DependentUpon>Principal_Menu.cs</DependentUpon>
@@ -143,6 +152,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -167,6 +177,18 @@
       <Project>{02d832cc-7fa0-45e2-8cee-3bd36d9690cf}</Project>
       <Name>Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emoji.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emojib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login_logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

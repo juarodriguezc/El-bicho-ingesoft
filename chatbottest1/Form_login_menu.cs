@@ -13,7 +13,7 @@ using Business;
 
 namespace chatbottest1
 {
-    public partial class Login_menu : Form
+    public partial class Form_login_menu : Form
     {
         //Variables a utilizar
         public String datoErro = "Verficar datos de:";
@@ -21,7 +21,7 @@ namespace chatbottest1
         private string messageData = "1. La contraseña debe tener entre 8 y 25 caracteres,\n almenos una letra mayuscula y al menos un número\n";
 
 
-        public Login_menu()
+        public Form_login_menu()
         {
             InitializeComponent();
         }
@@ -44,7 +44,7 @@ namespace chatbottest1
             var validLogin = user.LoginUser(txt_correo.Text, txt_contrasenia.Text);
             if (validLogin == true){
                 
-                Chatbot_menu bot_menu = new Chatbot_menu();
+                Form_menu_principal bot_menu = new Form_menu_principal();
                 bot_menu.Show();
 
                 /*Principal_Menu principal_Menu = new Principal_Menu();
