@@ -51,7 +51,7 @@ namespace chatbottest1
         private void Chatbot_Load(object sender, EventArgs e)
         {
             Image img;
-            img = Image.FromFile("images/icon3.png");
+            img = Image.FromFile("../../Images/icon3.png");
             img = resizeImage(img, new Size(20, 20));
             bt_sendMessage.Image = img;
             
@@ -222,10 +222,10 @@ namespace chatbottest1
             Image img;
             switch (tipo_imagen) {
                 case 7:
-                    img = Image.FromFile("images/creeper.png");
+                    img = Image.FromFile("../../Images/creeper.png");
                     break;
                 default:
-                    img = Image.FromFile("images/creeper.png");
+                    img = Image.FromFile("../../Images/creeper.png");
                     break;
             }
 
