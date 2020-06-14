@@ -30,7 +30,6 @@ namespace chatbottest1
         {
             InitializeComponent();
             InitClient();
-
             Activity userMessage = new Activity
             {
                 From = new ChannelAccount(id, fromUser),
