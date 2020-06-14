@@ -31,7 +31,6 @@ namespace chatbottest1
             InitializeComponent();
             InitClient();
 
-
             Activity userMessage = new Activity
             {
                 From = new ChannelAccount(id, fromUser),
@@ -51,13 +50,27 @@ namespace chatbottest1
         }
         private void Chatbot_Load(object sender, EventArgs e)
         {
+            Image img;
+            img = Image.FromFile("images/icon3.png");
+            img = resizeImage(img, new Size(20, 20));
+            bt_sendMessage.Image = img;
+            
             var date = DateTime.Now;
             sesion = new ModeloSesion();
             sesion.createSesion(UserLoginCache.Id_usuario, date);
 
-
-            lbl_hour.Text = (date.Day.ToString()) + " / " + (date.Month.ToString()) + " / " 
-                + (date.Year.ToString()) + "    " + (date.Hour.ToString()) + " : " + (date.Minute.ToString());
+            string day = "AM";
+            string minute = date.Minute.ToString();
+            string hour = (date.Hour%12).ToString();
+            if (date.Minute < 10) minute = "0" + minute;
+            if (date.Hour % 12 < 10) {
+                hour = "0" + hour;
+            }
+            if (date.Hour > 11) day = "PM";
+            lbl_hour.Text = (date.Day.ToString()) + "/" + (date.Month.ToString()) + "/" 
+                + (date.Year.ToString()) + "     " +  hour + ":" + minute +" "+day;
+            ActiveControl = textBox1;
+            
         }
 
 
@@ -138,6 +151,7 @@ namespace chatbottest1
                     }
                     return false;
                 case "El bicho siuu":
+                    sesion.create_reg_function(80, SesionCache.Id_acceso);
                     add_image(7);
                     return true;
                 default:
@@ -316,6 +330,32 @@ namespace chatbottest1
 
         }
 
+        private void lbl_hour_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            bt_sendMessage.PerformClick();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_sendMessage.PerformClick();
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

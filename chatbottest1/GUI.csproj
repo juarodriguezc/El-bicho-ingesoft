@@ -190,5 +190,11 @@
   <ItemGroup>
     <None Include="Resources\login_logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sendmessage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sendmessageBig.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

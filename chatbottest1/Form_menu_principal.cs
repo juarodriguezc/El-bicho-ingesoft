@@ -21,7 +21,7 @@ namespace chatbottest1
 
     public partial class Form_menu_principal : Form
     {
-        ModeloSesion sesion;
+        
         static Form_menu_principal _obj;
 
         public static Form_menu_principal Instance
@@ -70,51 +70,10 @@ namespace chatbottest1
         public Form_menu_principal()
         {
             InitializeComponent();
-            
-            
-        }
-
-        public Boolean realizarAccion(String accion) {
-            switch (accion) {
-                case "Add_user":
-                    if (UserLoginCache.Rol_empresa == Positions.Administrador) {
-                        Form_add_user add_user = new Form_add_user();
-                        add_user.Show();
-                        sesion.create_reg_function(2, SesionCache.Id_acceso);
-                        return true;
-                    }
-                    return false;
-                case "Edit_user":
-                    if (UserLoginCache.Rol_empresa == Positions.Administrador) {
-                        Form_Edit_user edit_user = new Form_Edit_user();
-                        edit_user.Show();
-                        sesion.create_reg_function(3, SesionCache.Id_acceso);
-                        return true;
-                    }
-                    return false;
-                case "Reg_conversacion":
-                    if (UserLoginCache.Rol_empresa == Positions.Administrador)
-                    {
-                        Form_registro_conversacion reg_conv = new Form_registro_conversacion();
-                        sesion.create_reg_function(8, SesionCache.Id_acceso);
-                        reg_conv.Show();
-                        
-                        return true;
-                    }
-                    return false;
-                default:
-                    return true;
-            }
-        }
-       
-        private void textBox_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-        private void textsend_TextChanged(object sender, EventArgs e)
-        {
 
         }
+
+      
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 

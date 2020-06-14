@@ -35,7 +35,9 @@ namespace chatbottest1
         {
             panel_login.Visible = true;
             panel_forgot.Visible = false;
+            panel_verificacion.Visible = false;
             txt_contrasenia.UseSystemPasswordChar = false;
+            ActiveControl = bt_ingresar;
         }
 
         private void bt_ingresar_Click(object sender, EventArgs e)
@@ -220,10 +222,11 @@ namespace chatbottest1
                     envioMail();
 
                     //Limpiar TextBox
-                    lbl_mailsent.Visible = true;
+                    
 
                     panel_forgot.Visible = false;
-                    panel_ver.Visible = true;
+                    panel_verificacion.Visible = true;
+                    //panel_ver.Visible = true;
 
                 }
                 else
@@ -249,7 +252,7 @@ namespace chatbottest1
             String Menssage = "Buen día: "+ nombre + "\n"
                     + "\tTe habla " + "YMCA-BOTSERVICE" + ", ¿haz olvidado tu contraseña?\n"
                     + "\tEl siguiente es tu codigo de recuperación \n"
-                    + "\t\n\t ---> " + UserRecuperaCache.cod_verificación + " <--- \n"
+                    + "\t\n\t --->" + UserRecuperaCache.cod_verificación + " <--- \n"
                     + "\t\nIngresalo en la app para poder cambiar tu contraseña\n"
                     + "\t\nEste tendra una duración de 5 minutos\n"
                     + "Gracias\n"
@@ -266,7 +269,7 @@ namespace chatbottest1
         {
             panel_forgot.Visible = false;
             panel_login.Visible = true;
-            lbl_mailsent.Visible = false;
+            
             emailTxbRecContr.Text = "";
         }
 
@@ -301,78 +304,10 @@ namespace chatbottest1
 
         private void btn_verificar_Click(object sender, EventArgs e)
         {
-            DateTime tiempoVer = DateTime.Now;
-            TimeSpan span = tiempoVer.Subtract(UserRecuperaCache.fecha_envio);
-
-            if (Convert.ToInt32(txt_codigo.Text) == UserRecuperaCache.cod_verificación && span.Minutes<=5)
-            {
-                panel_ver.Visible = false;
-                panel_cambio.Visible = true;
-                emailTxbRecContr.Text = "";
-                MessageBox.Show(messageData, "Tener en cuenta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                if (Convert.ToInt32(txt_codigo.Text) != UserRecuperaCache.cod_verificación)
-                {
-                    cod_incorrecto.Visible = true;
-                    txt_codigo.Clear();
-
-                }
-                if(span.Minutes > 5)
-                {
-                    Random rnd = new Random();
-                    UserRecuperaCache.cod_verificación = rnd.Next(1000, 9999);
-                    UserRecuperaCache.fecha_envio = DateTime.Now;
-                    txt_codigo.Clear();
-                    lbl_cod_exp.Visible = true;
-                    envioMail();
-                }
-            }     
-            
 
         }
 
-        private void btn_cambio_cont_Click(object sender, EventArgs e)
-        {
-
-            if(txt_cont_ver.Text.Length!=0 && txt_rep_cont_ver.TextLength != 0)
-            {
-                if(verificarPassWordL(txt_cont_ver.Text) && verificarIgualContr(txt_cont_ver.Text, txt_rep_cont_ver.Text)){
-
-                    ModeloUsuario recupera = new ModeloUsuario();
-                    recupera.CambiarPassword(UserRecuperaCache.id_persona, txt_cont_ver.Text);
-                    panel_cambio_correcto.Visible = true;
-                    panel_cambio.Visible = false;
-                }
-                else
-                {
-                    if (!verificarPassWordL(txt_cont_ver.Text))
-                    {
-                        lbl_verCon.Visible = false;
-                        lbl_cont_req.Visible = true;
-                        txt_cont_ver.Clear();
-                        txt_rep_cont_ver.Clear();
-                    }
-
-                    if(!verificarIgualContr(txt_cont_ver.Text, txt_rep_cont_ver.Text))
-                    {
-                        lbl_verCon.Visible = true;
-                        lbl_cont_req.Visible = false;
-                        txt_cont_ver.Clear();
-                        txt_rep_cont_ver.Clear();
-                    }
-
-                }
-
-            }
-            else
-            {
-                DialogResult datos = MessageBox.Show("Completa los campos", "Datos erroneos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-            }
-
-        }
+        
 
         public bool verificarPassWordL(String password)
         {
@@ -426,7 +361,7 @@ namespace chatbottest1
 
         private void btn_volver_login_Click(object sender, EventArgs e)
         {
-            panel_cambio_correcto.Visible = false;
+            btn_volver_login.Visible = false;
             panel_login.Visible = true;
 
             txt_correo.Text = "CORREO";
@@ -449,6 +384,127 @@ namespace chatbottest1
             txt_contrasenia.ForeColor = Color.DimGray;
             txt_contrasenia.UseSystemPasswordChar = true;
 
+        }
+
+        private void lbl_verificar_codigo_Click(object sender, EventArgs e)
+        {
+            DateTime tiempoVer = DateTime.Now;
+            TimeSpan span = tiempoVer.Subtract(UserRecuperaCache.fecha_envio);
+            if (verifyNumeric(txt_codigo_ver.Text)) {
+                if (Convert.ToInt32(txt_codigo_ver.Text) == UserRecuperaCache.cod_verificación && span.Minutes <= 5)
+                {
+                    //panel_ver.Visible = false;
+                    panel_verificacion.Visible = false;
+                    panel_cambio_contrasenia.Visible = true;
+                    txt_codigo_ver.Text = "";
+                    emailTxbRecContr.Text = "";
+                    MessageBox.Show(messageData, "Tener en cuenta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    if (Convert.ToInt32(txt_codigo_ver.Text) != UserRecuperaCache.cod_verificación)
+                    {
+                        lbl_codigo_incorrecto.Visible = true;
+                        txt_codigo_ver.Clear();
+
+                    }
+                    if (span.Minutes > 5)
+                    {
+                        Random rnd = new Random();
+                        UserRecuperaCache.cod_verificación = rnd.Next(1000, 9999);
+                        UserRecuperaCache.fecha_envio = DateTime.Now;
+                        txt_codigo_ver.Clear();
+                        //lbl_cod_exp.Visible = true;
+                        lbl_cod_expirado.Visible = true;
+                        envioMail();
+                    }
+                }
+            }
+            else
+            {
+                lbl_codigo_incorrecto.Visible = true;
+                txt_codigo_ver.Clear();
+            }
+
+        }
+
+        public bool verifyNumeric(string text) {
+            foreach (char a in text) {
+                if (!char.IsNumber(a)) return false;
+            }
+            return true;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            if (txt_cont_ver.Text.Length != 0 && txt_rep_cont_ver.TextLength != 0)
+            {
+                if (verificarPassWordL(txt_cont_ver.Text) && verificarIgualContr(txt_cont_ver.Text, txt_rep_cont_ver.Text))
+                {
+
+                    ModeloUsuario recupera = new ModeloUsuario();
+                    recupera.CambiarPassword(UserRecuperaCache.id_persona, txt_cont_ver.Text);
+                    panel_cambio_correcto.Visible = true;
+                    panel_cambio_contrasenia.Visible = false;
+                }
+                else
+                {
+                    if (!verificarPassWordL(txt_cont_ver.Text))
+                    {
+                        lbl_verCon.Visible = false;
+                        lbl_cont_req.Visible = true;
+                        txt_cont_ver.Clear();
+                        txt_rep_cont_ver.Clear();
+                    }
+
+                    if (!verificarIgualContr(txt_cont_ver.Text, txt_rep_cont_ver.Text))
+                    {
+                        lbl_verCon.Visible = true;
+                        lbl_cont_req.Visible = false;
+                        txt_cont_ver.Clear();
+                        txt_rep_cont_ver.Clear();
+                    }
+
+                }
+
+            }
+            else
+            {
+                DialogResult datos = MessageBox.Show("Completa los campos", "Datos erroneos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+        }
+
+        private void btn_volver_login_Click_1(object sender, EventArgs e)
+        {
+            panel_cambio_correcto.Visible = false;
+            panel_login.Visible = true;
+
+            txt_correo.Text = "CORREO";
+            txt_correo.ForeColor = Color.DimGray;
+
+            txt_contrasenia.Text = "CONTRASEÑA";
+            txt_contrasenia.ForeColor = Color.DimGray;
+        }
+
+        private void bt_cancelar_cambio_Click(object sender, EventArgs e)
+        {
+            lbl_cont_req.Visible = false;
+            lbl_verCon.Visible = false;
+            panel_cambio_contrasenia.Visible = false;
+            panel_login.Visible = true;
+            
+            emailTxbRecContr.Text = "";
+        }
+
+        private void bt_volver_inicio_codigo_Click(object sender, EventArgs e)
+        {
+            txt_codigo_ver.Text = "";
+            lbl_cod_expirado.Visible = false;
+            panel_verificacion.Visible = false;
+            panel_login.Visible = true;
+            
+            emailTxbRecContr.Text = "";
         }
     }
 }
