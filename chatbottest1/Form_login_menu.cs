@@ -20,7 +20,18 @@ namespace chatbottest1
 
         private string messageData = "1. La contraseña debe tener entre 8 y 25 caracteres,\n almenos una letra mayuscula y al menos un número\n";
 
-
+        static Form_login_menu _login;
+        public static Form_login_menu loginInstance
+        {
+            get
+            {
+                if (_login == null)
+                {
+                    _login = new Form_login_menu();
+                }
+                return _login;
+            }
+        }
         public Form_login_menu()
         {
             InitializeComponent();
@@ -33,13 +44,15 @@ namespace chatbottest1
 
         private void Login_menu_Load(object sender, EventArgs e)
         {
+            _login = this;
             panel_login.Visible = true;
             panel_forgot.Visible = false;
             panel_verificacion.Visible = false;
             txt_contrasenia.UseSystemPasswordChar = false;
             ActiveControl = bt_ingresar;
+            
         }
-
+        
         private void bt_ingresar_Click(object sender, EventArgs e)
         {
             ModeloUsuario user = new ModeloUsuario();
@@ -77,6 +90,7 @@ namespace chatbottest1
                 txt_correo.Text = "";
                 txt_correo.ForeColor = Color.DimGray;
             }
+            
         }
 
         private void txt_correo_Leave(object sender, EventArgs e)
@@ -289,16 +303,11 @@ namespace chatbottest1
             this.Show();
             txt_correo.Focus();
 
-            txt_correo.Text = "CORREO";
+            txt_correo.Text = "";
             txt_correo.ForeColor = Color.DimGray;
 
             txt_contrasenia.Text = "CONTRASEÑA";
             txt_contrasenia.ForeColor = Color.DimGray;
-        }
-
-        private void txt_contrasenia_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
 
@@ -434,6 +443,11 @@ namespace chatbottest1
             }
             return true;
         }
+
+        public void changeTxt() {
+            txt_correo.Text = "asdasdasd";
+            txt_contrasenia.UseSystemPasswordChar = false;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -506,5 +520,16 @@ namespace chatbottest1
             
             emailTxbRecContr.Text = "";
         }
+
+        private void Form_login_menu_Shown(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txt_correo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

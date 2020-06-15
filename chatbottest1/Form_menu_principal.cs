@@ -21,8 +21,28 @@ namespace chatbottest1
 
     public partial class Form_menu_principal : Form
     {
-        
+        //object user
+        static ModeloUsuario _loggedUser;
+        //Object main form
         static Form_menu_principal _obj;
+        //User control used
+        public Chatbot cb;
+        public Perfil_usuario profile;
+
+
+
+        public static ModeloUsuario UserInstance
+        {
+            get
+            {
+                if (_loggedUser == null)
+                {
+                    _loggedUser = new ModeloUsuario();
+                }
+                return _loggedUser;
+            }
+        }
+
 
         public static Form_menu_principal Instance
         {
@@ -35,6 +55,8 @@ namespace chatbottest1
                 return _obj;
             }
         }
+
+        
 
         public Panel PnlContainer
         {
@@ -50,10 +72,15 @@ namespace chatbottest1
         private void Chatbot_menu_Load(object sender, EventArgs e)
         {
             loadUserdata();
+            //Create objects
+
+            _loggedUser = new ModeloUsuario();
+            //User control create
             _obj = this;
-            Chatbot cb = new Chatbot();
+            cb = new Chatbot();
             cb.Dock = DockStyle.Fill;
             panel_principal.Controls.Add(cb);
+            
         }
 
 
@@ -71,6 +98,7 @@ namespace chatbottest1
         {
             InitializeComponent();
 
+
         }
 
       
@@ -82,7 +110,9 @@ namespace chatbottest1
         {
             if (MessageBox.Show("¿Estas seguro que quieres cerrar sesión?", "Warning",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
+                Form_login_menu.loginInstance.changeTxt();
                 this.Close();
+                
             }
         }
         private void Chatbot_menu_Leave(object sender, EventArgs e)
@@ -92,6 +122,41 @@ namespace chatbottest1
         private void Chatbot_menu_FormClosed(object sender, FormClosedEventArgs e)
         {
             
+        }
+
+        private void bt_profile_Click(object sender, EventArgs e)
+        {
+            panel_selected_window.Height = bt_profile.Height;
+            panel_selected_window.Top = bt_profile.Top;
+            if (profile != null) profile.Dispose(); //no overload the memory
+            profile = new Perfil_usuario();
+            profile.Dock = DockStyle.Fill;
+            cb.Visible = false;
+            profile.Visible = true;
+            panel_principal.Controls.Add(profile);
+        }
+
+        private void button_chatbot_Click(object sender, EventArgs e)
+        {
+
+            panel_selected_window.Height = bt_chatbot.Height;
+            panel_selected_window.Top = bt_chatbot.Top;
+            profile.Visible = false;
+            
+            cb.Visible = true;
+            
+        }
+        public Button getButton_chatbot() {
+            return bt_chatbot;
+        }
+        private void lbl_iniciales_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void bt_funcionalidad_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

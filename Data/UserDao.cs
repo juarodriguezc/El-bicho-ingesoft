@@ -287,9 +287,9 @@ namespace Data
             connection.Open();
             var command = new MySqlCommand();
             command.Connection = connection;
-            command.CommandText = "SELECT P.nombre_persona, P.apellido_persona, p.correo_persona, a.FECHA_ACCESO, a.ID_ACCESO, " +
+            command.CommandText = "SELECT P.nombre_persona, P.apellido_persona, P.Correo_persona, a.FECHA_ACCESO, a.ID_ACCESO, " +
                 "q.NOMBRE_FUNCION FROM PERSONA as P, REG_FUNCION as f, REG_ACCESO as a, USUARIO as u, FUNCIONES as q " +
-                "WHERE p.Id_persona=u.Id_persona and u.ID_USUARIO = a.ID_USUARIO and a.ID_ACCESO = f.ID_ACCESO and " +
+                "WHERE P.Id_persona=u.Id_persona and u.ID_USUARIO = a.ID_USUARIO and a.ID_ACCESO = f.ID_ACCESO and " +
                 "q.ID_FUNCION = f.ID_FUNCION ORDER BY FECHA_ACCESO;";
             MySqlDataReader reader = command.ExecuteReader();
             tabla.Load(reader);
@@ -307,6 +307,7 @@ namespace Data
             command.Parameters.AddWithValue("@id_persona", id_persona);
             command.CommandText = "UPDATE USUARIO set contrasenia=@contrasenia WHERE Id_persona=@Id_persona ";
             command.ExecuteNonQuery();
+            connection.Close();
 
         }
 

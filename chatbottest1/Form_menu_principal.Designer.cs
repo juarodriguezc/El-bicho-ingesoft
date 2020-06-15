@@ -29,61 +29,130 @@
         private void InitializeComponent()
         {
             this.panel_lateral = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button_chatbot = new System.Windows.Forms.Button();
-            this.bt_logout = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblCargo = new System.Windows.Forms.Label();
+            this.panel_seleccion = new System.Windows.Forms.Panel();
+            this.bt_funcionalidad = new System.Windows.Forms.Button();
+            this.panel_selected_window = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.lbl_func = new System.Windows.Forms.Label();
+            this.bt_profile = new System.Windows.Forms.Button();
+            this.bt_chatbot = new System.Windows.Forms.Button();
+            this.bt_logout = new System.Windows.Forms.Button();
+            this.panel_info_basica = new System.Windows.Forms.Panel();
+            this.lblCargo = new System.Windows.Forms.Label();
             this.lbl_iniciales = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.elipse_iniciales = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.panel_principal = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel_lateral.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel_seleccion.SuspendLayout();
+            this.panel_info_basica.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_lateral
             // 
             this.panel_lateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.panel_lateral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_lateral.Controls.Add(this.panel2);
-            this.panel_lateral.Controls.Add(this.panel1);
+            this.panel_lateral.Controls.Add(this.panel_seleccion);
+            this.panel_lateral.Controls.Add(this.panel_info_basica);
             this.panel_lateral.Location = new System.Drawing.Point(-2, -2);
             this.panel_lateral.Name = "panel_lateral";
             this.panel_lateral.Size = new System.Drawing.Size(295, 675);
             this.panel_lateral.TabIndex = 3;
             this.panel_lateral.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // panel2
+            // panel_seleccion
             // 
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.lbl_func);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.button_chatbot);
-            this.panel2.Controls.Add(this.bt_logout);
-            this.panel2.Location = new System.Drawing.Point(-1, 289);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(295, 385);
-            this.panel2.TabIndex = 10;
+            this.panel_seleccion.Controls.Add(this.bt_funcionalidad);
+            this.panel_seleccion.Controls.Add(this.panel_selected_window);
+            this.panel_seleccion.Controls.Add(this.button2);
+            this.panel_seleccion.Controls.Add(this.lbl_func);
+            this.panel_seleccion.Controls.Add(this.bt_profile);
+            this.panel_seleccion.Controls.Add(this.bt_chatbot);
+            this.panel_seleccion.Controls.Add(this.bt_logout);
+            this.panel_seleccion.Location = new System.Drawing.Point(-1, 289);
+            this.panel_seleccion.Name = "panel_seleccion";
+            this.panel_seleccion.Size = new System.Drawing.Size(295, 385);
+            this.panel_seleccion.TabIndex = 10;
             // 
-            // button_chatbot
+            // bt_funcionalidad
             // 
-            this.button_chatbot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.button_chatbot.FlatAppearance.BorderSize = 0;
-            this.button_chatbot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_chatbot.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_chatbot.ForeColor = System.Drawing.Color.White;
-            this.button_chatbot.Location = new System.Drawing.Point(-3, 0);
-            this.button_chatbot.Name = "button_chatbot";
-            this.button_chatbot.Size = new System.Drawing.Size(298, 50);
-            this.button_chatbot.TabIndex = 7;
-            this.button_chatbot.Text = "Chatbot";
-            this.button_chatbot.UseVisualStyleBackColor = false;
+            this.bt_funcionalidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.bt_funcionalidad.FlatAppearance.BorderSize = 0;
+            this.bt_funcionalidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_funcionalidad.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_funcionalidad.ForeColor = System.Drawing.Color.White;
+            this.bt_funcionalidad.Location = new System.Drawing.Point(14, 50);
+            this.bt_funcionalidad.Name = "bt_funcionalidad";
+            this.bt_funcionalidad.Size = new System.Drawing.Size(284, 50);
+            this.bt_funcionalidad.TabIndex = 10;
+            this.bt_funcionalidad.Text = "Funcionalidades";
+            this.bt_funcionalidad.UseVisualStyleBackColor = false;
+            this.bt_funcionalidad.Click += new System.EventHandler(this.bt_funcionalidad_Click);
+            // 
+            // panel_selected_window
+            // 
+            this.panel_selected_window.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel_selected_window.Location = new System.Drawing.Point(0, 0);
+            this.panel_selected_window.Name = "panel_selected_window";
+            this.panel_selected_window.Size = new System.Drawing.Size(14, 50);
+            this.panel_selected_window.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(14, 150);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(282, 50);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Ajustes";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // lbl_func
+            // 
+            this.lbl_func.AutoSize = true;
+            this.lbl_func.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_func.ForeColor = System.Drawing.Color.White;
+            this.lbl_func.Location = new System.Drawing.Point(29, 211);
+            this.lbl_func.Name = "lbl_func";
+            this.lbl_func.Size = new System.Drawing.Size(86, 16);
+            this.lbl_func.TabIndex = 5;
+            this.lbl_func.Text = "Funcionalidad";
+            this.lbl_func.Visible = false;
+            // 
+            // bt_profile
+            // 
+            this.bt_profile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.bt_profile.FlatAppearance.BorderSize = 0;
+            this.bt_profile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_profile.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_profile.ForeColor = System.Drawing.Color.White;
+            this.bt_profile.Location = new System.Drawing.Point(14, 100);
+            this.bt_profile.Name = "bt_profile";
+            this.bt_profile.Size = new System.Drawing.Size(284, 50);
+            this.bt_profile.TabIndex = 8;
+            this.bt_profile.Text = "Perfil";
+            this.bt_profile.UseVisualStyleBackColor = false;
+            this.bt_profile.Click += new System.EventHandler(this.bt_profile_Click);
+            // 
+            // bt_chatbot
+            // 
+            this.bt_chatbot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.bt_chatbot.FlatAppearance.BorderSize = 0;
+            this.bt_chatbot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_chatbot.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_chatbot.ForeColor = System.Drawing.Color.White;
+            this.bt_chatbot.Location = new System.Drawing.Point(14, 0);
+            this.bt_chatbot.Name = "bt_chatbot";
+            this.bt_chatbot.Size = new System.Drawing.Size(281, 50);
+            this.bt_chatbot.TabIndex = 7;
+            this.bt_chatbot.Text = "Chatbot";
+            this.bt_chatbot.UseVisualStyleBackColor = false;
+            this.bt_chatbot.Click += new System.EventHandler(this.button_chatbot_Click);
             // 
             // bt_logout
             // 
@@ -105,17 +174,17 @@
             this.bt_logout.UseVisualStyleBackColor = false;
             this.bt_logout.Click += new System.EventHandler(this.bt_logout_Click);
             // 
-            // panel1
+            // panel_info_basica
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.lblCargo);
-            this.panel1.Controls.Add(this.lbl_iniciales);
-            this.panel1.Controls.Add(this.lblName);
-            this.panel1.Controls.Add(this.shapeContainer2);
-            this.panel1.Location = new System.Drawing.Point(-1, -1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(295, 295);
-            this.panel1.TabIndex = 9;
+            this.panel_info_basica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel_info_basica.Controls.Add(this.lblCargo);
+            this.panel_info_basica.Controls.Add(this.lbl_iniciales);
+            this.panel_info_basica.Controls.Add(this.lblName);
+            this.panel_info_basica.Controls.Add(this.shapeContainer2);
+            this.panel_info_basica.Location = new System.Drawing.Point(-1, -1);
+            this.panel_info_basica.Name = "panel_info_basica";
+            this.panel_info_basica.Size = new System.Drawing.Size(295, 290);
+            this.panel_info_basica.TabIndex = 9;
             // 
             // lblCargo
             // 
@@ -125,33 +194,23 @@
             this.lblCargo.Location = new System.Drawing.Point(14, 251);
             this.lblCargo.Name = "lblCargo";
             this.lblCargo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCargo.Size = new System.Drawing.Size(63, 21);
+            this.lblCargo.Size = new System.Drawing.Size(52, 19);
             this.lblCargo.TabIndex = 4;
             this.lblCargo.Text = "Cargo";
-            // 
-            // lbl_func
-            // 
-            this.lbl_func.AutoSize = true;
-            this.lbl_func.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_func.ForeColor = System.Drawing.Color.White;
-            this.lbl_func.Location = new System.Drawing.Point(29, 211);
-            this.lbl_func.Name = "lbl_func";
-            this.lbl_func.Size = new System.Drawing.Size(110, 19);
-            this.lbl_func.TabIndex = 5;
-            this.lbl_func.Text = "Funcionalidad";
-            this.lbl_func.Visible = false;
             // 
             // lbl_iniciales
             // 
             this.lbl_iniciales.BackColor = System.Drawing.Color.White;
-            this.lbl_iniciales.Font = new System.Drawing.Font("Century Gothic", 40F, System.Drawing.FontStyle.Bold);
+            this.lbl_iniciales.Font = new System.Drawing.Font("Century Gothic", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_iniciales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.lbl_iniciales.Location = new System.Drawing.Point(65, 73);
+            this.lbl_iniciales.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.lbl_iniciales.Name = "lbl_iniciales";
             this.lbl_iniciales.Size = new System.Drawing.Size(160, 84);
             this.lbl_iniciales.TabIndex = 4;
             this.lbl_iniciales.Text = "MM";
             this.lbl_iniciales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_iniciales.Click += new System.EventHandler(this.lbl_iniciales_Click);
             // 
             // lblName
             // 
@@ -160,7 +219,7 @@
             this.lblName.ForeColor = System.Drawing.Color.White;
             this.lblName.Location = new System.Drawing.Point(14, 228);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(90, 23);
+            this.lblName.Size = new System.Drawing.Size(73, 21);
             this.lblName.TabIndex = 3;
             this.lblName.Text = "Nombre";
             // 
@@ -171,7 +230,7 @@
             this.shapeContainer2.Name = "shapeContainer2";
             this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.elipse_iniciales});
-            this.shapeContainer2.Size = new System.Drawing.Size(295, 295);
+            this.shapeContainer2.Size = new System.Drawing.Size(295, 290);
             this.shapeContainer2.TabIndex = 0;
             this.shapeContainer2.TabStop = false;
             // 
@@ -191,34 +250,6 @@
             this.panel_principal.Size = new System.Drawing.Size(971, 674);
             this.panel_principal.TabIndex = 5;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(298, 50);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Perfil";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(-2, 112);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(298, 50);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Ajustes";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // Form_menu_principal
             // 
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -234,10 +265,10 @@
             this.Load += new System.EventHandler(this.Chatbot_menu_Load);
             this.Leave += new System.EventHandler(this.Chatbot_menu_Leave);
             this.panel_lateral.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel_seleccion.ResumeLayout(false);
+            this.panel_seleccion.PerformLayout();
+            this.panel_info_basica.ResumeLayout(false);
+            this.panel_info_basica.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -248,15 +279,17 @@
         private System.Windows.Forms.Label lblCargo;
         private System.Windows.Forms.Label lbl_func;
         private System.Windows.Forms.Button bt_logout;
-        private System.Windows.Forms.Button button_chatbot;
+        private System.Windows.Forms.Button bt_chatbot;
         private System.Windows.Forms.Panel panel_principal;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel_info_basica;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
         public Microsoft.VisualBasic.PowerPacks.OvalShape elipse_iniciales;
         private System.Windows.Forms.Label lbl_iniciales;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel_seleccion;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_profile;
+        private System.Windows.Forms.Panel panel_selected_window;
+        private System.Windows.Forms.Button bt_funcionalidad;
     }
 }
 

@@ -115,6 +115,12 @@
     <Compile Include="Form_login_menu.Designer.cs">
       <DependentUpon>Form_login_menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Perfil_usuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Perfil_usuario.Designer.cs">
+      <DependentUpon>Perfil_usuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_login_menu.resx">
       <DependentUpon>Form_login_menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perfil_usuario.resx">
+      <DependentUpon>Perfil_usuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal_Menu.resx">
       <DependentUpon>Principal_Menu.cs</DependentUpon>

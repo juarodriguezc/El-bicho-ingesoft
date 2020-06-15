@@ -51,7 +51,7 @@ namespace chatbottest1
         {
             Image img;
             img = Image.FromFile("../../Images/icon3.png");
-            img = resizeImage(img, new Size(20, 20));
+            
             bt_sendMessage.Image = img;
             
             var date = DateTime.Now;
@@ -95,20 +95,10 @@ namespace chatbottest1
                                 ModeloRespuesta rta = new ModeloRespuesta();
                                 string rta_fin = rta.GenRespuesta(message);
                                 Console.WriteLine("Bot said: " + rta_fin);
-                                string[] multiple_lines = rta_fin.Split('*');
-                                if (realizarAccion(message))
-                                {
-                                    foreach (string a in multiple_lines) { 
-                                    
-                                        add_respuesta(a);
-                                        //textBox.AppendText("Bot said: " + a + "\r\n");
-                                    }
-                                }
-                                else
-                                {
-                                    add_respuesta("No tienes acceso a esta función");
-                                    //textBox.AppendText("Bot said: " + "No tienes acceso a esta función" + "\r\n");
-                                }
+
+                                if (realizarAccion(message, rta_fin)) { }
+                                else { add_respuesta("No tienes acceso a esta función"); }
+                                 
                             }));
                         }
                     }
@@ -117,8 +107,14 @@ namespace chatbottest1
 
         }
 
-        public Boolean realizarAccion(String accion)
+        public Boolean realizarAccion(String accion, String rta_fin)
         {
+            string[] multiple_lines = rta_fin.Split('*');
+            foreach (string a in multiple_lines)
+            {
+                add_respuesta(a);  
+            }
+            wait(2000);//Simular tiempo espera
             switch (accion)
             {
                 case "Add_user":
@@ -189,6 +185,7 @@ namespace chatbottest1
             panel_chat.Controls.Add(msg);
         }
         public void add_respuesta(string mensaje) {
+            panel_chat.VerticalScroll.Value = panel_chat.VerticalScroll.Maximum; //Forzar el scroll bajo
             label7.Text = mensaje;
             string mes2 = mensaje;
             for (int a = 25; label7.Width + 20 > 350; a -= 1)
@@ -341,7 +338,7 @@ namespace chatbottest1
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            panel_chat.VerticalScroll.Value = panel_chat.VerticalScroll.Maximum;
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
