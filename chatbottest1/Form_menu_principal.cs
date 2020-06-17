@@ -15,6 +15,7 @@ using System.Drawing.Text;
 using Common.Cache;
 using Business;
 using System.Reflection;
+using chatbottest1.UserControls;
 
 namespace chatbottest1
 {
@@ -28,7 +29,7 @@ namespace chatbottest1
         //User control used
         public Chatbot cb;
         public Perfil_usuario profile;
-
+        public Calendario calendar;
 
 
         public static ModeloUsuario UserInstance
@@ -80,7 +81,12 @@ namespace chatbottest1
             cb = new Chatbot();
             cb.Dock = DockStyle.Fill;
             panel_principal.Controls.Add(cb);
-            
+            //Instanciacion inicial
+            profile = new Perfil_usuario();
+            calendar = new Calendario();
+
+            profile.Visible = false;
+            calendar.Visible = false;
         }
 
 
@@ -131,7 +137,10 @@ namespace chatbottest1
             if (profile != null) profile.Dispose(); //no overload the memory
             profile = new Perfil_usuario();
             profile.Dock = DockStyle.Fill;
+            //Cerrar todo lo demas
             cb.Visible = false;
+            calendar.Dispose();
+            //mostrar el usercontrol
             profile.Visible = true;
             panel_principal.Controls.Add(profile);
         }
@@ -141,7 +150,9 @@ namespace chatbottest1
 
             panel_selected_window.Height = bt_chatbot.Height;
             panel_selected_window.Top = bt_chatbot.Top;
-            profile.Visible = false;
+            //Cerrar todo lo demas
+            profile.Dispose();
+            calendar.Dispose();
             
             cb.Visible = true;
             
@@ -157,6 +168,21 @@ namespace chatbottest1
         private void bt_funcionalidad_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void bt_calendario_Click(object sender, EventArgs e)
+        {
+            panel_selected_window.Height = bt_calendario.Height;
+            panel_selected_window.Top = bt_calendario.Top;
+            if (calendar != null) calendar.Dispose(); //no overload the memory
+            calendar = new Calendario();
+            calendar.Dock = DockStyle.Fill;
+            //Cerrar todo
+            cb.Visible = false;
+            profile.Dispose();
+            //Mostrar nuevo form
+            calendar.Visible = true;
+            panel_principal.Controls.Add(calendar);
         }
     }
 }

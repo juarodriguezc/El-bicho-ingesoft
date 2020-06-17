@@ -57,6 +57,7 @@ namespace chatbottest1
             var date = DateTime.Now;
             sesion = new ModeloSesion();
             sesion.createSesion(UserLoginCache.Id_usuario, date);
+            
 
             string day = "AM";
             string minute = date.Minute.ToString();
@@ -122,6 +123,7 @@ namespace chatbottest1
                     {
                         Form_add_user add_user = new Form_add_user();
                         add_user.Show();
+                        Console.WriteLine("Sesion: "+SesionCache.Id_acceso);
                         sesion.create_reg_function(2, SesionCache.Id_acceso);
                         return true;
                     }

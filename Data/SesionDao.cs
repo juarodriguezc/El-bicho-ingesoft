@@ -60,7 +60,7 @@ namespace Data
             {
                 while (reader.Read())
                 {
-                    SesionCache.Id_acceso = reader.GetInt32(1);
+                    SesionCache.Id_acceso = reader.GetInt32(0);
                     Console.WriteLine("ID_acceso: " + SesionCache.Id_acceso);
                 }
             }
@@ -91,6 +91,7 @@ namespace Data
             connection.Open();
             var command = new MySqlCommand();
             command.Connection = connection;
+            //Console.WriteLine("Id_acceso: "+Id_acceso);
             command.Parameters.AddWithValue("@Id_funcion", Id_funcion);
             command.Parameters.AddWithValue("@Id_acceso", Id_acceso);
             command.CommandText = "INSERT INTO REG_FUNCION(ID_FUNCION,ID_ACCESO) VALUES(@Id_funcion ,@Id_acceso);";

@@ -287,8 +287,9 @@ namespace Data
             connection.Open();
             var command = new MySqlCommand();
             command.Connection = connection;
-            command.CommandText = "SELECT P.nombre_persona, P.apellido_persona, P.Correo_persona, a.FECHA_ACCESO, a.ID_ACCESO, " +
-                "q.NOMBRE_FUNCION FROM PERSONA as P, REG_FUNCION as f, REG_ACCESO as a, USUARIO as u, FUNCIONES as q " +
+            command.CommandText = "SELECT P.nombre_persona as Nombre, P.apellido_persona as Apellido, P.Correo_persona as 'Correo electronico'," +
+                " a.FECHA_ACCESO as 'Fecha de acceso', a.ID_ACCESO as 'ID acceso', " +
+                "q.NOMBRE_FUNCION as 'Funcion usada' FROM PERSONA as P, REG_FUNCION as f, REG_ACCESO as a, USUARIO as u, FUNCIONES as q " +
                 "WHERE P.Id_persona=u.Id_persona and u.ID_USUARIO = a.ID_USUARIO and a.ID_ACCESO = f.ID_ACCESO and " +
                 "q.ID_FUNCION = f.ID_FUNCION ORDER BY FECHA_ACCESO;";
             MySqlDataReader reader = command.ExecuteReader();

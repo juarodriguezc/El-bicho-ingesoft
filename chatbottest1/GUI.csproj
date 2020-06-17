@@ -79,10 +79,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Chatbot.cs">
+    <Compile Include="Modified_objects\CalendarioPersonalizado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Calendario.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Chatbot.Designer.cs">
+    <Compile Include="UserControls\Calendario.Designer.cs">
+      <DependentUpon>Calendario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Chatbot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Chatbot.Designer.cs">
       <DependentUpon>Chatbot.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_menu_principal.cs">
@@ -115,10 +124,10 @@
     <Compile Include="Form_login_menu.Designer.cs">
       <DependentUpon>Form_login_menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Perfil_usuario.cs">
+    <Compile Include="UserControls\Perfil_usuario.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Perfil_usuario.Designer.cs">
+    <Compile Include="UserControls\Perfil_usuario.Designer.cs">
       <DependentUpon>Perfil_usuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal_Menu.cs">
@@ -129,7 +138,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Chatbot.resx">
+    <EmbeddedResource Include="UserControls\Calendario.resx">
+      <DependentUpon>Calendario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Chatbot.resx">
       <DependentUpon>Chatbot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_menu_principal.resx">
@@ -147,7 +159,7 @@
     <EmbeddedResource Include="Form_login_menu.resx">
       <DependentUpon>Form_login_menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Perfil_usuario.resx">
+    <EmbeddedResource Include="UserControls\Perfil_usuario.resx">
       <DependentUpon>Perfil_usuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal_Menu.resx">
@@ -205,5 +217,6 @@
   <ItemGroup>
     <None Include="Resources\sendmessageBig.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
