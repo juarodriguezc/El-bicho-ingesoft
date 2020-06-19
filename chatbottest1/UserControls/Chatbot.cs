@@ -147,6 +147,10 @@ namespace chatbottest1
                         return true;
                     }
                     return false;
+                case "Show_calendar":
+                    Form_menu_principal.Instance.getButton_calendario().PerformClick();
+                    
+                    return true;
                 case "El bicho siuu":
                     sesion.create_reg_function(80, SesionCache.Id_acceso);
                     add_image(7);

@@ -136,6 +136,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Principal_Menu";
             this.Text = "Principal_Menu";
+            this.Load += new System.EventHandler(this.Principal_Menu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

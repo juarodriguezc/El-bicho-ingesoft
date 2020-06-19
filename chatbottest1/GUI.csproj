@@ -138,6 +138,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Modified_objects\CalendarioPersonalizado.resx">
+      <DependentUpon>CalendarioPersonalizado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Calendario.resx">
       <DependentUpon>Calendario.cs</DependentUpon>
     </EmbeddedResource>
