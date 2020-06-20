@@ -23,9 +23,9 @@ namespace chatbottest1
     public partial class Form_menu_principal : Form
     {
         //object user
-        static ModeloUsuario _loggedUser;
+        public static ModeloUsuario _loggedUser;
         //Object main form
-        static Form_menu_principal _obj;
+        public static Form_menu_principal _obj;
         //User control used
         public Chatbot cb;
         public Perfil_usuario profile;
@@ -160,6 +160,10 @@ namespace chatbottest1
         public Button getButton_chatbot() {
             return bt_chatbot;
         }
+
+        public Button getButton_calendario() {
+            return bt_calendario;
+        }
         private void lbl_iniciales_Click(object sender, EventArgs e)
         {
             
@@ -174,15 +178,22 @@ namespace chatbottest1
         {
             panel_selected_window.Height = bt_calendario.Height;
             panel_selected_window.Top = bt_calendario.Top;
+            Calendario calendar2 = new Calendario();
+            calendar2.Dock = DockStyle.Fill;
+
             if (calendar != null) calendar.Dispose(); //no overload the memory
-            calendar = new Calendario();
-            calendar.Dock = DockStyle.Fill;
+            calendar = calendar2;
             //Cerrar todo
             cb.Visible = false;
             profile.Dispose();
             //Mostrar nuevo form
             calendar.Visible = true;
             panel_principal.Controls.Add(calendar);
+        }
+
+        private void panel_principal_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
