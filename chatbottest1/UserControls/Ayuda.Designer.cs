@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ayuda));
             this.panel1 = new System.Windows.Forms.Panel();
             this.bt_volver_chatbot = new System.Windows.Forms.Button();
-            this.guia = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Bt1 = new System.Windows.Forms.Button();
             this.Bt2 = new System.Windows.Forms.Button();
             this.Bt3 = new System.Windows.Forms.Button();
             this.Bt4 = new System.Windows.Forms.Button();
+            this.guia = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,26 +68,6 @@
             this.bt_volver_chatbot.Text = "VOLVER";
             this.bt_volver_chatbot.UseVisualStyleBackColor = false;
             this.bt_volver_chatbot.Click += new System.EventHandler(this.bt_volver_chatbot_Click);
-            // 
-            // guia
-            // 
-            this.guia.Image = global::chatbottest1.Properties.Resources.GuiaInteractivaChatboot_page_0001;
-            this.guia.Location = new System.Drawing.Point(177, 130);
-            this.guia.Name = "guia";
-            this.guia.Size = new System.Drawing.Size(960, 535);
-            this.guia.TabIndex = 50;
-            this.guia.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, -55);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(300, 194);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // Bt1
             // 
@@ -149,6 +128,25 @@
             this.Bt4.Text = "4";
             this.Bt4.UseVisualStyleBackColor = false;
             this.Bt4.Click += new System.EventHandler(this.Bt4_Click);
+            // 
+            // guia
+            // 
+            this.guia.Image = global::chatbottest1.Properties.Resources.GuiaInteractivaChatboot_page_00011;
+            this.guia.Location = new System.Drawing.Point(177, 130);
+            this.guia.Name = "guia";
+            this.guia.Size = new System.Drawing.Size(960, 535);
+            this.guia.TabIndex = 50;
+            this.guia.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(3, -55);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(300, 194);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // Ayuda
             // 

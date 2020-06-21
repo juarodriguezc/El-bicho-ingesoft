@@ -50,7 +50,7 @@ namespace chatbottest1
             panel_verificacion.Visible = false;
             txt_contrasenia.UseSystemPasswordChar = false;
             ActiveControl = bt_ingresar;
-            
+            Console.WriteLine(DateTime.Now.ToString("yyyy-MM-dd"));
         }
         
         private void bt_ingresar_Click(object sender, EventArgs e)

@@ -1,6 +1,4 @@
-﻿using Common.Cache;
-
-namespace chatbottest1
+﻿namespace chatbottest1
 {
     partial class Form_menu_principal
     {
@@ -39,6 +37,7 @@ namespace chatbottest1
             this.lbl_func = new System.Windows.Forms.Label();
             this.bt_profile = new System.Windows.Forms.Button();
             this.bt_chatbot = new System.Windows.Forms.Button();
+            this.bt_logout = new System.Windows.Forms.Button();
             this.panel_info_basica = new System.Windows.Forms.Panel();
             this.lblCargo = new System.Windows.Forms.Label();
             this.lbl_iniciales = new System.Windows.Forms.Label();
@@ -47,7 +46,6 @@ namespace chatbottest1
             this.elipse_iniciales = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.panel_principal = new System.Windows.Forms.Panel();
             this.BtH = new System.Windows.Forms.Button();
-            this.bt_logout = new System.Windows.Forms.Button();
             this.panel_lateral.SuspendLayout();
             this.panel_seleccion.SuspendLayout();
             this.panel_info_basica.SuspendLayout();
@@ -88,7 +86,7 @@ namespace chatbottest1
             this.bt_calendario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_calendario.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_calendario.ForeColor = System.Drawing.Color.White;
-            this.bt_calendario.Location = new System.Drawing.Point(14, 95);
+            this.bt_calendario.Location = new System.Drawing.Point(14, 96);
             this.bt_calendario.Name = "bt_calendario";
             this.bt_calendario.Size = new System.Drawing.Size(284, 50);
             this.bt_calendario.TabIndex = 11;
@@ -103,7 +101,7 @@ namespace chatbottest1
             this.bt_funcionalidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_funcionalidad.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_funcionalidad.ForeColor = System.Drawing.Color.White;
-            this.bt_funcionalidad.Location = new System.Drawing.Point(14, 47);
+            this.bt_funcionalidad.Location = new System.Drawing.Point(14, 46);
             this.bt_funcionalidad.Name = "bt_funcionalidad";
             this.bt_funcionalidad.Size = new System.Drawing.Size(284, 50);
             this.bt_funcionalidad.TabIndex = 10;
@@ -126,7 +124,7 @@ namespace chatbottest1
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(14, 184);
+            this.button2.Location = new System.Drawing.Point(14, 194);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(282, 50);
             this.button2.TabIndex = 9;
@@ -138,7 +136,7 @@ namespace chatbottest1
             this.lbl_func.AutoSize = true;
             this.lbl_func.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_func.ForeColor = System.Drawing.Color.White;
-            this.lbl_func.Location = new System.Drawing.Point(15, 282);
+            this.lbl_func.Location = new System.Drawing.Point(11, 294);
             this.lbl_func.Name = "lbl_func";
             this.lbl_func.Size = new System.Drawing.Size(110, 19);
             this.lbl_func.TabIndex = 5;
@@ -152,7 +150,7 @@ namespace chatbottest1
             this.bt_profile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_profile.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_profile.ForeColor = System.Drawing.Color.White;
-            this.bt_profile.Location = new System.Drawing.Point(14, 141);
+            this.bt_profile.Location = new System.Drawing.Point(14, 146);
             this.bt_profile.Name = "bt_profile";
             this.bt_profile.Size = new System.Drawing.Size(284, 50);
             this.bt_profile.TabIndex = 8;
@@ -174,6 +172,26 @@ namespace chatbottest1
             this.bt_chatbot.Text = "Chatbot";
             this.bt_chatbot.UseVisualStyleBackColor = false;
             this.bt_chatbot.Click += new System.EventHandler(this.button_chatbot_Click);
+            // 
+            // bt_logout
+            // 
+            this.bt_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bt_logout.FlatAppearance.BorderSize = 0;
+            this.bt_logout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.bt_logout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bt_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_logout.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_logout.ForeColor = System.Drawing.Color.White;
+            this.bt_logout.Image = global::chatbottest1.Properties.Resources.logout;
+            this.bt_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_logout.Location = new System.Drawing.Point(0, 325);
+            this.bt_logout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_logout.Name = "bt_logout";
+            this.bt_logout.Size = new System.Drawing.Size(296, 60);
+            this.bt_logout.TabIndex = 6;
+            this.bt_logout.Text = "Log out";
+            this.bt_logout.UseVisualStyleBackColor = false;
+            this.bt_logout.Click += new System.EventHandler(this.bt_logout_Click);
             // 
             // panel_info_basica
             // 
@@ -250,6 +268,7 @@ namespace chatbottest1
             this.panel_principal.Name = "panel_principal";
             this.panel_principal.Size = new System.Drawing.Size(971, 674);
             this.panel_principal.TabIndex = 5;
+            this.panel_principal.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_principal_Paint);
             // 
             // BtH
             // 
@@ -258,33 +277,13 @@ namespace chatbottest1
             this.BtH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtH.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtH.ForeColor = System.Drawing.Color.White;
-            this.BtH.Location = new System.Drawing.Point(12, 226);
+            this.BtH.Location = new System.Drawing.Point(14, 240);
             this.BtH.Name = "BtH";
             this.BtH.Size = new System.Drawing.Size(282, 50);
-            this.BtH.TabIndex = 12;
+            this.BtH.TabIndex = 10;
             this.BtH.Text = "Ayuda";
             this.BtH.UseVisualStyleBackColor = false;
             this.BtH.Click += new System.EventHandler(this.BtH_Click);
-            // 
-            // bt_logout
-            // 
-            this.bt_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bt_logout.FlatAppearance.BorderSize = 0;
-            this.bt_logout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.bt_logout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bt_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_logout.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_logout.ForeColor = System.Drawing.Color.White;
-            this.bt_logout.Image = global::chatbottest1.Properties.Resources.logout;
-            this.bt_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_logout.Location = new System.Drawing.Point(0, 325);
-            this.bt_logout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bt_logout.Name = "bt_logout";
-            this.bt_logout.Size = new System.Drawing.Size(296, 60);
-            this.bt_logout.TabIndex = 6;
-            this.bt_logout.Text = "Log out";
-            this.bt_logout.UseVisualStyleBackColor = false;
-            this.bt_logout.Click += new System.EventHandler(this.bt_logout_Click);
             // 
             // Form_menu_principal
             // 
@@ -306,8 +305,6 @@ namespace chatbottest1
             this.panel_info_basica.ResumeLayout(false);
             this.panel_info_basica.PerformLayout();
             this.ResumeLayout(false);
-
-
 
         }
 

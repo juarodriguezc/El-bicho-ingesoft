@@ -93,9 +93,29 @@ namespace chatbottest1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GuiaInteractivaChatboot_page_00011 {
+            get {
+                object obj = ResourceManager.GetObject("GuiaInteractivaChatboot_page-00011", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap GuiaInteractivaChatboot_page_0002 {
             get {
                 object obj = ResourceManager.GetObject("GuiaInteractivaChatboot_page-0002", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GuiaInteractivaChatboot_page_00021 {
+            get {
+                object obj = ResourceManager.GetObject("GuiaInteractivaChatboot_page-00021", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +133,29 @@ namespace chatbottest1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GuiaInteractivaChatboot_page_00031 {
+            get {
+                object obj = ResourceManager.GetObject("GuiaInteractivaChatboot_page-00031", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap GuiaInteractivaChatboot_page_0004 {
             get {
                 object obj = ResourceManager.GetObject("GuiaInteractivaChatboot_page-0004", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GuiaInteractivaChatboot_page_00041 {
+            get {
+                object obj = ResourceManager.GetObject("GuiaInteractivaChatboot_page-00041", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -137,6 +137,16 @@ namespace chatbottest1
                         return true;
                     }
                     return false;
+                case "Show_personas_info":
+                    if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area)
+                    {
+                        Form_Info_Personas info_personas = new Form_Info_Personas();
+                        info_personas.Show();
+                        Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
+                        sesion.create_reg_function(2, SesionCache.Id_acceso);
+                        return true;
+                    }
+                    return false;
                 case "Reg_conversacion":
                     if (UserLoginCache.Rol_empresa == Positions.Administrador)
                     {
@@ -147,6 +157,10 @@ namespace chatbottest1
                         return true;
                     }
                     return false;
+                case "Show_calendar":
+                    Form_menu_principal.Instance.getButton_calendario().PerformClick();
+                    
+                    return true;
                 case "El bicho siuu":
                     sesion.create_reg_function(80, SesionCache.Id_acceso);
                     add_image(7);

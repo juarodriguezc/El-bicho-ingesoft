@@ -23,14 +23,13 @@ namespace chatbottest1
     public partial class Form_menu_principal : Form
     {
         //object user
-        static ModeloUsuario _loggedUser;
+        public static ModeloUsuario _loggedUser;
         //Object main form
-        static Form_menu_principal _obj;
+        public static Form_menu_principal _obj;
         //User control used
         public Chatbot cb;
         public Perfil_usuario profile;
         public Calendario calendar;
-        //Ayuda (Felipe)
         public Ayuda help;
 
 
@@ -78,6 +77,10 @@ namespace chatbottest1
             //Create objects
 
             _loggedUser = new ModeloUsuario();
+
+            //Create Ayuda
+            help = new Ayuda();
+
             //User control create
             _obj = this;
             cb = new Chatbot();
@@ -86,8 +89,8 @@ namespace chatbottest1
             //Instanciacion inicial
             profile = new Perfil_usuario();
             calendar = new Calendario();
-            help = new Ayuda();
 
+            help.Visible = false;
             profile.Visible = false;
             calendar.Visible = false;
         }
@@ -141,8 +144,8 @@ namespace chatbottest1
             profile = new Perfil_usuario();
             profile.Dock = DockStyle.Fill;
             //Cerrar todo lo demas
-            calendar.Visible = false;
             help.Visible = false;
+            calendar.Visible = false;
             cb.Visible = false;
             calendar.Dispose();
             //mostrar el usercontrol
@@ -158,12 +161,22 @@ namespace chatbottest1
             //Cerrar todo lo demas
             profile.Dispose();
             calendar.Dispose();
-            
+
+            //Cerrar todo 
+            calendar.Visible = false;
+            profile.Visible = false;
+            help.Visible = false;
+
+            //Abrir
             cb.Visible = true;
             
         }
         public Button getButton_chatbot() {
             return bt_chatbot;
+        }
+
+        public Button getButton_calendario() {
+            return bt_calendario;
         }
         private void lbl_iniciales_Click(object sender, EventArgs e)
         {
@@ -179,30 +192,42 @@ namespace chatbottest1
         {
             panel_selected_window.Height = bt_calendario.Height;
             panel_selected_window.Top = bt_calendario.Top;
+            Calendario calendar2 = new Calendario();
+            calendar2.Dock = DockStyle.Fill;
+
             if (calendar != null) calendar.Dispose(); //no overload the memory
-            calendar = new Calendario();
-            calendar.Dock = DockStyle.Fill;
+            calendar = calendar2;
             //Cerrar todo
-            cb.Visible = false;
+            profile.Visible = false;
             help.Visible = false;
+            cb.Visible = false;
             profile.Dispose();
             //Mostrar nuevo form
             calendar.Visible = true;
             panel_principal.Controls.Add(calendar);
         }
 
-        //Felipe
+        private void panel_principal_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void BtH_Click(object sender, EventArgs e)
         {
             panel_selected_window.Height = BtH.Height;
             panel_selected_window.Top = BtH.Top;
-            //Cerrar todo
+
+            help = new Ayuda();
+
+            //Cerra todo
             cb.Visible = false;
             calendar.Visible = false;
             profile.Visible = false;
-            //Mostar form ayuda
+
+            //Mostar 
             help.Visible = true;
             panel_principal.Controls.Add(help);
+
         }
     }
 }

@@ -19,22 +19,22 @@ namespace chatbottest1.UserControls
 
         private void Bt1_Click(object sender, EventArgs e)
         {
-            this.guia.Image = global::chatbottest1.Properties.Resources.GuiaInteractivaChatboot_page_0001;
+            this.guia.Image = global::chatbottest1.Properties.Resources.GuiaInteractivaChatboot_page_00011;
         }
 
         private void Bt2_Click(object sender, EventArgs e)
         {
-            this.guia.Image = global::chatbottest1.Properties.Resources.GuiaInteractivaChatboot_page_0002;
+            this.guia.Image = global::chatbottest1.Properties.Resources.GuiaInteractivaChatboot_page_00021;
         }
 
         private void Bt3_Click(object sender, EventArgs e)
         {
-            this.guia.Image = global::chatbottest1.Properties.Resources.GuiaInteractivaChatboot_page_0003;
+            this.guia.Image = global::chatbottest1.Properties.Resources.GuiaInteractivaChatboot_page_00031;
         }
 
         private void Bt4_Click(object sender, EventArgs e)
         {
-            this.guia.Image = global::chatbottest1.Properties.Resources.GuiaInteractivaChatboot_page_0004;
+            this.guia.Image = global::chatbottest1.Properties.Resources.GuiaInteractivaChatboot_page_00041;
         }
 
         private void bt_volver_chatbot_Click(object sender, EventArgs e)

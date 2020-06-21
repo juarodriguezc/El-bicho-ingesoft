@@ -28,5 +28,10 @@ namespace chatbottest1
             Form_menu_principal bot_menu = new Form_menu_principal();
             bot_menu.Show();
         }
+
+        private void Principal_Menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
