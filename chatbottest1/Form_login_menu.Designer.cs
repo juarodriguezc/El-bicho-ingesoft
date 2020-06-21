@@ -99,7 +99,7 @@ namespace chatbottest1
             this.txt_correo.Location = new System.Drawing.Point(200, 160);
             this.txt_correo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_correo.Name = "txt_correo";
-            this.txt_correo.Size = new System.Drawing.Size(431, 20);
+            this.txt_correo.Size = new System.Drawing.Size(431, 25);
             this.txt_correo.TabIndex = 0;
             this.txt_correo.Text = "CORREO";
             this.txt_correo.TextChanged += new System.EventHandler(this.txt_correo_TextChanged);
@@ -114,7 +114,7 @@ namespace chatbottest1
             this.txt_contrasenia.Location = new System.Drawing.Point(200, 230);
             this.txt_contrasenia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_contrasenia.Name = "txt_contrasenia";
-            this.txt_contrasenia.Size = new System.Drawing.Size(431, 20);
+            this.txt_contrasenia.Size = new System.Drawing.Size(431, 25);
             this.txt_contrasenia.TabIndex = 1;
             this.txt_contrasenia.Text = "CONTRASEÑA";
             this.txt_contrasenia.Enter += new System.EventHandler(this.txt_contrasenia_Enter);
@@ -147,7 +147,7 @@ namespace chatbottest1
             this.lbl_bienvenido.Location = new System.Drawing.Point(48, 48);
             this.lbl_bienvenido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_bienvenido.Name = "lbl_bienvenido";
-            this.lbl_bienvenido.Size = new System.Drawing.Size(308, 56);
+            this.lbl_bienvenido.Size = new System.Drawing.Size(383, 70);
             this.lbl_bienvenido.TabIndex = 6;
             this.lbl_bienvenido.Text = "BIENVENIDO";
             // 
@@ -197,7 +197,7 @@ namespace chatbottest1
             this.linklbl_olvidar.LinkColor = System.Drawing.Color.DimGray;
             this.linklbl_olvidar.Location = new System.Drawing.Point(428, 313);
             this.linklbl_olvidar.Name = "linklbl_olvidar";
-            this.linklbl_olvidar.Size = new System.Drawing.Size(166, 17);
+            this.linklbl_olvidar.Size = new System.Drawing.Size(203, 20);
             this.linklbl_olvidar.TabIndex = 11;
             this.linklbl_olvidar.TabStop = true;
             this.linklbl_olvidar.Text = "¿Olvidaste tu contraseña?";
@@ -211,7 +211,7 @@ namespace chatbottest1
             this.label4.Location = new System.Drawing.Point(242, 55);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(274, 30);
+            this.label4.Size = new System.Drawing.Size(334, 37);
             this.label4.TabIndex = 12;
             this.label4.Text = "ACCEDE A TU CUENTA";
             // 
@@ -237,7 +237,7 @@ namespace chatbottest1
             this.lbl_error_data.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.lbl_error_data.Location = new System.Drawing.Point(196, 277);
             this.lbl_error_data.Name = "lbl_error_data";
-            this.lbl_error_data.Size = new System.Drawing.Size(110, 19);
+            this.lbl_error_data.Size = new System.Drawing.Size(136, 21);
             this.lbl_error_data.TabIndex = 37;
             this.lbl_error_data.Text = "Datos erróneos";
             this.lbl_error_data.Visible = false;
@@ -275,7 +275,7 @@ namespace chatbottest1
             this.labelInfoReccu.ForeColor = System.Drawing.Color.DimGray;
             this.labelInfoReccu.Location = new System.Drawing.Point(186, 145);
             this.labelInfoReccu.Name = "labelInfoReccu";
-            this.labelInfoReccu.Size = new System.Drawing.Size(348, 42);
+            this.labelInfoReccu.Size = new System.Drawing.Size(445, 46);
             this.labelInfoReccu.TabIndex = 34;
             this.labelInfoReccu.Text = "Ingresa tu email para realizar el proceso de \r\nrecuperación de contraseña";
             // 
@@ -323,7 +323,7 @@ namespace chatbottest1
             this.lbl_recuperarcontrasenia.Location = new System.Drawing.Point(216, 55);
             this.lbl_recuperarcontrasenia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_recuperarcontrasenia.Name = "lbl_recuperarcontrasenia";
-            this.lbl_recuperarcontrasenia.Size = new System.Drawing.Size(320, 30);
+            this.lbl_recuperarcontrasenia.Size = new System.Drawing.Size(392, 37);
             this.lbl_recuperarcontrasenia.TabIndex = 31;
             this.lbl_recuperarcontrasenia.Text = "RECUPERAR CONTRASEÑA";
             this.lbl_recuperarcontrasenia.Click += new System.EventHandler(this.label5_Click);
@@ -347,7 +347,7 @@ namespace chatbottest1
             this.emailRecContraLbl.ForeColor = System.Drawing.Color.DimGray;
             this.emailRecContraLbl.Location = new System.Drawing.Point(147, 260);
             this.emailRecContraLbl.Name = "emailRecContraLbl";
-            this.emailRecContraLbl.Size = new System.Drawing.Size(56, 21);
+            this.emailRecContraLbl.Size = new System.Drawing.Size(69, 23);
             this.emailRecContraLbl.TabIndex = 27;
             this.emailRecContraLbl.Text = "E-mail";
             // 
@@ -372,7 +372,7 @@ namespace chatbottest1
             this.lbl_version.Location = new System.Drawing.Point(13, 646);
             this.lbl_version.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_version.Name = "lbl_version";
-            this.lbl_version.Size = new System.Drawing.Size(68, 15);
+            this.lbl_version.Size = new System.Drawing.Size(82, 18);
             this.lbl_version.TabIndex = 5;
             this.lbl_version.Text = "Version 2.0";
             // 
@@ -452,7 +452,7 @@ namespace chatbottest1
             this.lbl_cod_expirado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.lbl_cod_expirado.Location = new System.Drawing.Point(245, 408);
             this.lbl_cod_expirado.Name = "lbl_cod_expirado";
-            this.lbl_cod_expirado.Size = new System.Drawing.Size(273, 38);
+            this.lbl_cod_expirado.Size = new System.Drawing.Size(328, 42);
             this.lbl_cod_expirado.TabIndex = 40;
             this.lbl_cod_expirado.Text = "El codigo ha expirado. \r\nSe ha enviado uno nuevo a su correo.\r\n";
             this.lbl_cod_expirado.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -465,7 +465,7 @@ namespace chatbottest1
             this.lbl_codigo_incorrecto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.lbl_codigo_incorrecto.Location = new System.Drawing.Point(320, 297);
             this.lbl_codigo_incorrecto.Name = "lbl_codigo_incorrecto";
-            this.lbl_codigo_incorrecto.Size = new System.Drawing.Size(134, 19);
+            this.lbl_codigo_incorrecto.Size = new System.Drawing.Size(164, 21);
             this.lbl_codigo_incorrecto.TabIndex = 39;
             this.lbl_codigo_incorrecto.Text = "Código Incorrecto";
             this.lbl_codigo_incorrecto.Visible = false;
@@ -506,7 +506,7 @@ namespace chatbottest1
             this.lbl_ingrese_cod.ForeColor = System.Drawing.Color.DimGray;
             this.lbl_ingrese_cod.Location = new System.Drawing.Point(258, 154);
             this.lbl_ingrese_cod.Name = "lbl_ingrese_cod";
-            this.lbl_ingrese_cod.Size = new System.Drawing.Size(218, 22);
+            this.lbl_ingrese_cod.Size = new System.Drawing.Size(288, 30);
             this.lbl_ingrese_cod.TabIndex = 36;
             this.lbl_ingrese_cod.Text = "Ingrese aquí el código:";
             // 
@@ -517,7 +517,7 @@ namespace chatbottest1
             this.lbl_enviadocod.ForeColor = System.Drawing.Color.DimGray;
             this.lbl_enviadocod.Location = new System.Drawing.Point(165, 91);
             this.lbl_enviadocod.Name = "lbl_enviadocod";
-            this.lbl_enviadocod.Size = new System.Drawing.Size(414, 21);
+            this.lbl_enviadocod.Size = new System.Drawing.Size(524, 23);
             this.lbl_enviadocod.TabIndex = 35;
             this.lbl_enviadocod.Text = "Se ha enviado un codigo de verificación a tu correo";
             // 
@@ -529,7 +529,7 @@ namespace chatbottest1
             this.lbl_tituloverificacion.Location = new System.Drawing.Point(279, 36);
             this.lbl_tituloverificacion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_tituloverificacion.Name = "lbl_tituloverificacion";
-            this.lbl_tituloverificacion.Size = new System.Drawing.Size(184, 30);
+            this.lbl_tituloverificacion.Size = new System.Drawing.Size(228, 37);
             this.lbl_tituloverificacion.TabIndex = 13;
             this.lbl_tituloverificacion.Text = "VERIFICACIÓN";
             // 
@@ -575,7 +575,7 @@ namespace chatbottest1
             this.lbl_cont_req.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.lbl_cont_req.Location = new System.Drawing.Point(217, 318);
             this.lbl_cont_req.Name = "lbl_cont_req";
-            this.lbl_cont_req.Size = new System.Drawing.Size(310, 19);
+            this.lbl_cont_req.Size = new System.Drawing.Size(375, 21);
             this.lbl_cont_req.TabIndex = 43;
             this.lbl_cont_req.Text = "Las contraseña no cumple con los requisitos";
             this.lbl_cont_req.Visible = false;
@@ -587,7 +587,7 @@ namespace chatbottest1
             this.lbl_verCon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.lbl_verCon.Location = new System.Drawing.Point(217, 318);
             this.lbl_verCon.Name = "lbl_verCon";
-            this.lbl_verCon.Size = new System.Drawing.Size(214, 19);
+            this.lbl_verCon.Size = new System.Drawing.Size(258, 21);
             this.lbl_verCon.TabIndex = 42;
             this.lbl_verCon.Text = "Las contraseñas no coinciden";
             this.lbl_verCon.Visible = false;
@@ -641,7 +641,7 @@ namespace chatbottest1
             this.lbl_re_n_contra.ForeColor = System.Drawing.Color.DimGray;
             this.lbl_re_n_contra.Location = new System.Drawing.Point(81, 259);
             this.lbl_re_n_contra.Name = "lbl_re_n_contra";
-            this.lbl_re_n_contra.Size = new System.Drawing.Size(233, 21);
+            this.lbl_re_n_contra.Size = new System.Drawing.Size(291, 23);
             this.lbl_re_n_contra.TabIndex = 38;
             this.lbl_re_n_contra.Text = "Repita la nueva contraseña:";
             // 
@@ -652,7 +652,7 @@ namespace chatbottest1
             this.lbl_n_contra.ForeColor = System.Drawing.Color.DimGray;
             this.lbl_n_contra.Location = new System.Drawing.Point(81, 167);
             this.lbl_n_contra.Name = "lbl_n_contra";
-            this.lbl_n_contra.Size = new System.Drawing.Size(161, 21);
+            this.lbl_n_contra.Size = new System.Drawing.Size(200, 23);
             this.lbl_n_contra.TabIndex = 37;
             this.lbl_n_contra.Text = "Nueva contraseña:";
             // 
@@ -664,7 +664,7 @@ namespace chatbottest1
             this.lbl_title_cambiocontra.Location = new System.Drawing.Point(214, 54);
             this.lbl_title_cambiocontra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_title_cambiocontra.Name = "lbl_title_cambiocontra";
-            this.lbl_title_cambiocontra.Size = new System.Drawing.Size(321, 30);
+            this.lbl_title_cambiocontra.Size = new System.Drawing.Size(394, 37);
             this.lbl_title_cambiocontra.TabIndex = 14;
             this.lbl_title_cambiocontra.Text = "CAMBIO DE CONTRASEÑA";
             // 
@@ -685,7 +685,7 @@ namespace chatbottest1
             this.lbl_cambio_correcto.ForeColor = System.Drawing.Color.DimGray;
             this.lbl_cambio_correcto.Location = new System.Drawing.Point(53, 159);
             this.lbl_cambio_correcto.Name = "lbl_cambio_correcto";
-            this.lbl_cambio_correcto.Size = new System.Drawing.Size(596, 30);
+            this.lbl_cambio_correcto.Size = new System.Drawing.Size(727, 37);
             this.lbl_cambio_correcto.TabIndex = 43;
             this.lbl_cambio_correcto.Text = "Su contraseña ha sido cambiada correctamente";
             // 

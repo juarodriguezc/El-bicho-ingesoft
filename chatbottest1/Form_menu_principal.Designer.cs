@@ -1,4 +1,6 @@
-﻿namespace chatbottest1
+﻿using Common.Cache;
+
+namespace chatbottest1
 {
     partial class Form_menu_principal
     {
@@ -30,10 +32,12 @@
         {
             this.panel_lateral = new System.Windows.Forms.Panel();
             this.panel_seleccion = new System.Windows.Forms.Panel();
+            this.bt_calendario = new System.Windows.Forms.Button();
             this.bt_funcionalidad = new System.Windows.Forms.Button();
             this.panel_selected_window = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.lbl_func = new System.Windows.Forms.Label();
+            this.bt_profile = new System.Windows.Forms.Button();
             this.bt_chatbot = new System.Windows.Forms.Button();
             this.panel_info_basica = new System.Windows.Forms.Panel();
             this.lblCargo = new System.Windows.Forms.Label();
@@ -42,8 +46,7 @@
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.elipse_iniciales = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.panel_principal = new System.Windows.Forms.Panel();
-            this.bt_calendario = new System.Windows.Forms.Button();
-            this.bt_profile = new System.Windows.Forms.Button();
+            this.BtH = new System.Windows.Forms.Button();
             this.bt_logout = new System.Windows.Forms.Button();
             this.panel_lateral.SuspendLayout();
             this.panel_seleccion.SuspendLayout();
@@ -64,6 +67,7 @@
             // 
             // panel_seleccion
             // 
+            this.panel_seleccion.Controls.Add(this.BtH);
             this.panel_seleccion.Controls.Add(this.bt_calendario);
             this.panel_seleccion.Controls.Add(this.bt_funcionalidad);
             this.panel_seleccion.Controls.Add(this.panel_selected_window);
@@ -77,6 +81,21 @@
             this.panel_seleccion.Size = new System.Drawing.Size(295, 385);
             this.panel_seleccion.TabIndex = 10;
             // 
+            // bt_calendario
+            // 
+            this.bt_calendario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.bt_calendario.FlatAppearance.BorderSize = 0;
+            this.bt_calendario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_calendario.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_calendario.ForeColor = System.Drawing.Color.White;
+            this.bt_calendario.Location = new System.Drawing.Point(14, 95);
+            this.bt_calendario.Name = "bt_calendario";
+            this.bt_calendario.Size = new System.Drawing.Size(284, 50);
+            this.bt_calendario.TabIndex = 11;
+            this.bt_calendario.Text = "Calendario";
+            this.bt_calendario.UseVisualStyleBackColor = false;
+            this.bt_calendario.Click += new System.EventHandler(this.bt_calendario_Click);
+            // 
             // bt_funcionalidad
             // 
             this.bt_funcionalidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
@@ -84,7 +103,7 @@
             this.bt_funcionalidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_funcionalidad.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_funcionalidad.ForeColor = System.Drawing.Color.White;
-            this.bt_funcionalidad.Location = new System.Drawing.Point(14, 50);
+            this.bt_funcionalidad.Location = new System.Drawing.Point(14, 47);
             this.bt_funcionalidad.Name = "bt_funcionalidad";
             this.bt_funcionalidad.Size = new System.Drawing.Size(284, 50);
             this.bt_funcionalidad.TabIndex = 10;
@@ -107,7 +126,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(14, 200);
+            this.button2.Location = new System.Drawing.Point(14, 184);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(282, 50);
             this.button2.TabIndex = 9;
@@ -121,10 +140,25 @@
             this.lbl_func.ForeColor = System.Drawing.Color.White;
             this.lbl_func.Location = new System.Drawing.Point(15, 282);
             this.lbl_func.Name = "lbl_func";
-            this.lbl_func.Size = new System.Drawing.Size(86, 16);
+            this.lbl_func.Size = new System.Drawing.Size(110, 19);
             this.lbl_func.TabIndex = 5;
             this.lbl_func.Text = "Funcionalidad";
             this.lbl_func.Visible = false;
+            // 
+            // bt_profile
+            // 
+            this.bt_profile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.bt_profile.FlatAppearance.BorderSize = 0;
+            this.bt_profile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_profile.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_profile.ForeColor = System.Drawing.Color.White;
+            this.bt_profile.Location = new System.Drawing.Point(14, 141);
+            this.bt_profile.Name = "bt_profile";
+            this.bt_profile.Size = new System.Drawing.Size(284, 50);
+            this.bt_profile.TabIndex = 8;
+            this.bt_profile.Text = "Perfil";
+            this.bt_profile.UseVisualStyleBackColor = false;
+            this.bt_profile.Click += new System.EventHandler(this.bt_profile_Click);
             // 
             // bt_chatbot
             // 
@@ -161,7 +195,7 @@
             this.lblCargo.Location = new System.Drawing.Point(14, 251);
             this.lblCargo.Name = "lblCargo";
             this.lblCargo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCargo.Size = new System.Drawing.Size(52, 19);
+            this.lblCargo.Size = new System.Drawing.Size(63, 21);
             this.lblCargo.TabIndex = 4;
             this.lblCargo.Text = "Cargo";
             // 
@@ -186,7 +220,7 @@
             this.lblName.ForeColor = System.Drawing.Color.White;
             this.lblName.Location = new System.Drawing.Point(14, 228);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(73, 21);
+            this.lblName.Size = new System.Drawing.Size(90, 23);
             this.lblName.TabIndex = 3;
             this.lblName.Text = "Nombre";
             // 
@@ -217,35 +251,20 @@
             this.panel_principal.Size = new System.Drawing.Size(971, 674);
             this.panel_principal.TabIndex = 5;
             // 
-            // bt_calendario
+            // BtH
             // 
-            this.bt_calendario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.bt_calendario.FlatAppearance.BorderSize = 0;
-            this.bt_calendario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_calendario.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_calendario.ForeColor = System.Drawing.Color.White;
-            this.bt_calendario.Location = new System.Drawing.Point(14, 100);
-            this.bt_calendario.Name = "bt_calendario";
-            this.bt_calendario.Size = new System.Drawing.Size(284, 50);
-            this.bt_calendario.TabIndex = 11;
-            this.bt_calendario.Text = "Calendario";
-            this.bt_calendario.UseVisualStyleBackColor = false;
-            this.bt_calendario.Click += new System.EventHandler(this.bt_calendario_Click);
-            // 
-            // bt_profile
-            // 
-            this.bt_profile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.bt_profile.FlatAppearance.BorderSize = 0;
-            this.bt_profile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_profile.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_profile.ForeColor = System.Drawing.Color.White;
-            this.bt_profile.Location = new System.Drawing.Point(14, 150);
-            this.bt_profile.Name = "bt_profile";
-            this.bt_profile.Size = new System.Drawing.Size(284, 50);
-            this.bt_profile.TabIndex = 8;
-            this.bt_profile.Text = "Perfil";
-            this.bt_profile.UseVisualStyleBackColor = false;
-            this.bt_profile.Click += new System.EventHandler(this.bt_profile_Click);
+            this.BtH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.BtH.FlatAppearance.BorderSize = 0;
+            this.BtH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtH.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtH.ForeColor = System.Drawing.Color.White;
+            this.BtH.Location = new System.Drawing.Point(12, 226);
+            this.BtH.Name = "BtH";
+            this.BtH.Size = new System.Drawing.Size(282, 50);
+            this.BtH.TabIndex = 12;
+            this.BtH.Text = "Ayuda";
+            this.BtH.UseVisualStyleBackColor = false;
+            this.BtH.Click += new System.EventHandler(this.BtH_Click);
             // 
             // bt_logout
             // 
@@ -288,6 +307,8 @@
             this.panel_info_basica.PerformLayout();
             this.ResumeLayout(false);
 
+
+
         }
 
         #endregion
@@ -308,6 +329,7 @@
         private System.Windows.Forms.Button bt_funcionalidad;
         private System.Windows.Forms.Button bt_calendario;
         private System.Windows.Forms.Button bt_profile;
+        private System.Windows.Forms.Button BtH;
     }
 }
 

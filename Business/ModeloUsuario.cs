@@ -50,5 +50,11 @@ namespace Business
         {
             userDao.CambiarPassword(id_persona, contrasenia);
         }
+
+        //Programa segun fecha, Codigo Felipe Riaño
+        public DataTable MostarInfoProgramaSegunFecha(DateTime date)
+        {
+            return userDao.programaSegunFecha(date);
+        }
     }
 }

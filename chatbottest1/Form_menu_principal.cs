@@ -30,6 +30,8 @@ namespace chatbottest1
         public Chatbot cb;
         public Perfil_usuario profile;
         public Calendario calendar;
+        //Ayuda (Felipe)
+        public Ayuda help;
 
 
         public static ModeloUsuario UserInstance
@@ -84,6 +86,7 @@ namespace chatbottest1
             //Instanciacion inicial
             profile = new Perfil_usuario();
             calendar = new Calendario();
+            help = new Ayuda();
 
             profile.Visible = false;
             calendar.Visible = false;
@@ -138,6 +141,8 @@ namespace chatbottest1
             profile = new Perfil_usuario();
             profile.Dock = DockStyle.Fill;
             //Cerrar todo lo demas
+            calendar.Visible = false;
+            help.Visible = false;
             cb.Visible = false;
             calendar.Dispose();
             //mostrar el usercontrol
@@ -179,10 +184,25 @@ namespace chatbottest1
             calendar.Dock = DockStyle.Fill;
             //Cerrar todo
             cb.Visible = false;
+            help.Visible = false;
             profile.Dispose();
             //Mostrar nuevo form
             calendar.Visible = true;
             panel_principal.Controls.Add(calendar);
+        }
+
+        //Felipe
+        private void BtH_Click(object sender, EventArgs e)
+        {
+            panel_selected_window.Height = BtH.Height;
+            panel_selected_window.Top = BtH.Top;
+            //Cerrar todo
+            cb.Visible = false;
+            calendar.Visible = false;
+            profile.Visible = false;
+            //Mostar form ayuda
+            help.Visible = true;
+            panel_principal.Controls.Add(help);
         }
     }
 }

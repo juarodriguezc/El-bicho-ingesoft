@@ -312,5 +312,20 @@ namespace Data
 
         }
 
+        public DataTable programaSegunFecha(DateTime date)
+        {
+            DataTable tabla = new DataTable();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@date", date);
+            command.CommandText = "SELECT * FROM PROGRAMA WHERE Fecha_programa = @date";
+            MySqlDataReader reader = command.ExecuteReader();
+            tabla.Load(reader);
+            connection.Close();
+            return tabla;
+        }
+
     }
 }
