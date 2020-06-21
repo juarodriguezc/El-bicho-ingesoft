@@ -312,6 +312,37 @@ namespace Data
 
         }
 
+
+        public DataTable programaSegunFecha(DateTime date)
+        {
+            DataTable tabla = new DataTable();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@date", date);
+            command.CommandText = "SELECT * FROM PROGRAMA WHERE Fecha_programa = @date";
+            MySqlDataReader reader = command.ExecuteReader();
+            tabla.Load(reader);
+            connection.Close();
+            return tabla;
+        }
+
+        //Felipe 
+        public DataTable personasInfo()
+        {
+            DataTable tabla = new DataTable();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "SELECT * FROM PERSONA";
+            MySqlDataReader reader = command.ExecuteReader();
+            tabla.Load(reader);
+            connection.Close();
+            return tabla;
+        }
+
         public List<string> ConsultarEventosDia(int id_usuario, DateTime dia) {
             List<string> Eventos = new List<string>();
             DateTime dia_fin = dia.AddDays(1);
@@ -376,6 +407,7 @@ namespace Data
             connection.Close();
 
             return prox;
+
         }
 
     }

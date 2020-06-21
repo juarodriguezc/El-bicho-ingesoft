@@ -53,6 +53,19 @@ namespace Business
             userDao.CambiarPassword(id_persona, contrasenia);
         }
 
+
+        //Programa segun fecha, Codigo Felipe Riaño
+        public DataTable MostarInfoProgramaSegunFecha(DateTime date)
+        {
+            return userDao.programaSegunFecha(date);
+        }
+
+        //Programa segun fecha, Codigo Felipe Riaño
+        public DataTable MostrarInfoPersonas()
+        {
+            return userDao.personasInfo();
+        }
+
         public List<string> ConsultarEventosDia(int id_usuario, DateTime dia)
         {
             return userDao.ConsultarEventosDia(id_usuario, dia);
@@ -60,6 +73,7 @@ namespace Business
         public string[] ConsultarProxEvento(int id_usuario)
         {
             return userDao.ConsultarProxEvento(id_usuario);
+
         }
     }
 }

@@ -30,6 +30,7 @@ namespace chatbottest1
         public Chatbot cb;
         public Perfil_usuario profile;
         public Calendario calendar;
+        public Ayuda help;
 
 
         public static ModeloUsuario UserInstance
@@ -76,6 +77,10 @@ namespace chatbottest1
             //Create objects
 
             _loggedUser = new ModeloUsuario();
+
+            //Create Ayuda
+            help = new Ayuda();
+
             //User control create
             _obj = this;
             cb = new Chatbot();
@@ -85,6 +90,7 @@ namespace chatbottest1
             profile = new Perfil_usuario();
             calendar = new Calendario();
 
+            help.Visible = false;
             profile.Visible = false;
             calendar.Visible = false;
         }
@@ -138,6 +144,8 @@ namespace chatbottest1
             profile = new Perfil_usuario();
             profile.Dock = DockStyle.Fill;
             //Cerrar todo lo demas
+            help.Visible = false;
+            calendar.Visible = false;
             cb.Visible = false;
             calendar.Dispose();
             //mostrar el usercontrol
@@ -153,7 +161,13 @@ namespace chatbottest1
             //Cerrar todo lo demas
             profile.Dispose();
             calendar.Dispose();
-            
+
+            //Cerrar todo 
+            calendar.Visible = false;
+            profile.Visible = false;
+            help.Visible = false;
+
+            //Abrir
             cb.Visible = true;
             
         }
@@ -184,6 +198,8 @@ namespace chatbottest1
             if (calendar != null) calendar.Dispose(); //no overload the memory
             calendar = calendar2;
             //Cerrar todo
+            profile.Visible = false;
+            help.Visible = false;
             cb.Visible = false;
             profile.Dispose();
             //Mostrar nuevo form
@@ -193,6 +209,24 @@ namespace chatbottest1
 
         private void panel_principal_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void BtH_Click(object sender, EventArgs e)
+        {
+            panel_selected_window.Height = BtH.Height;
+            panel_selected_window.Top = BtH.Top;
+
+            help = new Ayuda();
+
+            //Cerra todo
+            cb.Visible = false;
+            calendar.Visible = false;
+            profile.Visible = false;
+
+            //Mostar 
+            help.Visible = true;
+            panel_principal.Controls.Add(help);
 
         }
     }

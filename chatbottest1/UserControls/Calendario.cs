@@ -17,6 +17,8 @@ namespace chatbottest1.UserControls
         List<Label> Eventos_dia = new List<Label>();
         ModeloUsuario userLog = new ModeloUsuario();
         int position = 10;
+        public static DateTime dateInfoProgram;
+
         public Calendario()
         {
             InitializeComponent();
@@ -140,6 +142,28 @@ namespace chatbottest1.UserControls
         private void panel_eventos_dia_ControlAdded(object sender, ControlEventArgs e)
         {
            
+        }
+
+        private void lbl_calendario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnInfoProgramDate_Click(object sender, EventArgs e)
+        {
+
+            dateInfoProgram = this.calendar_events.SelectionStart;
+
+            string mensaje = "¿El programa del que deseas obtener información es de la fecha " + dateInfoProgram.ToString("d") + "?";
+            string titulo = "Informacion programa";
+
+            DialogResult d = MessageBox.Show(mensaje, titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (d == DialogResult.Yes)
+            {
+                Form_InfoPrograma_date formDate = new Form_InfoPrograma_date();
+                formDate.Show();
+            }
         }
     }
 }
