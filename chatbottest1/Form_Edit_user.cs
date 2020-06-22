@@ -130,6 +130,8 @@ namespace chatbottest1
             txt_apellido.Text = "APELLIDO";
             txt_correo.Text = "CORREO";
             txt_contrasenia.Text = "CONTRASEÑA";
+            txt_telefono.Text = "TELEFONO";
+            txt_usuario.Text = "USUARIO";
             pick_fecha_nacimiento.Value = Convert.ToDateTime("01-01-2000");
             //comboBox_cargo.ResetText();
             txt_nombre.ReadOnly = true;
@@ -138,6 +140,7 @@ namespace chatbottest1
             txt_contrasenia.ReadOnly = true;
             pick_fecha_nacimiento.Enabled = false;
             comboBox_cargo.Enabled = false;
+            comboBox_genero.Enabled = false;
 
             dato_erroneo_nombre.Visible = false;
             dato_erroneo_apellido.Visible = false;
