@@ -36,9 +36,6 @@
     <StartupObject>chatbottest1.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Guna.UI">
-      <HintPath>..\Framework\Guna.UI.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Bot.Connector.DirectLine, Version=3.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bot.Connector.DirectLine.3.0.2\lib\net45\Microsoft.Bot.Connector.DirectLine.dll</HintPath>
     </Reference>
@@ -79,8 +76,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form_InfoPersonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_InfoPersonas.Designer.cs">
+      <DependentUpon>Form_InfoPersonas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_InfoPrograma_date.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_InfoPrograma_date.Designer.cs">
+      <DependentUpon>Form_InfoPrograma_date.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modified_objects\CalendarioPersonalizado.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Ayuda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Ayuda.Designer.cs">
+      <DependentUpon>Ayuda.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Calendario.cs">
       <SubType>UserControl</SubType>
@@ -138,6 +153,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form_InfoPersonas.resx">
+      <DependentUpon>Form_InfoPersonas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_InfoPrograma_date.resx">
+      <DependentUpon>Form_InfoPrograma_date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modified_objects\CalendarioPersonalizado.resx">
+      <DependentUpon>CalendarioPersonalizado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Ayuda.resx">
+      <DependentUpon>Ayuda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Calendario.resx">
       <DependentUpon>Calendario.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,6 +244,17 @@
   <ItemGroup>
     <None Include="Resources\sendmessageBig.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\GuiaInteractivaChatboot_page-00011.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GuiaInteractivaChatboot_page-00021.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GuiaInteractivaChatboot_page-00031.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GuiaInteractivaChatboot_page-00041.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -18,4 +18,5 @@ namespace Common.Cache
         public static string Nickname { get; set; }
 
     }
+
 }

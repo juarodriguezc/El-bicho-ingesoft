@@ -345,55 +345,55 @@ namespace chatbottest1
 
         private void txt_cedula_Enter(object sender, EventArgs e)
         {
-            if (txt_apellido.Text == "CEDULA")
+            if (txt_cedula.Text == "CEDULA")
             {
-                txt_apellido.Text = "";
-                txt_apellido.ForeColor = Color.DimGray;
+                txt_cedula.Text = "";
+                txt_cedula.ForeColor = Color.DimGray;
             }
         }
 
         private void txt_cedula_Leave(object sender, EventArgs e)
         {
-            if (txt_correo.Text == "")
+            if (txt_cedula.Text == "")
             {
-                txt_correo.Text = "CEDULA";
-                txt_correo.ForeColor = Color.DimGray;
+                txt_cedula.Text = "CEDULA";
+                txt_cedula.ForeColor = Color.DimGray;
             }
         }
 
         private void txt_telefono_Enter(object sender, EventArgs e)
         {
-            if (txt_apellido.Text == "TELEFONO")
+            if (txt_telefono.Text == "TELEFONO")
             {
-                txt_apellido.Text = "";
-                txt_apellido.ForeColor = Color.DimGray;
+                txt_telefono.Text = "";
+                txt_telefono.ForeColor = Color.DimGray;
             }
         }
 
         private void txt_telefono_Leave(object sender, EventArgs e)
         {
-            if (txt_correo.Text == "")
+            if (txt_telefono.Text == "")
             {
-                txt_correo.Text = "TELEFONO";
-                txt_correo.ForeColor = Color.DimGray;
+                txt_telefono.Text = "TELEFONO";
+                txt_telefono.ForeColor = Color.DimGray;
             }
         }
 
         private void txt_usuario_Enter(object sender, EventArgs e)
         {
-            if (txt_apellido.Text == "USUARIO")
+            if (txt_usuario.Text == "USUARIO")
             {
-                txt_apellido.Text = "";
-                txt_apellido.ForeColor = Color.DimGray;
+                txt_usuario.Text = "";
+                txt_usuario.ForeColor = Color.DimGray;
             }
         }
 
         private void txt_usuario_Leave(object sender, EventArgs e)
         {
-            if (txt_correo.Text == "")
+            if (txt_usuario.Text == "")
             {
-                txt_correo.Text = "USUARIO";
-                txt_correo.ForeColor = Color.DimGray;
+                txt_usuario.Text = "USUARIO";
+                txt_usuario.ForeColor = Color.DimGray;
             }
         }
     }
