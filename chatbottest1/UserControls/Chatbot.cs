@@ -165,6 +165,18 @@ namespace chatbottest1
                         return true;
                     }
                     return false;
+                case "User_request":
+                    Form_UserRequest UserReq = new Form_UserRequest();
+                    UserReq.Show();
+                    Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
+                    sesion.create_reg_function(2, SesionCache.Id_acceso);
+                    return true;
+                case "Info_specific_program":
+                    Form_InfoSpecificProgram infoSpc = new Form_InfoSpecificProgram();
+                    infoSpc.Show();
+                    Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
+                    sesion.create_reg_function(2, SesionCache.Id_acceso);
+                    return true;
                 case "Reg_conversacion":
                     if (UserLoginCache.Rol_empresa == Positions.Administrador)
                     {
