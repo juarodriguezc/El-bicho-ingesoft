@@ -45,22 +45,30 @@ namespace Data
             var connection = GetConnection();
             connection.Open();
             //var sql = "select * from USUARIO where CORREO = @correo and  CONTRASENIA = @contrasenia";
-            var sql = "SELECT * FROM PERSONA as P, USUARIO as U WHERE P.ID_PERSONA=U.ID_PERSONA and P.CORREO_PERSONA = @correo and U.CONTRASENIA = @contrasenia ";
-            var command = new MySqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@correo", correo);
-            command.Parameters.AddWithValue("@contrasenia", contrasenia);
-            MySqlDataReader reader = command.ExecuteReader();
+            MySqlDataReader reader;
+
+            if (correo.Contains("@"))
+            {
+                var sql = "SELECT * FROM PERSONA as P, USUARIO as U WHERE P.ID_PERSONA=U.ID_PERSONA and P.CORREO_PERSONA = @correo and U.CONTRASENIA = @contrasenia ";
+                var command = new MySqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@correo", correo);
+                command.Parameters.AddWithValue("@contrasenia", contrasenia);
+                reader = command.ExecuteReader();
+            }
+            else
+            {
+                var sql = "SELECT * FROM PERSONA as P, USUARIO as U WHERE P.ID_PERSONA=U.ID_PERSONA and U.NICKNAME = @nickname and U.CONTRASENIA = @contrasenia ";
+                var command = new MySqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@nickname", correo);
+                command.Parameters.AddWithValue("@contrasenia", contrasenia);
+                reader = command.ExecuteReader();
+
+            }
+
             if (reader.HasRows)
             {
                 while (reader.Read())
                 {
-                    /*UserLoginCache.Id_usuario = reader.GetInt32(0);
-                    UserLoginCache.Nombre = reader.GetString(2);
-                    UserLoginCache.Apellido = reader.GetString(3);
-                    UserLoginCache.Correo = reader.GetString(1);
-                    UserLoginCache.Fecha_nacimiento = reader.GetDateTime(4);
-                    //UserLoginCache.Id_usuario = reader.GetInt32(6);
-                    UserLoginCache.Rol_empresa = reader.GetString(6);*/
                     UserLoginCache.Id_Persona = reader.GetInt32(0);
                     UserLoginCache.Id_usuario = reader.GetInt32(1);
                     UserLoginCache.Nombre = reader.GetString(2);

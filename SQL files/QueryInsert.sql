@@ -28,6 +28,7 @@ INSERT INTO FUNCIONES VALUES (6,'Thanks');
 INSERT INTO FUNCIONES VALUES (7,'Smile');
 INSERT INTO FUNCIONES VALUES (8, "Reg_conversacion");
 INSERT INTO FUNCIONES VALUES (80,'El bicho siuu');
+INSERT INTO FUNCIONES VALUES (17,'Show_stock');
 SELECT * FROM FUNCIONES;
 
 
@@ -69,3 +70,22 @@ INSERT INTO MENSAJE VALUES (8,30,'Ok * Mostrar el registro de las conversaciones
 INSERT INTO MENSAJE VALUES (80,100,'SIUUUUUUUUUUUUUU');
 INSERT INTO MENSAJE VALUES (80,101,'¡Ay mi madre el BICHO!');
 INSERT INTO MENSAJE VALUES (80,102,'Mico Mandante SIUUUU');
+
+
+INSERT INTO MENSAJE VALUES (17,39,'Mostrare los productos en bodega');
+INSERT INTO MENSAJE VALUES (17,40,'Ok. Voy a mostrar un tabla con los productos en bodega');
+
+/*==============================================================*/
+/* Table: PRODUCTO                                              */
+/*==============================================================*/
+
+INSERT INTO PRODUCTO VALUES(1,'Papel Alumino',20,'C1','Unidad');
+INSERT INTO PRODUCTO VALUES(2,'Tableros de picado',30,'A1','Unidad');
+INSERT INTO PRODUCTO VALUES(3,'Borrador tablero pequeño',30,'C2','Unidad');
+INSERT INTO PRODUCTO VALUES(4,'Borrador tablero mediano',15,'C2','Unidad');
+INSERT INTO PRODUCTO VALUES(5,'Borrador tablero grande',10,'C2','Unidad');
+INSERT INTO PRODUCTO VALUES(6,'Pelotas de piscina',100,'B5','Unidad');
+INSERT INTO PRODUCTO VALUES(7,'Pelotas antiestres',50,'A4','Unidad');
+INSERT INTO PRODUCTO VALUES(8,'Pelotas de tenis',25,'A4','Unidad');
+INSERT INTO PRODUCTO VALUES(9,'Balon de futbol',5,'D3','Unidad');
+INSERT INTO PRODUCTO VALUES(10,'Costales',20,'A1','Unidad');

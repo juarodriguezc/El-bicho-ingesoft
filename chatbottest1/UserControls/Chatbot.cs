@@ -183,6 +183,11 @@ namespace chatbottest1
                     sesion.create_reg_function(80, SesionCache.Id_acceso);
                     add_image(7);
                     return true;
+                case "Show_stock":        
+                    Form_show_stock show_stock = new Form_show_stock();
+                    sesion.create_reg_function(17, SesionCache.Id_acceso);
+                    show_stock.Show();
+                    return true;
                 default:
                     return true;
             }
