@@ -76,6 +76,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form_InfoSpecificProgram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_InfoSpecificProgram.Designer.cs">
+      <DependentUpon>Form_InfoSpecificProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_UserRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_UserRequest.Designer.cs">
+      <DependentUpon>Form_UserRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_InfoPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +171,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form_InfoSpecificProgram.resx">
+      <DependentUpon>Form_InfoSpecificProgram.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_InfoPersonas.resx">
       <DependentUpon>Form_InfoPersonas.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_show_stock.resx">
       <DependentUpon>Form_show_stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_UserRequest.resx">
+      <DependentUpon>Form_UserRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modified_objects\CalendarioPersonalizado.resx">
       <DependentUpon>CalendarioPersonalizado.cs</DependentUpon>

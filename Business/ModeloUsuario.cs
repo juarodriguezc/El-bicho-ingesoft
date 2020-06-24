@@ -75,5 +75,20 @@ namespace Business
             return userDao.ConsultarProxEvento(id_usuario);
 
         }
+
+        public int Add_UserRequest(int idP, int idUsFrom, int idUsTo, string asunto, string descrip)
+        {
+            return userDao.Add_UserRequest(idP, idUsFrom, idUsTo, asunto, descrip);
+        }
+
+        public string correoDirectivo(int idDirectivo)
+        {
+            return userDao.MailDirect(idDirectivo);
+        }
+
+        public DataTable MostrarInfoProgramaEspc(int idP, int idC, string nomP, DateTime fechaIn, string typeP)
+        {
+            return userDao.MostrarProgramaEspecifico(idP, idC, nomP, fechaIn, typeP);
+        }
     }
 }
