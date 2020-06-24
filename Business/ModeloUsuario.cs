@@ -75,5 +75,15 @@ namespace Business
             return userDao.ConsultarProxEvento(id_usuario);
 
         }
+
+        public bool Add_program(int idP, int IdC, string nomP, DateTime dateIn, string typePro)
+        {
+            return userDao.Add_program(idP, IdC, nomP, dateIn, typePro);
+        }
+
+        public DataTable showInfoCompanies()
+        {
+            return userDao.showCompanies();
+        }
     }
 }
