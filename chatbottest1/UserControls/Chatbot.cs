@@ -137,6 +137,24 @@ namespace chatbottest1
                         return true;
                     }
                     return false;
+                case "Add_program":
+                    if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area)
+                    {
+                        Form_AddPrograms_Boss addProgram = new Form_AddPrograms_Boss();
+                        addProgram.Show();
+                        sesion.create_reg_function(3, SesionCache.Id_acceso);
+                        return true;
+                    }
+                    return false;
+                case "Show_company":
+                    if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area || UserLoginCache.Rol_empresa == Positions.Empleado)
+                    {
+                        Form_ListComp listComp = new Form_ListComp();
+                        listComp.Show();
+                        sesion.create_reg_function(3, SesionCache.Id_acceso);
+                        return true;
+                    }
+                    return false;
                 case "Show_personas_info":
                     if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area)
                     {
