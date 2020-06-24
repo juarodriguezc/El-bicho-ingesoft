@@ -75,5 +75,31 @@ namespace Business
             return userDao.ConsultarProxEvento(id_usuario);
 
         }
+
+        //Error de merge solucionado
+        public int Add_UserRequest(int idP, int idUsFrom, int idUsTo, string asunto, string descrip)
+        {
+            return userDao.Add_UserRequest(idP, idUsFrom, idUsTo, asunto, descrip);
+        }
+
+        public string correoDirectivo(int idDirectivo)
+        {
+            return userDao.MailDirect(idDirectivo);
+        }
+
+        public DataTable MostrarInfoProgramaEspc(int idP, int idC, string nomP, DateTime fechaIn, string typeP)
+        {
+            return userDao.MostrarProgramaEspecifico(idP, idC, nomP, fechaIn, typeP);
+        }
+
+        public bool Add_program(int idP, int IdC, string nomP, DateTime dateIn, string typePro)
+        {
+            return userDao.Add_program(idP, IdC, nomP, dateIn, typePro);
+        }
+        //Error de merge solucionado
+        public DataTable showInfoCompanies()
+        {
+            return userDao.showCompanies();
+        }
     }
 }

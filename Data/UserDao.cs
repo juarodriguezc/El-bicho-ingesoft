@@ -418,5 +418,167 @@ namespace Data
 
         }
 
+        //Merge 23 de junio
+        //añadir solicitud
+        public int Add_UserRequest(int idP, int idUsFrom, int idUsTo, string asunto, string descrip)
+        {
+            var connection = GetConnection();
+            connection.Open();
+            var sql = "SELECT * FROM PETICIONES WHERE ID_PETICION = @idPet";
+            var command = new MySqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@idPet", idP);
+            command.Parameters.AddWithValue("@idUserFrom", idUsFrom);
+            command.Parameters.AddWithValue("@idUserTo", idUsTo);
+            command.Parameters.AddWithValue("@asuntoSol", asunto);
+            command.Parameters.AddWithValue("@Desc", descrip);
+            MySqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                //Ya existe un id de peticion igual
+                return 1;
+            }
+            reader.Close();
+
+            //Verificar existencia de UserTo
+            var sql1 = "SELECT * FROM USUARIO WHERE ID_USUARIO = @idUserTo";
+            var command1 = new MySqlCommand(sql1, connection);
+            command1.Parameters.AddWithValue("@idUserTo", idUsFrom);
+            MySqlDataReader reader1 = command1.ExecuteReader();
+
+            if (!reader1.HasRows)
+            {
+                //No existe UserTo
+                return 2;
+            }
+            reader1.Close();
+
+            command.CommandText = "INSERT INTO PETICIONES (Id_peticion, Id_usuario_from, Id_usuario_to, Asunto_peticion, Desc_peticion) VALUES(@idPet, @idUserFrom, @idUserTo, @asuntoSol, @Desc)";
+            command.ExecuteNonQuery();
+
+            connection.Close();
+            return 0;
+        }
+
+        //Obtener correo dirigente
+        public string MailDirect(int idDirectivo)
+        {
+            string mailD = "";
+            DataTable tabla = new DataTable();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@idD", idDirectivo);
+            command.CommandText = "SELECT PERSONA.Correo_persona FROM USUARIO, PERSONA WHERE USUARIO.Id_usuario = @idD AND PERSONA.Id_persona = USUARIO.Id_persona";
+            MySqlDataReader reader = command.ExecuteReader();
+            tabla.Load(reader);
+
+            var columnsWidths = new int[tabla.Columns.Count];
+            foreach (DataRow row in tabla.Rows)
+            {
+                for (int i = 0; i < tabla.Columns.Count; i++)
+                {
+                    mailD = row[i].ToString();
+                    connection.Close();
+                }
+            }
+            return mailD;
+        }
+        //Fin merge 23 de junio
+        public bool Add_program(int idP, int IdC, string nomP, DateTime dateIn, string typePro)
+        {
+            var connection = GetConnection();
+            connection.Open();
+            var sql = "SELECT * FROM PROGRAMA WHERE Id_programa = @idP";
+            var command = new MySqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@idP", idP);
+            command.Parameters.AddWithValue("@idC", IdC);
+            command.Parameters.AddWithValue("@NomP", nomP);
+            command.Parameters.AddWithValue("@dateIni", dateIn);
+            command.Parameters.AddWithValue("@type", typePro);
+            MySqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                Console.WriteLine("Ya existe el id del programa");
+                return false;
+            }
+            reader.Close();
+
+
+            sql = "SELECT * FROM COMPANIA WHERE ID_COMPANIA = @IdC";
+            var command2 = new MySqlCommand(sql, connection);
+            command2.Parameters.AddWithValue("@idC", IdC);
+            MySqlDataReader reader2 = command2.ExecuteReader();
+
+            if (!reader2.HasRows)
+            {
+                Console.WriteLine("No existe esa compañia");
+                return false;
+            }
+
+            reader2.Close();
+
+            command.CommandText = "INSERT INTO PROGRAMA (ID_PROGRAMA, ID_COMPANIA, NOMBRE_PROGRAMA, FECHA_PROGRAMA, TIPO_PROGRAMA) VALUES(@idP, @idC, @NomP, @dateIni, @type)";
+            command.ExecuteNonQuery();
+
+            connection.Close();
+            return true;
+        }
+        //Error de merge solucionado
+        public DataTable showCompanies()
+        {
+            DataTable tabla = new DataTable();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "SELECT * FROM COMPANIA";
+            MySqlDataReader reader = command.ExecuteReader();
+            tabla.Load(reader);
+            connection.Close();
+            return tabla;
+
+        }
+
+        public DataTable MostrarProgramaEspecifico(int idP , int idC, string nomP, DateTime fechaIn, string typeP)
+        {
+            DataTable tabla = new DataTable();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+
+            if(idP != 0)
+            {
+                command.Parameters.AddWithValue("@data", idP);
+                command.CommandText = "SELECT * FROM PROGRAMA WHERE Id_programa = @data";
+            }
+            else if (idC != 0)
+            {
+                command.Parameters.AddWithValue("@data", idC);
+                command.CommandText = "SELECT * FROM PROGRAMA WHERE Id_compania = @data";
+            }
+            else if(nomP != null)
+            {
+                command.Parameters.AddWithValue("@data", nomP);
+                command.CommandText = "SELECT * FROM PROGRAMA WHERE Nombre_programa = @data";
+            }
+            else if(fechaIn != DateTime.MinValue)
+            {
+                command.Parameters.AddWithValue("@data", fechaIn);
+                command.CommandText = "SELECT * FROM PROGRAMA WHERE Fecha_programa = @data";
+            }
+            else if(typeP != null)
+            {
+                command.Parameters.AddWithValue("@data", typeP);
+                command.CommandText = "SELECT * FROM PROGRAMA WHERE Tipo_programa = @data";
+            }
+            
+            MySqlDataReader reader = command.ExecuteReader();
+            tabla.Load(reader);
+            connection.Close();
+            return tabla;
+        }
+
     }
 }
