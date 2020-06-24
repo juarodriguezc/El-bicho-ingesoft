@@ -418,6 +418,7 @@ namespace Data
 
         }
 
+        //Merge 23 de junio
         //añadir solicitud
         public int Add_UserRequest(int idP, int idUsFrom, int idUsTo, string asunto, string descrip)
         {
@@ -482,6 +483,61 @@ namespace Data
                 }
             }
             return mailD;
+        }
+        //Fin merge 23 de junio
+        public bool Add_program(int idP, int IdC, string nomP, DateTime dateIn, string typePro)
+        {
+            var connection = GetConnection();
+            connection.Open();
+            var sql = "SELECT * FROM PROGRAMA WHERE Id_programa = @idP";
+            var command = new MySqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@idP", idP);
+            command.Parameters.AddWithValue("@idC", IdC);
+            command.Parameters.AddWithValue("@NomP", nomP);
+            command.Parameters.AddWithValue("@dateIni", dateIn);
+            command.Parameters.AddWithValue("@type", typePro);
+            MySqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                Console.WriteLine("Ya existe el id del programa");
+                return false;
+            }
+            reader.Close();
+
+
+            sql = "SELECT * FROM COMPANIA WHERE ID_COMPANIA = @IdC";
+            var command2 = new MySqlCommand(sql, connection);
+            command2.Parameters.AddWithValue("@idC", IdC);
+            MySqlDataReader reader2 = command2.ExecuteReader();
+
+            if (!reader2.HasRows)
+            {
+                Console.WriteLine("No existe esa compañia");
+                return false;
+            }
+
+            reader2.Close();
+
+            command.CommandText = "INSERT INTO PROGRAMA (ID_PROGRAMA, ID_COMPANIA, NOMBRE_PROGRAMA, FECHA_PROGRAMA, TIPO_PROGRAMA) VALUES(@idP, @idC, @NomP, @dateIni, @type)";
+            command.ExecuteNonQuery();
+
+            connection.Close();
+            return true;
+        }
+        //Error de merge solucionado
+        public DataTable showCompanies()
+        {
+            DataTable tabla = new DataTable();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "SELECT * FROM COMPANIA";
+            MySqlDataReader reader = command.ExecuteReader();
+            tabla.Load(reader);
+            connection.Close();
+            return tabla;
+
         }
 
         public DataTable MostrarProgramaEspecifico(int idP , int idC, string nomP, DateTime fechaIn, string typeP)

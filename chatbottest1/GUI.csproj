@@ -76,17 +76,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form_InfoSpecificProgram.cs">
+    <Compile Include="Form_AddPrograms_Boss.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_InfoSpecificProgram.Designer.cs">
-      <DependentUpon>Form_InfoSpecificProgram.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_UserRequest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_UserRequest.Designer.cs">
-      <DependentUpon>Form_UserRequest.cs</DependentUpon>
+    <Compile Include="Form_AddPrograms_Boss.Designer.cs">
+      <DependentUpon>Form_AddPrograms_Boss.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_InfoPersonas.cs">
       <SubType>Form</SubType>
@@ -100,11 +94,29 @@
     <Compile Include="Form_InfoPrograma_date.Designer.cs">
       <DependentUpon>Form_InfoPrograma_date.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_InfoSpecificProgram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_InfoSpecificProgram.Designer.cs">
+      <DependentUpon>Form_InfoSpecificProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ListComp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ListComp.Designer.cs">
+      <DependentUpon>Form_ListComp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_show_stock.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_show_stock.Designer.cs">
       <DependentUpon>Form_show_stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_UserRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_UserRequest.Designer.cs">
+      <DependentUpon>Form_UserRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="Modified_objects\CalendarioPersonalizado.cs">
       <SubType>Component</SubType>
@@ -171,14 +183,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form_InfoSpecificProgram.resx">
-      <DependentUpon>Form_InfoSpecificProgram.cs</DependentUpon>
+    <EmbeddedResource Include="Form_AddPrograms_Boss.resx">
+      <DependentUpon>Form_AddPrograms_Boss.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_InfoPersonas.resx">
       <DependentUpon>Form_InfoPersonas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_InfoPrograma_date.resx">
       <DependentUpon>Form_InfoPrograma_date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_InfoSpecificProgram.resx">
+      <DependentUpon>Form_InfoSpecificProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ListComp.resx">
+      <DependentUpon>Form_ListComp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_show_stock.resx">
       <DependentUpon>Form_show_stock.cs</DependentUpon>
