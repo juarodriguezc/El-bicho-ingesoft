@@ -50,20 +50,18 @@ namespace chatbottest1
             panel_verificacion.Visible = false;
             txt_contrasenia.UseSystemPasswordChar = false;
             ActiveControl = bt_ingresar;
-            
+            Console.WriteLine(DateTime.Now.ToString("yyyy-MM-dd"));
         }
         
         private void bt_ingresar_Click(object sender, EventArgs e)
         {
             ModeloUsuario user = new ModeloUsuario();
             var validLogin = user.LoginUser(txt_correo.Text, txt_contrasenia.Text);
+
             if (validLogin == true){
                 
                 Form_menu_principal bot_menu = new Form_menu_principal();
                 bot_menu.Show();
-
-                /*Principal_Menu principal_Menu = new Principal_Menu();
-                principal_Menu.Show();*/
                 this.Hide();
                 bot_menu.FormClosed += Logout;
             }
@@ -308,6 +306,8 @@ namespace chatbottest1
 
             txt_contrasenia.Text = "CONTRASEÑA";
             txt_contrasenia.ForeColor = Color.DimGray;
+
+            lbl_error_data.Visible = false;
         }
 
 

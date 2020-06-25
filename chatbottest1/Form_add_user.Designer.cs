@@ -317,6 +317,7 @@
             // 
             // comboBox_cargo
             // 
+            this.comboBox_cargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_cargo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_cargo.FormattingEnabled = true;
             this.comboBox_cargo.Items.AddRange(new object[] {
@@ -429,6 +430,7 @@
             // 
             // comboBox_genero
             // 
+            this.comboBox_genero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_genero.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_genero.FormattingEnabled = true;
             this.comboBox_genero.Items.AddRange(new object[] {

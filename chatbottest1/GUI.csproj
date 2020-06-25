@@ -36,9 +36,6 @@
     <StartupObject>chatbottest1.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Guna.UI">
-      <HintPath>..\Framework\Guna.UI.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Bot.Connector.DirectLine, Version=3.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bot.Connector.DirectLine.3.0.2\lib\net45\Microsoft.Bot.Connector.DirectLine.dll</HintPath>
     </Reference>
@@ -84,9 +81,62 @@
     </Compile>
     <Compile Include="Form_add_volunteer.Designer.cs">
       <DependentUpon>Form_add_volunteer.cs</DependentUpon>
+    <Compile Include="Form_add_program.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_add_program.Designer.cs">
+      <DependentUpon>Form_add_program.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_InfoPersonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_InfoPersonas.Designer.cs">
+      <DependentUpon>Form_InfoPersonas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_InfoPrograma_date.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_InfoPrograma_date.Designer.cs">
+      <DependentUpon>Form_InfoPrograma_date.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_InfoSpecificProgram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_InfoSpecificProgram.Designer.cs">
+      <DependentUpon>Form_InfoSpecificProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ListComp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ListComp.Designer.cs">
+      <DependentUpon>Form_ListComp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_programas_activos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_programas_activos.Designer.cs">
+      <DependentUpon>Form_programas_activos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_show_stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_show_stock.Designer.cs">
+      <DependentUpon>Form_show_stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_UserRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_UserRequest.Designer.cs">
+      <DependentUpon>Form_UserRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="Modified_objects\CalendarioPersonalizado.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Ayuda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Ayuda.Designer.cs">
+      <DependentUpon>Ayuda.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Calendario.cs">
       <SubType>UserControl</SubType>
@@ -136,16 +186,39 @@
     <Compile Include="UserControls\Perfil_usuario.Designer.cs">
       <DependentUpon>Perfil_usuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Principal_Menu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Principal_Menu.Designer.cs">
-      <DependentUpon>Principal_Menu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form_add_volunteer.resx">
       <DependentUpon>Form_add_volunteer.cs</DependentUpon>
+    <EmbeddedResource Include="Form_add_program.resx">
+      <DependentUpon>Form_add_program.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_InfoPersonas.resx">
+      <DependentUpon>Form_InfoPersonas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_InfoPrograma_date.resx">
+      <DependentUpon>Form_InfoPrograma_date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_InfoSpecificProgram.resx">
+      <DependentUpon>Form_InfoSpecificProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ListComp.resx">
+      <DependentUpon>Form_ListComp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_programas_activos.resx">
+      <DependentUpon>Form_programas_activos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_show_stock.resx">
+      <DependentUpon>Form_show_stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_UserRequest.resx">
+      <DependentUpon>Form_UserRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modified_objects\CalendarioPersonalizado.resx">
+      <DependentUpon>CalendarioPersonalizado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Ayuda.resx">
+      <DependentUpon>Ayuda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Calendario.resx">
       <DependentUpon>Calendario.cs</DependentUpon>
@@ -170,9 +243,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Perfil_usuario.resx">
       <DependentUpon>Perfil_usuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Principal_Menu.resx">
-      <DependentUpon>Principal_Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -226,6 +296,17 @@
   <ItemGroup>
     <None Include="Resources\sendmessageBig.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\GuiaInteractivaChatboot_page-00011.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GuiaInteractivaChatboot_page-00021.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GuiaInteractivaChatboot_page-00031.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GuiaInteractivaChatboot_page-00041.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
