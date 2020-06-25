@@ -96,10 +96,10 @@ namespace chatbottest1
             this.txt_correo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_correo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_correo.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_correo.Location = new System.Drawing.Point(200, 160);
+            this.txt_correo.Location = new System.Drawing.Point(120, 154);
             this.txt_correo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_correo.Name = "txt_correo";
-            this.txt_correo.Size = new System.Drawing.Size(431, 25);
+            this.txt_correo.Size = new System.Drawing.Size(431, 20);
             this.txt_correo.TabIndex = 0;
             this.txt_correo.Text = "CORREO";
             this.txt_correo.TextChanged += new System.EventHandler(this.txt_correo_TextChanged);
@@ -111,10 +111,10 @@ namespace chatbottest1
             this.txt_contrasenia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_contrasenia.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_contrasenia.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_contrasenia.Location = new System.Drawing.Point(200, 230);
+            this.txt_contrasenia.Location = new System.Drawing.Point(120, 224);
             this.txt_contrasenia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_contrasenia.Name = "txt_contrasenia";
-            this.txt_contrasenia.Size = new System.Drawing.Size(431, 25);
+            this.txt_contrasenia.Size = new System.Drawing.Size(431, 20);
             this.txt_contrasenia.TabIndex = 1;
             this.txt_contrasenia.Text = "CONTRASEÑA";
             this.txt_contrasenia.Enter += new System.EventHandler(this.txt_contrasenia_Enter);
@@ -130,7 +130,7 @@ namespace chatbottest1
             this.bt_ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_ingresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.bt_ingresar.ForeColor = System.Drawing.Color.LightGray;
-            this.bt_ingresar.Location = new System.Drawing.Point(249, 408);
+            this.bt_ingresar.Location = new System.Drawing.Point(169, 402);
             this.bt_ingresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_ingresar.Name = "bt_ingresar";
             this.bt_ingresar.Size = new System.Drawing.Size(323, 33);
@@ -147,7 +147,7 @@ namespace chatbottest1
             this.lbl_bienvenido.Location = new System.Drawing.Point(48, 48);
             this.lbl_bienvenido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_bienvenido.Name = "lbl_bienvenido";
-            this.lbl_bienvenido.Size = new System.Drawing.Size(383, 70);
+            this.lbl_bienvenido.Size = new System.Drawing.Size(308, 56);
             this.lbl_bienvenido.TabIndex = 6;
             this.lbl_bienvenido.Text = "BIENVENIDO";
             // 
@@ -155,36 +155,36 @@ namespace chatbottest1
             // 
             this.lineShape1.BorderColor = System.Drawing.Color.DimGray;
             this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 200;
-            this.lineShape1.X2 = 630;
-            this.lineShape1.Y1 = 260;
-            this.lineShape1.Y2 = 260;
+            this.lineShape1.X1 = 120;
+            this.lineShape1.X2 = 550;
+            this.lineShape1.Y1 = 253;
+            this.lineShape1.Y2 = 253;
             // 
             // line_Correo
             // 
             this.line_Correo.BorderColor = System.Drawing.Color.DimGray;
             this.line_Correo.Name = "line_Correo";
-            this.line_Correo.X1 = 200;
-            this.line_Correo.X2 = 630;
-            this.line_Correo.Y1 = 190;
-            this.line_Correo.Y2 = 190;
+            this.line_Correo.X1 = 120;
+            this.line_Correo.X2 = 550;
+            this.line_Correo.Y1 = 183;
+            this.line_Correo.Y2 = 183;
             // 
             // panel_logo_login
             // 
             this.panel_logo_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.panel_logo_login.Controls.Add(this.pictureBox1);
             this.panel_logo_login.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel_logo_login.Location = new System.Drawing.Point(812, 0);
+            this.panel_logo_login.Location = new System.Drawing.Point(649, 0);
             this.panel_logo_login.Name = "panel_logo_login";
-            this.panel_logo_login.Size = new System.Drawing.Size(450, 673);
+            this.panel_logo_login.Size = new System.Drawing.Size(372, 648);
             this.panel_logo_login.TabIndex = 9;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-61, 127);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 228);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(566, 355);
+            this.pictureBox1.Size = new System.Drawing.Size(368, 260);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -195,9 +195,9 @@ namespace chatbottest1
             this.linklbl_olvidar.AutoSize = true;
             this.linklbl_olvidar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linklbl_olvidar.LinkColor = System.Drawing.Color.DimGray;
-            this.linklbl_olvidar.Location = new System.Drawing.Point(428, 313);
+            this.linklbl_olvidar.Location = new System.Drawing.Point(348, 307);
             this.linklbl_olvidar.Name = "linklbl_olvidar";
-            this.linklbl_olvidar.Size = new System.Drawing.Size(203, 20);
+            this.linklbl_olvidar.Size = new System.Drawing.Size(166, 17);
             this.linklbl_olvidar.TabIndex = 11;
             this.linklbl_olvidar.TabStop = true;
             this.linklbl_olvidar.Text = "¿Olvidaste tu contraseña?";
@@ -208,10 +208,10 @@ namespace chatbottest1
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(242, 55);
+            this.label4.Location = new System.Drawing.Point(162, 49);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(334, 37);
+            this.label4.Size = new System.Drawing.Size(274, 30);
             this.label4.TabIndex = 12;
             this.label4.Text = "ACCEDE A TU CUENTA";
             // 
@@ -226,7 +226,7 @@ namespace chatbottest1
             this.panel_login.Controls.Add(this.shapeContainer2);
             this.panel_login.Location = new System.Drawing.Point(0, 149);
             this.panel_login.Name = "panel_login";
-            this.panel_login.Size = new System.Drawing.Size(818, 494);
+            this.panel_login.Size = new System.Drawing.Size(649, 465);
             this.panel_login.TabIndex = 13;
             this.panel_login.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_login_Paint);
             // 
@@ -235,9 +235,9 @@ namespace chatbottest1
             this.lbl_error_data.AutoSize = true;
             this.lbl_error_data.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_error_data.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.lbl_error_data.Location = new System.Drawing.Point(196, 277);
+            this.lbl_error_data.Location = new System.Drawing.Point(116, 271);
             this.lbl_error_data.Name = "lbl_error_data";
-            this.lbl_error_data.Size = new System.Drawing.Size(136, 21);
+            this.lbl_error_data.Size = new System.Drawing.Size(110, 19);
             this.lbl_error_data.TabIndex = 37;
             this.lbl_error_data.Text = "Datos erróneos";
             this.lbl_error_data.Visible = false;
@@ -250,7 +250,7 @@ namespace chatbottest1
             this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1,
             this.line_Correo});
-            this.shapeContainer2.Size = new System.Drawing.Size(818, 494);
+            this.shapeContainer2.Size = new System.Drawing.Size(649, 465);
             this.shapeContainer2.TabIndex = 13;
             this.shapeContainer2.TabStop = false;
             // 
@@ -264,7 +264,7 @@ namespace chatbottest1
             this.panel_forgot.Controls.Add(this.emailRecContraLbl);
             this.panel_forgot.Location = new System.Drawing.Point(0, 149);
             this.panel_forgot.Name = "panel_forgot";
-            this.panel_forgot.Size = new System.Drawing.Size(818, 494);
+            this.panel_forgot.Size = new System.Drawing.Size(649, 465);
             this.panel_forgot.TabIndex = 14;
             this.panel_forgot.Visible = false;
             // 
@@ -273,9 +273,9 @@ namespace chatbottest1
             this.labelInfoReccu.AutoSize = true;
             this.labelInfoReccu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInfoReccu.ForeColor = System.Drawing.Color.DimGray;
-            this.labelInfoReccu.Location = new System.Drawing.Point(186, 145);
+            this.labelInfoReccu.Location = new System.Drawing.Point(130, 141);
             this.labelInfoReccu.Name = "labelInfoReccu";
-            this.labelInfoReccu.Size = new System.Drawing.Size(445, 46);
+            this.labelInfoReccu.Size = new System.Drawing.Size(348, 42);
             this.labelInfoReccu.TabIndex = 34;
             this.labelInfoReccu.Text = "Ingresa tu email para realizar el proceso de \r\nrecuperación de contraseña";
             // 
@@ -288,7 +288,7 @@ namespace chatbottest1
             this.backHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.backHome.ForeColor = System.Drawing.Color.LightGray;
-            this.backHome.Location = new System.Drawing.Point(60, 408);
+            this.backHome.Location = new System.Drawing.Point(95, 382);
             this.backHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backHome.Name = "backHome";
             this.backHome.Size = new System.Drawing.Size(101, 33);
@@ -306,7 +306,7 @@ namespace chatbottest1
             this.recup_datos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.recup_datos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.recup_datos.ForeColor = System.Drawing.Color.LightGray;
-            this.recup_datos.Location = new System.Drawing.Point(564, 408);
+            this.recup_datos.Location = new System.Drawing.Point(389, 382);
             this.recup_datos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.recup_datos.Name = "recup_datos";
             this.recup_datos.Size = new System.Drawing.Size(162, 33);
@@ -320,10 +320,10 @@ namespace chatbottest1
             this.lbl_recuperarcontrasenia.AutoSize = true;
             this.lbl_recuperarcontrasenia.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_recuperarcontrasenia.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_recuperarcontrasenia.Location = new System.Drawing.Point(216, 55);
+            this.lbl_recuperarcontrasenia.Location = new System.Drawing.Point(160, 51);
             this.lbl_recuperarcontrasenia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_recuperarcontrasenia.Name = "lbl_recuperarcontrasenia";
-            this.lbl_recuperarcontrasenia.Size = new System.Drawing.Size(392, 37);
+            this.lbl_recuperarcontrasenia.Size = new System.Drawing.Size(320, 30);
             this.lbl_recuperarcontrasenia.TabIndex = 31;
             this.lbl_recuperarcontrasenia.Text = "RECUPERAR CONTRASEÑA";
             this.lbl_recuperarcontrasenia.Click += new System.EventHandler(this.label5_Click);
@@ -332,7 +332,7 @@ namespace chatbottest1
             // 
             this.emailTxbRecContr.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailTxbRecContr.ForeColor = System.Drawing.Color.DimGray;
-            this.emailTxbRecContr.Location = new System.Drawing.Point(305, 257);
+            this.emailTxbRecContr.Location = new System.Drawing.Point(209, 253);
             this.emailTxbRecContr.MaxLength = 80;
             this.emailTxbRecContr.Multiline = true;
             this.emailTxbRecContr.Name = "emailTxbRecContr";
@@ -345,9 +345,9 @@ namespace chatbottest1
             this.emailRecContraLbl.AutoSize = true;
             this.emailRecContraLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailRecContraLbl.ForeColor = System.Drawing.Color.DimGray;
-            this.emailRecContraLbl.Location = new System.Drawing.Point(147, 260);
+            this.emailRecContraLbl.Location = new System.Drawing.Point(54, 256);
             this.emailRecContraLbl.Name = "emailRecContraLbl";
-            this.emailRecContraLbl.Size = new System.Drawing.Size(69, 23);
+            this.emailRecContraLbl.Size = new System.Drawing.Size(56, 21);
             this.emailRecContraLbl.TabIndex = 27;
             this.emailRecContraLbl.Text = "E-mail";
             // 
@@ -369,10 +369,10 @@ namespace chatbottest1
             // 
             this.lbl_version.AutoSize = true;
             this.lbl_version.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.lbl_version.Location = new System.Drawing.Point(13, 646);
+            this.lbl_version.Location = new System.Drawing.Point(13, 617);
             this.lbl_version.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_version.Name = "lbl_version";
-            this.lbl_version.Size = new System.Drawing.Size(82, 18);
+            this.lbl_version.Size = new System.Drawing.Size(68, 15);
             this.lbl_version.TabIndex = 5;
             this.lbl_version.Text = "Version 2.0";
             // 
@@ -423,7 +423,7 @@ namespace chatbottest1
             this.panel_verificacion.Controls.Add(this.lbl_tituloverificacion);
             this.panel_verificacion.Location = new System.Drawing.Point(0, 150);
             this.panel_verificacion.Name = "panel_verificacion";
-            this.panel_verificacion.Size = new System.Drawing.Size(815, 494);
+            this.panel_verificacion.Size = new System.Drawing.Size(649, 464);
             this.panel_verificacion.TabIndex = 17;
             this.panel_verificacion.Visible = false;
             // 
@@ -436,7 +436,7 @@ namespace chatbottest1
             this.bt_volver_inicio_codigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_volver_inicio_codigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.bt_volver_inicio_codigo.ForeColor = System.Drawing.Color.LightGray;
-            this.bt_volver_inicio_codigo.Location = new System.Drawing.Point(60, 429);
+            this.bt_volver_inicio_codigo.Location = new System.Drawing.Point(27, 39);
             this.bt_volver_inicio_codigo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_volver_inicio_codigo.Name = "bt_volver_inicio_codigo";
             this.bt_volver_inicio_codigo.Size = new System.Drawing.Size(101, 33);
@@ -450,9 +450,9 @@ namespace chatbottest1
             this.lbl_cod_expirado.AutoSize = true;
             this.lbl_cod_expirado.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_cod_expirado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.lbl_cod_expirado.Location = new System.Drawing.Point(245, 408);
+            this.lbl_cod_expirado.Location = new System.Drawing.Point(192, 376);
             this.lbl_cod_expirado.Name = "lbl_cod_expirado";
-            this.lbl_cod_expirado.Size = new System.Drawing.Size(328, 42);
+            this.lbl_cod_expirado.Size = new System.Drawing.Size(273, 38);
             this.lbl_cod_expirado.TabIndex = 40;
             this.lbl_cod_expirado.Text = "El codigo ha expirado. \r\nSe ha enviado uno nuevo a su correo.\r\n";
             this.lbl_cod_expirado.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -463,9 +463,9 @@ namespace chatbottest1
             this.lbl_codigo_incorrecto.AutoSize = true;
             this.lbl_codigo_incorrecto.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_codigo_incorrecto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.lbl_codigo_incorrecto.Location = new System.Drawing.Point(320, 297);
+            this.lbl_codigo_incorrecto.Location = new System.Drawing.Point(245, 270);
             this.lbl_codigo_incorrecto.Name = "lbl_codigo_incorrecto";
-            this.lbl_codigo_incorrecto.Size = new System.Drawing.Size(164, 21);
+            this.lbl_codigo_incorrecto.Size = new System.Drawing.Size(134, 19);
             this.lbl_codigo_incorrecto.TabIndex = 39;
             this.lbl_codigo_incorrecto.Text = "Código Incorrecto";
             this.lbl_codigo_incorrecto.Visible = false;
@@ -479,7 +479,7 @@ namespace chatbottest1
             this.lbl_verificar_codigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbl_verificar_codigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lbl_verificar_codigo.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_verificar_codigo.Location = new System.Drawing.Point(314, 355);
+            this.lbl_verificar_codigo.Location = new System.Drawing.Point(221, 325);
             this.lbl_verificar_codigo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbl_verificar_codigo.Name = "lbl_verificar_codigo";
             this.lbl_verificar_codigo.Size = new System.Drawing.Size(179, 33);
@@ -492,7 +492,7 @@ namespace chatbottest1
             // 
             this.txt_codigo_ver.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_codigo_ver.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_codigo_ver.Location = new System.Drawing.Point(314, 252);
+            this.txt_codigo_ver.Location = new System.Drawing.Point(221, 223);
             this.txt_codigo_ver.MaxLength = 80;
             this.txt_codigo_ver.Multiline = true;
             this.txt_codigo_ver.Name = "txt_codigo_ver";
@@ -504,9 +504,9 @@ namespace chatbottest1
             this.lbl_ingrese_cod.AutoSize = true;
             this.lbl_ingrese_cod.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ingrese_cod.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_ingrese_cod.Location = new System.Drawing.Point(258, 154);
+            this.lbl_ingrese_cod.Location = new System.Drawing.Point(205, 182);
             this.lbl_ingrese_cod.Name = "lbl_ingrese_cod";
-            this.lbl_ingrese_cod.Size = new System.Drawing.Size(288, 30);
+            this.lbl_ingrese_cod.Size = new System.Drawing.Size(218, 22);
             this.lbl_ingrese_cod.TabIndex = 36;
             this.lbl_ingrese_cod.Text = "Ingrese aquí el código:";
             // 
@@ -515,9 +515,9 @@ namespace chatbottest1
             this.lbl_enviadocod.AutoSize = true;
             this.lbl_enviadocod.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_enviadocod.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_enviadocod.Location = new System.Drawing.Point(165, 91);
+            this.lbl_enviadocod.Location = new System.Drawing.Point(130, 140);
             this.lbl_enviadocod.Name = "lbl_enviadocod";
-            this.lbl_enviadocod.Size = new System.Drawing.Size(524, 23);
+            this.lbl_enviadocod.Size = new System.Drawing.Size(414, 21);
             this.lbl_enviadocod.TabIndex = 35;
             this.lbl_enviadocod.Text = "Se ha enviado un codigo de verificación a tu correo";
             // 
@@ -526,10 +526,10 @@ namespace chatbottest1
             this.lbl_tituloverificacion.AutoSize = true;
             this.lbl_tituloverificacion.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_tituloverificacion.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_tituloverificacion.Location = new System.Drawing.Point(279, 36);
+            this.lbl_tituloverificacion.Location = new System.Drawing.Point(216, 78);
             this.lbl_tituloverificacion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_tituloverificacion.Name = "lbl_tituloverificacion";
-            this.lbl_tituloverificacion.Size = new System.Drawing.Size(228, 37);
+            this.lbl_tituloverificacion.Size = new System.Drawing.Size(184, 30);
             this.lbl_tituloverificacion.TabIndex = 13;
             this.lbl_tituloverificacion.Text = "VERIFICACIÓN";
             // 
@@ -546,7 +546,7 @@ namespace chatbottest1
             this.panel_cambio_contrasenia.Controls.Add(this.lbl_title_cambiocontra);
             this.panel_cambio_contrasenia.Location = new System.Drawing.Point(0, 150);
             this.panel_cambio_contrasenia.Name = "panel_cambio_contrasenia";
-            this.panel_cambio_contrasenia.Size = new System.Drawing.Size(809, 492);
+            this.panel_cambio_contrasenia.Size = new System.Drawing.Size(649, 464);
             this.panel_cambio_contrasenia.TabIndex = 18;
             this.panel_cambio_contrasenia.Visible = false;
             // 
@@ -559,7 +559,7 @@ namespace chatbottest1
             this.bt_cancelar_cambio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_cancelar_cambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.bt_cancelar_cambio.ForeColor = System.Drawing.Color.LightGray;
-            this.bt_cancelar_cambio.Location = new System.Drawing.Point(44, 429);
+            this.bt_cancelar_cambio.Location = new System.Drawing.Point(58, 381);
             this.bt_cancelar_cambio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_cancelar_cambio.Name = "bt_cancelar_cambio";
             this.bt_cancelar_cambio.Size = new System.Drawing.Size(128, 33);
@@ -573,9 +573,9 @@ namespace chatbottest1
             this.lbl_cont_req.AutoSize = true;
             this.lbl_cont_req.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_cont_req.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.lbl_cont_req.Location = new System.Drawing.Point(217, 318);
+            this.lbl_cont_req.Location = new System.Drawing.Point(174, 317);
             this.lbl_cont_req.Name = "lbl_cont_req";
-            this.lbl_cont_req.Size = new System.Drawing.Size(375, 21);
+            this.lbl_cont_req.Size = new System.Drawing.Size(310, 19);
             this.lbl_cont_req.TabIndex = 43;
             this.lbl_cont_req.Text = "Las contraseña no cumple con los requisitos";
             this.lbl_cont_req.Visible = false;
@@ -587,7 +587,7 @@ namespace chatbottest1
             this.lbl_verCon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.lbl_verCon.Location = new System.Drawing.Point(217, 318);
             this.lbl_verCon.Name = "lbl_verCon";
-            this.lbl_verCon.Size = new System.Drawing.Size(258, 21);
+            this.lbl_verCon.Size = new System.Drawing.Size(214, 19);
             this.lbl_verCon.TabIndex = 42;
             this.lbl_verCon.Text = "Las contraseñas no coinciden";
             this.lbl_verCon.Visible = false;
@@ -601,7 +601,7 @@ namespace chatbottest1
             this.btn_cambio_cont.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cambio_cont.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btn_cambio_cont.ForeColor = System.Drawing.Color.LightGray;
-            this.btn_cambio_cont.Location = new System.Drawing.Point(419, 392);
+            this.btn_cambio_cont.Location = new System.Drawing.Point(324, 381);
             this.btn_cambio_cont.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_cambio_cont.Name = "btn_cambio_cont";
             this.btn_cambio_cont.Size = new System.Drawing.Size(270, 33);
@@ -614,7 +614,7 @@ namespace chatbottest1
             // 
             this.txt_rep_cont_ver.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_rep_cont_ver.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_rep_cont_ver.Location = new System.Drawing.Point(419, 256);
+            this.txt_rep_cont_ver.Location = new System.Drawing.Point(324, 252);
             this.txt_rep_cont_ver.MaxLength = 80;
             this.txt_rep_cont_ver.Multiline = true;
             this.txt_rep_cont_ver.Name = "txt_rep_cont_ver";
@@ -626,7 +626,7 @@ namespace chatbottest1
             // 
             this.txt_cont_ver.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_cont_ver.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_cont_ver.Location = new System.Drawing.Point(419, 160);
+            this.txt_cont_ver.Location = new System.Drawing.Point(324, 163);
             this.txt_cont_ver.MaxLength = 80;
             this.txt_cont_ver.Multiline = true;
             this.txt_cont_ver.Name = "txt_cont_ver";
@@ -639,9 +639,9 @@ namespace chatbottest1
             this.lbl_re_n_contra.AutoSize = true;
             this.lbl_re_n_contra.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_re_n_contra.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_re_n_contra.Location = new System.Drawing.Point(81, 259);
+            this.lbl_re_n_contra.Location = new System.Drawing.Point(38, 258);
             this.lbl_re_n_contra.Name = "lbl_re_n_contra";
-            this.lbl_re_n_contra.Size = new System.Drawing.Size(291, 23);
+            this.lbl_re_n_contra.Size = new System.Drawing.Size(233, 21);
             this.lbl_re_n_contra.TabIndex = 38;
             this.lbl_re_n_contra.Text = "Repita la nueva contraseña:";
             // 
@@ -650,9 +650,9 @@ namespace chatbottest1
             this.lbl_n_contra.AutoSize = true;
             this.lbl_n_contra.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_n_contra.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_n_contra.Location = new System.Drawing.Point(81, 167);
+            this.lbl_n_contra.Location = new System.Drawing.Point(38, 166);
             this.lbl_n_contra.Name = "lbl_n_contra";
-            this.lbl_n_contra.Size = new System.Drawing.Size(200, 23);
+            this.lbl_n_contra.Size = new System.Drawing.Size(161, 21);
             this.lbl_n_contra.TabIndex = 37;
             this.lbl_n_contra.Text = "Nueva contraseña:";
             // 
@@ -661,10 +661,10 @@ namespace chatbottest1
             this.lbl_title_cambiocontra.AutoSize = true;
             this.lbl_title_cambiocontra.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_title_cambiocontra.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_title_cambiocontra.Location = new System.Drawing.Point(214, 54);
+            this.lbl_title_cambiocontra.Location = new System.Drawing.Point(171, 53);
             this.lbl_title_cambiocontra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_title_cambiocontra.Name = "lbl_title_cambiocontra";
-            this.lbl_title_cambiocontra.Size = new System.Drawing.Size(394, 37);
+            this.lbl_title_cambiocontra.Size = new System.Drawing.Size(321, 30);
             this.lbl_title_cambiocontra.TabIndex = 14;
             this.lbl_title_cambiocontra.Text = "CAMBIO DE CONTRASEÑA";
             // 
@@ -674,7 +674,7 @@ namespace chatbottest1
             this.panel_cambio_correcto.Controls.Add(this.btn_volver_login);
             this.panel_cambio_correcto.Location = new System.Drawing.Point(0, 150);
             this.panel_cambio_correcto.Name = "panel_cambio_correcto";
-            this.panel_cambio_correcto.Size = new System.Drawing.Size(803, 493);
+            this.panel_cambio_correcto.Size = new System.Drawing.Size(649, 461);
             this.panel_cambio_correcto.TabIndex = 19;
             this.panel_cambio_correcto.Visible = false;
             // 
@@ -683,9 +683,9 @@ namespace chatbottest1
             this.lbl_cambio_correcto.AutoSize = true;
             this.lbl_cambio_correcto.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_cambio_correcto.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_cambio_correcto.Location = new System.Drawing.Point(53, 159);
+            this.lbl_cambio_correcto.Location = new System.Drawing.Point(36, 166);
             this.lbl_cambio_correcto.Name = "lbl_cambio_correcto";
-            this.lbl_cambio_correcto.Size = new System.Drawing.Size(727, 37);
+            this.lbl_cambio_correcto.Size = new System.Drawing.Size(596, 30);
             this.lbl_cambio_correcto.TabIndex = 43;
             this.lbl_cambio_correcto.Text = "Su contraseña ha sido cambiada correctamente";
             // 
@@ -698,7 +698,7 @@ namespace chatbottest1
             this.btn_volver_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_volver_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btn_volver_login.ForeColor = System.Drawing.Color.LightGray;
-            this.btn_volver_login.Location = new System.Drawing.Point(305, 370);
+            this.btn_volver_login.Location = new System.Drawing.Point(221, 318);
             this.btn_volver_login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_volver_login.Name = "btn_volver_login";
             this.btn_volver_login.Size = new System.Drawing.Size(179, 33);
@@ -712,7 +712,7 @@ namespace chatbottest1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.ClientSize = new System.Drawing.Size(1021, 648);
             this.Controls.Add(this.panel_logo_login);
             this.Controls.Add(this.lbl_bienvenido);
             this.Controls.Add(this.lbl_version);

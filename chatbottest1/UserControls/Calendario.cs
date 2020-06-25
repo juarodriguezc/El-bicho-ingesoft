@@ -16,6 +16,8 @@ namespace chatbottest1.UserControls
     {
         List<Label> Eventos_dia = new List<Label>();
         ModeloUsuario userLog = new ModeloUsuario();
+        ModeloEventos eventos = new ModeloEventos();
+
         int position = 10;
         public static DateTime dateInfoProgram;
 
@@ -33,7 +35,7 @@ namespace chatbottest1.UserControls
             panel_eventos_dia.Controls.Clear();
             string start_day = DateTime.Now.ToString("yyyy-MM-dd");
             Console.WriteLine(DateTime.Parse(start_day));
-            List<string> eventos_dia = userLog.ConsultarEventosDia(UserLoginCache.Id_usuario, DateTime.Parse( start_day ));
+            List<string> eventos_dia = eventos.ConsultarEventosDia(UserLoginCache.Id_usuario, DateTime.Parse( start_day ));
             if (eventos_dia.Any())
             {
                 foreach (string a in eventos_dia)
@@ -52,7 +54,7 @@ namespace chatbottest1.UserControls
 
             //Calcular el próximo evento
 
-            string[] prox = userLog.ConsultarProxEvento(UserLoginCache.Id_usuario);
+            string[] prox = eventos.ConsultarProxEvento(UserLoginCache.Id_usuario);
             if (prox != null && prox.Length > 0)
             {
                 DateTime fecha_proxima = DateTime.Parse(prox[0]);
@@ -91,7 +93,7 @@ namespace chatbottest1.UserControls
             lbl_current_day.Text = calendar_events.SelectionRange.Start.ToString("dddd dd") + " de " + 
                 calendar_events.SelectionRange.Start.ToString("MMMMMMMMMMM");
             panel_eventos_dia.Controls.Clear();
-            List<string> eventos_dia = userLog.ConsultarEventosDia(UserLoginCache.Id_usuario, calendar_events.SelectionRange.Start);
+            List<string> eventos_dia = eventos.ConsultarEventosDia(UserLoginCache.Id_usuario, calendar_events.SelectionRange.Start);
             if (eventos_dia.Any()) {
                 foreach (string a in eventos_dia)
                 {
@@ -111,15 +113,12 @@ namespace chatbottest1.UserControls
 
         private void bt_add_event_Click(object sender, EventArgs e)
         {
-            
-            userLog.ConsultarEventosDia(UserLoginCache.Id_usuario, calendar_events.SelectionRange.Start);
+            eventos.ConsultarEventosDia(UserLoginCache.Id_usuario, calendar_events.SelectionRange.Start);
 
         }
 
         public void add_eventos_dia_panel(string evento)
-        {
-            
-            
+        { 
             Console.WriteLine(panel_eventos_dia.Height);
             Label b_lateral = new Label();
             b_lateral.Text = "";

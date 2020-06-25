@@ -14,7 +14,9 @@ namespace chatbottest1
 {
     public partial class Form_InfoPrograma_date : Form
     {
-        ModeloUsuario usuario = new ModeloUsuario();
+        //ModeloUsuario usuario = new ModeloUsuario();
+        ModeloPrograma programa = new ModeloPrograma();
+        
 
         public Form_InfoPrograma_date()
         {
@@ -24,12 +26,17 @@ namespace chatbottest1
 
         private void MostarInformacionDeProgramaSegunFecha()
         {
-            dataGridView1.DataSource = usuario.MostarInfoProgramaSegunFecha(chatbottest1.UserControls.Calendario.dateInfoProgram);
+            dataGridView1.DataSource = programa.MostarInfoProgramaSegunFecha(chatbottest1.UserControls.Calendario.dateInfoProgram);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void bt_editar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -12,12 +12,7 @@ namespace Business
             return userDao.Login(correo, contrasenia);
         }
 
-        /*public bool Add_user(string correo, string nombre, string apellido, DateTime fecha_nacimiento, string contrasenia, string rol_empresa)
-        {
-            return userDao.Add_user(correo, nombre, apellido, fecha_nacimiento, contrasenia, rol_empresa);
-        }*/
-
-        public bool Add_user(int id_persona, string nombre, string apellido, DateTime fecha_nacimiento, string telefono, string genero, string correo, string contrasenia, string rol_empresa, string nickname)
+        public bool Add_user(string id_persona, string nombre, string apellido, DateTime fecha_nacimiento, string telefono, string genero, string correo, string contrasenia, string rol_empresa, string nickname)
         {
             return userDao.Add_user(id_persona, nombre, apellido, fecha_nacimiento, telefono, genero, correo, contrasenia, rol_empresa, nickname);
         }
@@ -55,10 +50,10 @@ namespace Business
 
 
         //Programa segun fecha, Codigo Felipe Riaño
-        public DataTable MostarInfoProgramaSegunFecha(DateTime date)
+        /*public DataTable MostarInfoProgramaSegunFecha(DateTime date)
         {
             return userDao.programaSegunFecha(date);
-        }
+        }*/
 
         //Programa segun fecha, Codigo Felipe Riaño
         public DataTable MostrarInfoPersonas()
@@ -66,15 +61,16 @@ namespace Business
             return userDao.personasInfo();
         }
 
-        public List<string> ConsultarEventosDia(int id_usuario, DateTime dia)
+        /*public List<string> ConsultarEventosDia(int id_usuario, DateTime dia)
         {
             return userDao.ConsultarEventosDia(id_usuario, dia);
-        }
-        public string[] ConsultarProxEvento(int id_usuario)
+        }*/
+
+        /*public string[] ConsultarProxEvento(int id_usuario)
         {
             return userDao.ConsultarProxEvento(id_usuario);
 
-        }
+        }*/
 
         //Error de merge solucionado
         public int Add_UserRequest(int idP, int idUsFrom, int idUsTo, string asunto, string descrip)

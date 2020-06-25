@@ -123,7 +123,7 @@ namespace chatbottest1
                     {
                         Form_add_user add_user = new Form_add_user();
                         add_user.Show();
-                        Console.WriteLine("Sesion: "+SesionCache.Id_acceso);
+                        Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
                         sesion.create_reg_function(2, SesionCache.Id_acceso);
                         return true;
                     }
@@ -140,9 +140,10 @@ namespace chatbottest1
                 case "Add_program":
                     if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area)
                     {
-                        Form_AddPrograms_Boss addProgram = new Form_AddPrograms_Boss();
+                        //Form_AddPrograms_Boss addProgram = new Form_AddPrograms_Boss();
+                        Form_add_program addProgram = new Form_add_program();
                         addProgram.Show();
-                        sesion.create_reg_function(3, SesionCache.Id_acceso);
+                        sesion.create_reg_function(13, SesionCache.Id_acceso);
                         return true;
                     }
                     return false;
@@ -151,7 +152,7 @@ namespace chatbottest1
                     {
                         Form_ListComp listComp = new Form_ListComp();
                         listComp.Show();
-                        sesion.create_reg_function(3, SesionCache.Id_acceso);
+                        sesion.create_reg_function(11, SesionCache.Id_acceso);
                         return true;
                     }
                     return false;
@@ -161,7 +162,7 @@ namespace chatbottest1
                         Form_Info_Personas info_personas = new Form_Info_Personas();
                         info_personas.Show();
                         Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
-                        sesion.create_reg_function(2, SesionCache.Id_acceso);
+                        sesion.create_reg_function(12, SesionCache.Id_acceso);
                         return true;
                     }
                     return false;
@@ -169,13 +170,13 @@ namespace chatbottest1
                     Form_UserRequest UserReq = new Form_UserRequest();
                     UserReq.Show();
                     Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
-                    sesion.create_reg_function(2, SesionCache.Id_acceso);
+                    sesion.create_reg_function(10, SesionCache.Id_acceso);
                     return true;
                 case "Info_specific_program":
                     Form_InfoSpecificProgram infoSpc = new Form_InfoSpecificProgram();
                     infoSpc.Show();
                     Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
-                    sesion.create_reg_function(2, SesionCache.Id_acceso);
+                    sesion.create_reg_function(9, SesionCache.Id_acceso);
                     return true;
                 case "Reg_conversacion":
                     if (UserLoginCache.Rol_empresa == Positions.Administrador)
@@ -183,13 +184,11 @@ namespace chatbottest1
                         Form_registro_conversacion reg_conv = new Form_registro_conversacion();
                         sesion.create_reg_function(8, SesionCache.Id_acceso);
                         reg_conv.Show();
-
                         return true;
                     }
                     return false;
                 case "Show_calendar":
-                    Form_menu_principal.Instance.getButton_calendario().PerformClick();
-                    
+                    Form_menu_principal.Instance.getButton_calendario().PerformClick();        
                     return true;
                 case "El bicho siuu":
                     sesion.create_reg_function(80, SesionCache.Id_acceso);
@@ -204,9 +203,6 @@ namespace chatbottest1
                     return true;
             }
         }
-
-
-
 
         public void add_mensaje(string mensaje) {
             label7.Text = mensaje;

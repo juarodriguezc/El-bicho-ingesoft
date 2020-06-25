@@ -15,11 +15,10 @@ namespace chatbottest1
 {
     public partial class Form_UserRequest : Form
     {
-
         private int idUsuarioFrom = UserLoginCache.Id_usuario;
-        ModeloUsuario addUserReq = new ModeloUsuario();
-        private int indice;
-        private string comboBoxText;
+        private string UsuarioFrom = UserLoginCache.Nombre+" "+ UserLoginCache.Apellido;
+        ModeloPeticiones peticiones = new ModeloPeticiones();
+
 
         //Funcion Enviar Correo electronico
         private void sendEmail(string correoDestinatario, string asunto, string mensaje)
@@ -66,51 +65,36 @@ namespace chatbottest1
         }
 
         //Verificar datos
-        private bool verificarIdPeticion()
+        private bool verificarDirectivo()
         {
-            char[] idP = idPeticion.Text.ToCharArray();
-
-            foreach(char i in idP)
+            if (!string.IsNullOrEmpty(comboBox_directivo.Text))
             {
-                if (!char.IsDigit(i))
-                {
-                    datoErroneoIdPeticion.Visible = true;
-                    return false;
-                }
+                return true;
             }
-            return true;
-        }
-
-        private bool verficarIdDirectivo()
-        {
-            char[] idD = idUsuarioTo.Text.ToCharArray();
-
-            foreach(char i in idD)
+            else
             {
-                if (!char.IsDigit(i))
-                {
-                    datoErroneoIdDirectivo.Visible = true;
-                    return false;
-                }
+                lbl_error_directivo.Visible = false;
+                return false;
             }
-            return true;
 
         }
 
         private bool verificarTipoSolicitud()
         {
-            if(tiposDeSolicitud.Text == "")
+            if (!string.IsNullOrEmpty(comboBox_tipo_solicitud.Text))
             {
-                datoErrorTipoSolicitud.Visible = true;
+                return true;
+            }
+            else
+            {
+                lbl_error_tipo.Visible = false;
                 return false;
             }
-
-            return true;
         }
          
         private bool verificarAsunto()
         {
-            if(solicitudText.Text.Length == 0)
+            if(txt_asunto_solicitud.Text.Length == 0)
             {
                 datoErroneoAsuntoSolicitud.Visible = true;
                 return false;
@@ -120,7 +104,7 @@ namespace chatbottest1
 
         private bool verificarDescripcion()
         {
-            if(descripcionSolicitudText.Text.Length == 0)
+            if(txt_descripcion.Text.Length == 0)
             {
                 datoErroneoDescripSoli.Visible = true;
                 return false;
@@ -135,22 +119,6 @@ namespace chatbottest1
             InitializeComponent();
         }
 
-        private void idUsuarioTo_TextChanged(object sender, EventArgs e)
-        {
-            if (idUsuarioTo.Text == "ID PETICION")
-            {
-                idUsuarioTo.Text = "";
-            }
-        }
-
-        private void idPeticion_TextChanged(object sender, EventArgs e)
-        {
-            if(idPeticion.Text == "ID PETICION")
-            {
-                idPeticion.Text = "";
-            }
-        }
-
         private void backHome_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -158,45 +126,40 @@ namespace chatbottest1
 
         private void bt_addRequest_Click(object sender, EventArgs e)
         {
-            bool a = verficarIdDirectivo(), b = verificarAsunto(), c = verificarIdPeticion(), d = verificarTipoSolicitud(), f = verificarDescripcion();
+            if(verificarDirectivo() && verificarTipoSolicitud() && verificarAsunto() && verificarDescripcion())
+            {
+                peticiones.add_user_request(idUsuarioFrom, comboBox_directivo.SelectedItem.ToString(), comboBox_tipo_solicitud.SelectedItem.ToString(), txt_asunto_solicitud.Text, txt_descripcion.Text);
+                string mailTo = peticiones.mailDirect(comboBox_directivo.SelectedItem.ToString());
+                string asunto = txt_asunto_solicitud.Text ;
+                string mensaje = "Buenas tardes\n\n" +
+                    "El usuario : " + UsuarioFrom +
+                    "\nrealizo la siguiente solicitud: " +
+                    comboBox_tipo_solicitud.SelectedItem.ToString()+"\n\n "+
+                    txt_descripcion.Text+
+                    "\n\nFavor atender la solicitud lo antes posible.";
 
-            if(a && b && c && d && f)
-            {
-                //Base de datos
-                switch (addUserReq.Add_UserRequest(Int32.Parse(idPeticion.Text), idUsuarioFrom, Int32.Parse(idUsuarioTo.Text), tiposDeSolicitud.Text, descripcionSolicitudText.Text))
-                {
-                    case 0:
-                        Console.WriteLine("Ningún problema!");
-                        //enviar correo a dirigente
-                        string asunto = "Solicitud usuario " + idUsuarioFrom;
-                        string mensaje = "Buenas tardes\n\n" +
-                            "El usuario con id: \t\t" + idUsuarioFrom +
-                            "\nrealizo un solicitud de tipo: \t\t" + tiposDeSolicitud.Text +
-                            "\nel id de la peticion es: \t\t" + Int32.Parse(idPeticion.Text) +
-                            "\n\nFavor atender la solicitud lo antes posible.";
-                        sendEmail(addUserReq.correoDirectivo(Int32.Parse(idUsuarioTo.Text)), asunto, mensaje);
-                        this.Close();
-                        break;
-                    case 1:
-                        MessageBox.Show("El id de la peticion ya existe");
-                        break;
-                    case 2:
-                        MessageBox.Show("El id del directivo no existe");
-                        break;
-                    default:
-                        break;
-                }
-                //enviar correo
+                sendEmail(mailTo, asunto, mensaje);
+
+                MessageBox.Show("La petición ha sido realizada\n", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.Close();
             }
-            else
+            
+
+
+        }
+        private void llenarDirectivos()
+        {
+            List<string> directivos = peticiones.nombresDirectivos();
+            foreach (string a in directivos)
             {
-                MessageBox.Show("Completa correctamente los datos de tu solicitud!");
+                comboBox_directivo.Items.Add(a);
             }
+
         }
 
-        private void tiposDeSolicitud_SelectedIndexChanged(object sender, EventArgs e)
+        private void Form_UserRequest_Load(object sender, EventArgs e)
         {
-            
+            llenarDirectivos();
         }
     }
 }

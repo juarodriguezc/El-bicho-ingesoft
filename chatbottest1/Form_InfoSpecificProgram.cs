@@ -112,5 +112,10 @@ namespace chatbottest1
             
             
         }
+
+        private void backHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
