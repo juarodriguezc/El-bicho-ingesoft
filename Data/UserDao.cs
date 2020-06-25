@@ -11,40 +11,10 @@ namespace Data
 {
     public class UserDao : ConnectionToSql
     {
-        /*public bool Login(string correo, string contrasenia) {
-            using (var connection = GetConnection()) {
-                connection.Open();
-                using (var command = new SqlCommand()) {
-                    command.Connection = connection;
-                    command.Parameters.AddWithValue("@correo", correo);
-                    command.Parameters.AddWithValue("@contrasenia", contrasenia);
-                    command.CommandText = "select * from USUARIO where CORREO = @correo and  CONTRASENIA = @contrasenia";
-                    command.CommandType = CommandType.Text;
-                    SqlDataReader reader = command.ExecuteReader();
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read()) {
-                            UserLoginCache.Id_usuario = reader.GetInt32(0);
-                            UserLoginCache.Nombre = reader.GetString(2);
-                            UserLoginCache.Apellido = reader.GetString(3);
-                            UserLoginCache.Correo = reader.GetString(1);
-                            UserLoginCache.Fecha_nacimiento = reader.GetDateTime(4);
-                            UserLoginCache.Rol_empresa = reader.GetString(6);
-                        }
-                        return true;
-                    }
-                    else {
-                        return false;
-                    }
-                }
-            }
-        }*/
-
         public bool Login(string correo, string contrasenia)
         {
             var connection = GetConnection();
             connection.Open();
-            //var sql = "select * from USUARIO where CORREO = @correo and  CONTRASENIA = @contrasenia";
             MySqlDataReader reader;
 
             if (correo.Contains("@"))
@@ -77,9 +47,8 @@ namespace Data
                     UserLoginCache.Telefono = reader.GetString(5);
                     UserLoginCache.Genero = reader.GetString(6);
                     UserLoginCache.Correo = reader.GetString(7);
-                    UserLoginCache.Nickname = reader.GetString(10);
-                    UserLoginCache.Rol_empresa = reader.GetString(12);
-
+                    UserLoginCache.Nickname = reader.GetString(12);
+                    UserLoginCache.Rol_empresa = reader.GetString(14);
                 }
                 connection.Close();
                 return true;
@@ -92,35 +61,7 @@ namespace Data
 
         }
 
-        /*public bool Add_user(string correo, string nombre, string apellido, DateTime fecha_nacimiento, string contrasenia, string rol_empresa)
-        {
-            using (var connection = GetConnection())
-            {
-                connection.Open();
-                using (var command = new SqlCommand())
-                {
-                    command.Connection = connection;
-                    command.Parameters.AddWithValue("@correo", correo);
-                    command.Parameters.AddWithValue("@nombre", nombre);
-                    command.Parameters.AddWithValue("@apellido", apellido);
-                    command.Parameters.AddWithValue("@fecha_nacimiento", fecha_nacimiento);
-                    command.Parameters.AddWithValue("@contrasenia", contrasenia);
-                    command.Parameters.AddWithValue("@rol_empresa", rol_empresa);
-                    //Verificar la existencia del correo
-                    command.CommandText = "SELECT * FROM USUARIO WHERE correo = @correo";
-                    command.CommandType = CommandType.Text;
-                    SqlDataReader reader = command.ExecuteReader();
-                    if (reader.HasRows) return false; //No se añade el usuario y se retorna false
-                    reader.Close();
-                    command.CommandText = "INSERT INTO USUARIO VALUES(@correo, @nombre, @apellido, @fecha_nacimiento, @contrasenia, @rol_empresa)";
-                    command.CommandType = CommandType.Text;
-                    command.ExecuteNonQuery();
-                    return true; //Se añade el usuario y se retorna true
-                }
-            }
-        }*/
-
-        public bool Add_user(int id_persona, string nombre, string apellido, DateTime fecha_nacimiento, string telefono, string genero, string correo, string contrasenia, string rol_empresa, string nickname)
+        public bool Add_user(string id_persona, string nombre, string apellido, DateTime fecha_nacimiento, string telefono, string genero, string correo, string contrasenia, string rol_empresa, string nickname)
         {
             var connection = GetConnection();
             connection.Open();
@@ -140,7 +81,7 @@ namespace Data
             if (reader.HasRows) return false;
             reader.Close();
 
-            command.CommandText = "INSERT INTO PERSONA (Id_persona, Nombre_persona, Apellido_persona, Fecha_nacimiento, Telefono_persona, Genero, Correo_persona) VALUES(@Id_persona, @nombre, @apellido, @fecha_nacimiento, @telefono, @genero, @correo)";
+            command.CommandText = "INSERT INTO PERSONA (Id_persona, Nombre_persona, Apellido_persona, Fecha_nacimiento, Telefono_persona, Genero, Correo_persona, Pais_origen, Rol_persona) VALUES(@Id_persona, @nombre, @apellido, @fecha_nacimiento, @telefono, @genero, @correo, 'Colombia', 'Trabajador')";
             command.ExecuteNonQuery();
             command.CommandText = "INSERT INTO USUARIO (Id_persona, Nickname, Contrasenia, Rol_empresa) VALUES(@Id_persona, @nickname, @contrasenia, @rol_empresa)";
             command.ExecuteNonQuery();
@@ -150,38 +91,6 @@ namespace Data
             connection.Close();
             return true;
         }
-
-        /*public bool RecuperaContra(string correo)
-        {
-            using (var connection = GetConnection())
-            {
-                connection.Open();
-                using (var command = new SqlCommand())
-                {
-                    command.Connection = connection;
-                    command.Parameters.AddWithValue("@correo", correo);
-                    command.CommandText = "select * from USUARIO where CORREO = @correo";
-                    command.CommandType = CommandType.Text;
-                    SqlDataReader reader = command.ExecuteReader();
-                    if (reader.HasRows)
-                    {
-                        Console.WriteLine("Datos correctos ");
-                        while (reader.Read())
-                        {
-                            UserRecuperaCache.nombre_completo = reader.GetString(2);
-                            UserRecuperaCache.nombre_completo += " " + reader.GetString(3);
-                            UserRecuperaCache.contrasenia = reader.GetString(5);
-                        }
-                        return true;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Datos correctos ");
-                        return false;
-                    }
-                }
-            }
-        }*/
 
         public bool RecuperaContra(string correo)
         {
@@ -216,25 +125,6 @@ namespace Data
             }
         }
 
-
-        /*public DataTable MostrarUsuarios(string correo) {
-            DataTable tabla = new DataTable();
-            using (var connection = GetConnection())
-            {
-                connection.Open();
-                using (var command = new SqlCommand())
-                {
-                    command.Connection = connection;
-                    command.Parameters.AddWithValue("@correo", correo);
-                    command.CommandText = "SELECT Nombre, Apellido, Correo, Contrasenia as Contraseña, Fecha_nacimiento as Nacimiento, Rol_empresa as 'Tipo usuario' FROM USUARIO WHERE CORREO != @correo;";
-                    command.CommandType = CommandType.Text;
-                    SqlDataReader reader = command.ExecuteReader();
-                    tabla.Load(reader);
-                    return tabla;
-                }
-            }
-        }*/
-
         public DataTable MostrarUsuarios(string correo)
         {
             DataTable tabla = new DataTable();
@@ -256,15 +146,6 @@ namespace Data
             connection.Open();
             var command = new MySqlCommand();
             command.Connection = connection;
-            /*command.Parameters.AddWithValue("@id", id);
-            command.Parameters.AddWithValue("@correo", correo);
-            command.Parameters.AddWithValue("@nombre", nombre);
-            command.Parameters.AddWithValue("@apellido", apellido);
-            command.Parameters.AddWithValue("@fecha_nacimiento", fecha_nacimiento);
-            command.Parameters.AddWithValue("@contrasenia", contrasenia);
-            command.Parameters.AddWithValue("@rol_empresa", rol_empresa);
-            command.CommandText = "UPDATE USUARIO SET NOMBRE = @nombre, APELLIDO = @apellido," +
-                " FECHA_NACIMIENTO = @fecha_nacimiento, CONTRASENIA = @contrasenia, ROL_EMPRESA = @rol_empresa, CORREO = @correo where ID_USUARIO = @id";*/
             command.Parameters.AddWithValue("@genero", genero);
             command.Parameters.AddWithValue("@telefono", telefono);
             command.Parameters.AddWithValue("@Id_persona", id_persona);
@@ -321,21 +202,6 @@ namespace Data
         }
 
 
-        public DataTable programaSegunFecha(DateTime date)
-        {
-            DataTable tabla = new DataTable();
-            var connection = GetConnection();
-            connection.Open();
-            var command = new MySqlCommand();
-            command.Connection = connection;
-            command.Parameters.AddWithValue("@date", date);
-            command.CommandText = "SELECT * FROM PROGRAMA WHERE Fecha_programa = @date";
-            MySqlDataReader reader = command.ExecuteReader();
-            tabla.Load(reader);
-            connection.Close();
-            return tabla;
-        }
-
         //Felipe 
         public DataTable personasInfo()
         {
@@ -351,7 +217,7 @@ namespace Data
             return tabla;
         }
 
-        public List<string> ConsultarEventosDia(int id_usuario, DateTime dia) {
+        /*public List<string> ConsultarEventosDia(int id_usuario, DateTime dia) {
             List<string> Eventos = new List<string>();
             DateTime dia_fin = dia.AddDays(1);
             var connection = GetConnection();
@@ -381,8 +247,9 @@ namespace Data
             Console.WriteLine(Eventos);
             connection.Close();
             return Eventos;
-        }
-        public string[] ConsultarProxEvento(int id_usuario) {
+        }*/
+
+        /*public string[] ConsultarProxEvento(int id_usuario) {
             string[] prox = {"dia","hora","asunto" };
 
             var connection = GetConnection();
@@ -410,13 +277,10 @@ namespace Data
             }
             else {
                 prox = null;
-            }
-            
+            }      
             connection.Close();
-
             return prox;
-
-        }
+        }*/
 
         //Merge 23 de junio
         //añadir solicitud

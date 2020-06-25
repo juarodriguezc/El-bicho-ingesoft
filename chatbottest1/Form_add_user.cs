@@ -47,11 +47,7 @@ namespace chatbottest1
                     && verificarEmail(txt_correo.Text) && verficarPassWordL(txt_contrasenia.Text) && verificarIgualdadContra(txt_contrasenia.Text, txt_v_contra.Text)) 
                 {
                     ModeloUsuario addUser = new ModeloUsuario();
-                    /*if (!addUser.Add_user(txt_correo.Text, txt_nombre.Text, txt_apellido.Text, Convert.ToDateTime(pick_fecha_nacimiento.Text), txt_contrasenia.Text, comboBox_cargo.SelectedItem.ToString()))
-                    {
-                        MessageBox.Show("El correo registrado ya se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }*/
-                    if (!addUser.Add_user(Convert.ToInt32(txt_cedula.Text), txt_nombre.Text, txt_apellido.Text, Convert.ToDateTime(pick_fecha_nacimiento.Text), txt_telefono.Text, comboBox_genero.SelectedItem.ToString(), txt_correo.Text, txt_contrasenia.Text, comboBox_cargo.SelectedItem.ToString(), txt_usuario.Text))
+                    if (!addUser.Add_user(txt_cedula.Text, txt_nombre.Text, txt_apellido.Text, Convert.ToDateTime(pick_fecha_nacimiento.Text), txt_telefono.Text, comboBox_genero.SelectedItem.ToString(), txt_correo.Text, txt_contrasenia.Text, comboBox_cargo.SelectedItem.ToString(), txt_usuario.Text))
                     {
                         MessageBox.Show("El correo registrado ya se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }

@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_InfoSpecificProgram));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -48,6 +52,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Id del programa",
@@ -55,11 +60,11 @@
             "Nombre del programa",
             "Fecha del programa",
             "Tipo del programa"});
-            this.comboBox1.Location = new System.Drawing.Point(306, 116);
+            this.comboBox1.Location = new System.Drawing.Point(230, 94);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(390, 24);
+            this.comboBox1.Size = new System.Drawing.Size(294, 21);
             this.comboBox1.TabIndex = 0;
-            this.comboBox1.Text = "-";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // panel2
@@ -69,16 +74,16 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(768, 75);
+            this.panel2.Size = new System.Drawing.Size(576, 61);
             this.panel2.TabIndex = 53;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(2, -45);
+            this.pictureBox1.Location = new System.Drawing.Point(2, -37);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(225, 158);
+            this.pictureBox1.Size = new System.Drawing.Size(169, 128);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -88,9 +93,10 @@
             this.dataOfProgram.AutoSize = true;
             this.dataOfProgram.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataOfProgram.ForeColor = System.Drawing.Color.DimGray;
-            this.dataOfProgram.Location = new System.Drawing.Point(62, 117);
+            this.dataOfProgram.Location = new System.Drawing.Point(46, 95);
+            this.dataOfProgram.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dataOfProgram.Name = "dataOfProgram";
-            this.dataOfProgram.Size = new System.Drawing.Size(140, 23);
+            this.dataOfProgram.Size = new System.Drawing.Size(115, 21);
             this.dataOfProgram.TabIndex = 54;
             this.dataOfProgram.Text = "BUSCAR POR ";
             // 
@@ -99,9 +105,10 @@
             this.datoErroneoComboBox.AutoSize = true;
             this.datoErroneoComboBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datoErroneoComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.datoErroneoComboBox.Location = new System.Drawing.Point(302, 143);
+            this.datoErroneoComboBox.Location = new System.Drawing.Point(226, 116);
+            this.datoErroneoComboBox.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.datoErroneoComboBox.Name = "datoErroneoComboBox";
-            this.datoErroneoComboBox.Size = new System.Drawing.Size(108, 20);
+            this.datoErroneoComboBox.Size = new System.Drawing.Size(88, 17);
             this.datoErroneoComboBox.TabIndex = 55;
             this.datoErroneoComboBox.Text = "Dato erróneo";
             this.datoErroneoComboBox.Visible = false;
@@ -115,13 +122,14 @@
             this.backHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.backHome.ForeColor = System.Drawing.Color.White;
-            this.backHome.Location = new System.Drawing.Point(12, 693);
-            this.backHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.backHome.Location = new System.Drawing.Point(230, 546);
+            this.backHome.Margin = new System.Windows.Forms.Padding(2);
             this.backHome.Name = "backHome";
-            this.backHome.Size = new System.Drawing.Size(101, 33);
+            this.backHome.Size = new System.Drawing.Size(84, 29);
             this.backHome.TabIndex = 57;
             this.backHome.Text = "VOLVER";
             this.backHome.UseVisualStyleBackColor = false;
+            this.backHome.Click += new System.EventHandler(this.backHome_Click);
             // 
             // bt_Search
             // 
@@ -132,10 +140,10 @@
             this.bt_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.bt_Search.ForeColor = System.Drawing.Color.White;
-            this.bt_Search.Location = new System.Drawing.Point(464, 197);
-            this.bt_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_Search.Location = new System.Drawing.Point(348, 160);
+            this.bt_Search.Margin = new System.Windows.Forms.Padding(2);
             this.bt_Search.Name = "bt_Search";
-            this.bt_Search.Size = new System.Drawing.Size(232, 33);
+            this.bt_Search.Size = new System.Drawing.Size(174, 27);
             this.bt_Search.TabIndex = 56;
             this.bt_Search.Text = "BUSCAR";
             this.bt_Search.UseVisualStyleBackColor = false;
@@ -146,9 +154,10 @@
             this.datoErroneoDataProg.AutoSize = true;
             this.datoErroneoDataProg.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datoErroneoDataProg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.datoErroneoDataProg.Location = new System.Drawing.Point(62, 228);
+            this.datoErroneoDataProg.Location = new System.Drawing.Point(46, 185);
+            this.datoErroneoDataProg.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.datoErroneoDataProg.Name = "datoErroneoDataProg";
-            this.datoErroneoDataProg.Size = new System.Drawing.Size(108, 20);
+            this.datoErroneoDataProg.Size = new System.Drawing.Size(88, 17);
             this.datoErroneoDataProg.TabIndex = 59;
             this.datoErroneoDataProg.Text = "Dato erróneo";
             this.datoErroneoDataProg.Visible = false;
@@ -159,10 +168,10 @@
             this.dataProg.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataProg.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataProg.ForeColor = System.Drawing.Color.DimGray;
-            this.dataProg.Location = new System.Drawing.Point(66, 201);
-            this.dataProg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataProg.Location = new System.Drawing.Point(50, 163);
+            this.dataProg.Margin = new System.Windows.Forms.Padding(2);
             this.dataProg.Name = "dataProg";
-            this.dataProg.Size = new System.Drawing.Size(296, 25);
+            this.dataProg.Size = new System.Drawing.Size(222, 20);
             this.dataProg.TabIndex = 58;
             this.dataProg.Visible = false;
             this.dataProg.Enter += new System.EventHandler(this.dataProg_Enter);
@@ -173,9 +182,10 @@
             this.labelComboText.AutoSize = true;
             this.labelComboText.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelComboText.ForeColor = System.Drawing.Color.DimGray;
-            this.labelComboText.Location = new System.Drawing.Point(62, 176);
+            this.labelComboText.Location = new System.Drawing.Point(46, 143);
+            this.labelComboText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelComboText.Name = "labelComboText";
-            this.labelComboText.Size = new System.Drawing.Size(0, 20);
+            this.labelComboText.Size = new System.Drawing.Size(0, 17);
             this.labelComboText.TabIndex = 60;
             // 
             // labelComboBox
@@ -183,30 +193,67 @@
             this.labelComboBox.AutoSize = true;
             this.labelComboBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelComboBox.ForeColor = System.Drawing.Color.DimGray;
-            this.labelComboBox.Location = new System.Drawing.Point(62, 176);
+            this.labelComboBox.Location = new System.Drawing.Point(46, 143);
+            this.labelComboBox.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelComboBox.Name = "labelComboBox";
-            this.labelComboBox.Size = new System.Drawing.Size(14, 20);
+            this.labelComboBox.Size = new System.Drawing.Size(12, 17);
             this.labelComboBox.TabIndex = 61;
             this.labelComboBox.Text = "-";
             this.labelComboBox.Visible = false;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 271);
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.ColumnHeadersHeight = 45;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.Location = new System.Drawing.Point(22, 213);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(121)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(704, 399);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(502, 316);
             this.dataGridView1.TabIndex = 62;
             // 
             // Form_InfoSpecificProgram
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(763, 737);
+            this.ClientSize = new System.Drawing.Size(563, 599);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.labelComboBox);
             this.Controls.Add(this.labelComboText);
@@ -218,6 +265,7 @@
             this.Controls.Add(this.dataOfProgram);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.comboBox1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_InfoSpecificProgram";
             this.Text = "Form1";
             this.panel2.ResumeLayout(false);

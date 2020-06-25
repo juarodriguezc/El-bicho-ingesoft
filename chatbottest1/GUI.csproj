@@ -76,11 +76,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form_AddPrograms_Boss.cs">
+    <Compile Include="Form_add_program.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_AddPrograms_Boss.Designer.cs">
-      <DependentUpon>Form_AddPrograms_Boss.cs</DependentUpon>
+    <Compile Include="Form_add_program.Designer.cs">
+      <DependentUpon>Form_add_program.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_InfoPersonas.cs">
       <SubType>Form</SubType>
@@ -105,6 +105,12 @@
     </Compile>
     <Compile Include="Form_ListComp.Designer.cs">
       <DependentUpon>Form_ListComp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_programas_activos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_programas_activos.Designer.cs">
+      <DependentUpon>Form_programas_activos.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_show_stock.cs">
       <SubType>Form</SubType>
@@ -175,16 +181,10 @@
     <Compile Include="UserControls\Perfil_usuario.Designer.cs">
       <DependentUpon>Perfil_usuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Principal_Menu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Principal_Menu.Designer.cs">
-      <DependentUpon>Principal_Menu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form_AddPrograms_Boss.resx">
-      <DependentUpon>Form_AddPrograms_Boss.cs</DependentUpon>
+    <EmbeddedResource Include="Form_add_program.resx">
+      <DependentUpon>Form_add_program.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_InfoPersonas.resx">
       <DependentUpon>Form_InfoPersonas.cs</DependentUpon>
@@ -197,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ListComp.resx">
       <DependentUpon>Form_ListComp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_programas_activos.resx">
+      <DependentUpon>Form_programas_activos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_show_stock.resx">
       <DependentUpon>Form_show_stock.cs</DependentUpon>
@@ -233,9 +236,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Perfil_usuario.resx">
       <DependentUpon>Perfil_usuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Principal_Menu.resx">
-      <DependentUpon>Principal_Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -34,5 +34,20 @@ namespace chatbottest1
         {
             MostrarProductosStock();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbl_title_stock_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGrid_stock_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

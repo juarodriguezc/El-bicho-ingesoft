@@ -30,5 +30,10 @@ namespace chatbottest1
         {
 
         }
+
+        private void bt_editar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
