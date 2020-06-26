@@ -101,7 +101,6 @@ namespace Data
                     mailD = reader.GetString(0);
                 }
             }
-            
             return mailD;
         }
     }

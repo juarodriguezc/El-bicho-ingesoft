@@ -114,6 +114,44 @@ namespace Data
             connection.Close();
             return tabla;
         }
+        public DataTable MostrarProgramaEspecifico(int idP, int idC, string nomP, DateTime fechaIn, string typeP)
+        {
+            DataTable tabla = new DataTable();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
 
+            if (idP != 0)
+            {
+                command.Parameters.AddWithValue("@data", idP);
+                command.CommandText = "SELECT * FROM PROGRAMA WHERE Id_programa = @data";
+            }
+            else if (idC != 0)
+            {
+                command.Parameters.AddWithValue("@data", idC);
+                command.CommandText = "SELECT * FROM PROGRAMA WHERE Id_compania = @data";
+            }
+            else if (nomP != null)
+            {
+                command.Parameters.AddWithValue("@data", nomP);
+                command.CommandText = "SELECT * FROM PROGRAMA WHERE Nombre_programa = @data";
+            }
+            else if (fechaIn != DateTime.MinValue)
+            {
+                command.Parameters.AddWithValue("@data", fechaIn);
+                command.CommandText = "SELECT * FROM PROGRAMA WHERE Fecha_programa = @data";
+            }
+            else if (typeP != null)
+            {
+                command.Parameters.AddWithValue("@data", typeP);
+                command.CommandText = "SELECT * FROM PROGRAMA WHERE Tipo_programa = @data";
+            }
+
+            MySqlDataReader reader = command.ExecuteReader();
+            tabla.Load(reader);
+            connection.Close();
+            return tabla;
+        }
     }
 }
