@@ -164,5 +164,10 @@ namespace chatbottest1.UserControls
                 formDate.Show();
             }
         }
+
+        private void lbl_fecha_actual_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

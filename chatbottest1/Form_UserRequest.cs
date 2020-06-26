@@ -161,5 +161,10 @@ namespace chatbottest1
         {
             llenarDirectivos();
         }
+
+        private void comboBox_directivo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

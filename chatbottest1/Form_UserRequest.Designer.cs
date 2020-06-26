@@ -189,6 +189,7 @@
             this.comboBox_directivo.Name = "comboBox_directivo";
             this.comboBox_directivo.Size = new System.Drawing.Size(392, 29);
             this.comboBox_directivo.TabIndex = 72;
+            this.comboBox_directivo.SelectedIndexChanged += new System.EventHandler(this.comboBox_directivo_SelectedIndexChanged);
             // 
             // comboBox_tipo_solicitud
             // 
