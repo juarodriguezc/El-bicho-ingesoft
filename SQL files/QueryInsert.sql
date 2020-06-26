@@ -1,14 +1,22 @@
+DELETE FROM PERSONAS;
+/*==============================================================*/
+/* Table: PERSONA 						*/
+/*==============================================================*/
+INSERT INTO PERSONA VALUES('1',NULL,'admin','man','1890-07-26','696969','Masculino','@dmin','Barrancabermeja','Trabajador');
+
+
 /*==============================================================*/
 /* Table: USUARIO                                               */
 /*==============================================================*/
 DELETE FROM REG_ACCESO;
 DELETE FROM USUARIO;
-INSERT INTO USUARIO VALUES('juanse260726@gmail.com','Sebastian','Rodriguez','2001-07-26','Juli1804','Empleado');
-INSERT INTO USUARIO VALUES('juanse979@hotmail.com','Sebastian','Rodriguez','2001-07-26','Juli1804','Jefe de área');
-INSERT INTO USUARIO VALUES('@','Sebastian','Rodriguez','2001-07-26','1234','Administrador');
+INSERT INTO USUARIO (Id_persona,Nickname,Contrasenia,Rol_empresa)VALUES('1','@','123','Administrador');
 SELECT * FROM USUARIO;
 
-
+/*==============================================================*/
+/* Table: PERSONA - UPDATE 					*/
+/*==============================================================*/
+UPDATE PERSONA SET Id_usuario = 1 WHERE Id_persona = '1';
 
 
 /*==============================================================*/
@@ -26,9 +34,21 @@ INSERT INTO FUNCIONES VALUES (4,'Find_user');
 INSERT INTO FUNCIONES VALUES (5,'Show_users');
 INSERT INTO FUNCIONES VALUES (6,'Thanks');
 INSERT INTO FUNCIONES VALUES (7,'Smile');
-INSERT INTO FUNCIONES VALUES (8, "Reg_conversacion");
-INSERT INTO FUNCIONES VALUES (80,'El bicho siuu');
+INSERT INTO FUNCIONES VALUES (8,'Reg_conversacion');
+INSERT INTO FUNCIONES VALUES (9,'Info_specific_program');
+INSERT INTO FUNCIONES VALUES (10,'User_request');
+INSERT INTO FUNCIONES VALUES (11,'Show_company');
+INSERT INTO FUNCIONES VALUES (12,'Show_personas_info');
+INSERT INTO FUNCIONES VALUES (13,'Add_program');
+INSERT INTO FUNCIONES VALUES (14,'Search_foreign_volunteers');
+INSERT INTO FUNCIONES VALUES (15,'Search_program_by_person');
+INSERT INTO FUNCIONES VALUES (16,'Add_volunter');
 INSERT INTO FUNCIONES VALUES (17,'Show_stock');
+INSERT INTO FUNCIONES VALUES (18,'Show_calendar');
+INSERT INTO FUNCIONES VALUES (19,'Add_event');
+INSERT INTO FUNCIONES VALUES (20,'Show_user_info');
+INSERT INTO FUNCIONES VALUES (80,'El bicho siuu');
+
 SELECT * FROM FUNCIONES;
 
 
@@ -67,13 +87,23 @@ INSERT INTO MENSAJE VALUES (7,27,':D ');
 INSERT INTO MENSAJE VALUES (7,28,':D :D :D ;D ');
 INSERT INTO MENSAJE VALUES (7,29,'	\(^o^)/');
 INSERT INTO MENSAJE VALUES (8,30,'Ok * Mostrar el registro de las conversaciones');
+INSERT INTO MENSAJE VALUES (9,31,'Ok * Voy a mostrar la información del programa que selecciones');
+INSERT INTO MENSAJE VALUES (10,32,'Ok * Voy a deplegar un formulario para que realices tu solicitud');
+INSERT INTO MENSAJE VALUES (11,33,'Ok * Te voy a mostrar la información de las compañias asociadas');
+INSERT INTO MENSAJE VALUES (12,34,'Listo * 'Voy a mostrar la información de las personas registradas');
+INSERT INTO MENSAJE VALUES (13,35,'Entiendo,voy a mostrar un formulario para que añadas un programa');
+INSERT INTO MENSAJE VALUES (14,36,'Ok * Voy a desplegar una ventana con las personas extranjeras');
+INSERT INTO MENSAJE VALUES (15,37,'Bueno* Voy a desplegar una ventana para que busques los programas en los que ha participado una persona');
+INSERT INTO MENSAJE VALUES (16,38,'Ok * Voy a mostrar un formulario para que añadas una voluntario');
+INSERT INTO MENSAJE VALUES (17,39,'Mostrare los productos en bodega');
+INSERT INTO MENSAJE VALUES (17,40,'Ok. Voy a mostrar un tabla con los productos en bodega');
+INSERT INTO MENSAJE VALUES (18,41,'Ok, voy a mostrar el calendario');
+INSERT INTO MENSAJE VALUES (19,42,'De acuerdo* Voy a mostrar un formulario para que añadas un evento');
+INSERT INTO MENSAJE VALUES (20,43,'Ok* Voy a mostrarte la información de los usuarios');
 INSERT INTO MENSAJE VALUES (80,100,'SIUUUUUUUUUUUUUU');
 INSERT INTO MENSAJE VALUES (80,101,'¡Ay mi madre el BICHO!');
 INSERT INTO MENSAJE VALUES (80,102,'Mico Mandante SIUUUU');
 
-
-INSERT INTO MENSAJE VALUES (17,39,'Mostrare los productos en bodega');
-INSERT INTO MENSAJE VALUES (17,40,'Ok. Voy a mostrar un tabla con los productos en bodega');
 
 /*==============================================================*/
 /* Table: PRODUCTO                                              */

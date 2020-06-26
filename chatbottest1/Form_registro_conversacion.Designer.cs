@@ -36,23 +36,23 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lbl_title = new System.Windows.Forms.Label();
             this.panel_busqueda = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbl_busca = new System.Windows.Forms.Label();
-            this.txt_correo = new System.Windows.Forms.TextBox();
-            this.bt_volver_chatbot = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txt_correo = new System.Windows.Forms.TextBox();
+            this.lbl_busca = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bt_volver_chatbot = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel_busqueda.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -78,7 +78,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(14, 156);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -126,90 +126,6 @@
             this.panel_busqueda.Size = new System.Drawing.Size(298, 606);
             this.panel_busqueda.TabIndex = 9;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(983, 75);
-            this.panel2.TabIndex = 5;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(2, -45);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(225, 158);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lbl_busca
-            // 
-            this.lbl_busca.AutoSize = true;
-            this.lbl_busca.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_busca.ForeColor = System.Drawing.Color.White;
-            this.lbl_busca.Location = new System.Drawing.Point(110, 135);
-            this.lbl_busca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_busca.Name = "lbl_busca";
-            this.lbl_busca.Size = new System.Drawing.Size(175, 24);
-            this.lbl_busca.TabIndex = 10;
-            this.lbl_busca.Text = "Filtrar por correo";
-            // 
-            // txt_correo
-            // 
-            this.txt_correo.BackColor = System.Drawing.Color.White;
-            this.txt_correo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_correo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_correo.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_correo.Location = new System.Drawing.Point(3, 0);
-            this.txt_correo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_correo.Name = "txt_correo";
-            this.txt_correo.Size = new System.Drawing.Size(254, 20);
-            this.txt_correo.TabIndex = 11;
-            this.txt_correo.Text = "CORREO";
-            this.txt_correo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // bt_volver_chatbot
-            // 
-            this.bt_volver_chatbot.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bt_volver_chatbot.FlatAppearance.BorderSize = 0;
-            this.bt_volver_chatbot.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.bt_volver_chatbot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bt_volver_chatbot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_volver_chatbot.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.bt_volver_chatbot.ForeColor = System.Drawing.Color.LightGray;
-            this.bt_volver_chatbot.Location = new System.Drawing.Point(14, 42);
-            this.bt_volver_chatbot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bt_volver_chatbot.Name = "bt_volver_chatbot";
-            this.bt_volver_chatbot.Size = new System.Drawing.Size(79, 33);
-            this.bt_volver_chatbot.TabIndex = 47;
-            this.bt_volver_chatbot.Text = "VOLVER";
-            this.bt_volver_chatbot.UseVisualStyleBackColor = false;
-            this.bt_volver_chatbot.Click += new System.EventHandler(this.bt_volver_chatbot_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.lbl_title);
-            this.panel1.Controls.Add(this.bt_volver_chatbot);
-            this.panel1.Location = new System.Drawing.Point(0, 75);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(690, 600);
-            this.panel1.TabIndex = 48;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.txt_correo);
-            this.panel3.Location = new System.Drawing.Point(26, 198);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(260, 25);
-            this.panel3.TabIndex = 12;
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
@@ -247,6 +163,90 @@
             this.label1.Text = "Filtrar por nombre";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.txt_correo);
+            this.panel3.Location = new System.Drawing.Point(26, 198);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(260, 25);
+            this.panel3.TabIndex = 12;
+            // 
+            // txt_correo
+            // 
+            this.txt_correo.BackColor = System.Drawing.Color.White;
+            this.txt_correo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_correo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_correo.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_correo.Location = new System.Drawing.Point(3, 0);
+            this.txt_correo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_correo.Name = "txt_correo";
+            this.txt_correo.Size = new System.Drawing.Size(254, 20);
+            this.txt_correo.TabIndex = 11;
+            this.txt_correo.Text = "CORREO";
+            this.txt_correo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbl_busca
+            // 
+            this.lbl_busca.AutoSize = true;
+            this.lbl_busca.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_busca.ForeColor = System.Drawing.Color.White;
+            this.lbl_busca.Location = new System.Drawing.Point(110, 135);
+            this.lbl_busca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_busca.Name = "lbl_busca";
+            this.lbl_busca.Size = new System.Drawing.Size(175, 24);
+            this.lbl_busca.TabIndex = 10;
+            this.lbl_busca.Text = "Filtrar por correo";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Location = new System.Drawing.Point(0, -5);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(983, 75);
+            this.panel2.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(2, -45);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(225, 158);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // bt_volver_chatbot
+            // 
+            this.bt_volver_chatbot.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.bt_volver_chatbot.FlatAppearance.BorderSize = 0;
+            this.bt_volver_chatbot.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.bt_volver_chatbot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bt_volver_chatbot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_volver_chatbot.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.bt_volver_chatbot.ForeColor = System.Drawing.Color.LightGray;
+            this.bt_volver_chatbot.Location = new System.Drawing.Point(14, 42);
+            this.bt_volver_chatbot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_volver_chatbot.Name = "bt_volver_chatbot";
+            this.bt_volver_chatbot.Size = new System.Drawing.Size(79, 33);
+            this.bt_volver_chatbot.TabIndex = 47;
+            this.bt_volver_chatbot.Text = "VOLVER";
+            this.bt_volver_chatbot.UseVisualStyleBackColor = false;
+            this.bt_volver_chatbot.Click += new System.EventHandler(this.bt_volver_chatbot_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.lbl_title);
+            this.panel1.Controls.Add(this.bt_volver_chatbot);
+            this.panel1.Location = new System.Drawing.Point(0, 75);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(690, 600);
+            this.panel1.TabIndex = 48;
+            // 
             // Form_registro_conversacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -257,7 +257,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel_busqueda);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_registro_conversacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro conversaciones";
@@ -265,14 +265,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel_busqueda.ResumeLayout(false);
             this.panel_busqueda.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
