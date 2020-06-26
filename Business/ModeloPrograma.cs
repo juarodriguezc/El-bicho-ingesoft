@@ -26,5 +26,11 @@ namespace Business
         {
             return programa.programaActivos();
         }
+
+        public DataTable MostrarInfoProgramaEspc(int idP, int idC, string nomP, DateTime fechaIn, string typeP)
+        {
+            return programa.MostrarProgramaEspecifico(idP, idC, nomP, fechaIn, typeP);
+        }
+
     }
 }

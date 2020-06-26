@@ -14,7 +14,8 @@ namespace chatbottest1
     public partial class Form_InfoSpecificProgram : Form
     {
         private string comboSelect;
-        ModeloUsuario showSpePro = new ModeloUsuario();
+        //ModeloUsuario showSpePro = new ModeloUsuario();
+        ModeloPrograma programa = new ModeloPrograma();
 
         //Verificacion de campos
         private bool verificarComboBox()
@@ -46,7 +47,7 @@ namespace chatbottest1
 
         private void MostrarInformacionProgramaEspecifico(int idP, int idC, string nomP, DateTime fechaIn, string typeP)
         {
-            dataGridView1.DataSource = showSpePro.MostrarInfoProgramaEspc( idP, idC, nomP, fechaIn, typeP);
+            dataGridView1.DataSource = programa.MostrarInfoProgramaEspc( idP, idC, nomP, fechaIn, typeP);
         }
 
         private void dataProg_Enter(object sender, EventArgs e)
