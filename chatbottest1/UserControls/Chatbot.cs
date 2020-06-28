@@ -209,7 +209,8 @@ namespace chatbottest1
                     Form_add_volunteer addVol = new Form_add_volunteer();
                     addVol.Show();
                     Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
-                    sesion.create_reg_function(16, SesionCache.Id_acceso);   
+                    sesion.create_reg_function(16, SesionCache.Id_acceso);
+                    return true;
                 case "El bicho siuu":
                     procesarRespuesta(rta_fin);
                     sesion.create_reg_function(80, SesionCache.Id_acceso);

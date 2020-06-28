@@ -59,7 +59,7 @@
             this.dato_erroneo_telefono.AutoSize = true;
             this.dato_erroneo_telefono.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dato_erroneo_telefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.dato_erroneo_telefono.Location = new System.Drawing.Point(23, 327);
+            this.dato_erroneo_telefono.Location = new System.Drawing.Point(23, 358);
             this.dato_erroneo_telefono.Name = "dato_erroneo_telefono";
             this.dato_erroneo_telefono.Size = new System.Drawing.Size(88, 17);
             this.dato_erroneo_telefono.TabIndex = 61;
@@ -72,7 +72,7 @@
             this.txt_telefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_telefono.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_telefono.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_telefono.Location = new System.Drawing.Point(24, 298);
+            this.txt_telefono.Location = new System.Drawing.Point(24, 329);
             this.txt_telefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(213, 20);
@@ -87,7 +87,7 @@
             this.comboBox_genero.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
-            this.comboBox_genero.Location = new System.Drawing.Point(233, 357);
+            this.comboBox_genero.Location = new System.Drawing.Point(233, 388);
             this.comboBox_genero.Name = "comboBox_genero";
             this.comboBox_genero.Size = new System.Drawing.Size(227, 29);
             this.comboBox_genero.TabIndex = 59;
@@ -97,7 +97,7 @@
             this.lbl_genero.AutoSize = true;
             this.lbl_genero.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_genero.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_genero.Location = new System.Drawing.Point(22, 360);
+            this.lbl_genero.Location = new System.Drawing.Point(22, 391);
             this.lbl_genero.Name = "lbl_genero";
             this.lbl_genero.Size = new System.Drawing.Size(78, 21);
             this.lbl_genero.TabIndex = 58;
@@ -108,7 +108,7 @@
             this.dato_erroneo_cedula.AutoSize = true;
             this.dato_erroneo_cedula.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dato_erroneo_cedula.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.dato_erroneo_cedula.Location = new System.Drawing.Point(19, 116);
+            this.dato_erroneo_cedula.Location = new System.Drawing.Point(19, 147);
             this.dato_erroneo_cedula.Name = "dato_erroneo_cedula";
             this.dato_erroneo_cedula.Size = new System.Drawing.Size(88, 17);
             this.dato_erroneo_cedula.TabIndex = 57;
@@ -121,7 +121,7 @@
             this.txt_cedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_cedula.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_cedula.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_cedula.Location = new System.Drawing.Point(22, 82);
+            this.txt_cedula.Location = new System.Drawing.Point(22, 113);
             this.txt_cedula.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_cedula.Name = "txt_cedula";
             this.txt_cedula.Size = new System.Drawing.Size(206, 20);
@@ -133,7 +133,7 @@
             this.dato_erroneo_email.AutoSize = true;
             this.dato_erroneo_email.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dato_erroneo_email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.dato_erroneo_email.Location = new System.Drawing.Point(23, 231);
+            this.dato_erroneo_email.Location = new System.Drawing.Point(23, 262);
             this.dato_erroneo_email.Name = "dato_erroneo_email";
             this.dato_erroneo_email.Size = new System.Drawing.Size(88, 17);
             this.dato_erroneo_email.TabIndex = 55;
@@ -145,7 +145,7 @@
             this.dato_erroneo_apellido.AutoSize = true;
             this.dato_erroneo_apellido.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dato_erroneo_apellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.dato_erroneo_apellido.Location = new System.Drawing.Point(250, 173);
+            this.dato_erroneo_apellido.Location = new System.Drawing.Point(250, 204);
             this.dato_erroneo_apellido.Name = "dato_erroneo_apellido";
             this.dato_erroneo_apellido.Size = new System.Drawing.Size(88, 17);
             this.dato_erroneo_apellido.TabIndex = 54;
@@ -157,7 +157,7 @@
             this.dato_erroneo_nombre.AutoSize = true;
             this.dato_erroneo_nombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dato_erroneo_nombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.dato_erroneo_nombre.Location = new System.Drawing.Point(21, 173);
+            this.dato_erroneo_nombre.Location = new System.Drawing.Point(21, 204);
             this.dato_erroneo_nombre.Name = "dato_erroneo_nombre";
             this.dato_erroneo_nombre.Size = new System.Drawing.Size(88, 17);
             this.dato_erroneo_nombre.TabIndex = 53;
@@ -169,7 +169,7 @@
             this.fecha_nacimiento.AutoSize = true;
             this.fecha_nacimiento.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fecha_nacimiento.ForeColor = System.Drawing.Color.DimGray;
-            this.fecha_nacimiento.Location = new System.Drawing.Point(20, 261);
+            this.fecha_nacimiento.Location = new System.Drawing.Point(20, 292);
             this.fecha_nacimiento.Name = "fecha_nacimiento";
             this.fecha_nacimiento.Size = new System.Drawing.Size(199, 21);
             this.fecha_nacimiento.TabIndex = 52;
@@ -180,7 +180,7 @@
             this.pick_fecha_nacimiento.CustomFormat = "dd-MM-yyyy";
             this.pick_fecha_nacimiento.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pick_fecha_nacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.pick_fecha_nacimiento.Location = new System.Drawing.Point(290, 256);
+            this.pick_fecha_nacimiento.Location = new System.Drawing.Point(290, 287);
             this.pick_fecha_nacimiento.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.pick_fecha_nacimiento.Name = "pick_fecha_nacimiento";
             this.pick_fecha_nacimiento.Size = new System.Drawing.Size(169, 27);
@@ -193,7 +193,7 @@
             this.txt_correo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_correo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_correo.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_correo.Location = new System.Drawing.Point(24, 202);
+            this.txt_correo.Location = new System.Drawing.Point(24, 233);
             this.txt_correo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_correo.Name = "txt_correo";
             this.txt_correo.Size = new System.Drawing.Size(434, 20);
@@ -206,7 +206,7 @@
             this.txt_apellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_apellido.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_apellido.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_apellido.Location = new System.Drawing.Point(253, 140);
+            this.txt_apellido.Location = new System.Drawing.Point(253, 171);
             this.txt_apellido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_apellido.Name = "txt_apellido";
             this.txt_apellido.Size = new System.Drawing.Size(222, 20);
@@ -219,7 +219,7 @@
             this.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_nombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nombre.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_nombre.Location = new System.Drawing.Point(22, 140);
+            this.txt_nombre.Location = new System.Drawing.Point(22, 171);
             this.txt_nombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(206, 20);
@@ -230,10 +230,10 @@
             // 
             this.lineShape4.BorderColor = System.Drawing.Color.DimGray;
             this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = 17;
-            this.lineShape4.X2 = 214;
-            this.lineShape4.Y1 = 106;
-            this.lineShape4.Y2 = 106;
+            this.lineShape4.X1 = 18;
+            this.lineShape4.X2 = 215;
+            this.lineShape4.Y1 = 135;
+            this.lineShape4.Y2 = 135;
             // 
             // lineShape1
             // 
@@ -241,8 +241,8 @@
             this.lineShape1.Name = "lineShape1";
             this.lineShape1.X1 = 19;
             this.lineShape1.X2 = 216;
-            this.lineShape1.Y1 = 163;
-            this.lineShape1.Y2 = 163;
+            this.lineShape1.Y1 = 194;
+            this.lineShape1.Y2 = 194;
             // 
             // lineShape2
             // 
@@ -250,8 +250,8 @@
             this.lineShape2.Name = "lineShape2";
             this.lineShape2.X1 = 249;
             this.lineShape2.X2 = 455;
-            this.lineShape2.Y1 = 162;
-            this.lineShape2.Y2 = 162;
+            this.lineShape2.Y1 = 194;
+            this.lineShape2.Y2 = 194;
             // 
             // lineShape8
             // 
@@ -259,17 +259,17 @@
             this.lineShape8.Name = "lineShape8";
             this.lineShape8.X1 = 20;
             this.lineShape8.X2 = 420;
-            this.lineShape8.Y1 = 226;
-            this.lineShape8.Y2 = 226;
+            this.lineShape8.Y1 = 258;
+            this.lineShape8.Y2 = 258;
             // 
             // lineShape3
             // 
             this.lineShape3.BorderColor = System.Drawing.Color.DimGray;
             this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 18;
-            this.lineShape3.X2 = 210;
-            this.lineShape3.Y1 = 322;
-            this.lineShape3.Y2 = 322;
+            this.lineShape3.X1 = 21;
+            this.lineShape3.X2 = 213;
+            this.lineShape3.Y1 = 353;
+            this.lineShape3.Y2 = 353;
             // 
             // shapeContainer1
             // 
@@ -291,12 +291,12 @@
             this.lbl_addUser.AutoSize = true;
             this.lbl_addUser.Font = new System.Drawing.Font("Century Gothic", 31.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_addUser.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_addUser.Location = new System.Drawing.Point(55, 31);
+            this.lbl_addUser.Location = new System.Drawing.Point(13, 31);
             this.lbl_addUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_addUser.Name = "lbl_addUser";
-            this.lbl_addUser.Size = new System.Drawing.Size(380, 49);
+            this.lbl_addUser.Size = new System.Drawing.Size(465, 49);
             this.lbl_addUser.TabIndex = 63;
-            this.lbl_addUser.Text = "AÑADIR USUARIO";
+            this.lbl_addUser.Text = "AÑADIR VOLUNTARIO";
             this.lbl_addUser.Click += new System.EventHandler(this.lbl_addUser_Click);
             // 
             // backHome
@@ -308,13 +308,14 @@
             this.backHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.backHome.ForeColor = System.Drawing.Color.LightGray;
-            this.backHome.Location = new System.Drawing.Point(58, 411);
+            this.backHome.Location = new System.Drawing.Point(58, 509);
             this.backHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backHome.Name = "backHome";
             this.backHome.Size = new System.Drawing.Size(101, 33);
             this.backHome.TabIndex = 69;
             this.backHome.Text = "VOLVER";
             this.backHome.UseVisualStyleBackColor = false;
+            this.backHome.Click += new System.EventHandler(this.backHome_Click);
             // 
             // bt_adduser
             // 
@@ -325,7 +326,7 @@
             this.bt_adduser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_adduser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.bt_adduser.ForeColor = System.Drawing.Color.LightGray;
-            this.bt_adduser.Location = new System.Drawing.Point(233, 411);
+            this.bt_adduser.Location = new System.Drawing.Point(233, 509);
             this.bt_adduser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_adduser.Name = "bt_adduser";
             this.bt_adduser.Size = new System.Drawing.Size(232, 33);
@@ -372,7 +373,7 @@
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.shapeContainer1);
             this.Name = "Form_add_volunteer";
-            this.Text = " ";
+            this.Text = " Añadir voluntario";
             this.ResumeLayout(false);
             this.PerformLayout();
 
