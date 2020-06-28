@@ -14,8 +14,6 @@ namespace Business
         {
             return volunteerDao.Add_volunteer(id_persona, nombre, apellido, fecha_nacimiento, telefono, genero, correo);
         }
-
-
         public DataTable MostrarVoluntarios()
         {
             return volunteerDao.MostrarVoluntarios();
