@@ -199,6 +199,12 @@ namespace chatbottest1
                     sesion.create_reg_function(17, SesionCache.Id_acceso);
                     show_stock.Show();
                     return true;
+                case "Add_volunteer":
+                    Form_add_volunteer addVol = new Form_add_volunteer();
+                    addVol.Show();
+                    Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
+                    sesion.create_reg_function(16, SesionCache.Id_acceso);
+                    return true;
                 default:
                     return true;
             }

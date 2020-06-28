@@ -82,6 +82,12 @@
     <Compile Include="Form_add_program.Designer.cs">
       <DependentUpon>Form_add_program.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_add_volunteer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_add_volunteer.Designer.cs">
+      <DependentUpon>Form_add_volunteer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_InfoPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form_add_program.resx">
       <DependentUpon>Form_add_program.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_add_volunteer.resx">
+      <DependentUpon>Form_add_volunteer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_InfoPersonas.resx">
       <DependentUpon>Form_InfoPersonas.cs</DependentUpon>
