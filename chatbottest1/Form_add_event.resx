@@ -120,9 +120,9 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bt_adduser.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAABBSURBVFhH7dIxCgAgFMPQ3v/SumR3sHwQ8zZBagYjPW2B4zzeN8AAAwzoB7Bbx/wZ9+uY72HX
-        T2iAAQZ8HCDdSzYZRU7AU4PQAAAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAEFJREFUWEft
+        0jEKACAUw9De/9K6ZHewfBDzNkFqBiM9bYHjPN43wAADDOgHsFvH/Bn365jvYddPaIABBnwcIN1LNhlF
+        TsBTg9AAAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

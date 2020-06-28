@@ -166,5 +166,10 @@ namespace chatbottest1
         {
 
         }
+
+        private void comboBox_tipo_solicitud_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -19,5 +19,9 @@ namespace Business
             return eventos.ConsultarProxEvento(id_usuario);
 
         }
+        public List<string[]> ShowUsersCargo()
+        {
+            return eventos.ShowUsersCargo();
+        }
     }
 }
