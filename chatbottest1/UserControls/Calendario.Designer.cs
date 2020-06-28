@@ -33,13 +33,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_contenido = new System.Windows.Forms.Panel();
+            this.lbl_seleccione = new System.Windows.Forms.Label();
             this.BtnInfoProgramDate = new System.Windows.Forms.Button();
             this.bt_todos_eventos = new System.Windows.Forms.Button();
             this.bt_add_event = new System.Windows.Forms.Button();
             this.panel_next_event = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbl_asunto_proximo = new System.Windows.Forms.Label();
-            this.lbl_hora_proxima = new System.Windows.Forms.Label();
             this.lbl_fecha_proximo = new System.Windows.Forms.Label();
             this.lbl_no_prox = new System.Windows.Forms.Label();
             this.lbl_proximo_evento = new System.Windows.Forms.Label();
@@ -56,7 +56,6 @@
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.bt_volver_chatbot = new System.Windows.Forms.Button();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
-            this.lbl_seleccione = new System.Windows.Forms.Label();
             this.calendar_events = new CalendarioPersonalizado();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,7 +71,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(983, 75);
             this.panel1.TabIndex = 47;
@@ -81,7 +80,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(2, -45);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(225, 158);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -103,6 +102,18 @@
             this.panel_contenido.Name = "panel_contenido";
             this.panel_contenido.Size = new System.Drawing.Size(983, 591);
             this.panel_contenido.TabIndex = 48;
+            this.panel_contenido.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_contenido_Paint);
+            // 
+            // lbl_seleccione
+            // 
+            this.lbl_seleccione.AutoSize = true;
+            this.lbl_seleccione.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_seleccione.ForeColor = System.Drawing.Color.DimGray;
+            this.lbl_seleccione.Location = new System.Drawing.Point(600, 331);
+            this.lbl_seleccione.Name = "lbl_seleccione";
+            this.lbl_seleccione.Size = new System.Drawing.Size(338, 24);
+            this.lbl_seleccione.TabIndex = 66;
+            this.lbl_seleccione.Text = "Seleccione la fecha a consultar";
             // 
             // BtnInfoProgramDate
             // 
@@ -113,10 +124,10 @@
             this.BtnInfoProgramDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnInfoProgramDate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnInfoProgramDate.ForeColor = System.Drawing.Color.White;
-            this.BtnInfoProgramDate.Location = new System.Drawing.Point(636, 536);
+            this.BtnInfoProgramDate.Location = new System.Drawing.Point(634, 482);
             this.BtnInfoProgramDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnInfoProgramDate.Name = "BtnInfoProgramDate";
-            this.BtnInfoProgramDate.Size = new System.Drawing.Size(259, 33);
+            this.BtnInfoProgramDate.Size = new System.Drawing.Size(268, 33);
             this.BtnInfoProgramDate.TabIndex = 66;
             this.BtnInfoProgramDate.Text = "PROGRAMAS POR FECHA";
             this.BtnInfoProgramDate.UseVisualStyleBackColor = false;
@@ -131,13 +142,14 @@
             this.bt_todos_eventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_todos_eventos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_todos_eventos.ForeColor = System.Drawing.Color.White;
-            this.bt_todos_eventos.Location = new System.Drawing.Point(636, 457);
+            this.bt_todos_eventos.Location = new System.Drawing.Point(634, 427);
             this.bt_todos_eventos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_todos_eventos.Name = "bt_todos_eventos";
-            this.bt_todos_eventos.Size = new System.Drawing.Size(260, 33);
+            this.bt_todos_eventos.Size = new System.Drawing.Size(268, 33);
             this.bt_todos_eventos.TabIndex = 65;
             this.bt_todos_eventos.Text = "VER EVENTOS PROGRAMADOS";
             this.bt_todos_eventos.UseVisualStyleBackColor = false;
+            this.bt_todos_eventos.Click += new System.EventHandler(this.bt_todos_eventos_Click);
             // 
             // bt_add_event
             // 
@@ -148,13 +160,14 @@
             this.bt_add_event.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_add_event.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_add_event.ForeColor = System.Drawing.Color.White;
-            this.bt_add_event.Location = new System.Drawing.Point(637, 351);
+            this.bt_add_event.Location = new System.Drawing.Point(634, 372);
             this.bt_add_event.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_add_event.Name = "bt_add_event";
-            this.bt_add_event.Size = new System.Drawing.Size(258, 33);
+            this.bt_add_event.Size = new System.Drawing.Size(268, 33);
             this.bt_add_event.TabIndex = 64;
             this.bt_add_event.Text = "AÑADIR EVENTO";
             this.bt_add_event.UseVisualStyleBackColor = false;
+            this.bt_add_event.Click += new System.EventHandler(this.bt_add_event_Click_1);
             // 
             // panel_next_event
             // 
@@ -163,14 +176,13 @@
             this.panel_next_event.Controls.Add(this.lbl_proximo_evento);
             this.panel_next_event.Location = new System.Drawing.Point(634, 58);
             this.panel_next_event.Name = "panel_next_event";
-            this.panel_next_event.Size = new System.Drawing.Size(268, 276);
+            this.panel_next_event.Size = new System.Drawing.Size(268, 252);
             this.panel_next_event.TabIndex = 63;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.panel3.Controls.Add(this.lbl_asunto_proximo);
-            this.panel3.Controls.Add(this.lbl_hora_proxima);
             this.panel3.Controls.Add(this.lbl_fecha_proximo);
             this.panel3.Controls.Add(this.lbl_no_prox);
             this.panel3.Location = new System.Drawing.Point(0, 67);
@@ -180,24 +192,13 @@
             // 
             // lbl_asunto_proximo
             // 
-            this.lbl_asunto_proximo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_asunto_proximo.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_asunto_proximo.ForeColor = System.Drawing.Color.White;
             this.lbl_asunto_proximo.Location = new System.Drawing.Point(6, 76);
             this.lbl_asunto_proximo.Name = "lbl_asunto_proximo";
             this.lbl_asunto_proximo.Size = new System.Drawing.Size(252, 96);
             this.lbl_asunto_proximo.TabIndex = 2;
             this.lbl_asunto_proximo.Text = "Evento reunión de prueba ";
-            // 
-            // lbl_hora_proxima
-            // 
-            this.lbl_hora_proxima.AutoSize = true;
-            this.lbl_hora_proxima.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_hora_proxima.ForeColor = System.Drawing.Color.White;
-            this.lbl_hora_proxima.Location = new System.Drawing.Point(3, 41);
-            this.lbl_hora_proxima.Name = "lbl_hora_proxima";
-            this.lbl_hora_proxima.Size = new System.Drawing.Size(108, 17);
-            this.lbl_hora_proxima.TabIndex = 1;
-            this.lbl_hora_proxima.Text = "a las 12:00 a.m.";
             // 
             // lbl_fecha_proximo
             // 
@@ -241,10 +242,10 @@
             this.bt_modificar_eventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_modificar_eventos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_modificar_eventos.ForeColor = System.Drawing.Color.White;
-            this.bt_modificar_eventos.Location = new System.Drawing.Point(638, 406);
+            this.bt_modificar_eventos.Location = new System.Drawing.Point(634, 537);
             this.bt_modificar_eventos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_modificar_eventos.Name = "bt_modificar_eventos";
-            this.bt_modificar_eventos.Size = new System.Drawing.Size(258, 33);
+            this.bt_modificar_eventos.Size = new System.Drawing.Size(268, 33);
             this.bt_modificar_eventos.TabIndex = 62;
             this.bt_modificar_eventos.Text = "MODIFICAR EVENTOS";
             this.bt_modificar_eventos.UseVisualStyleBackColor = false;
@@ -384,17 +385,6 @@
             this.horafecha.Enabled = true;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
             // 
-            // lbl_seleccione
-            // 
-            this.lbl_seleccione.AutoSize = true;
-            this.lbl_seleccione.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_seleccione.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_seleccione.Location = new System.Drawing.Point(596, 501);
-            this.lbl_seleccione.Name = "lbl_seleccione";
-            this.lbl_seleccione.Size = new System.Drawing.Size(338, 24);
-            this.lbl_seleccione.TabIndex = 66;
-            this.lbl_seleccione.Text = "Seleccione la fecha a consultar";
-            // 
             // calendar_events
             // 
             this.calendar_events.BackColor = System.Drawing.Color.White;
@@ -465,7 +455,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button bt_todos_eventos;
         private System.Windows.Forms.Label lbl_asunto_proximo;
-        private System.Windows.Forms.Label lbl_hora_proxima;
         private System.Windows.Forms.Label lbl_fecha_proximo;
         private System.Windows.Forms.Label lbl_no_prox;
         private System.Windows.Forms.Button BtnInfoProgramDate;

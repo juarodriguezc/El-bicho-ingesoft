@@ -23,5 +23,9 @@ namespace Business
         {
             return eventos.ShowUsersCargo();
         }
+        public void createEvent(string id_owner, List<string> list_invitados, string asunto, DateTime fecha_evento)
+        {
+            eventos.createEvent(id_owner, list_invitados, asunto, fecha_evento);
+        }
     }
 }

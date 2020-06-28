@@ -97,8 +97,8 @@
             this.lineShape1.Name = "lineShape1";
             this.lineShape1.X1 = 29;
             this.lineShape1.X2 = 226;
-            this.lineShape1.Y1 = 172;
-            this.lineShape1.Y2 = 172;
+            this.lineShape1.Y1 = 175;
+            this.lineShape1.Y2 = 175;
             // 
             // shapeContainer1
             // 
@@ -178,8 +178,8 @@
             this.lineShape2.Name = "lineShape2";
             this.lineShape2.X1 = 258;
             this.lineShape2.X2 = 464;
-            this.lineShape2.Y1 = 172;
-            this.lineShape2.Y2 = 172;
+            this.lineShape2.Y1 = 175;
+            this.lineShape2.Y2 = 175;
             // 
             // txt_apellido
             // 
