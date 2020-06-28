@@ -205,6 +205,11 @@ namespace chatbottest1
                         add_event.Show();
                     }
                     return false;
+                 case "Add_volunteer":
+                    Form_add_volunteer addVol = new Form_add_volunteer();
+                    addVol.Show();
+                    Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
+                    sesion.create_reg_function(16, SesionCache.Id_acceso);   
                 case "El bicho siuu":
                     procesarRespuesta(rta_fin);
                     sesion.create_reg_function(80, SesionCache.Id_acceso);
