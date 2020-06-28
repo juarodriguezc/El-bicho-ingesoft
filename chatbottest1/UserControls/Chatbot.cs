@@ -190,14 +190,21 @@ namespace chatbottest1
                 case "Show_calendar":
                     Form_menu_principal.Instance.getButton_calendario().PerformClick();        
                     return true;
-                case "El bicho siuu":
-                    sesion.create_reg_function(80, SesionCache.Id_acceso);
-                    add_image(7);
-                    return true;
                 case "Show_stock":        
                     Form_show_stock show_stock = new Form_show_stock();
                     sesion.create_reg_function(17, SesionCache.Id_acceso);
                     show_stock.Show();
+                    return true;
+                case "Add_event":
+                    if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area) {
+                        Form_add_event add_event = new Form_add_event();
+                        //sesion.create_reg_function()
+                        add_event.Show();
+                    }
+                    return false;
+                case "El bicho siuu":
+                    sesion.create_reg_function(80, SesionCache.Id_acceso);
+                    add_image(7);
                     return true;
                 default:
                     return true;
@@ -397,6 +404,11 @@ namespace chatbottest1
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_chat_bar_Paint(object sender, PaintEventArgs e)
         {
 
         }

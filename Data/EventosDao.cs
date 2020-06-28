@@ -2,6 +2,8 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Linq;
 using System.Text;
 
 namespace Data
@@ -74,6 +76,32 @@ namespace Data
             }
             connection.Close();
             return prox;
+        }
+        public List<string[]> ShowUsersCargo()
+        {
+            List<String[]> UsersCargo = new List<string[]>();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "SELECT P.NOMBRE_PERSONA, P.APELLIDO_PERSONA, U.ROL_EMPRESA, P.ID_PERSONA FROM PERSONA as P," +
+                " USUARIO as U WHERE P.ID_PERSONA=U.ID_PERSONA";
+            command.CommandType = CommandType.Text;
+            MySqlDataReader reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    string[] usu = new string[2];
+                    usu[0] = reader.GetString(0) + " " + reader.GetString(1) + "-"+ reader.GetString(2).Substring(0,3);
+                    usu[1] = reader.GetString(3);
+                    UsersCargo.Add(usu);
+                }
+            }
+            reader.Close();
+            connection.Close();
+            return UsersCargo;
         }
 
     }
