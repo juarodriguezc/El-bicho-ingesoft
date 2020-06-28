@@ -722,12 +722,13 @@ namespace chatbottest1
             this.Controls.Add(this.panel_cambio_contrasenia);
             this.Controls.Add(this.panel_verificacion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "Form_login_menu";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login chatBot";
+            this.Text = "Chatbot YMCA";
             this.Load += new System.EventHandler(this.Login_menu_Load);
             this.Shown += new System.EventHandler(this.Form_login_menu_Shown);
             this.panel_logo_login.ResumeLayout(false);

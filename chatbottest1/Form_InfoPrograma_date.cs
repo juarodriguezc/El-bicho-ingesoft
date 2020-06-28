@@ -16,8 +16,8 @@ namespace chatbottest1
     {
         //ModeloUsuario usuario = new ModeloUsuario();
         ModeloPrograma programa = new ModeloPrograma();
-        
 
+        DateTime selectedDate;
         public Form_InfoPrograma_date()
         {
             InitializeComponent();
@@ -26,7 +26,8 @@ namespace chatbottest1
 
         private void MostarInformacionDeProgramaSegunFecha()
         {
-            dataGridView1.DataSource = programa.MostarInfoProgramaSegunFecha(chatbottest1.UserControls.Calendario.dateInfoProgram);
+            selectedDate = chatbottest1.UserControls.Calendario.dateInfoProgram;
+            dataGridView1.DataSource = programa.MostarInfoProgramaSegunFecha(selectedDate);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -37,6 +38,24 @@ namespace chatbottest1
         private void bt_editar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Form_InfoPrograma_date_Load(object sender, EventArgs e)
+        {
+            lbl_seleccted_date.Text = selectedDate.ToString("dd 'de' MMMM 'del' yyyy");
+            pick_fecha_nacimiento.Value = selectedDate;
+        }
+
+        private void bt_select_Click(object sender, EventArgs e)
+        {
+            selectedDate = pick_fecha_nacimiento.Value;
+            lbl_seleccted_date.Text = selectedDate.ToString("dd 'de' MMMM 'del' yyyy");
+            dataGridView1.DataSource = programa.MostarInfoProgramaSegunFecha(selectedDate);
         }
     }
 }

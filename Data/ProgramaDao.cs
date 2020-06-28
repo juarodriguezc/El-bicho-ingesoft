@@ -17,7 +17,10 @@ namespace Data
             var command = new MySqlCommand();
             command.Connection = connection;
             command.Parameters.AddWithValue("@date", date);
-            command.CommandText = "SELECT * FROM PROGRAMA WHERE Fecha_programa = @date";
+            command.CommandText = "SELECT p.Id_programa as 'Id Prog', c.NOMBRE_COMPANIA as 'Empresa asociada', " +
+                "p.Nombre_programa as 'Nombre del programa', p.Fecha_inicio as 'Fecha inicio', p.Fecha_fin as 'Fecha fin'," +
+                " p.Tipo_programa as 'Tipo de programa' FROM PROGRAMA as p ,COMPANIA as c" +
+                " WHERE c.ID_COMPANIA = p.ID_COMPANIA AND Fecha_fin >= @date AND Fecha_inicio <= @date";
             MySqlDataReader reader = command.ExecuteReader();
             tabla.Load(reader);
             connection.Close();

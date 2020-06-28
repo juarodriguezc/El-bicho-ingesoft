@@ -60,17 +60,26 @@ namespace chatbottest1.UserControls
                 DateTime fecha_proxima = DateTime.Parse(prox[0]);
                 lbl_asunto_proximo.Text = prox[2];
                 lbl_fecha_proximo.Text = fecha_proxima.ToLongDateString();
-                lbl_hora_proxima.Text = "a las "+ fecha_proxima.ToShortTimeString();
                 lbl_no_prox.Visible = false;
             }
             else 
             {
                 lbl_asunto_proximo.Visible = false;
                 lbl_fecha_proximo.Visible = false;
-                lbl_hora_proxima.Visible = false;
                 lbl_no_prox.Visible = true;
             }
-            
+            position = 10;
+            //Ocultar botones para usuarios sin acceso
+            if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area)
+            {
+                bt_add_event.Visible = true;
+                bt_modificar_eventos.Visible = true;
+            }
+            else
+            {
+                bt_add_event.Visible = false;
+                bt_modificar_eventos.Visible = false;
+            }
 
 
 
@@ -163,6 +172,27 @@ namespace chatbottest1.UserControls
                 Form_InfoPrograma_date formDate = new Form_InfoPrograma_date();
                 formDate.Show();
             }
+        }
+
+        private void lbl_fecha_actual_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_todos_eventos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_add_event_Click_1(object sender, EventArgs e)
+        {
+            Form_add_event add_event = new Form_add_event();
+            add_event.Show();
+        }
+
+        private void panel_contenido_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
