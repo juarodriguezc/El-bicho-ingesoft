@@ -17,7 +17,10 @@ namespace Data
             var command = new MySqlCommand();
             command.Connection = connection;
             command.Parameters.AddWithValue("@date", date);
-            command.CommandText = "SELECT * FROM PROGRAMA WHERE Fecha_programa = @date";
+            command.CommandText = "SELECT p.Id_programa as 'Id Prog', c.NOMBRE_COMPANIA as 'Empresa asociada', " +
+                "p.Nombre_programa as 'Nombre del programa', p.Fecha_inicio as 'Fecha inicio', p.Fecha_fin as 'Fecha fin'," +
+                " p.Tipo_programa as 'Tipo de programa' FROM PROGRAMA as p ,COMPANIA as c" +
+                " WHERE c.ID_COMPANIA = p.ID_COMPANIA AND Fecha_fin >= @date AND Fecha_inicio <= @date";
             MySqlDataReader reader = command.ExecuteReader();
             tabla.Load(reader);
             connection.Close();
@@ -114,6 +117,44 @@ namespace Data
             connection.Close();
             return tabla;
         }
+        public DataTable MostrarProgramaEspecifico(int idP, int idC, string nomP, DateTime fechaIn, string typeP)
+        {
+            DataTable tabla = new DataTable();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
 
+            if (idP != 0)
+            {
+                command.Parameters.AddWithValue("@data", idP);
+                command.CommandText = "SELECT * FROM PROGRAMA WHERE Id_programa = @data";
+            }
+            else if (idC != 0)
+            {
+                command.Parameters.AddWithValue("@data", idC);
+                command.CommandText = "SELECT * FROM PROGRAMA WHERE Id_compania = @data";
+            }
+            else if (nomP != null)
+            {
+                command.Parameters.AddWithValue("@data", nomP);
+                command.CommandText = "SELECT * FROM PROGRAMA WHERE Nombre_programa = @data";
+            }
+            else if (fechaIn != DateTime.MinValue)
+            {
+                command.Parameters.AddWithValue("@data", fechaIn);
+                command.CommandText = "SELECT * FROM PROGRAMA WHERE Fecha_programa = @data";
+            }
+            else if (typeP != null)
+            {
+                command.Parameters.AddWithValue("@data", typeP);
+                command.CommandText = "SELECT * FROM PROGRAMA WHERE Tipo_programa = @data";
+            }
+
+            MySqlDataReader reader = command.ExecuteReader();
+            tabla.Load(reader);
+            connection.Close();
+            return tabla;
+        }
     }
 }

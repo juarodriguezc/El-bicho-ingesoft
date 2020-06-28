@@ -97,8 +97,7 @@ namespace chatbottest1
                                 string rta_fin = rta.GenRespuesta(message);
                                 Console.WriteLine("Bot said: " + rta_fin);
 
-                                if (realizarAccion(message, rta_fin)) { }
-                                else { add_respuesta("No tienes acceso a esta función"); }
+                                if (!realizarAccion(message, rta_fin)) add_respuesta("No tienes acceso a esta función"); 
                                  
                             }));
                         }
@@ -110,17 +109,12 @@ namespace chatbottest1
 
         public Boolean realizarAccion(String accion, String rta_fin)
         {
-            string[] multiple_lines = rta_fin.Split('*');
-            foreach (string a in multiple_lines)
-            {
-                add_respuesta(a);  
-            }
-            wait(2000);//Simular tiempo espera
             switch (accion)
             {
                 case "Add_user":
                     if (UserLoginCache.Rol_empresa == Positions.Administrador)
                     {
+                        procesarRespuesta(rta_fin);
                         Form_add_user add_user = new Form_add_user();
                         add_user.Show();
                         Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
@@ -131,6 +125,7 @@ namespace chatbottest1
                 case "Edit_user":
                     if (UserLoginCache.Rol_empresa == Positions.Administrador)
                     {
+                        procesarRespuesta(rta_fin);
                         Form_Edit_user edit_user = new Form_Edit_user();
                         edit_user.Show();
                         sesion.create_reg_function(3, SesionCache.Id_acceso);
@@ -140,7 +135,7 @@ namespace chatbottest1
                 case "Add_program":
                     if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area)
                     {
-                        //Form_AddPrograms_Boss addProgram = new Form_AddPrograms_Boss();
+                        procesarRespuesta(rta_fin);
                         Form_add_program addProgram = new Form_add_program();
                         addProgram.Show();
                         sesion.create_reg_function(13, SesionCache.Id_acceso);
@@ -150,6 +145,7 @@ namespace chatbottest1
                 case "Show_company":
                     if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area || UserLoginCache.Rol_empresa == Positions.Empleado)
                     {
+                        procesarRespuesta(rta_fin);
                         Form_ListComp listComp = new Form_ListComp();
                         listComp.Show();
                         sesion.create_reg_function(11, SesionCache.Id_acceso);
@@ -159,6 +155,7 @@ namespace chatbottest1
                 case "Show_personas_info":
                     if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area)
                     {
+                        procesarRespuesta(rta_fin);
                         Form_Info_Personas info_personas = new Form_Info_Personas();
                         info_personas.Show();
                         Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
@@ -167,12 +164,14 @@ namespace chatbottest1
                     }
                     return false;
                 case "User_request":
+                    procesarRespuesta(rta_fin);
                     Form_UserRequest UserReq = new Form_UserRequest();
                     UserReq.Show();
                     Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
                     sesion.create_reg_function(10, SesionCache.Id_acceso);
                     return true;
                 case "Info_specific_program":
+                    procesarRespuesta(rta_fin);
                     Form_InfoSpecificProgram infoSpc = new Form_InfoSpecificProgram();
                     infoSpc.Show();
                     Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
@@ -181,6 +180,7 @@ namespace chatbottest1
                 case "Reg_conversacion":
                     if (UserLoginCache.Rol_empresa == Positions.Administrador)
                     {
+                        procesarRespuesta(rta_fin);
                         Form_registro_conversacion reg_conv = new Form_registro_conversacion();
                         sesion.create_reg_function(8, SesionCache.Id_acceso);
                         reg_conv.Show();
@@ -188,28 +188,46 @@ namespace chatbottest1
                     }
                     return false;
                 case "Show_calendar":
+                    procesarRespuesta(rta_fin);
                     Form_menu_principal.Instance.getButton_calendario().PerformClick();        
                     return true;
-                case "El bicho siuu":
-                    sesion.create_reg_function(80, SesionCache.Id_acceso);
-                    add_image(7);
-                    return true;
-                case "Show_stock":        
+                case "Show_stock":
+                    procesarRespuesta(rta_fin);
                     Form_show_stock show_stock = new Form_show_stock();
                     sesion.create_reg_function(17, SesionCache.Id_acceso);
                     show_stock.Show();
                     return true;
-                case "Add_volunteer":
+                case "Add_event":
+                    if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area) {
+                        procesarRespuesta(rta_fin);
+                        Form_add_event add_event = new Form_add_event();
+                        sesion.create_reg_function(19, SesionCache.Id_acceso);
+                        add_event.Show();
+                    }
+                    return false;
+                 case "Add_volunteer":
                     Form_add_volunteer addVol = new Form_add_volunteer();
                     addVol.Show();
                     Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
-                    sesion.create_reg_function(16, SesionCache.Id_acceso);
+                    sesion.create_reg_function(16, SesionCache.Id_acceso);   
+                case "El bicho siuu":
+                    procesarRespuesta(rta_fin);
+                    sesion.create_reg_function(80, SesionCache.Id_acceso);
+                    add_image(7);
                     return true;
                 default:
+                    procesarRespuesta(rta_fin);
                     return true;
             }
         }
-
+        public void procesarRespuesta(String rta_fin) {
+            string[] multiple_lines = rta_fin.Split('*');
+            foreach (string a in multiple_lines)
+            {
+                add_respuesta(a);
+            }
+            wait(1500);//Simular tiempo espera
+        }
         public void add_mensaje(string mensaje) {
             label7.Text = mensaje;
             string mes2 = mensaje;
@@ -403,6 +421,11 @@ namespace chatbottest1
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_chat_bar_Paint(object sender, PaintEventArgs e)
         {
 
         }
