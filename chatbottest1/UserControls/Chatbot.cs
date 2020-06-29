@@ -206,8 +206,9 @@ namespace chatbottest1
                     }
                     return false;
                  case "Add_volunteer":
-                    Form_add_volunteer addVol = new Form_add_volunteer();
-                    addVol.Show();
+                    procesarRespuesta(rta_fin);
+                    Form_add_volunteer addVolunter = new Form_add_volunteer();
+                    addVolunter.Show();
                     Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
                     sesion.create_reg_function(16, SesionCache.Id_acceso);
                     return true;
