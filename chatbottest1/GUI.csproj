@@ -88,6 +88,12 @@
     <Compile Include="Form_add_program.Designer.cs">
       <DependentUpon>Form_add_program.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_add_stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_add_stock.Designer.cs">
+      <DependentUpon>Form_add_stock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_add_volunteer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,12 @@
     </Compile>
     <Compile Include="Form_programas_activos.Designer.cs">
       <DependentUpon>Form_programas_activos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_RealizarMovimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_RealizarMovimiento.Designer.cs">
+      <DependentUpon>Form_RealizarMovimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_show_stock.cs">
       <SubType>Form</SubType>
@@ -201,6 +213,9 @@
     <EmbeddedResource Include="Form_add_program.resx">
       <DependentUpon>Form_add_program.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_add_stock.resx">
+      <DependentUpon>Form_add_stock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_add_volunteer.resx">
       <DependentUpon>Form_add_volunteer.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_programas_activos.resx">
       <DependentUpon>Form_programas_activos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_RealizarMovimiento.resx">
+      <DependentUpon>Form_RealizarMovimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_show_stock.resx">
       <DependentUpon>Form_show_stock.cs</DependentUpon>
