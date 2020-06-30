@@ -24,15 +24,11 @@ namespace chatbottest1
             lbl_errorNombrePrograma.Visible = false;
             lbl_FechaFinErronea.Visible = false;
             lbl_fechaInicioErronea.Visible = false;
+            lbl_errorCompania.Visible = false;
+            lbl_error_tipo_programa.Visible = false;
 
-            if (string.IsNullOrEmpty(cmb_company.Text))
+            if (verificarNombre(txt_programa.Text) && verificarFechaInicio(Convert.ToDateTime(pick_fecha_inicioPrograma.Text)) && verificarFechaFin(Convert.ToDateTime(pick_fecha_inicioPrograma.Text), Convert.ToDateTime(pick_fecha_finPrograma.Text)) && verificarCompania() && verificarTipoPrograma())
             {
-                Console.WriteLine("Hola");
-            }
-
-                if (verificarNombre(txt_programa.Text) && verificarFechaInicio(Convert.ToDateTime(pick_fecha_inicioPrograma.Text)) && verificarFechaFin(Convert.ToDateTime(pick_fecha_inicioPrograma.Text), Convert.ToDateTime(pick_fecha_finPrograma.Text)) && verificarCompania() && verificarTipoPrograma())
-            {
-
                 if(!programa.add_program(cmb_company.SelectedItem.ToString(),txt_programa.Text, Convert.ToDateTime(pick_fecha_inicioPrograma.Text), Convert.ToDateTime(pick_fecha_finPrograma.Text), cmb_tipoPrograma.SelectedItem.ToString())){
                     MessageBox.Show("El programa ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -110,7 +106,7 @@ namespace chatbottest1
             }
             else
             {
-                lbl_errorCompania.Visible = false;
+                lbl_errorCompania.Visible = true;
                 return false;
             }
         }
@@ -123,7 +119,7 @@ namespace chatbottest1
             }
             else
             {
-                lbl_errorCompania.Visible = false;
+                lbl_error_tipo_programa.Visible = true;
                 return false;
             }
         }

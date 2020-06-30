@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ayuda));
             this.panel1 = new System.Windows.Forms.Panel();
             this.bt_volver_chatbot = new System.Windows.Forms.Button();
             this.Bt1 = new System.Windows.Forms.Button();
@@ -46,9 +47,9 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, -1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1311, 92);
+            this.panel1.Size = new System.Drawing.Size(983, 75);
             this.panel1.TabIndex = 48;
             // 
             // bt_volver_chatbot
@@ -60,10 +61,10 @@
             this.bt_volver_chatbot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_volver_chatbot.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.bt_volver_chatbot.ForeColor = System.Drawing.Color.LightGray;
-            this.bt_volver_chatbot.Location = new System.Drawing.Point(23, 116);
-            this.bt_volver_chatbot.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.bt_volver_chatbot.Location = new System.Drawing.Point(17, 94);
+            this.bt_volver_chatbot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_volver_chatbot.Name = "bt_volver_chatbot";
-            this.bt_volver_chatbot.Size = new System.Drawing.Size(105, 41);
+            this.bt_volver_chatbot.Size = new System.Drawing.Size(79, 33);
             this.bt_volver_chatbot.TabIndex = 49;
             this.bt_volver_chatbot.Text = "VOLVER";
             this.bt_volver_chatbot.UseVisualStyleBackColor = false;
@@ -76,9 +77,10 @@
             this.Bt1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Bt1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bt1.ForeColor = System.Drawing.Color.White;
-            this.Bt1.Location = new System.Drawing.Point(290, 684);
+            this.Bt1.Location = new System.Drawing.Point(218, 556);
+            this.Bt1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Bt1.Name = "Bt1";
-            this.Bt1.Size = new System.Drawing.Size(40, 44);
+            this.Bt1.Size = new System.Drawing.Size(30, 36);
             this.Bt1.TabIndex = 51;
             this.Bt1.Text = "1";
             this.Bt1.UseVisualStyleBackColor = false;
@@ -91,9 +93,10 @@
             this.Bt2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Bt2.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bt2.ForeColor = System.Drawing.Color.White;
-            this.Bt2.Location = new System.Drawing.Point(504, 684);
+            this.Bt2.Location = new System.Drawing.Point(378, 556);
+            this.Bt2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Bt2.Name = "Bt2";
-            this.Bt2.Size = new System.Drawing.Size(40, 44);
+            this.Bt2.Size = new System.Drawing.Size(30, 36);
             this.Bt2.TabIndex = 52;
             this.Bt2.Text = "2";
             this.Bt2.UseVisualStyleBackColor = false;
@@ -106,9 +109,10 @@
             this.Bt3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Bt3.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bt3.ForeColor = System.Drawing.Color.White;
-            this.Bt3.Location = new System.Drawing.Point(743, 684);
+            this.Bt3.Location = new System.Drawing.Point(557, 556);
+            this.Bt3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Bt3.Name = "Bt3";
-            this.Bt3.Size = new System.Drawing.Size(40, 44);
+            this.Bt3.Size = new System.Drawing.Size(30, 36);
             this.Bt3.TabIndex = 53;
             this.Bt3.Text = "3";
             this.Bt3.UseVisualStyleBackColor = false;
@@ -121,9 +125,10 @@
             this.Bt4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Bt4.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bt4.ForeColor = System.Drawing.Color.White;
-            this.Bt4.Location = new System.Drawing.Point(999, 684);
+            this.Bt4.Location = new System.Drawing.Point(749, 556);
+            this.Bt4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Bt4.Name = "Bt4";
-            this.Bt4.Size = new System.Drawing.Size(40, 44);
+            this.Bt4.Size = new System.Drawing.Size(30, 36);
             this.Bt4.TabIndex = 54;
             this.Bt4.Text = "4";
             this.Bt4.UseVisualStyleBackColor = false;
@@ -132,25 +137,27 @@
             // guia
             // 
             this.guia.Image = global::chatbottest1.Properties.Resources.GuiaInteractivaChatboot_page_00011;
-            this.guia.Location = new System.Drawing.Point(177, 130);
+            this.guia.Location = new System.Drawing.Point(133, 106);
+            this.guia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guia.Name = "guia";
-            this.guia.Size = new System.Drawing.Size(960, 535);
+            this.guia.Size = new System.Drawing.Size(720, 435);
             this.guia.TabIndex = 50;
             this.guia.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, -55);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(2, -41);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(300, 194);
+            this.pictureBox1.Size = new System.Drawing.Size(225, 158);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
             // Ayuda
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.Bt4);
             this.Controls.Add(this.Bt3);
@@ -159,8 +166,9 @@
             this.Controls.Add(this.guia);
             this.Controls.Add(this.bt_volver_chatbot);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Ayuda";
-            this.Size = new System.Drawing.Size(1311, 830);
+            this.Size = new System.Drawing.Size(983, 674);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -171,12 +179,12 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button bt_volver_chatbot;
         private System.Windows.Forms.PictureBox guia;
         private System.Windows.Forms.Button Bt1;
         private System.Windows.Forms.Button Bt2;
         private System.Windows.Forms.Button Bt3;
         private System.Windows.Forms.Button Bt4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

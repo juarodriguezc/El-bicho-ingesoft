@@ -212,6 +212,17 @@ namespace chatbottest1
                     Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
                     sesion.create_reg_function(16, SesionCache.Id_acceso);
                     return true;
+                case "Pick_stock":
+                    procesarRespuesta(rta_fin);
+                    Form_RealizarMovimiento movimiento = new Form_RealizarMovimiento();
+                    movimiento.Show();
+                    sesion.create_reg_function(21, SesionCache.Id_acceso);
+                    return true;
+                case "Add_stock":
+                    Form_add_stock addStock = new Form_add_stock();
+                    addStock.Show();
+                    sesion.create_reg_function(22, SesionCache.Id_acceso);
+                    return true;
                 case "El bicho siuu":
                     procesarRespuesta(rta_fin);
                     sesion.create_reg_function(80, SesionCache.Id_acceso);
