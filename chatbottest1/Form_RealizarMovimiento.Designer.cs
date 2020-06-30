@@ -88,6 +88,7 @@
             this.txt_cantidad.Name = "txt_cantidad";
             this.txt_cantidad.Size = new System.Drawing.Size(242, 20);
             this.txt_cantidad.TabIndex = 47;
+            this.txt_cantidad.Text = "0";
             // 
             // lineShape8
             // 
