@@ -111,6 +111,10 @@ namespace chatbottest1
         {
             switch (accion)
             {
+                case "Hello and welcome!":
+                    procesarRespuesta(rta_fin);
+                    proximoEvento();
+                    return true;
                 case "Add_user":
                     if (UserLoginCache.Rol_empresa == Positions.Administrador)
                     {
@@ -206,10 +210,35 @@ namespace chatbottest1
                     }
                     return false;
                  case "Add_volunteer":
-                    Form_add_volunteer addVol = new Form_add_volunteer();
-                    addVol.Show();
+                    procesarRespuesta(rta_fin);
+                    Form_add_volunteer addVolunter = new Form_add_volunteer();
+                    addVolunter.Show();
                     Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
                     sesion.create_reg_function(16, SesionCache.Id_acceso);
+                    return true;
+                case "Pick_stock":
+                    procesarRespuesta(rta_fin);
+                    Form_RealizarMovimiento movimiento = new Form_RealizarMovimiento();
+                    movimiento.Show();
+                    sesion.create_reg_function(21, SesionCache.Id_acceso);
+                    return true;
+                case "Add_stock":
+                    Form_add_stock addStock = new Form_add_stock();
+                    addStock.Show();
+                    sesion.create_reg_function(22, SesionCache.Id_acceso);
+                    return true;
+                case "Modificar_evento":
+                    if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area)
+                    {
+                        procesarRespuesta(rta_fin);
+                        Form_modificar_evento modificar_evento = new Form_modificar_evento();
+                        sesion.create_reg_function(23, SesionCache.Id_acceso);
+                        modificar_evento.Show();
+                    }
+                    return false;
+                case "Show_events":
+                    procesarRespuesta(rta_fin);
+                    sesion.create_reg_function(24, SesionCache.Id_acceso);
                     return true;
                 case "El bicho siuu":
                     procesarRespuesta(rta_fin);
@@ -220,6 +249,32 @@ namespace chatbottest1
                     procesarRespuesta(rta_fin);
                     return true;
             }
+        }
+        private void proximoEvento() {
+            ModeloEventos eventos = new ModeloEventos();
+            string[] prox = eventos.ConsultarProxEvento(UserLoginCache.Id_usuario);
+            if (prox != null && prox.Length > 0)
+            {
+                DateTime evento = DateTime.Parse(prox[0]);
+                Console.WriteLine(evento);
+                string dia_mostrar;
+
+                if (IsTheSameDay(DateTime.Today, evento)){
+                    dia_mostrar = "de hoy";
+                }
+                else 
+                {
+                    dia_mostrar = evento.ToString("dd 'de' MMMM 'del' yyyy");
+                }
+                add_respuesta("Tienes un evento programado!");
+                string prox_event = prox[2]+" el día "+dia_mostrar;
+                add_respuesta(prox_event);
+                add_respuesta("No olvides asistir! ;)");
+            }
+        }
+        private bool IsTheSameDay(DateTime date1, DateTime date2)
+        {
+            return (date1.Year == date2.Year && date1.DayOfYear == date2.DayOfYear);
         }
         public void procesarRespuesta(String rta_fin) {
             string[] multiple_lines = rta_fin.Split('*');

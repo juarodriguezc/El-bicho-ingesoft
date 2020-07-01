@@ -69,7 +69,7 @@
             this.lbl_addUser.AutoSize = true;
             this.lbl_addUser.Font = new System.Drawing.Font("Century Gothic", 31.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_addUser.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_addUser.Location = new System.Drawing.Point(34, 9);
+            this.lbl_addUser.Location = new System.Drawing.Point(51, 19);
             this.lbl_addUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_addUser.Name = "lbl_addUser";
             this.lbl_addUser.Size = new System.Drawing.Size(380, 49);

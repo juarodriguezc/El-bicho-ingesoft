@@ -194,5 +194,11 @@ namespace chatbottest1.UserControls
         {
 
         }
+
+        private void bt_modificar_eventos_Click(object sender, EventArgs e)
+        {
+            Form_modificar_evento modificar_evento = new Form_modificar_evento();
+            modificar_evento.Show();
+        }
     }
 }
