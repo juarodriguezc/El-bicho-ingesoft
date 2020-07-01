@@ -16,8 +16,8 @@ namespace chatbottest1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form_add_event());
-            Application.Run(new Form_login_menu());
+            Application.Run(new Form_show_program_by_person());
+            //Application.Run(new Form_login_menu());
         }
     }
 }

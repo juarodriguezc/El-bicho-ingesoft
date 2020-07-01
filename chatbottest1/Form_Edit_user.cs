@@ -32,6 +32,7 @@ namespace chatbottest1
         {
             MostrarUsuarios();
         }
+
         private void MostrarUsuarios() {
             dataGridView1.DataSource = usuario.MostrarUsuarios(UserLoginCache.Correo);
         }
