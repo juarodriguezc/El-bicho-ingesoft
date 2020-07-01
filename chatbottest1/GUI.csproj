@@ -124,6 +124,12 @@
     <Compile Include="Form_programas_activos.Designer.cs">
       <DependentUpon>Form_programas_activos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_show_program_by_person.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_show_program_by_person.Designer.cs">
+      <DependentUpon>Form_show_program_by_person.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_show_stock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_programas_activos.resx">
       <DependentUpon>Form_programas_activos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_show_program_by_person.resx">
+      <DependentUpon>Form_show_program_by_person.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_show_stock.resx">
       <DependentUpon>Form_show_stock.cs</DependentUpon>

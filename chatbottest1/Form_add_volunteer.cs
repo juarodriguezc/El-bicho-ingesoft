@@ -41,7 +41,7 @@ namespace chatbottest1
                     && verificarEmail(txt_correo.Text))
                 {
                     ModeloVoluntario addVolunteer = new ModeloVoluntario();
-                    if (!addVolunteer.Add_volunteer(Convert.ToInt32(txt_cedula.Text), txt_nombre.Text, txt_apellido.Text, Convert.ToDateTime(pick_fecha_nacimiento.Text), txt_telefono.Text, comboBox_genero.SelectedItem.ToString(), txt_correo.Text))
+                    if (!addVolunteer.Add_volunteer(Convert.ToInt32(txt_cedula.Text), txt_nombre.Text, txt_apellido.Text, Convert.ToDateTime(pick_fecha_nacimiento.Text), txt_telefono.Text, comboBox_genero.SelectedItem.ToString(), txt_correo.Text,comboBoxPais.SelectedItem.ToString()))
                     {
                         MessageBox.Show("El correo registrado ya se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -125,6 +125,16 @@ namespace chatbottest1
         private void backHome_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void comboBox_genero_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_genero_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -52,6 +52,8 @@
             this.backHome = new System.Windows.Forms.Button();
             this.bt_adduser = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxPais = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dato_erroneo_telefono
@@ -81,27 +83,32 @@
             // 
             // comboBox_genero
             // 
+            this.comboBox_genero.AutoCompleteCustomSource.AddRange(new string[] {
+            "Masculino",
+            "Femenino"});
             this.comboBox_genero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_genero.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_genero.FormattingEnabled = true;
             this.comboBox_genero.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
-            this.comboBox_genero.Location = new System.Drawing.Point(233, 388);
+            this.comboBox_genero.Location = new System.Drawing.Point(233, 389);
             this.comboBox_genero.Name = "comboBox_genero";
             this.comboBox_genero.Size = new System.Drawing.Size(227, 29);
             this.comboBox_genero.TabIndex = 59;
+            this.comboBox_genero.SelectedIndexChanged += new System.EventHandler(this.comboBox_genero_SelectedIndexChanged);
             // 
             // lbl_genero
             // 
             this.lbl_genero.AutoSize = true;
             this.lbl_genero.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_genero.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_genero.Location = new System.Drawing.Point(22, 391);
+            this.lbl_genero.Location = new System.Drawing.Point(22, 392);
             this.lbl_genero.Name = "lbl_genero";
             this.lbl_genero.Size = new System.Drawing.Size(78, 21);
             this.lbl_genero.TabIndex = 58;
             this.lbl_genero.Text = "GENERO";
+            this.lbl_genero.Click += new System.EventHandler(this.lbl_genero_Click);
             // 
             // dato_erroneo_cedula
             // 
@@ -347,12 +354,290 @@
             this.label1.TabIndex = 67;
             this.label1.Text = "AÑADIR USUARIO";
             // 
+            // comboBoxPais
+            // 
+            this.comboBoxPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPais.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxPais.FormattingEnabled = true;
+            this.comboBoxPais.Items.AddRange(new object[] {
+            "Afganistán",
+            "Akrotiri",
+            "Albania",
+            "Alemania",
+            "Andorra",
+            "Angola",
+            "Anguila",
+            "Antártida",
+            "Antigua y Barbuda",
+            "Antillas Neerlandesas",
+            "Arabia Saudí",
+            "Arctic Ocean",
+            "Argelia",
+            "Argentina",
+            "Armenia",
+            "Aruba",
+            "Ashmore andCartier Islands",
+            "Atlantic Ocean",
+            "Australia",
+            "Austria",
+            "Azerbaiyán",
+            "Bahamas",
+            "Bahráin",
+            "Bangladesh",
+            "Barbados",
+            "Bélgica",
+            "Belice",
+            "Benín",
+            "Bermudas",
+            "Bielorrusia",
+            "Birmania Myanmar",
+            "Bolivia",
+            "Bosnia y Hercegovina",
+            "Botsuana",
+            "Brasil",
+            "Brunéi",
+            "Bulgaria",
+            "Burkina Faso",
+            "Burundi",
+            "Bután",
+            "Cabo Verde",
+            "Camboya",
+            "Camerún",
+            "Canadá",
+            "Chad",
+            "Chile",
+            "China",
+            "Chipre",
+            "Clipperton Island",
+            "Colombia",
+            "Comoras",
+            "Congo",
+            "Coral Sea Islands",
+            "Corea del Norte",
+            "Corea del Sur",
+            "Costa de Marfil",
+            "Costa Rica",
+            "Croacia",
+            "Cuba",
+            "Dhekelia",
+            "Dinamarca",
+            "Dominica",
+            "Ecuador",
+            "Egipto",
+            "El Salvador",
+            "El Vaticano",
+            "Emiratos Árabes Unidos",
+            "Eritrea",
+            "Eslovaquia",
+            "Eslovenia",
+            "España",
+            "Estados Unidos",
+            "Estonia",
+            "Etiopía",
+            "Filipinas",
+            "Finlandia",
+            "Fiyi",
+            "Francia",
+            "Gabón",
+            "Gambia",
+            "Gaza Strip",
+            "Georgia",
+            "Ghana",
+            "Gibraltar",
+            "Granada",
+            "Grecia",
+            "Groenlandia",
+            "Guam",
+            "Guatemala",
+            "Guernsey",
+            "Guinea",
+            "Guinea Ecuatorial",
+            "Guinea-Bissau",
+            "Guyana",
+            "Haití",
+            "Honduras",
+            "Hong Kong",
+            "Hungría",
+            "India",
+            "Indian Ocean",
+            "Indonesia",
+            "Irán",
+            "Iraq",
+            "Irlanda",
+            "Isla Bouvet",
+            "Isla Christmas",
+            "Isla Norfolk",
+            "Islandia",
+            "Islas Caimán",
+            "Islas Cocos",
+            "Islas Cook",
+            "Islas Feroe",
+            "Islas Georgia del Sur y Sandwich del Sur",
+            "Islas Heard y McDonald",
+            "Islas Malvinas",
+            "Islas Marianas del Norte",
+            "IslasMarshall",
+            "Islas Pitcairn",
+            "Islas Salomón",
+            "Islas Turcas y Caicos",
+            "Islas Vírgenes Americanas",
+            "Islas Vírgenes Británicas",
+            "Israel",
+            "Italia",
+            "Jamaica",
+            "Jan Mayen",
+            "Japón",
+            "Jersey",
+            "Jordania",
+            "Kazajistán",
+            "Kenia",
+            "Kirguizistán",
+            "Kiribati",
+            "Kuwait",
+            "Laos",
+            "Lesoto",
+            "Letonia",
+            "Líbano",
+            "Liberia",
+            "Libia",
+            "Liechtenstein",
+            "Lituania",
+            "Luxemburgo",
+            "Macao",
+            "Macedonia",
+            "Madagascar",
+            "Malasia",
+            "Malaui",
+            "Maldivas",
+            "Malí",
+            "Malta",
+            "Man, Isle of",
+            "Marruecos",
+            "Mauricio",
+            "Mauritania",
+            "Mayotte",
+            "México",
+            "Micronesia",
+            "Moldavia",
+            "Mónaco",
+            "Mongolia",
+            "Montserrat",
+            "Mozambique",
+            "Namibia",
+            "Nauru",
+            "Navassa Island",
+            "Nepal",
+            "Nicaragua",
+            "Níger",
+            "Nigeria",
+            "Niue",
+            "Noruega",
+            "Nueva Caledonia",
+            "Nueva Zelanda",
+            "Omán",
+            "Pacific Ocean",
+            "Países Bajos",
+            "Pakistán",
+            "Palaos",
+            "Panamá",
+            "Papúa-Nueva Guinea",
+            "Paracel Islands",
+            "Paraguay",
+            "Perú",
+            "Polinesia Francesa",
+            "Polonia",
+            "Portugal",
+            "Puerto Rico",
+            "Qatar",
+            "Reino Unido",
+            "República Centroafricana",
+            "República Checa",
+            "República Democrática del Congo",
+            "República Dominicana",
+            "Ruanda",
+            "Rumania",
+            "Rusia",
+            "Sáhara Occidental",
+            "Samoa",
+            "Samoa Americana",
+            "San Cristóbal y Nieves",
+            "San Marino",
+            "San Pedro y Miquelón",
+            "San Vicente y las Granadinas",
+            "Santa Helena",
+            "Santa Lucía",
+            "Santo Tomé y Príncipe",
+            "Senegal",
+            "Seychelles",
+            "Sierra Leona",
+            "Singapur",
+            "Siria",
+            "Somalia",
+            "Southern Ocean",
+            "Spratly Islands",
+            "Sri Lanka",
+            "Suazilandia",
+            "Sudáfrica",
+            "Sudán",
+            "Suecia",
+            "Suiza",
+            "Surinam",
+            "Svalbard y Jan Mayen",
+            "Tailandia",
+            "Taiwán",
+            "Tanzania",
+            "Tayikistán",
+            "TerritorioBritánicodel Océano Indico",
+            "Territorios Australes Franceses",
+            "Timor Oriental",
+            "Togo",
+            "Tokelau",
+            "Tonga",
+            "Trinidad y Tobago",
+            "Túnez",
+            "Turkmenistán",
+            "Turquía",
+            "Tuvalu",
+            "Ucrania",
+            "Uganda",
+            "Unión Europea",
+            "Uruguay",
+            "Uzbekistán",
+            "Vanuatu",
+            "Venezuela",
+            "Vietnam",
+            "Wake Island",
+            "Wallis y Futuna",
+            "West Bank",
+            "World",
+            "Yemen",
+            "Yibuti",
+            "Zambia",
+            "Zimbabue"});
+            this.comboBoxPais.Location = new System.Drawing.Point(233, 444);
+            this.comboBoxPais.Name = "comboBoxPais";
+            this.comboBoxPais.Size = new System.Drawing.Size(227, 29);
+            this.comboBoxPais.TabIndex = 71;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(22, 447);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 21);
+            this.label2.TabIndex = 70;
+            this.label2.Text = "PAIS";
+            // 
             // Form_add_volunteer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(494, 591);
+            this.Controls.Add(this.comboBoxPais);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.backHome);
             this.Controls.Add(this.bt_adduser);
             this.Controls.Add(this.label1);
@@ -405,5 +690,7 @@
         private System.Windows.Forms.Button backHome;
         private System.Windows.Forms.Button bt_adduser;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxPais;
+        private System.Windows.Forms.Label label2;
     }
 }

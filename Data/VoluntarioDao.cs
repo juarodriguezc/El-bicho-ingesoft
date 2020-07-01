@@ -12,7 +12,7 @@ namespace Data
 {
     public class VoluntarioDao : ConnectionToSql
     {
-        public bool Add_volunteer(int id_persona, string nombre, string apellido, DateTime fecha_nacimiento, string telefono, string genero, string correo)
+        public bool Add_volunteer(int id_persona, string nombre, string apellido, DateTime fecha_nacimiento, string telefono, string genero, string correo, string pais_origen)
         {
             var connection = GetConnection();
             connection.Open();
@@ -25,11 +25,11 @@ namespace Data
             command.Parameters.AddWithValue("@nombre", nombre);
             command.Parameters.AddWithValue("@apellido", apellido);
             command.Parameters.AddWithValue("@fecha_nacimiento", fecha_nacimiento);
+            command.Parameters.AddWithValue("@pais", pais_origen);
             MySqlDataReader reader = command.ExecuteReader();
             if (reader.HasRows) return false;
             reader.Close();
-
-            command.CommandText = "INSERT INTO PERSONA (Id_persona, Nombre_persona, Apellido_persona, Fecha_nacimiento, Telefono_persona, Genero, Correo_persona) VALUES(@Id_persona, @nombre, @apellido, @fecha_nacimiento, @telefono, @genero, @correo)";
+            command.CommandText = "INSERT INTO PERSONA (Id_persona, Nombre_persona, Apellido_persona, Fecha_nacimiento, Telefono_persona, Genero, Correo_persona, PAIS_ORIGEN,ROL_PERSONA) VALUES(@Id_persona, @nombre, @apellido, @fecha_nacimiento, @telefono, @genero, @correo,@pais,'Voluntario')";
             command.ExecuteNonQuery();
             connection.Close();
             return true;
@@ -56,23 +56,23 @@ namespace Data
             connection.Open();
             var command = new MySqlCommand();
             command.Connection = connection;
-            if (numIdentificacion != null)
+            if (opcion == "Id persona")
             {
-                numIdentificacion= "%" + numIdentificacion+ "%";
-                command.Parameters.AddWithValue("@data", numIdentificacion);
-                command.CommandText = "SELECT P.Id_persona as 'Numero de identificacion', P.Nombre_persona as Nombre', P.Apellido_persona as 'Apellido', PR.NOMBRE_PROGRAMA as 'Nombre Programa', PR.FECHA_PROGRAMA as 'Fecha Programa',  A.ROL_PROGRAMA_PERSONA as 'Rol',A.CALIFICACION as'Calificacion' FROM PERSONA as P, PER_PROG as A, PROGRAMA as PR WHERE P.ID_PERSONA =A.ID_PERSONA AND A.ID_PROGRAMA=PR.ID_PROGRAMA AND P.Id_persona like @data;";
+                valor= "%" + valor+ "%";
+                command.Parameters.AddWithValue("@data", valor);
+                command.CommandText = "SELECT P.Id_persona as 'Numero de identificacion', P.Nombre_persona as 'Nombre', P.APELLIDO_PERSONA as 'Apellido', PR.NOMBRE_PROGRAMA as 'Nombre Programa', PR.FECHA_INICIO as 'Fecha Inicio', PR.FECHA_FIN as 'Fecha Fin',  A.ROL_PROGRAMA as 'Rol',A.CALIFICACION as'Calificacion' FROM PERSONA as P, PER_PROG as A, PROGRAMA as PR WHERE P.ID_PERSONA =A.ID_PERSONA AND A.ID_PROGRAMA=PR.ID_PROGRAMA AND P.Id_persona like @data;";
             }
-            else if (nombre != null)
+            else if (opcion == "Nombre persona")
             {
-                nombre= "%" + nombre+ "%";
-                command.Parameters.AddWithValue("@data", nombre);
-                command.CommandText = "SELECT P.Id_persona as 'Numero de identificacion', P.Nombre_persona as Nombre', P.Apellido_persona as 'Apellido', PR.NOMBRE_PROGRAMA as 'Nombre Programa', PR.FECHA_PROGRAMA as 'Fecha Programa',  A.ROL_PROGRAMA_PERSONA as 'Rol',A.CALIFICACION as'Calificacion' FROM PERSONA as P, PER_PROG as A, PROGRAMA as PR WHERE P.ID_PERSONA =A.ID_PERSONA AND A.ID_PROGRAMA=PR.ID_PROGRAMA AND P.NOMBRE_PERSONA like @data;";
+                valor = "%" + valor + "%";
+                command.Parameters.AddWithValue("@data", valor);
+                command.CommandText = "SELECT P.Id_persona as 'Numero de identificacion', P.Nombre_persona as 'Nombre', P.APELLIDO_PERSONA as 'Apellido', PR.NOMBRE_PROGRAMA as 'Nombre Programa', PR.FECHA_INICIO as 'Fecha Inicio', PR.FECHA_FIN as 'Fecha Fin',  A.ROL_PROGRAMA as 'Rol',A.CALIFICACION as'Calificacion' FROM PERSONA as P, PER_PROG as A, PROGRAMA as PR WHERE P.ID_PERSONA =A.ID_PERSONA AND A.ID_PROGRAMA=PR.ID_PROGRAMA AND P.NOMBRE_PERSONA like @data;";
             }
-            else if (apellido!= null)
+            else if (opcion== "Apellido persona")
             {
-                apellido = "%" + apellido + "%";
-                command.Parameters.AddWithValue("@data", apellido);
-                command.CommandText = "SELECT P.Id_persona as 'Numero de identificacion', P.Nombre_persona as Nombre', P.Apellido_persona as 'Apellido', PR.NOMBRE_PROGRAMA as 'Nombre Programa', PR.FECHA_PROGRAMA as 'Fecha Programa',  A.ROL_PROGRAMA_PERSONA as 'Rol',A.CALIFICACION as'Calificacion' FROM PERSONA as P, PER_PROG as A, PROGRAMA as PR WHERE P.ID_PERSONA =A.ID_PERSONA AND A.ID_PROGRAMA=PR.ID_PROGRAMA AND P.APELLIDO_PERSONA like @data;";
+                valor = "%" + valor + "%";
+                command.Parameters.AddWithValue("@data", valor);
+                command.CommandText = "SELECT P.Id_persona as 'Numero de identificacion', P.Nombre_persona as 'Nombre', P.APELLIDO_PERSONA as 'Apellido', PR.NOMBRE_PROGRAMA as 'Nombre Programa', PR.FECHA_INICIO as 'Fecha Inicio', PR.FECHA_FIN as 'Fecha Fin', A.ROL_PROGRAMA as 'Rol',A.CALIFICACION as'Calificacion' FROM PERSONA as P, PER_PROG as A, PROGRAMA as PR WHERE P.ID_PERSONA =A.ID_PERSONA AND A.ID_PROGRAMA=PR.ID_PROGRAMA AND P.APELLIDO_PERSONA like @data;";
             }
             MySqlDataReader reader = command.ExecuteReader();
             tabla.Load(reader);
@@ -80,15 +80,17 @@ namespace Data
             return tabla;
         }
 
-        public DataTable MostrarVoluntariosDifferentToCountry(string country)
+        public DataTable MostrarVoluntariosDifferentToCountryWithActivePrograms(string country)
         {
+            DateTime dateNow = DateTime.Now;
             DataTable tabla = new DataTable();
             var connection = GetConnection();
             connection.Open();
             var command = new MySqlCommand();
             command.Connection = connection;
             command.Parameters.AddWithValue("@pais", country);
-            command.CommandText = "SELECT P.Id_persona, P.Nombre_persona as 'Nombre', P.Apellido_persona as 'Apellido', P.Correo_persona as 'Correo', P.Fecha_nacimiento as 'Nacimiento', P.telefono_persona as 'Telefono' , P.Genero FROM PERSONA as P where P.PAIS_ORIGEN!=@pais";
+            command.Parameters.AddWithValue("@dateActual", dateNow);
+            command.CommandText = "SELECT P.Id_persona, P.Nombre_persona as 'Nombre', P.Apellido_persona as 'Apellido', P.Correo_persona as 'Correo', P.Fecha_nacimiento as 'Nacimiento', P.telefono_persona as 'Telefono' , P.Genero FROM PERSONA as P , PER_PROG as A, PROGRAMA as PR WHERE P.ID_PERSONA =A.ID_PERSONA AND A.ID_PROGRAMA=PR.ID_PROGRAMA P.PAIS_ORIGEN!=@pais AND PR.FECHA_INICIO>= @dateActual AND PR.FECHA_FIN< @dateActual ";
             MySqlDataReader reader = command.ExecuteReader();
             tabla.Load(reader);
             connection.Close();

@@ -14,6 +14,7 @@ namespace chatbottest1
 {
     public partial class Form_show_program_by_person : Form
     {
+        ModeloVoluntario voluntario = new ModeloVoluntario();
         public Form_show_program_by_person()
         {
             InitializeComponent();
@@ -31,10 +32,16 @@ namespace chatbottest1
 
         private void bt_Search_Click(object sender, EventArgs e)
         {
-            comboBoxConsulta.SelectedItem.ToString();
+            string opcion=comboBoxConsulta.SelectedItem.ToString();
+            string valor = dataProg.Text;
             MostrarVoluntariosPorPrograma(opcion,valor);
 
         }
+
+        private void MostrarVoluntariosPorPrograma(string opcion, string valor)
+        {
+            dataGridView1.DataSource = voluntario.MostrarVoluntariosPorPrograma(opcion, valor);
+        } 
 
         private void datoErroneoComboBox_Click(object sender, EventArgs e)
         {
