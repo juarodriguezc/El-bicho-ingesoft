@@ -254,6 +254,23 @@ namespace Data
             connection.Close();
             return tabla;
         }
+        public DataTable EventosProximos(int id_usuario, DateTime fecha)
+        {
+            DataTable tabla = new DataTable();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@id_usuario", id_usuario);
+            command.Parameters.AddWithValue("@fecha", fecha);
+            command.CommandText = "SELECT E.ID_EVENTO AS 'Id', E.FECHA_EVENTO AS 'Fecha del evento', E.ASUNTO_EVENTO AS 'Asunto del evento' " +
+                "FROM EVENTOS AS E, P_EVENTOS AS P WHERE P.ID_EVENTO = E.ID_EVENTO AND E.FECHA_EVENTO > @fecha " +
+                "AND P.ID_USUARIO = @id_usuario";
+            MySqlDataReader reader = command.ExecuteReader();
+            tabla.Load(reader);
+            connection.Close();
+            return tabla;
+        }
         public static DateTime Max(DateTime a, DateTime b)
         {
             return a > b ? a : b;
