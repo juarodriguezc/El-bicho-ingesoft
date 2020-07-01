@@ -10,7 +10,7 @@ using MySql.Data.MySqlClient;
 
 namespace Data
 {
-    public class VoluntarioDao:ConnectionToSql
+    public class VoluntarioDao : ConnectionToSql
     {
         public bool Add_volunteer(int id_persona, string nombre, string apellido, DateTime fecha_nacimiento, string telefono, string genero, string correo)
         {
@@ -49,7 +49,38 @@ namespace Data
             return tabla;
         }
 
-        public DataTable MostrarVoluntariosByCountry(string country)
+        public DataTable MostrarVoluntariosPorPrograma(string opcion, string valor)
+        {
+            DataTable tabla = new DataTable();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            if (numIdentificacion != null)
+            {
+                numIdentificacion= "%" + numIdentificacion+ "%";
+                command.Parameters.AddWithValue("@data", numIdentificacion);
+                command.CommandText = "SELECT P.Id_persona as 'Numero de identificacion', P.Nombre_persona as Nombre', P.Apellido_persona as 'Apellido', PR.NOMBRE_PROGRAMA as 'Nombre Programa', PR.FECHA_PROGRAMA as 'Fecha Programa',  A.ROL_PROGRAMA_PERSONA as 'Rol',A.CALIFICACION as'Calificacion' FROM PERSONA as P, PER_PROG as A, PROGRAMA as PR WHERE P.ID_PERSONA =A.ID_PERSONA AND A.ID_PROGRAMA=PR.ID_PROGRAMA AND P.Id_persona like @data;";
+            }
+            else if (nombre != null)
+            {
+                nombre= "%" + nombre+ "%";
+                command.Parameters.AddWithValue("@data", nombre);
+                command.CommandText = "SELECT P.Id_persona as 'Numero de identificacion', P.Nombre_persona as Nombre', P.Apellido_persona as 'Apellido', PR.NOMBRE_PROGRAMA as 'Nombre Programa', PR.FECHA_PROGRAMA as 'Fecha Programa',  A.ROL_PROGRAMA_PERSONA as 'Rol',A.CALIFICACION as'Calificacion' FROM PERSONA as P, PER_PROG as A, PROGRAMA as PR WHERE P.ID_PERSONA =A.ID_PERSONA AND A.ID_PROGRAMA=PR.ID_PROGRAMA AND P.NOMBRE_PERSONA like @data;";
+            }
+            else if (apellido!= null)
+            {
+                apellido = "%" + apellido + "%";
+                command.Parameters.AddWithValue("@data", apellido);
+                command.CommandText = "SELECT P.Id_persona as 'Numero de identificacion', P.Nombre_persona as Nombre', P.Apellido_persona as 'Apellido', PR.NOMBRE_PROGRAMA as 'Nombre Programa', PR.FECHA_PROGRAMA as 'Fecha Programa',  A.ROL_PROGRAMA_PERSONA as 'Rol',A.CALIFICACION as'Calificacion' FROM PERSONA as P, PER_PROG as A, PROGRAMA as PR WHERE P.ID_PERSONA =A.ID_PERSONA AND A.ID_PROGRAMA=PR.ID_PROGRAMA AND P.APELLIDO_PERSONA like @data;";
+            }
+            MySqlDataReader reader = command.ExecuteReader();
+            tabla.Load(reader);
+            connection.Close();
+            return tabla;
+        }
+
+        public DataTable MostrarVoluntariosDifferentToCountry(string country)
         {
             DataTable tabla = new DataTable();
             var connection = GetConnection();
@@ -57,7 +88,7 @@ namespace Data
             var command = new MySqlCommand();
             command.Connection = connection;
             command.Parameters.AddWithValue("@pais", country);
-            command.CommandText = "SELECT P.Id_persona, P.Nombre_persona as 'Nombre', P.Apellido_persona as 'Apellido', P.Correo_persona as 'Correo', P.Fecha_nacimiento as 'Nacimiento', P.telefono_persona as 'Telefono' , P.Genero FROM PERSONA as P";
+            command.CommandText = "SELECT P.Id_persona, P.Nombre_persona as 'Nombre', P.Apellido_persona as 'Apellido', P.Correo_persona as 'Correo', P.Fecha_nacimiento as 'Nacimiento', P.telefono_persona as 'Telefono' , P.Genero FROM PERSONA as P where P.PAIS_ORIGEN!=@pais";
             MySqlDataReader reader = command.ExecuteReader();
             tabla.Load(reader);
             connection.Close();
