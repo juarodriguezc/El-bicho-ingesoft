@@ -238,6 +238,8 @@ namespace chatbottest1
                     return false;
                 case "Show_events":
                     procesarRespuesta(rta_fin);
+                    Form_show_events show_events = new Form_show_events();
+                    show_events.Show();
                     sesion.create_reg_function(24, SesionCache.Id_acceso);
                     return true;
                 case "El bicho siuu":
