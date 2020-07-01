@@ -181,7 +181,8 @@ namespace chatbottest1.UserControls
 
         private void bt_todos_eventos_Click(object sender, EventArgs e)
         {
-
+            Form_show_events show_events = new Form_show_events();
+            show_events.Show();
         }
 
         private void bt_add_event_Click_1(object sender, EventArgs e)
