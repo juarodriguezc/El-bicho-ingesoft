@@ -245,6 +245,13 @@ namespace chatbottest1
                     sesion.create_reg_function(80, SesionCache.Id_acceso);
                     add_image(7);
                     return true;
+                case "Search_program_by_person":
+                    procesarRespuesta(rta_fin);
+                    Form_show_program_by_person searchPersonProgram = new Form_show_program_by_person();
+                    searchPersonProgram.Show();
+                    Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
+                    sesion.create_reg_function(15, SesionCache.Id_acceso);
+                    return true;
                 default:
                     procesarRespuesta(rta_fin);
                     return true;
