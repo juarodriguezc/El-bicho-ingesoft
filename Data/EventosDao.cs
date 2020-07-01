@@ -145,6 +145,80 @@ namespace Data
             }
             connection.Close();
         }
+        public void updateEvent(int id_evento, int id_owner, List<string> list_invitados, string asunto, DateTime fecha_evento) {
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            MySqlDataReader reader;
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@id_evento", id_evento);
+            command.Parameters.AddWithValue("@id_owner", id_owner);
+            command.CommandText = "DELETE FROM P_EVENTOS WHERE ID_EVENTO = @id_evento AND ID_USUARIO != @id_owner";
+            command.ExecuteNonQuery();
+            command.Parameters.AddWithValue("@asunto", asunto);
+            command.Parameters.AddWithValue("@fecha_evento", fecha_evento);
+            command.CommandText = "UPDATE EVENTOS SET FECHA_EVENTO=@fecha_evento, ASUNTO_EVENTO = @asunto" +
+                " WHERE ID_EVENTO = @id_evento";
+            command.ExecuteNonQuery();
+            foreach (string id_invitado in list_invitados)
+            {
+                command.Parameters.Clear();
+                command.Parameters.AddWithValue("@id_invitado", id_invitado);
+                command.Parameters.AddWithValue("@id_evento", id_evento);
+                command.CommandText = "SELECT ID_USUARIO FROM USUARIO WHERE ID_PERSONA = @id_invitado";
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    command.Parameters.AddWithValue("@id_usuario_invitado", reader.GetString(0));
+                }
+                reader.Close();
+                command.CommandText = "INSERT INTO P_EVENTOS VALUES (@id_evento, @id_usuario_invitado)";
+                command.ExecuteNonQuery();
+            }
+            connection.Close();
+        }
+        public DataTable MostrarEventosPersona(int id_usuario) {
+            DataTable tabla = new DataTable();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@id_usuario", id_usuario);
+            command.CommandText = "SELECT E.ID_EVENTO AS 'Id', E.FECHA_EVENTO AS 'Fecha del evento', E.ASUNTO_EVENTO AS 'Asunto del evento'," +
+                " COUNT(P.ID_USUARIO)-1" +
+                " AS 'Invitados' FROM EVENTOS AS E, P_EVENTOS AS P" +
+                " WHERE P.ID_EVENTO = E.ID_EVENTO AND FECHA_EVENTO > CURDATE() AND E.ID_USUARIO = @id_usuario GROUP BY (E.ID_EVENTO)";
+            MySqlDataReader reader = command.ExecuteReader();
+            tabla.Load(reader);
+            connection.Close();
+            return tabla;
+        }
+        public List<string> ShowUsersEvent(int id_evento, int id_usuario)
+        {
+            List<String> UsersEvent = new List<string>();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@id_evento", id_evento);
+            command.Parameters.AddWithValue("@id_usuario", id_usuario);
+            command.CommandText = "SELECT U.ID_PERSONA FROM USUARIO AS U, P_EVENTOS AS P, EVENTOS AS E WHERE U.ID_USUARIO = P.ID_USUARIO AND" +
+                " P.ID_EVENTO = E.ID_EVENTO AND E.ID_EVENTO = @id_evento AND  P.ID_USUARIO != @id_usuario";
+            command.CommandType = CommandType.Text;
+            MySqlDataReader reader = command.ExecuteReader();
 
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    Console.WriteLine("Invitado: " + reader.GetString(0));
+                    UsersEvent.Add(reader.GetString(0));
+                    
+                }
+            }
+            reader.Close();
+            connection.Close();
+            return UsersEvent;
+        }
     }
 }

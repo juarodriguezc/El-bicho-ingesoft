@@ -223,6 +223,15 @@ namespace chatbottest1
                     addStock.Show();
                     sesion.create_reg_function(22, SesionCache.Id_acceso);
                     return true;
+                case "Modificar_evento":
+                    if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area)
+                    {
+                        procesarRespuesta(rta_fin);
+                        Form_modificar_evento modificar_evento = new Form_modificar_evento();
+                        sesion.create_reg_function(23, SesionCache.Id_acceso);
+                        modificar_evento.Show();
+                    }
+                    return false;
                 case "El bicho siuu":
                     procesarRespuesta(rta_fin);
                     sesion.create_reg_function(80, SesionCache.Id_acceso);
