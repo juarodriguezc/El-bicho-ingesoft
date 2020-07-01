@@ -111,6 +111,10 @@ namespace chatbottest1
         {
             switch (accion)
             {
+                case "Hello and welcome!":
+                    procesarRespuesta(rta_fin);
+                    proximoEvento();
+                    return true;
                 case "Add_user":
                     if (UserLoginCache.Rol_empresa == Positions.Administrador)
                     {
@@ -232,6 +236,10 @@ namespace chatbottest1
                         modificar_evento.Show();
                     }
                     return false;
+                case "Show_events":
+                    procesarRespuesta(rta_fin);
+                    sesion.create_reg_function(24, SesionCache.Id_acceso);
+                    return true;
                 case "El bicho siuu":
                     procesarRespuesta(rta_fin);
                     sesion.create_reg_function(80, SesionCache.Id_acceso);
@@ -241,6 +249,32 @@ namespace chatbottest1
                     procesarRespuesta(rta_fin);
                     return true;
             }
+        }
+        private void proximoEvento() {
+            ModeloEventos eventos = new ModeloEventos();
+            string[] prox = eventos.ConsultarProxEvento(UserLoginCache.Id_usuario);
+            if (prox != null && prox.Length > 0)
+            {
+                DateTime evento = DateTime.Parse(prox[0]);
+                Console.WriteLine(evento);
+                string dia_mostrar;
+
+                if (IsTheSameDay(DateTime.Today, evento)){
+                    dia_mostrar = "de hoy";
+                }
+                else 
+                {
+                    dia_mostrar = evento.ToString("dd 'de' MMMM 'del' yyyy");
+                }
+                add_respuesta("Tienes un evento programado!");
+                string prox_event = prox[2]+" el día "+dia_mostrar;
+                add_respuesta(prox_event);
+                add_respuesta("No olvides asistir! ;)");
+            }
+        }
+        private bool IsTheSameDay(DateTime date1, DateTime date2)
+        {
+            return (date1.Year == date2.Year && date1.DayOfYear == date2.DayOfYear);
         }
         public void procesarRespuesta(String rta_fin) {
             string[] multiple_lines = rta_fin.Split('*');
