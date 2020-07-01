@@ -49,6 +49,7 @@ INSERT INTO FUNCIONES VALUES (19,'Add_event');
 INSERT INTO FUNCIONES VALUES (20,'Show_user_info');
 INSERT INTO FUNCIONES VALUES (21,'Pick_stock');
 INSERT INTO FUNCIONES VALUES (22,'Add_stock');
+INSERT INTO FUNCIONES VALUES (23,'Modificar_evento');
 INSERT INTO FUNCIONES VALUES (80,'El bicho siuu');
 
 SELECT * FROM FUNCIONES;
@@ -92,7 +93,7 @@ INSERT INTO MENSAJE VALUES (8,30,'Ok * Mostrar el registro de las conversaciones
 INSERT INTO MENSAJE VALUES (9,31,'Ok * Voy a mostrar la información del programa que selecciones');
 INSERT INTO MENSAJE VALUES (10,32,'Ok * Voy a deplegar un formulario para que realices tu solicitud');
 INSERT INTO MENSAJE VALUES (11,33,'Ok * Te voy a mostrar la información de las compañias asociadas');
-INSERT INTO MENSAJE VALUES (12,34,'Listo * 'Voy a mostrar la información de las personas registradas');
+INSERT INTO MENSAJE VALUES (12,34,'Listo * Voy a mostrar la información de las personas registradas');
 INSERT INTO MENSAJE VALUES (13,35,'Entiendo,voy a mostrar un formulario para que añadas un programa');
 INSERT INTO MENSAJE VALUES (14,36,'Ok * Voy a desplegar una ventana con las personas extranjeras');
 INSERT INTO MENSAJE VALUES (15,37,'Bueno* Voy a desplegar una ventana para que busques los programas en los que ha participado una persona');
@@ -104,6 +105,7 @@ INSERT INTO MENSAJE VALUES (19,42,'De acuerdo* Voy a mostrar un formulario para 
 INSERT INTO MENSAJE VALUES (20,43,'Ok* Voy a mostrarte la información de los usuarios');
 INSERT INTO MENSAJE VALUES (21,44,'Ok* Voy a mostrarte un formulario para realizar un movimiento sobre bodega');
 INSERT INTO MENSAJE VALUES (22,45,'Ok* Voy a mostrarte un formulario para ingresar un producto en bodega');
+INSERT INTO MENSAJE VALUES (23,46,'Ok* Voy a mostrarte tus eventos para que puedas editarlos');
 INSERT INTO MENSAJE VALUES (80,100,'SIUUUUUUUUUUUUUU');
 INSERT INTO MENSAJE VALUES (80,101,'¡Ay mi madre el BICHO!');
 INSERT INTO MENSAJE VALUES (80,102,'Mico Mandante SIUUUU');

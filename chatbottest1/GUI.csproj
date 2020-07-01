@@ -124,6 +124,12 @@
     <Compile Include="Form_ListComp.Designer.cs">
       <DependentUpon>Form_ListComp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_modificar_evento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_modificar_evento.Designer.cs">
+      <DependentUpon>Form_modificar_evento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_programas_activos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ListComp.resx">
       <DependentUpon>Form_ListComp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_modificar_evento.resx">
+      <DependentUpon>Form_modificar_evento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_programas_activos.resx">
       <DependentUpon>Form_programas_activos.cs</DependentUpon>

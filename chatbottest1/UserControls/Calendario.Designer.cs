@@ -43,7 +43,6 @@
             this.lbl_fecha_proximo = new System.Windows.Forms.Label();
             this.lbl_no_prox = new System.Windows.Forms.Label();
             this.lbl_proximo_evento = new System.Windows.Forms.Label();
-            this.bt_modificar_eventos = new System.Windows.Forms.Button();
             this.lbl_calendario = new System.Windows.Forms.Label();
             this.panel_calendario = new System.Windows.Forms.Panel();
             this.panel_eventos_dia = new System.Windows.Forms.Panel();
@@ -52,11 +51,12 @@
             this.lbl_fecha_actual = new System.Windows.Forms.Label();
             this.lblampm = new System.Windows.Forms.Label();
             this.lbl_hora_actual = new System.Windows.Forms.Label();
+            this.calendar_events = new CalendarioPersonalizado();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.bt_volver_chatbot = new System.Windows.Forms.Button();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
-            this.calendar_events = new CalendarioPersonalizado();
+            this.bt_modificar_eventos = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_contenido.SuspendLayout();
@@ -89,12 +89,12 @@
             // 
             // panel_contenido
             // 
+            this.panel_contenido.Controls.Add(this.bt_modificar_eventos);
             this.panel_contenido.Controls.Add(this.lbl_seleccione);
             this.panel_contenido.Controls.Add(this.BtnInfoProgramDate);
             this.panel_contenido.Controls.Add(this.bt_todos_eventos);
             this.panel_contenido.Controls.Add(this.bt_add_event);
             this.panel_contenido.Controls.Add(this.panel_next_event);
-            this.panel_contenido.Controls.Add(this.bt_modificar_eventos);
             this.panel_contenido.Controls.Add(this.lbl_calendario);
             this.panel_contenido.Controls.Add(this.panel_calendario);
             this.panel_contenido.Controls.Add(this.bt_volver_chatbot);
@@ -233,24 +233,6 @@
             this.lbl_proximo_evento.TabIndex = 64;
             this.lbl_proximo_evento.Text = "Próximo evento";
             // 
-            // bt_modificar_eventos
-            // 
-            this.bt_modificar_eventos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.bt_modificar_eventos.FlatAppearance.BorderSize = 0;
-            this.bt_modificar_eventos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.bt_modificar_eventos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bt_modificar_eventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_modificar_eventos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_modificar_eventos.ForeColor = System.Drawing.Color.White;
-            this.bt_modificar_eventos.Location = new System.Drawing.Point(634, 537);
-            this.bt_modificar_eventos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bt_modificar_eventos.Name = "bt_modificar_eventos";
-            this.bt_modificar_eventos.Size = new System.Drawing.Size(268, 33);
-            this.bt_modificar_eventos.TabIndex = 62;
-            this.bt_modificar_eventos.Text = "MODIFICAR EVENTOS";
-            this.bt_modificar_eventos.UseVisualStyleBackColor = false;
-            this.bt_modificar_eventos.Click += new System.EventHandler(this.bt_add_event_Click);
-            // 
             // lbl_calendario
             // 
             this.lbl_calendario.AutoSize = true;
@@ -343,6 +325,25 @@
             this.lbl_hora_actual.TabIndex = 2;
             this.lbl_hora_actual.Text = "11:12:20";
             // 
+            // calendar_events
+            // 
+            this.calendar_events.BackColor = System.Drawing.Color.White;
+            this.calendar_events.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
+            this.calendar_events.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calendar_events.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.calendar_events.Location = new System.Drawing.Point(13, 80);
+            this.calendar_events.Margin = new System.Windows.Forms.Padding(0);
+            this.calendar_events.MaxSelectionCount = 1;
+            this.calendar_events.Name = "calendar_events";
+            this.calendar_events.RightToLeftLayout = true;
+            this.calendar_events.ShowToday = false;
+            this.calendar_events.ShowTodayCircle = false;
+            this.calendar_events.TabIndex = 1;
+            this.calendar_events.TitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.calendar_events.TitleForeColor = System.Drawing.Color.White;
+            this.calendar_events.TrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.calendar_events.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.calendarioPersonalizado1_DateSelected);
+            // 
             // shapeContainer1
             // 
             this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
@@ -385,24 +386,23 @@
             this.horafecha.Enabled = true;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
             // 
-            // calendar_events
+            // bt_modificar_eventos
             // 
-            this.calendar_events.BackColor = System.Drawing.Color.White;
-            this.calendar_events.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
-            this.calendar_events.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calendar_events.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.calendar_events.Location = new System.Drawing.Point(13, 80);
-            this.calendar_events.Margin = new System.Windows.Forms.Padding(0);
-            this.calendar_events.MaxSelectionCount = 1;
-            this.calendar_events.Name = "calendar_events";
-            this.calendar_events.RightToLeftLayout = true;
-            this.calendar_events.ShowToday = false;
-            this.calendar_events.ShowTodayCircle = false;
-            this.calendar_events.TabIndex = 1;
-            this.calendar_events.TitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.calendar_events.TitleForeColor = System.Drawing.Color.White;
-            this.calendar_events.TrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.calendar_events.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.calendarioPersonalizado1_DateSelected);
+            this.bt_modificar_eventos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.bt_modificar_eventos.FlatAppearance.BorderSize = 0;
+            this.bt_modificar_eventos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.bt_modificar_eventos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bt_modificar_eventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_modificar_eventos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_modificar_eventos.ForeColor = System.Drawing.Color.White;
+            this.bt_modificar_eventos.Location = new System.Drawing.Point(634, 536);
+            this.bt_modificar_eventos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_modificar_eventos.Name = "bt_modificar_eventos";
+            this.bt_modificar_eventos.Size = new System.Drawing.Size(268, 33);
+            this.bt_modificar_eventos.TabIndex = 67;
+            this.bt_modificar_eventos.Text = "MODIFICAR EVENTOS";
+            this.bt_modificar_eventos.UseVisualStyleBackColor = false;
+            this.bt_modificar_eventos.Click += new System.EventHandler(this.bt_modificar_eventos_Click);
             // 
             // Calendario
             // 
@@ -443,7 +443,6 @@
         public CalendarioPersonalizado calendar_events;
         private System.Windows.Forms.Label lblampm;
         private System.Windows.Forms.Label lbl_calendario;
-        private System.Windows.Forms.Button bt_modificar_eventos;
         private System.Windows.Forms.Panel panel_eventos_dia;
         private System.Windows.Forms.Label lbl_no_eventos;
         private System.Windows.Forms.Label lbl_current_day;
@@ -459,5 +458,6 @@
         private System.Windows.Forms.Label lbl_no_prox;
         private System.Windows.Forms.Button BtnInfoProgramDate;
         private System.Windows.Forms.Label lbl_seleccione;
+        private System.Windows.Forms.Button bt_modificar_eventos;
     }
 }
