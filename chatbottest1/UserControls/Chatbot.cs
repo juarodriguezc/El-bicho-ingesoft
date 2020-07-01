@@ -246,6 +246,7 @@ namespace chatbottest1
                         Form_modificar_evento modificar_evento = new Form_modificar_evento();
                         sesion.create_reg_function(23, SesionCache.Id_acceso);
                         modificar_evento.Show();
+                        return true;
                     }
                     return false;
                 case "Show_events":

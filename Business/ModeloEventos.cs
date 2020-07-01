@@ -48,5 +48,9 @@ namespace Business
         {
             return eventos.TotalEventos(id_usuario);
         }
+        public DataTable EventosProximos(int id_usuario, DateTime fecha)
+        {
+            return eventos.EventosProximos(id_usuario, fecha);
+        }
     }
 }

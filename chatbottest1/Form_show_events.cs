@@ -24,9 +24,7 @@ namespace chatbottest1
         {
             pick_fecha_inicio.Value = DateTime.Today;
             pick__fecha_fin.Value = DateTime.Today.AddHours(23).AddMinutes(59).AddSeconds(59);
-            dataGridView1.DataSource = eventos.TotalEventos(UserLoginCache.Id_usuario);
-            dataGridView1.Columns[0].Width = 80;
-            dataGridView1.Columns[1].Width = 100;
+            bt_prox_events.PerformClick();
         }
         private void MostrarEventos(DateTime fecha_inicio, DateTime fecha_fin)
         {
@@ -63,6 +61,13 @@ namespace chatbottest1
         private void bt_todos_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = eventos.TotalEventos(UserLoginCache.Id_usuario);
+        }
+
+        private void bt_prox_events_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = eventos.EventosProximos(UserLoginCache.Id_usuario, DateTime.Today);
+            dataGridView1.Columns[0].Width = 80;
+            dataGridView1.Columns[1].Width = 100;
         }
     }
 }
