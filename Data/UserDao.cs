@@ -230,7 +230,21 @@ namespace Data
 
         }
 
-        
+        public DataTable showPrograms()
+        {
+            DataTable tabla = new DataTable();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "SELECT * FROM PROGRAMA";
+            MySqlDataReader reader = command.ExecuteReader();
+            tabla.Load(reader);
+            connection.Close();
+            return tabla;
+
+        }
+
 
     }
 }

@@ -38,9 +38,9 @@ namespace Data
             command.CommandType = CommandType.Text;
             MySqlDataReader reader = command.ExecuteReader();
 
-            if(reader.HasRows)
-            { 
-                while(reader.Read())
+            if (reader.HasRows)
+            {
+                while (reader.Read())
                 {
                     String a = reader.GetString(1);
                     //Console.WriteLine(a);
@@ -56,7 +56,7 @@ namespace Data
         {
             var connection = GetConnection();
             connection.Open();
-            int idCompany= 0;
+            int idCompany = 0;
             var sql = "SELECT * FROM COMPANIA WHERE NOMBRE_COMPANIA = @nombreCompania";
             var command = new MySqlCommand(sql, connection);
             command.Parameters.AddWithValue("@nombreCompania", nombreCompany);
@@ -74,6 +74,48 @@ namespace Data
             return idCompany;
         }
 
+        public string buscarNombreCompanies(int idCompanies)
+        {
+            var connection = GetConnection();
+            connection.Open();
+            string nameCompany = "";
+            var sql = "SELECT * FROM COMPANIA WHERE ID_COMPANIA = @idC";
+            var command = new MySqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@idC", idCompanies);
+            MySqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    nameCompany = reader.GetInt32(1).ToString();
+                }
+            }
+            reader.Close();
+
+            connection.Close();
+            return nameCompany;
+        }
+
+        public bool existeCompany(int idCompany)
+        {
+            var connection = GetConnection();
+            connection.Open();
+            var sql = "SELECT * FROM COMPANIA WHERE ID_COMPANIA = @idC";
+            var command = new MySqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@idC", idCompany);
+            MySqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                return true;
+            }
+            reader.Close();
+
+            connection.Close();
+            return false;
+        }
+
+
+
         public bool add_program(string nombreCompany, string nombrePrograma, DateTime fechaInicio, DateTime fechaFin, string tipoPrograma)
         {
             var connection = GetConnection();
@@ -82,7 +124,7 @@ namespace Data
 
             var sql = "SELECT * FROM PROGRAMA WHERE Nombre_Programa = @nombrePrograma";
             var command = new MySqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@nombrePrograma", nombrePrograma+ fechaInicio.ToString());
+            command.Parameters.AddWithValue("@nombrePrograma", nombrePrograma + fechaInicio.ToString());
             command.Parameters.AddWithValue("@IdCompania", idCompany);
             command.Parameters.AddWithValue("@fechaInicio", fechaInicio);
             command.Parameters.AddWithValue("@fechaFin", fechaFin);
@@ -100,6 +142,25 @@ namespace Data
 
             connection.Close();
             return true;
+        }
+
+        public void editProgram(int idP, int idC, string name, string tipo, DateTime fechaIni, DateTime fechaFin)
+        {
+            var connection = GetConnection();
+            connection.Open();
+
+            var sql = "UPDATE PROGRAMA SET ID_COMPANIA = @idC," +
+            " NOMBRE_PROGRAMA = @name, TIPO_PROGRAMA = @tipo, FECHA_INICIO = @fechaIni, FECHA_FIN = @fechaFin where ID_PROGRAMA = @idP";
+            var command = new MySqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@idP", idP);
+            command.Parameters.AddWithValue("@idC", idC);
+            command.Parameters.AddWithValue("@name", name);
+            command.Parameters.AddWithValue("@tipo", tipo);
+            command.Parameters.AddWithValue("@fechaIni", fechaIni);
+            command.Parameters.AddWithValue("@fechaFin", fechaFin);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            connection.Close();
         }
 
         public DataTable programaActivos()

@@ -22,6 +22,26 @@ namespace Business
             return programa.add_program(nombreCompany, nombrePrograma, fechaInicio, fechaFin, tipoPrograma);
         }
 
+        public string nameCompany(int idC)
+        {
+            return programa.buscarNombreCompanies(idC);
+        }
+
+        public int buscarIdCompany(string name)
+        {
+            return programa.buscarIdCompany(name);
+        }
+
+        public void editProgram(int idP, int idC, string name, string tipo, DateTime fechaIni, DateTime fechaFin)
+        {
+            programa.editProgram(idP, idC, name, tipo, fechaIni, fechaFin);
+        }
+
+        public bool existeCompania(int idC)
+        {
+            return programa.existeCompany(idC);
+        }
+
         public DataTable programaActivos()
         {
             return programa.programaActivos();

@@ -76,6 +76,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form_EditProgramInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_EditProgramInfo.Designer.cs">
+      <DependentUpon>Form_EditProgramInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_add_event.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_add_volunteer.resx">
       <DependentUpon>Form_add_volunteer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_EditProgramInfo.resx">
+      <DependentUpon>Form_EditProgramInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_InfoPersonas.resx">
       <DependentUpon>Form_InfoPersonas.cs</DependentUpon>

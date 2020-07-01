@@ -146,6 +146,18 @@ namespace chatbottest1
                         return true;
                     }
                     return false;
+                //Codigo Ivan
+                case "Change_programInfo":
+                    if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area)
+                    {
+                        procesarRespuesta(rta_fin);
+                        Form_EditProgramInfo edtProgram = new Form_EditProgramInfo();
+                        edtProgram.Show();
+                        sesion.create_reg_function(13, SesionCache.Id_acceso);
+                        return true;
+                    }
+                    return false;
+                //----
                 case "Show_company":
                     if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area || UserLoginCache.Rol_empresa == Positions.Empleado)
                     {
