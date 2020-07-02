@@ -15,6 +15,9 @@ namespace chatbottest1
     public partial class Form_show_program_by_person : Form
     {
         ModeloVoluntario voluntario = new ModeloVoluntario();
+
+        private string messageData = "Recuerde que:\n"
+                 + "1. Seleccionar una opcion valida entre las desplegadas.\n";
         public Form_show_program_by_person()
         {
             InitializeComponent();
@@ -32,10 +35,17 @@ namespace chatbottest1
 
         private void bt_Search_Click(object sender, EventArgs e)
         {
-            string opcion=comboBoxConsulta.SelectedItem.ToString();
-            string valor = dataProg.Text;
-            MostrarVoluntariosPorPrograma(opcion,valor);
-
+            if (comboBoxConsulta.SelectedItem==null) {
+                datoErroneoComboBox.Visible = true;
+                MessageBox.Show(messageData, "Tener en cuenta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                string opcion = comboBoxConsulta.SelectedItem.ToString();
+                string valor = dataProg.Text;
+                MostrarVoluntariosPorPrograma(opcion, valor);
+            }
+            
         }
 
         private void MostrarVoluntariosPorPrograma(string opcion, string valor)
@@ -66,6 +76,11 @@ namespace chatbottest1
         private void Form_show_program_by_person_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void bt_volver_chatbot_stock_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
