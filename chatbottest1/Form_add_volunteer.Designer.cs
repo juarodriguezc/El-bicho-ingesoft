@@ -289,7 +289,7 @@
             this.lineShape2,
             this.lineShape1,
             this.lineShape4});
-            this.shapeContainer1.Size = new System.Drawing.Size(494, 591);
+            this.shapeContainer1.Size = new System.Drawing.Size(494, 573);
             this.shapeContainer1.TabIndex = 62;
             this.shapeContainer1.TabStop = false;
             // 
@@ -315,7 +315,7 @@
             this.backHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.backHome.ForeColor = System.Drawing.Color.LightGray;
-            this.backHome.Location = new System.Drawing.Point(58, 509);
+            this.backHome.Location = new System.Drawing.Point(46, 498);
             this.backHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backHome.Name = "backHome";
             this.backHome.Size = new System.Drawing.Size(101, 33);
@@ -333,7 +333,7 @@
             this.bt_adduser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_adduser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.bt_adduser.ForeColor = System.Drawing.Color.LightGray;
-            this.bt_adduser.Location = new System.Drawing.Point(233, 509);
+            this.bt_adduser.Location = new System.Drawing.Point(224, 498);
             this.bt_adduser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_adduser.Name = "bt_adduser";
             this.bt_adduser.Size = new System.Drawing.Size(232, 33);
@@ -614,7 +614,7 @@
             "Yibuti",
             "Zambia",
             "Zimbabue"});
-            this.comboBoxPais.Location = new System.Drawing.Point(233, 444);
+            this.comboBoxPais.Location = new System.Drawing.Point(231, 441);
             this.comboBoxPais.Name = "comboBoxPais";
             this.comboBoxPais.Size = new System.Drawing.Size(227, 29);
             this.comboBoxPais.TabIndex = 71;
@@ -624,7 +624,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(22, 447);
+            this.label2.Location = new System.Drawing.Point(22, 444);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 21);
             this.label2.TabIndex = 70;
@@ -635,7 +635,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(494, 591);
+            this.ClientSize = new System.Drawing.Size(494, 573);
             this.Controls.Add(this.comboBoxPais);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.backHome);
