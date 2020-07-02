@@ -148,16 +148,17 @@
     <Compile Include="Form_RealizarMovimiento.Designer.cs">
       <DependentUpon>Form_RealizarMovimiento.cs</DependentUpon>
     </Compile>
-      <Compile Include="Form_show_program_by_person.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_show_program_by_person.Designer.cs">
-      <DependentUpon>Form_show_program_by_person.cs</DependentUpon>
     <Compile Include="Form_show_events.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_show_events.Designer.cs">
       <DependentUpon>Form_show_events.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_show_program_by_person.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_show_program_by_person.Designer.cs">
+      <DependentUpon>Form_show_program_by_person.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_show_stock.cs">
       <SubType>Form</SubType>
@@ -266,10 +267,11 @@
     <EmbeddedResource Include="Form_RealizarMovimiento.resx">
       <DependentUpon>Form_RealizarMovimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_show_program_by_person.resx">
-      <DependentUpon>Form_show_program_by_person.cs</DependentUpon>
     <EmbeddedResource Include="Form_show_events.resx">
       <DependentUpon>Form_show_events.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_show_program_by_person.resx">
+      <DependentUpon>Form_show_program_by_person.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_show_stock.resx">
       <DependentUpon>Form_show_stock.cs</DependentUpon>
