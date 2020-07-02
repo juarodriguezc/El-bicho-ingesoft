@@ -398,6 +398,7 @@
             this.txt_cedula.ForeColor = System.Drawing.Color.DimGray;
             this.txt_cedula.Location = new System.Drawing.Point(28, 90);
             this.txt_cedula.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_cedula.MaxLength = 9;
             this.txt_cedula.Name = "txt_cedula";
             this.txt_cedula.Size = new System.Drawing.Size(206, 20);
             this.txt_cedula.TabIndex = 42;

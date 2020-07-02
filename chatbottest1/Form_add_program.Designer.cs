@@ -320,6 +320,7 @@
             this.Controls.Add(this.lbl_add_program);
             this.Controls.Add(this.shapeContainer1);
             this.Name = "Form_add_program";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_add_program";
             this.Load += new System.EventHandler(this.Form_add_program_Load);
             this.ResumeLayout(false);
