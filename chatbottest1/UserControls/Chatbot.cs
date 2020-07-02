@@ -146,6 +146,18 @@ namespace chatbottest1
                         return true;
                     }
                     return false;
+                //Codigo Ivan
+                case "Change_programInfo":
+                    if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area)
+                    {
+                        procesarRespuesta(rta_fin);
+                        Form_EditProgramInfo edtProgram = new Form_EditProgramInfo();
+                        edtProgram.Show();
+                        sesion.create_reg_function(13, SesionCache.Id_acceso);
+                        return true;
+                    }
+                    return false;
+                //----
                 case "Show_company":
                     if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area || UserLoginCache.Rol_empresa == Positions.Empleado)
                     {
@@ -234,10 +246,13 @@ namespace chatbottest1
                         Form_modificar_evento modificar_evento = new Form_modificar_evento();
                         sesion.create_reg_function(23, SesionCache.Id_acceso);
                         modificar_evento.Show();
+                        return true;
                     }
                     return false;
                 case "Show_events":
                     procesarRespuesta(rta_fin);
+                    Form_show_events show_events = new Form_show_events();
+                    show_events.Show();
                     sesion.create_reg_function(24, SesionCache.Id_acceso);
                     return true;
                 case "El bicho siuu":

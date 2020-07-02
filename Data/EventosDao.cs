@@ -220,5 +220,65 @@ namespace Data
             connection.Close();
             return UsersEvent;
         }
+        public DataTable EventosDosFechas(int id_usuario, DateTime fecha_inicio, DateTime fecha_fin)
+        {
+            DataTable tabla = new DataTable();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@id_usuario", id_usuario);
+            command.Parameters.AddWithValue("@fecha_inicio", Min(fecha_inicio,fecha_fin));
+            command.Parameters.AddWithValue("@fecha_fin", Max(fecha_inicio, fecha_fin));
+            command.CommandText = "SELECT E.ID_EVENTO AS 'Id', E.FECHA_EVENTO AS 'Fecha del evento', E.ASUNTO_EVENTO AS 'Asunto del evento' " +
+                "FROM EVENTOS AS E, P_EVENTOS AS P WHERE P.ID_EVENTO = E.ID_EVENTO " +
+                "AND E.FECHA_EVENTO > @fecha_inicio AND E.FECHA_EVENTO < @fecha_fin AND P.ID_USUARIO = @id_usuario";
+            MySqlDataReader reader = command.ExecuteReader();
+            tabla.Load(reader);
+            connection.Close();
+            return tabla;
+        }
+        public DataTable TotalEventos(int id_usuario)
+        {
+            DataTable tabla = new DataTable();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@id_usuario", id_usuario);
+            command.CommandText = "SELECT E.ID_EVENTO AS 'Id', E.FECHA_EVENTO AS 'Fecha del evento', E.ASUNTO_EVENTO AS 'Asunto del evento' " +
+                "FROM EVENTOS AS E, P_EVENTOS AS P WHERE P.ID_EVENTO = E.ID_EVENTO " +
+                "AND P.ID_USUARIO = @id_usuario";
+            MySqlDataReader reader = command.ExecuteReader();
+            tabla.Load(reader);
+            connection.Close();
+            return tabla;
+        }
+        public DataTable EventosProximos(int id_usuario, DateTime fecha)
+        {
+            DataTable tabla = new DataTable();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@id_usuario", id_usuario);
+            command.Parameters.AddWithValue("@fecha", fecha);
+            command.CommandText = "SELECT E.ID_EVENTO AS 'Id', E.FECHA_EVENTO AS 'Fecha del evento', E.ASUNTO_EVENTO AS 'Asunto del evento' " +
+                "FROM EVENTOS AS E, P_EVENTOS AS P WHERE P.ID_EVENTO = E.ID_EVENTO AND E.FECHA_EVENTO > @fecha " +
+                "AND P.ID_USUARIO = @id_usuario";
+            MySqlDataReader reader = command.ExecuteReader();
+            tabla.Load(reader);
+            connection.Close();
+            return tabla;
+        }
+        public static DateTime Max(DateTime a, DateTime b)
+        {
+            return a > b ? a : b;
+        }
+        public static DateTime Min(DateTime a, DateTime b)
+        {
+            return a < b ? a : b;
+        }
     }
+    
 }

@@ -52,5 +52,10 @@ namespace Business
         {
             return userDao.showCompanies();
         }
+
+        public DataTable showProgram()
+        {
+            return userDao.showPrograms();
+        }
     }
 }

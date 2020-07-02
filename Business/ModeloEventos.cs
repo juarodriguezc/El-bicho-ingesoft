@@ -40,5 +40,17 @@ namespace Business
         {
             return eventos.ShowUsersEvent(id_evento, id_usuario);
         }
+        public DataTable EventosDosFechas(int id_usuario, DateTime fecha_inicio, DateTime fecha_fin)
+        {
+            return eventos.EventosDosFechas(id_usuario, fecha_inicio, fecha_fin);
+        }
+        public DataTable TotalEventos(int id_usuario)
+        {
+            return eventos.TotalEventos(id_usuario);
+        }
+        public DataTable EventosProximos(int id_usuario, DateTime fecha)
+        {
+            return eventos.EventosProximos(id_usuario, fecha);
+        }
     }
 }
