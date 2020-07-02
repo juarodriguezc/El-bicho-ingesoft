@@ -51,6 +51,7 @@ INSERT INTO FUNCIONES VALUES (21,'Pick_stock');
 INSERT INTO FUNCIONES VALUES (22,'Add_stock');
 INSERT INTO FUNCIONES VALUES (23,'Modificar_evento');
 INSERT INTO FUNCIONES VALUES (24,'Show_events');
+INSERT INTO FUNCIONES VALUES (25,'Change_programInfo');
 INSERT INTO FUNCIONES VALUES (80,'El bicho siuu');
 
 SELECT * FROM FUNCIONES;
@@ -107,7 +108,8 @@ INSERT INTO MENSAJE VALUES (20,43,'Ok* Voy a mostrarte la información de los us
 INSERT INTO MENSAJE VALUES (21,44,'Ok* Voy a mostrarte un formulario para realizar un movimiento sobre bodega');
 INSERT INTO MENSAJE VALUES (22,45,'Ok* Voy a mostrarte un formulario para ingresar un producto en bodega');
 INSERT INTO MENSAJE VALUES (23,46,'Ok* Voy a mostrarte tus eventos para que puedas editarlos');
-INSERT INTO MENSAJE VALUES (24,47,'Mut bien! *Voy a desplegar una ventana con los eventos empresariales que tienes programados');
+INSERT INTO MENSAJE VALUES (24,47,'Muy bien! *Voy a desplegar una ventana con los eventos empresariales que tienes programados');
+INSERT INTO MENSAJE VALUES (25,48,'Muy bien! *Voy a desplegar una ventana para que puedas editar los programas');
 INSERT INTO MENSAJE VALUES (80,100,'SIUUUUUUUUUUUUUU');
 INSERT INTO MENSAJE VALUES (80,101,'¡Ay mi madre el BICHO!');
 INSERT INTO MENSAJE VALUES (80,102,'Mico Mandante SIUUUU');

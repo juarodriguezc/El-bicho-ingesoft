@@ -153,7 +153,7 @@ namespace chatbottest1
                         procesarRespuesta(rta_fin);
                         Form_EditProgramInfo edtProgram = new Form_EditProgramInfo();
                         edtProgram.Show();
-                        sesion.create_reg_function(13, SesionCache.Id_acceso);
+                        sesion.create_reg_function(25, SesionCache.Id_acceso);
                         return true;
                     }
                     return false;
