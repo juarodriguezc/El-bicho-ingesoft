@@ -230,6 +230,45 @@ namespace Data
 
         }
 
+        public DataTable MostrarUsuarios(int id_usuario)
+        {
+            DataTable tabla = new DataTable();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@id_usuario", id_usuario);
+            command.CommandText = "SELECT P.NOMBRE_PERSONA AS 'NOMBRE', P.APELLIDO_PERSONA AS 'APELLIDO', P.TELEFONO_PERSONA AS 'TELEFONO', " +
+                "P.CORREO_PERSONA AS 'CORREO ELECTRONICO', U.ROL_EMPRESA AS 'CARGO' FROM PERSONA AS P, USUARIO AS U " +
+                "WHERE P.ID_PERSONA = U.ID_PERSONA AND U.ID_USUARIO != @id_usuario";
+            MySqlDataReader reader = command.ExecuteReader();
+            tabla.Load(reader);
+            connection.Close();
+            return tabla;
+
+        }
+
+        public DataTable CompletaUsuarios(int id_usuario)
+        {
+            DataTable tabla = new DataTable();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@id_usuario", id_usuario);
+            command.CommandText = "SELECT P.ID_PERSONA, P.NOMBRE_PERSONA AS 'NOMBRE', P.APELLIDO_PERSONA AS 'APELLIDO', P.TELEFONO_PERSONA AS 'TELEFONO', " +
+                "P.CORREO_PERSONA AS 'CORREO ELECTRONICO', P.FECHA_NACIMIENTO AS 'FECHA NACIMIENTO', U.ROL_EMPRESA AS 'CARGO', P.GENERO, " +
+                "P.PAIS_ORIGEN AS 'PAIS DE ORIGEN' FROM PERSONA AS P, USUARIO AS U " +
+                "WHERE P.ID_PERSONA = U.ID_PERSONA AND U.ID_USUARIO != @id_usuario";
+            MySqlDataReader reader = command.ExecuteReader();
+            tabla.Load(reader);
+            connection.Close();
+            return tabla;
+
+        }
+
+        //Arreglar esto 
+
         public DataTable showPrograms()
         {
             DataTable tabla = new DataTable();
@@ -243,6 +282,24 @@ namespace Data
             connection.Close();
             return tabla;
 
+        }
+
+        public DateTime getNacimiento(int id_persona) {
+            DateTime fecha_nacimiento = DateTime.Today;
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@id_persona", id_persona);
+            command.CommandText = "SELECT  P.FECHA_NACIMIENTO FROM PERSONA AS P WHERE P.ID_PERSONA = @id_persona";
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                
+                fecha_nacimiento = DateTime.Parse((DateTime.Parse(reader.GetString(0))).ToString("yyyy - MM - dd"));
+            }
+            connection.Close();
+            return fecha_nacimiento;
         }
 
 

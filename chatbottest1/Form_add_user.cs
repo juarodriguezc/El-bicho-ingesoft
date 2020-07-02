@@ -51,36 +51,39 @@ namespace chatbottest1
                     {
                         MessageBox.Show("El correo registrado ya se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    MessageBox.Show("El usuario ha sido registrado\n"+"Se ha enviado un correo al usuario para el acceso.\n", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    else
+                    {
+                        MessageBox.Show("El usuario ha sido registrado\n" + "Se ha enviado un correo al usuario para el acceso.\n", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                    String nombre = txt_nombre.Text+" "+txt_apellido.Text;
-                    String messageB = "Hola\n\n"
-                            + nombre + "\n"
-                            + "Te damos la bienvenida a YMCA-BOTSERVICE\n"
-                            + "Recuerda tus datos:"
-                            + "\n\t- Correo de acceso:\t" + txt_correo.Text + "\n"
-                            + "\t- Contraseña:\t" + txt_contrasenia.Text + "\n\n"
-                            + "Gracias!\n"
-                            + "YMCA Colombia";
-                    String subject = "Bienvenido a YMCA-BOTSERVICE";
+                        String nombre = txt_nombre.Text + " " + txt_apellido.Text;
+                        String messageB = "Hola\n\n"
+                                + nombre + "\n"
+                                + "Te damos la bienvenida a YMCA-BOTSERVICE\n"
+                                + "Recuerda tus datos:"
+                                + "\n\t- Correo de acceso:\t" + txt_correo.Text + "\n"
+                                + "\t- Contraseña:\t" + txt_contrasenia.Text + "\n\n"
+                                + "Gracias!\n"
+                                + "YMCA Colombia";
+                        String subject = "Bienvenido a YMCA-BOTSERVICE";
 
-                    String email = txt_correo.Text;
+                        String email = txt_correo.Text;
 
-                    sendEmail(email, messageB, subject);
+                        sendEmail(email, messageB, subject);
 
-                    //Reiniciar valores para otro registro
-                    
-                    txt_nombre.Text = "NOMBRE";
-                    txt_apellido.Text = "APELLIDO";
-                    txt_correo.Text = "CORREO";
-                    txt_usuario.Text = "USUARIO";
-                    pick_fecha_nacimiento.Value = DateTime.Parse("01-01-2000");
-                    txt_contrasenia.UseSystemPasswordChar = false;
-                    txt_v_contra.UseSystemPasswordChar = false;
-                    txt_contrasenia.Text = "CONTRASEÑA";
-                    txt_v_contra.Text = "VERIFICACIÓN";
-
-
+                        //Reiniciar valores para otro registro
+                        /*
+                        txt_nombre.Text = "NOMBRE";
+                        txt_apellido.Text = "APELLIDO";
+                        txt_correo.Text = "CORREO";
+                        txt_usuario.Text = "USUARIO";
+                        pick_fecha_nacimiento.Value = DateTime.Parse("01-01-2000");
+                        txt_contrasenia.UseSystemPasswordChar = false;
+                        txt_v_contra.UseSystemPasswordChar = false;
+                        txt_contrasenia.Text = "CONTRASEÑA";
+                        txt_v_contra.Text = "VERIFICACIÓN";
+                        */
+                        this.Close();
+                    }
                 }
                 else {
                     if (!verficarNombre_Apell(txt_nombre.Text)) dato_erroneo_nombre.Visible = true;

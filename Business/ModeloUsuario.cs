@@ -52,6 +52,22 @@ namespace Business
         {
             return userDao.showCompanies();
         }
+        public DataTable MostrarUsuarios(int id_usuario)
+        {
+            return userDao.MostrarUsuarios(id_usuario);
+        }
+        public DataTable CompletaUsuarios(int id_usuario)
+        {
+            return userDao.CompletaUsuarios(id_usuario);
+        }
+        public DateTime getNacimiento(int id_persona)
+        {
+            return userDao.getNacimiento(id_persona);
+        }
+
+
+
+
 
         public DataTable showProgram()
         {

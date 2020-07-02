@@ -11,7 +11,7 @@ using System.Configuration;
 using Microsoft.Bot.Connector.DirectLine;
 using Business;
 using Common.Cache;
-
+using System.Security.Cryptography.X509Certificates;
 
 namespace chatbottest1
 {
@@ -113,6 +113,7 @@ namespace chatbottest1
             {
                 case "Hello and welcome!":
                     procesarRespuesta(rta_fin);
+                    verificarCumple();
                     proximoEvento();
                     return true;
                 case "Add_user":
@@ -267,9 +268,27 @@ namespace chatbottest1
                     Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
                     sesion.create_reg_function(15, SesionCache.Id_acceso);
                     return true;
+                case "Show_users":
+                    procesarRespuesta(rta_fin);
+                    Form_show_users show_users= new Form_show_users();
+                    show_users.Show();
+                    sesion.create_reg_function(5, SesionCache.Id_acceso);
+                    return true;
                 default:
                     procesarRespuesta(rta_fin);
                     return true;
+            }
+        }
+        private void verificarCumple()
+        {
+            ModeloUsuario user = new ModeloUsuario();
+            DateTime nacimiento = user.getNacimiento(UserLoginCache.Id_Persona);
+            string dia_mes_user = nacimiento.ToString("dd - MM");
+            string dia_mes_actual = DateTime.Today.ToString("dd - MM");
+            if (dia_mes_user == dia_mes_actual) 
+            {
+                add_respuesta("Desde el grupo de YMCA te deseamos un Feliz cumpleaños! :D");
+                add_image(1); //Número para cumpleaños
             }
         }
         private void proximoEvento() {
@@ -366,7 +385,10 @@ namespace chatbottest1
             Label msg = new Label();
             Image img;
             switch (tipo_imagen) {
-                case 7:
+                case 1: //cumpleaños
+                    img = Image.FromFile("../../Images/cumple_test2.jpg");
+                    break;
+                case 7: //Ay mi madre el bichoooooooooooooooo
                     img = Image.FromFile("../../Images/creeper.png");
                     break;
                 default:
