@@ -114,8 +114,6 @@ namespace Data
             return false;
         }
 
-
-
         public bool add_program(string nombreCompany, string nombrePrograma, DateTime fechaInicio, DateTime fechaFin, string tipoPrograma)
         {
             var connection = GetConnection();
@@ -172,7 +170,7 @@ namespace Data
             var command = new MySqlCommand();
             command.Connection = connection;
             command.Parameters.AddWithValue("@dateActual", dateNow);
-            command.CommandText = "SELECT C.NOMBRE_COMPANIA, P.NOMBRE_PROGRAMA, P.FECHA_INICIO, P.FECHA_FIN, P.TIPO_PROGRAMA FROM PROGRAMA as P, COMPANIA as C WHERE P.FECHA_INICIO>= @dateActual AND P.FECHA_FIN< @dateActual ";
+            command.CommandText = "SELECT C.NOMBRE_COMPANIA, P.NOMBRE_PROGRAMA, P.FECHA_INICIO, P.FECHA_FIN, P.TIPO_PROGRAMA FROM PROGRAMA as P, COMPANIA as C WHERE P.FECHA_INICIO<= @dateActual AND P.FECHA_FIN> @dateActual ";
             MySqlDataReader reader = command.ExecuteReader();
             tabla.Load(reader);
             connection.Close();
@@ -216,6 +214,33 @@ namespace Data
             tabla.Load(reader);
             connection.Close();
             return tabla;
+        }
+
+
+        public List<string> programasList()
+        {
+            List<String> programas = new List<string>();
+            DateTime dateNow = DateTime.Now;
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@dateActual", dateNow);
+            command.CommandText = "SELECT * FROM PROGRAMA WHERE FECHA_INICIO<= @dateActual AND FECHA_FIN> @dateActual";
+            command.CommandType = CommandType.Text;
+            MySqlDataReader reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    String a = reader.GetString(2);
+                    programas.Add(a);
+                }
+            }
+            reader.Close();
+
+            return programas;
         }
     }
 }

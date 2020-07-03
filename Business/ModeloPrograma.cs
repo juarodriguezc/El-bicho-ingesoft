@@ -52,5 +52,9 @@ namespace Business
             return programa.MostrarProgramaEspecifico(idP, idC, nomP, fechaIn, typeP);
         }
 
+        public List<string> programasList()
+        {
+            return programa.programasList();
+        }
     }
 }
