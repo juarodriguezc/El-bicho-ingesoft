@@ -274,6 +274,16 @@ namespace chatbottest1
                     show_users.Show();
                     sesion.create_reg_function(5, SesionCache.Id_acceso);
                     return true;
+                case "Add_volunteer_program":
+                    if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area)
+                    {
+                        procesarRespuesta(rta_fin);
+                        Form_AddPersonaPrograma personaPrograma = new Form_AddPersonaPrograma();
+                        sesion.create_reg_function(26, SesionCache.Id_acceso);
+                        personaPrograma.Show();
+                        return true;
+                    }
+                    return false;
                 default:
                     procesarRespuesta(rta_fin);
                     return true;

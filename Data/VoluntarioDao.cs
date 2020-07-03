@@ -96,5 +96,61 @@ namespace Data
             connection.Close();
             return tabla;
         }
+        
+        public int getIdPrograma(string programa)
+        {
+            var connection = GetConnection();
+            connection.Open();
+            int idPrograma = 0;
+            var sql = "SELECT * FROM PROGRAMA WHERE NOMBRE_PROGRAMA = @nombrePrograma";
+            var command = new MySqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@nombrePrograma", programa);
+            MySqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    idPrograma = reader.GetInt32(0);
+                }
+            }
+            reader.Close();
+
+            connection.Close();
+            return idPrograma;
+
+
+        }
+
+        public DataTable VoluntariosDisponibles(string programa)
+        {
+            int idPrograma = getIdPrograma(programa);
+
+            DataTable tabla = new DataTable();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "SELECT P.Id_persona as 'Id persona', P.Nombre_persona as 'Nombre', P.Apellido_persona as 'Apellido' FROM PERSONA as P LEFT JOIN PER_PROG as PR ON P.ID_PERSONA=PR.ID_PERSONA AND PR.ID_PROGRAMA=@idPrograma WHERE PR.ID_PERSONA IS NULL";
+            command.Parameters.AddWithValue("@idPrograma", idPrograma);
+            MySqlDataReader reader = command.ExecuteReader();
+            tabla.Load(reader);
+            connection.Close();
+            return tabla;
+        }
+
+        public void add_VolunterProgram(string id_persona, string programa)
+        {
+            int idPrograma = getIdPrograma(programa);
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@id_persona", id_persona);
+            command.Parameters.AddWithValue("@id_programa", idPrograma);
+            command.CommandText = "INSERT INTO PER_PROG (Id_programa, Id_persona, Rol_programa, Calificacion) VALUES(@id_programa,@id_persona,'Voluntario',0)";
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+
     }
 }

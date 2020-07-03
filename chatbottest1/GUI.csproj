@@ -76,6 +76,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form_AddPersonaPrograma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AddPersonaPrograma.Designer.cs">
+      <DependentUpon>Form_AddPersonaPrograma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_EditProgramInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +243,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form_AddPersonaPrograma.resx">
+      <DependentUpon>Form_AddPersonaPrograma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_add_event.resx">
       <DependentUpon>Form_add_event.cs</DependentUpon>
     </EmbeddedResource>

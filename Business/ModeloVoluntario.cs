@@ -15,7 +15,6 @@ namespace Business
             return volunteerDao.Add_volunteer(id_persona, nombre, apellido, fecha_nacimiento, telefono, genero, correo, pais);
         }
 
-
         public DataTable MostrarVoluntariosPorPrograma(string opcion, string valor)
         {
             return volunteerDao.MostrarVoluntariosPorPrograma(opcion, valor);
@@ -24,6 +23,16 @@ namespace Business
         public DataTable MostrarVoluntariosDifferentToCountryWithActivePrograms(string country)
         {
             return volunteerDao.MostrarVoluntariosDifferentToCountryWithActivePrograms("Colombia");
+        }
+
+        public DataTable VoluntariosDisponibles(string programa)
+        {
+            return volunteerDao.VoluntariosDisponibles(programa);
+        }
+
+        public void add_VolunterProgram(string id_persona, string programa)
+        {
+            volunteerDao.add_VolunterProgram(id_persona, programa);
         }
     }
 }
