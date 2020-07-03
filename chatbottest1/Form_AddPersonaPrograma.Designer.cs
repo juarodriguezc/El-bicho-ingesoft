@@ -297,6 +297,7 @@
             this.Controls.Add(this.dataGrid_voluntarios);
             this.Controls.Add(this.panel2);
             this.Name = "Form_AddPersonaPrograma";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Añadir PersonaPrograma";
             this.Load += new System.EventHandler(this.Form_AddPersonaPrograma_Load);
             this.panel2.ResumeLayout(false);
