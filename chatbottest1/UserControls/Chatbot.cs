@@ -51,24 +51,11 @@ namespace chatbottest1
         {
             Image img;
             img = Image.FromFile("../../Images/icon3.png");
-            
             bt_sendMessage.Image = img;
-            
             var date = DateTime.Now;
             sesion = new ModeloSesion();
             sesion.createSesion(UserLoginCache.Id_usuario, date);
-            
-
-            string day = "AM";
-            string minute = date.Minute.ToString();
-            string hour = (date.Hour%12).ToString();
-            if (date.Minute < 10) minute = "0" + minute;
-            if (date.Hour % 12 < 10) {
-                hour = "0" + hour;
-            }
-            if (date.Hour > 11) day = "PM";
-            lbl_hour.Text = (date.Day.ToString()) + "/" + (date.Month.ToString()) + "/" 
-                + (date.Year.ToString()) + "     " +  hour + ":" + minute +" "+day;
+            lbl_hour.Text = date.ToString("dd/MM/yyyy       hh:mm tt");
             ActiveControl = textBox1;
             
         }
@@ -95,7 +82,7 @@ namespace chatbottest1
                             BeginInvoke(new MethodInvoker(delegate {
                                 ModeloRespuesta rta = new ModeloRespuesta();
                                 string rta_fin = rta.GenRespuesta(message);
-                                Console.WriteLine("Bot said: " + rta_fin);
+                                Console.WriteLine("Bot said: "+message+ " Shown as " + rta_fin);
 
                                 if (!realizarAccion(message, rta_fin)) add_respuesta("No tienes acceso a esta función"); 
                                  
@@ -113,8 +100,14 @@ namespace chatbottest1
             {
                 case "Hello and welcome!":
                     procesarRespuesta(rta_fin);
-                    verificarCumple();
-                    proximoEvento();
+                    return true;
+                case "start_chatbot":
+                    add_respuesta("Hola, Bienvenido al Chatbot Empresarial YMCA"); //Mensaje introducción
+                    if (!verificarCumple()) {
+                        if (!proximoEvento()) {
+                            add_respuesta("¿Qué puedo hacer por ti?"); //Mensaje de pregunta
+                        }
+                    }
                     return true;
                 case "Add_user":
                     if (UserLoginCache.Rol_empresa == Positions.Administrador)
@@ -289,7 +282,7 @@ namespace chatbottest1
                     return true;
             }
         }
-        private void verificarCumple()
+        private bool verificarCumple()
         {
             ModeloUsuario user = new ModeloUsuario();
             DateTime nacimiento = user.getNacimiento(UserLoginCache.Id_Persona);
@@ -299,29 +292,35 @@ namespace chatbottest1
             {
                 add_respuesta("Desde el grupo de YMCA te deseamos un Feliz cumpleaños! :D");
                 add_image(1); //Número para cumpleaños
+                return true;
             }
+            return false;
         }
-        private void proximoEvento() {
+        private bool proximoEvento() {
             ModeloEventos eventos = new ModeloEventos();
             string[] prox = eventos.ConsultarProxEvento(UserLoginCache.Id_usuario);
             if (prox != null && prox.Length > 0)
             {
                 DateTime evento = DateTime.Parse(prox[0]);
                 Console.WriteLine(evento);
-                string dia_mostrar;
-
-                if (IsTheSameDay(DateTime.Today, evento)){
-                    dia_mostrar = "de hoy";
+                //Solo mostrar los eventos próximos a 8 días
+                if ((evento - DateTime.Now).TotalDays < 8) { 
+                    string dia_mostrar;
+                    if (IsTheSameDay(DateTime.Today, evento))
+                    {
+                        dia_mostrar = "de hoy";
+                    }
+                    else
+                    {
+                        dia_mostrar = evento.ToString("dd 'de' MMMM 'del' yyyy");
+                    }
+                    string prox_event = prox[2];
+                    add_respuesta("Tienes el evento: " + System.Environment.NewLine+" \" "+prox_event + " \" "+System.Environment.NewLine +
+                        " programado el día " + dia_mostrar + System.Environment.NewLine + System.Environment.NewLine + "No olvides asistir! ;)");
+                    return true;
                 }
-                else 
-                {
-                    dia_mostrar = evento.ToString("dd 'de' MMMM 'del' yyyy");
-                }
-                add_respuesta("Tienes un evento programado!");
-                string prox_event = prox[2]+" el día "+dia_mostrar;
-                add_respuesta(prox_event);
-                add_respuesta("No olvides asistir! ;)");
             }
+            return false;
         }
         private bool IsTheSameDay(DateTime date1, DateTime date2)
         {
@@ -336,9 +335,7 @@ namespace chatbottest1
             wait(1500);//Simular tiempo espera
         }
         public void add_mensaje(string mensaje) {
-            label7.Text = mensaje;
-            string mes2 = mensaje;
-            for (int a = 25; label7.Width+20 > 350; a -= 1)
+            /*for (int a = 25; label7.Width+20 > 350; a -= 1)
             {
                 if (a == 0) {
                     for (int b = 25; label7.Width + 20 > 350 && b > 0; b -= 1)
@@ -350,13 +347,17 @@ namespace chatbottest1
                 }
                 mes2 = SplitBySpace(mensaje, a);
                 label7.Text = mes2;
-            }
-            mensaje = mes2;
+            }*/ //Algoritmo anterior de acomodación de texto - Obsoleto
+            label7.Text = mensaje; //Label de respaldo con valor actual
+            label7.Padding = new Padding(10, 10, 10, 10);
+            label7.AutoSize = true;
+            label7.MaximumSize = new Size(350, 1000);
             Label msg = new Label();
             msg.Text = mensaje;
             msg.BackColor = Color.FromArgb(27, 131, 185);
             msg.AutoSize = true;
             msg.Padding = new Padding(10, 10, 10, 10);
+            msg.MaximumSize = new Size(350, 1000);
             msg.ForeColor = Color.White;
             msg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             msg.Location = new Point(panel_chat.Width - label7.Width - 100, panel_chat.Height + 20);
@@ -365,27 +366,12 @@ namespace chatbottest1
         public void add_respuesta(string mensaje) {
             panel_chat.VerticalScroll.Value = panel_chat.VerticalScroll.Maximum; //Forzar el scroll bajo
             label7.Text = mensaje;
-            string mes2 = mensaje;
-            for (int a = 25; label7.Width + 20 > 350; a -= 1)
-            {
-                if (a == 0)
-                {
-                    for (int b = 25; label7.Width + 20 > 350 && b > 0 ; b -= 1)
-                    {
-                        mes2 = ForcedSplit(mensaje, b);
-                        label7.Text = mes2;
-                    }
-                    break;
-                }
-                mes2 = SplitBySpace(mensaje, a);
-                label7.Text = mes2;
-            }
-            mensaje = mes2;
             Label msgrta = new Label();
             msgrta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             msgrta.Text = mensaje;
             msgrta.AutoSize = true;
             msgrta.Padding = new Padding(10, 10, 10, 10);
+            msgrta.MaximumSize = new Size(350, 1000);
             msgrta.BackColor = Color.FromArgb(225, 225, 225);
             msgrta.Location = new Point(50, panel_chat.Height + 20);
             panel_chat.Controls.Add(msgrta);
@@ -441,7 +427,7 @@ namespace chatbottest1
 
 
         }
-        public string SplitBySpace(string str, int chunkSize)
+        /*public string SplitBySpace(string str, int chunkSize) //Obsoleto
         {
             string resul = "";
             for (int a = 0; a < str.Length; a++)
@@ -453,9 +439,9 @@ namespace chatbottest1
                 resul += str[a];
             }
             return resul;
-        }
+        }*/
 
-        public string ForcedSplit(string str, int chunkSize)
+        /*public string ForcedSplit(string str, int chunkSize)  //Obsoleto
         {
             string resul = "";
             for (int a = 0; a < str.Length; a++)
@@ -467,7 +453,7 @@ namespace chatbottest1
                 resul += str[a];
             }
             return resul;
-        }
+        }*/
 
         private void Panel_chat_ControlAdded(object sender, ControlEventArgs e)
         {
