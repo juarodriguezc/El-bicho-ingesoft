@@ -27,6 +27,20 @@ namespace Data
             return tabla;
         }
 
+        public DataTable programaNomCompania()
+        {
+            DataTable tabla = new DataTable();
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "SELECT * FROM PROGRAMA, COMPANIA WHERE PROGRAMA.Id_compania = COMPANIA.Id_compania";
+            MySqlDataReader reader = command.ExecuteReader();
+            tabla.Load(reader);
+            connection.Close();
+            return tabla;
+        }
+
         public List<string> companyList()
         {
             List<String> companies = new List<string>();

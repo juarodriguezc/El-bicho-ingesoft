@@ -34,29 +34,27 @@ namespace chatbottest1
             dato_erroneo_cedula.Visible = false;
             dato_erroneo_telefono.Visible = false;
             if (txt_nombre.Text.Length != 0 && txt_apellido.Text.Length != 0 && txt_correo.Text.Length != 0
-                && txt_cedula.Text.Length != 0)
+                && txt_cedula.Text.Length != 0 && txt_nombre.Text != "NOMBRE" && txt_apellido.Text != "APELLIDO" 
+                && txt_cedula.Text != "CÉDULA" && txt_correo.Text != "CORREO ELECTRÓNICO" && txt_telefono.Text != "TELÉFONO" )
             {
                 //Verifica que los campos no estén vacios -- Codigo traido de Felipe Riaño
                 if (verficarNombre_Apell(txt_nombre.Text) && verficarNombre_Apell(txt_apellido.Text)
-                    && verificarEmail(txt_correo.Text))
+                    && verificarEmail(txt_correo.Text) && comboBox_genero.SelectedItem != null && comboboxTipo.SelectedItem != null 
+                    && comboBoxPais.SelectedItem != null)
                 {
                     ModeloVoluntario addVolunteer = new ModeloVoluntario();
-                    if (!addVolunteer.Add_volunteer(Convert.ToInt32(txt_cedula.Text), txt_nombre.Text, txt_apellido.Text, Convert.ToDateTime(pick_fecha_nacimiento.Text), txt_telefono.Text, comboBox_genero.SelectedItem.ToString(), txt_correo.Text,comboBoxPais.SelectedItem.ToString()))
+                    if (!addVolunteer.Add_volunteer(txt_cedula.Text, txt_nombre.Text, txt_apellido.Text, Convert.ToDateTime(pick_fecha_nacimiento.Text),
+                        txt_telefono.Text, comboBox_genero.SelectedItem.ToString(), txt_correo.Text,comboBoxPais.SelectedItem.ToString(), comboboxTipo.SelectedItem.ToString()))
                     {
-                        MessageBox.Show("El correo registrado ya se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("El correo o cédula ya se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        dato_erroneo_cedula.Visible = true;
+                        dato_erroneo_email.Visible = true;
                     }
-                    MessageBox.Show("El usuario ha sido registrado\n" + "Se ha enviado un correo al usuario para el acceso.\n", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                    String nombre = txt_nombre.Text + " " + txt_apellido.Text;
-
-                    //Reiniciar valores para otro registro
-
-                    txt_nombre.Text = "NOMBRE";
-                    txt_apellido.Text = "APELLIDO";
-                    txt_correo.Text = "CORREO";
-                    pick_fecha_nacimiento.Value = DateTime.Parse("01-01-2000");
-
-
+                    else
+                    {
+                        MessageBox.Show("La persona ha sido registrada", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        this.Close();
+                    }
                 }
                 else
                 {
@@ -121,6 +119,12 @@ namespace chatbottest1
                 return false;
             }
         }
+        public void changeTipoVoluntario() {
+            lbl_addUser.Text = "AÑADIR VOLUNTARIO";
+            comboboxTipo.SelectedItem = "Voluntario";
+            comboboxTipo.Enabled = false;
+        }
+
 
         private void backHome_Click(object sender, EventArgs e)
         {
@@ -135,6 +139,102 @@ namespace chatbottest1
         private void lbl_genero_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form_add_volunteer_Load(object sender, EventArgs e)
+        {
+            ActiveControl = backHome;
+            comboBoxPais.SelectedIndex = 49;
+        }
+
+        private void txt_cedula_Enter(object sender, EventArgs e)
+        {
+            if (txt_cedula.Text == "CÉDULA")
+            {
+                txt_cedula.Text = "";
+                txt_cedula.ForeColor = Color.DimGray;
+            }
+        }
+       
+        private void txt_cedula_Leave(object sender, EventArgs e)
+        {
+            if (txt_cedula.Text == "")
+            {
+                txt_cedula.Text = "CÉDULA";
+                txt_cedula.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txt_telefono_Enter(object sender, EventArgs e)
+        {
+            if (txt_telefono.Text == "TELÉFONO")
+            {
+                txt_telefono.Text = "";
+                txt_telefono.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txt_telefono_Leave(object sender, EventArgs e)
+        {
+            if (txt_telefono.Text == "")
+            {
+                txt_telefono.Text = "TELÉFONO";
+                txt_telefono.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txt_nombre_Enter(object sender, EventArgs e)
+        {
+            if (txt_nombre.Text == "NOMBRE")
+            {
+                txt_nombre.Text = "";
+                txt_nombre.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txt_nombre_Leave(object sender, EventArgs e)
+        {
+            if (txt_nombre.Text == "")
+            {
+                txt_nombre.Text = "NOMBRE";
+                txt_nombre.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txt_apellido_Enter(object sender, EventArgs e)
+        {
+            if (txt_apellido.Text == "APELLIDO")
+            {
+                txt_apellido.Text = "";
+                txt_apellido.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txt_apellido_Leave(object sender, EventArgs e)
+        {
+            if (txt_apellido.Text == "")
+            {
+                txt_apellido.Text = "APELLIDO";
+                txt_apellido.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txt_correo_Enter(object sender, EventArgs e)
+        {
+            if (txt_correo.Text == "CORREO ELECTRÓNICO")
+            {
+                txt_correo.Text = "";
+                txt_correo.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txt_correo_Leave(object sender, EventArgs e)
+        {
+            if (txt_correo.Text == "")
+            {
+                txt_correo.Text = "CORREO ELECTRÓNICO";
+                txt_correo.ForeColor = Color.DimGray;
+            }
         }
     }
 }

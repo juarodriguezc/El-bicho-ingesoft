@@ -530,6 +530,10 @@ namespace chatbottest1
         {
 
         }
-        
+
+        private void txt_contrasenia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

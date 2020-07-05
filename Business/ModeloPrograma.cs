@@ -13,6 +13,13 @@ namespace Business
             return programa.programaSegunFecha(date);
         }
 
+        public DataTable programaNomCompania()
+        {
+            return programa.programaNomCompania();
+        }
+
+        
+
         public List<string> companyList()
         {
             return programa.companyList();

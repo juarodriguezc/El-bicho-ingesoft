@@ -218,9 +218,18 @@ namespace chatbottest1
                  case "Add_volunteer":
                     procesarRespuesta(rta_fin);
                     Form_add_volunteer addVolunter = new Form_add_volunteer();
+                    addVolunter.changeTipoVoluntario();
                     addVolunter.Show();
                     Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
                     sesion.create_reg_function(16, SesionCache.Id_acceso);
+                    return true;
+                case "Add_person":
+                    procesarRespuesta(rta_fin);
+                    Form_add_volunteer addPerson = new Form_add_volunteer();
+                    
+                    addPerson.Show();
+                    Console.WriteLine("Sesion: " + SesionCache.Id_acceso);
+                    sesion.create_reg_function(27, SesionCache.Id_acceso);
                     return true;
                 case "Pick_stock":
                     procesarRespuesta(rta_fin);
