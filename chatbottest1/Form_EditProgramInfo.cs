@@ -17,6 +17,7 @@ namespace chatbottest1
         ModeloPrograma program = new ModeloPrograma();
         int idProgram = 0, idCompania = 0;
         string tipoProg =  "";
+        string nombreCompa = "";
 
         public Form_EditProgramInfo()
         {
@@ -66,7 +67,13 @@ namespace chatbottest1
 
         private void mostrarProgramas()
         {
-            dataGridView1.DataSource = usuario.showProgram();
+            dataGridView1.DataSource = program.programaNomCompania();
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[1].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
+            dataGridView1.Columns[8].Visible = false;
+            dataGridView1.Columns[9].Visible = false;
+            dataGridView1.Columns[10].Visible = false;
         }
 
         private bool existeCompania(int idC)
@@ -90,12 +97,31 @@ namespace chatbottest1
 
                 idProgram = int.Parse(dataGridView1.CurrentRow.Cells["Id_programa"].Value.ToString());
                 idCompania = int.Parse(dataGridView1.CurrentRow.Cells["Id_compania"].Value.ToString());
+                nombreCompa = dataGridView1.CurrentRow.Cells[7].Value.ToString();
                 txt_ProgramName.Text = dataGridView1.CurrentRow.Cells["Nombre_programa"].Value.ToString();
                 tipoProg = dataGridView1.CurrentRow.Cells["Tipo_programa"].Value.ToString();
                 pick_fechaIni.Value = DateTime.Parse(dataGridView1.CurrentRow.Cells["Fecha_inicio"].Value.ToString());
                 pick_fechaFin.Value = DateTime.Parse(dataGridView1.CurrentRow.Cells["Fecha_fin"].Value.ToString());
 
-                
+
+                for(int i = 0; i < comboBoxNombresCompan.Items.Count; i++)
+                {
+                    comboBoxNombresCompan.SelectedIndex = i;
+                    if (comboBoxNombresCompan.SelectedItem.ToString().Equals(nombreCompa))
+                    {
+                        i = comboBoxNombresCompan.Items.Count;
+                    }
+                }
+
+                for (int i = 0; i < comboBoxTipoPrograma.Items.Count; i++)
+                {
+                    comboBoxTipoPrograma.SelectedIndex = i;
+                    if (comboBoxTipoPrograma.SelectedItem.ToString().Equals(nombreCompa))
+                    {
+                        i = comboBoxTipoPrograma.Items.Count;
+                    }
+                }
+
             }
             else
             {
