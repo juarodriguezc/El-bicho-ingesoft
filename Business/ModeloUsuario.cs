@@ -12,9 +12,9 @@ namespace Business
             return userDao.Login(correo, contrasenia);
         }
 
-        public bool Add_user(string id_persona, string nombre, string apellido, DateTime fecha_nacimiento, string telefono, string genero, string correo, string contrasenia, string rol_empresa, string nickname)
+        public bool Add_user(string id_persona, string nombre, string apellido, DateTime fecha_nacimiento, string telefono, string genero, string correo, string contrasenia, string rol_empresa, string nickname, string pais_n)
         {
-            return userDao.Add_user(id_persona, nombre, apellido, fecha_nacimiento, telefono, genero, correo, contrasenia, rol_empresa, nickname);
+            return userDao.Add_user(id_persona, nombre, apellido, fecha_nacimiento, telefono, genero, correo, contrasenia, rol_empresa, nickname, pais_n);
         }
 
 
@@ -66,7 +66,7 @@ namespace Business
         }
 
 
-
+        
 
 
         public DataTable showProgram()

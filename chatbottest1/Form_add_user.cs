@@ -1,4 +1,5 @@
 ﻿using Business;
+using Common.Cache;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace chatbottest1
 {
     public partial class Form_add_user : Form
     {
+        ModeloUsuario addUser = new ModeloUsuario();
         //Variables utilizadas
         private string messageData = "Recuerde que:\n"
                 + "1. Diligenciar nombre y apellido solo con caracteres alfabeticos.\n"
@@ -46,8 +48,7 @@ namespace chatbottest1
                 if (verficarNombre_Apell(txt_nombre.Text) && verficarNombre_Apell(txt_apellido.Text)
                     && verificarEmail(txt_correo.Text) && verficarPassWordL(txt_contrasenia.Text) && verificarIgualdadContra(txt_contrasenia.Text, txt_v_contra.Text)) 
                 {
-                    ModeloUsuario addUser = new ModeloUsuario();
-                    if (!addUser.Add_user(txt_cedula.Text, txt_nombre.Text, txt_apellido.Text, Convert.ToDateTime(pick_fecha_nacimiento.Text), txt_telefono.Text, comboBox_genero.SelectedItem.ToString(), txt_correo.Text, txt_contrasenia.Text, comboBox_cargo.SelectedItem.ToString(), txt_usuario.Text))
+                    if (!addUser.Add_user(txt_cedula.Text, txt_nombre.Text, txt_apellido.Text, Convert.ToDateTime(pick_fecha_nacimiento.Text), txt_telefono.Text, comboBox_genero.SelectedItem.ToString(), txt_correo.Text, txt_contrasenia.Text, comboBox_cargo.SelectedItem.ToString(), txt_usuario.Text, comboBox_pais.SelectedItem.ToString()))
                     {
                         MessageBox.Show("El correo registrado ya se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -254,8 +255,10 @@ namespace chatbottest1
         private void Form_add_user_Load(object sender, EventArgs e)
         {
             MessageBox.Show(messageData, "Tener en cuenta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            txt_contrasenia.UseSystemPasswordChar = false;
-            txt_v_contra.UseSystemPasswordChar = false;
+            //txt_contrasenia.UseSystemPasswordChar = true;
+            //txt_v_contra.UseSystemPasswordChar = true;
+            ActiveControl = backHome;
+            comboBox_pais.SelectedIndex = 49;
         }
 
         private void txt_apellido_Leave(object sender, EventArgs e)
@@ -296,12 +299,7 @@ namespace chatbottest1
 
         private void txt_contrasenia_Enter(object sender, EventArgs e)
         {
-            if (txt_contrasenia.Text == "CONTRASEÑA")
-            {
-                txt_contrasenia.Text = "";
-                txt_contrasenia.ForeColor = Color.DimGray;
-                txt_contrasenia.UseSystemPasswordChar = true;
-            }
+            
         }
 
         private void txt_contrasenia_Leave(object sender, EventArgs e)
@@ -316,21 +314,13 @@ namespace chatbottest1
 
         private void txt_v_contra_Leave(object sender, EventArgs e)
         {
-            if (txt_v_contra.Text == "")
-            {
-                txt_v_contra.Text = "VERIFICACIÓN";
-                txt_v_contra.ForeColor = Color.DimGray;
-                txt_v_contra.UseSystemPasswordChar = false;
-            }
+            
         }
 
         private void txt_v_contra_Enter(object sender, EventArgs e)
         {
-            if (txt_v_contra.Text == "VERIFICACIÓN")
-                txt_v_contra.Text = "";
-                txt_v_contra.ForeColor = Color.DimGray;
-                txt_v_contra.UseSystemPasswordChar = true;
-            }
+            
+        }
 
         private void backHome_Click(object sender, EventArgs e)
         {
@@ -344,6 +334,7 @@ namespace chatbottest1
 
         private void txt_cedula_Enter(object sender, EventArgs e)
         {
+
             if (txt_cedula.Text == "CEDULA")
             {
                 txt_cedula.Text = "";
@@ -360,6 +351,7 @@ namespace chatbottest1
             }
         }
 
+        
         private void txt_telefono_Enter(object sender, EventArgs e)
         {
             if (txt_telefono.Text == "TELEFONO")
@@ -394,6 +386,19 @@ namespace chatbottest1
                 txt_usuario.Text = "USUARIO";
                 txt_usuario.ForeColor = Color.DimGray;
             }
+        }
+
+        private void txt_v_contra_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_adduser.PerformClick();
+            }
+        }
+
+        private void txt_v_contra_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
     
