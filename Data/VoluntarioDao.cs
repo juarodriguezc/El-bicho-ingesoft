@@ -12,7 +12,7 @@ namespace Data
 {
     public class VoluntarioDao : ConnectionToSql
     {
-        public bool Add_volunteer(int id_persona, string nombre, string apellido, DateTime fecha_nacimiento, string telefono, string genero, string correo, string pais_origen)
+        public bool Add_volunteer(string id_persona, string nombre, string apellido, DateTime fecha_nacimiento, string telefono, string genero, string correo, string pais_origen, string tipo_p)
         {
             var connection = GetConnection();
             connection.Open();
@@ -26,10 +26,13 @@ namespace Data
             command.Parameters.AddWithValue("@apellido", apellido);
             command.Parameters.AddWithValue("@fecha_nacimiento", fecha_nacimiento);
             command.Parameters.AddWithValue("@pais", pais_origen);
+            command.Parameters.AddWithValue("@tipo_p", tipo_p);
             MySqlDataReader reader = command.ExecuteReader();
             if (reader.HasRows) return false;
             reader.Close();
-            command.CommandText = "INSERT INTO PERSONA (Id_persona, Nombre_persona, Apellido_persona, Fecha_nacimiento, Telefono_persona, Genero, Correo_persona, PAIS_ORIGEN,ROL_PERSONA) VALUES(@Id_persona, @nombre, @apellido, @fecha_nacimiento, @telefono, @genero, @correo,@pais,'Voluntario')";
+            command.CommandText = "INSERT INTO PERSONA (Id_persona, Nombre_persona, Apellido_persona, Fecha_nacimiento, Telefono_persona," +
+                " Genero, Correo_persona, PAIS_ORIGEN,ROL_PERSONA) VALUES(@Id_persona, @nombre, @apellido, @fecha_nacimiento, @telefono," +
+                " @genero, @correo,@pais,@tipo_p)";
             command.ExecuteNonQuery();
             connection.Close();
             return true;

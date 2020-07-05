@@ -61,7 +61,7 @@ namespace Data
 
         }
 
-        public bool Add_user(string id_persona, string nombre, string apellido, DateTime fecha_nacimiento, string telefono, string genero, string correo, string contrasenia, string rol_empresa, string nickname)
+        public bool Add_user(string id_persona, string nombre, string apellido, DateTime fecha_nacimiento, string telefono, string genero, string correo, string contrasenia, string rol_empresa, string nickname, string pais_n)
         {
             var connection = GetConnection();
             connection.Open();
@@ -77,11 +77,12 @@ namespace Data
             command.Parameters.AddWithValue("@contrasenia", contrasenia);
             command.Parameters.AddWithValue("@rol_empresa", rol_empresa);
             command.Parameters.AddWithValue("@nickname", nickname);
+            command.Parameters.AddWithValue("@pais_n", pais_n);
             MySqlDataReader reader = command.ExecuteReader();
             if (reader.HasRows) return false;
             reader.Close();
 
-            command.CommandText = "INSERT INTO PERSONA (Id_persona, Nombre_persona, Apellido_persona, Fecha_nacimiento, Telefono_persona, Genero, Correo_persona, Pais_origen, Rol_persona) VALUES(@Id_persona, @nombre, @apellido, @fecha_nacimiento, @telefono, @genero, @correo, 'Colombia', 'Trabajador')";
+            command.CommandText = "INSERT INTO PERSONA (Id_persona, Nombre_persona, Apellido_persona, Fecha_nacimiento, Telefono_persona, Genero, Correo_persona, Pais_origen, Rol_persona) VALUES(@Id_persona, @nombre, @apellido, @fecha_nacimiento, @telefono, @genero, @correo, @pais_n, 'Trabajador')";
             command.ExecuteNonQuery();
             command.CommandText = "INSERT INTO USUARIO (Id_persona, Nickname, Contrasenia, Rol_empresa) VALUES(@Id_persona, @nickname, @contrasenia, @rol_empresa)";
             command.ExecuteNonQuery();
@@ -284,7 +285,8 @@ namespace Data
 
         }
 
-        public DateTime getNacimiento(int id_persona) {
+        public DateTime getNacimiento(int id_persona)
+        {
             DateTime fecha_nacimiento = DateTime.Today;
             var connection = GetConnection();
             connection.Open();
@@ -295,13 +297,13 @@ namespace Data
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                
+
                 fecha_nacimiento = DateTime.Parse((DateTime.Parse(reader.GetString(0))).ToString("yyyy - MM - dd"));
             }
             connection.Close();
             return fecha_nacimiento;
         }
 
-
+        
     }
 }
