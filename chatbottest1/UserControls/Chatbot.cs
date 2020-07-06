@@ -303,6 +303,16 @@ namespace chatbottest1
                         return true;
                     }
                     return false;
+                case "Add_empresa":
+                    if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area)
+                    {
+                        procesarRespuesta(rta_fin);
+                        Form_add_empresa addEmpresa = new Form_add_empresa();
+                        sesion.create_reg_function(29, SesionCache.Id_acceso);
+                        addEmpresa.Show();
+                        return true;
+                    }
+                    return false;
                 default:
                     procesarRespuesta(rta_fin);
                     return true;

@@ -55,6 +55,7 @@ INSERT INTO FUNCIONES VALUES (25,'Change_programInfo');
 INSERT INTO FUNCIONES VALUES (26,'Add_volunteer_program');
 INSERT INTO FUNCIONES VALUES (27,'Add_person');
 INSERT INTO FUNCIONES VALUES (28,'Program_fecha');
+INSERT INTO FUNCIONES VALUES (29,'Program_fecha');
 INSERT INTO FUNCIONES VALUES (80,'El bicho siuu');
 
 SELECT * FROM FUNCIONES;
@@ -116,6 +117,7 @@ INSERT INTO MENSAJE VALUES (25,48,'Muy bien! *Voy a desplegar una ventana para q
 INSERT INTO MENSAJE VALUES (26,49,'Muy bien! *Voy a desplegar una ventana para que puedas añadir voluntarios al programa de tu eleccion');
 INSERT INTO MENSAJE VALUES (27,50,'Ok * Voy a mostrar un formulario para que añadas una persona a la base de datos');
 INSERT INTO MENSAJE VALUES (28,51,'Ok * Voy a mostrar una ventana con los programas activos en la fecha que elijas');
+INSERT INTO MENSAJE VALUES (29,52,'Ok * Voy a desplegar un formulario para que añadas una empresa');
 INSERT INTO MENSAJE VALUES (80,100,'SIUUUUUUUUUUUUUU');
 INSERT INTO MENSAJE VALUES (80,101,'¡Ay mi madre el BICHO!');
 INSERT INTO MENSAJE VALUES (80,102,'Mico Mandante SIUUUU');
