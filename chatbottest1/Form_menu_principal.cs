@@ -120,12 +120,13 @@ namespace chatbottest1
         }
         private void bt_logout_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Estas seguro que quieres cerrar sesión?", "Warning",
+            /*if (MessageBox.Show("¿Estas seguro que quieres cerrar sesión?", "Warning",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
                 Form_login_menu.loginInstance.changeTxt();
                 this.Close();
                 
-            }
+            }*/
+            this.Close();
         }
         private void Chatbot_menu_Leave(object sender, EventArgs e)
         {

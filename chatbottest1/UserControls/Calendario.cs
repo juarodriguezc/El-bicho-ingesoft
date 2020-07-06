@@ -169,7 +169,7 @@ namespace chatbottest1.UserControls
 
             if (d == DialogResult.Yes)
             {
-                Form_InfoPrograma_date formDate = new Form_InfoPrograma_date();
+                Form_InfoPrograma_date formDate = new Form_InfoPrograma_date(DateTime.Parse(calendar_events.SelectionRange.Start.ToString()));
                 formDate.Show();
             }
         }

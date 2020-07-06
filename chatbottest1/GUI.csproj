@@ -35,6 +35,9 @@
   <PropertyGroup>
     <StartupObject>chatbottest1.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icono2.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Bot.Connector.DirectLine, Version=3.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bot.Connector.DirectLine.3.0.2\lib\net45\Microsoft.Bot.Connector.DirectLine.dll</HintPath>
@@ -399,6 +402,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\GuiaInteractivaChatboot_page-00041.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icono2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

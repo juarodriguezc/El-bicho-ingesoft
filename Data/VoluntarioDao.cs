@@ -93,7 +93,11 @@ namespace Data
             command.Connection = connection;
             command.Parameters.AddWithValue("@pais", country);
             command.Parameters.AddWithValue("@dateActual", dateNow);
-            command.CommandText = "SELECT P.Id_persona as 'Id Persona', P.Nombre_persona as 'Nombre', P.Apellido_persona as 'Apellido' FROM PERSONA as P , PER_PROG as A, PROGRAMA as PR WHERE P.ID_PERSONA =A.ID_PERSONA AND A.ID_PROGRAMA=PR.ID_PROGRAMA AND P.PAIS_ORIGEN!=@pais AND PR.FECHA_INICIO>= @dateActual AND PR.FECHA_FIN<@dateActual and P.ROL_PERSONA = 'Voluntario'";
+            command.CommandText = "SELECT P.Id_persona as 'ID PERSONA', P.Nombre_persona as 'NOMBRE', P.Apellido_persona as 'APELLIDO'," +
+                " PR.NOMBRE_PROGRAMA AS 'NOMBRE DEL PROGRAMA' "+
+                " FROM PERSONA as P , PER_PROG as A, PROGRAMA as PR WHERE P.ID_PERSONA =A.ID_PERSONA AND " +
+                "A.ID_PROGRAMA=PR.ID_PROGRAMA AND P.PAIS_ORIGEN!=@pais AND PR.FECHA_INICIO<= @dateActual AND " +
+                "PR.FECHA_FIN>@dateActual and P.ROL_PERSONA = 'Voluntario'";
             MySqlDataReader reader = command.ExecuteReader();
             tabla.Load(reader);
             connection.Close();

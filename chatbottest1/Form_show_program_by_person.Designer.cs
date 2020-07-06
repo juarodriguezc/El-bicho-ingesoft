@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_show_program_by_person));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.datoErroneoDataProg = new System.Windows.Forms.Label();
             this.dataProg = new System.Windows.Forms.TextBox();
@@ -42,78 +40,59 @@
             this.datoErroneoComboBox = new System.Windows.Forms.Label();
             this.dataOfProgram = new System.Windows.Forms.Label();
             this.comboBoxConsulta = new System.Windows.Forms.ComboBox();
-            this.bt_volver_chatbot_stock = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bt_volver_chatbot = new System.Windows.Forms.Button();
+            this.lbl_title = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1134, 75);
-            this.panel2.TabIndex = 53;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(2, -45);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(225, 158);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.ColumnHeadersHeight = 45;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 184);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 290);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(121)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(121)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(760, 349);
+            this.dataGridView1.Size = new System.Drawing.Size(786, 298);
             this.dataGridView1.TabIndex = 54;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -122,8 +101,7 @@
             this.datoErroneoDataProg.AutoSize = true;
             this.datoErroneoDataProg.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datoErroneoDataProg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.datoErroneoDataProg.Location = new System.Drawing.Point(186, 165);
-            this.datoErroneoDataProg.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.datoErroneoDataProg.Location = new System.Drawing.Point(92, 253);
             this.datoErroneoDataProg.Name = "datoErroneoDataProg";
             this.datoErroneoDataProg.Size = new System.Drawing.Size(88, 17);
             this.datoErroneoDataProg.TabIndex = 65;
@@ -137,10 +115,9 @@
             this.dataProg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dataProg.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataProg.ForeColor = System.Drawing.Color.DimGray;
-            this.dataProg.Location = new System.Drawing.Point(189, 136);
-            this.dataProg.Margin = new System.Windows.Forms.Padding(2);
+            this.dataProg.Location = new System.Drawing.Point(95, 223);
             this.dataProg.Name = "dataProg";
-            this.dataProg.Size = new System.Drawing.Size(222, 27);
+            this.dataProg.Size = new System.Drawing.Size(332, 27);
             this.dataProg.TabIndex = 64;
             this.dataProg.TextChanged += new System.EventHandler(this.dataProg_TextChanged);
             // 
@@ -153,10 +130,9 @@
             this.bt_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.bt_Search.ForeColor = System.Drawing.Color.White;
-            this.bt_Search.Location = new System.Drawing.Point(490, 136);
-            this.bt_Search.Margin = new System.Windows.Forms.Padding(2);
+            this.bt_Search.Location = new System.Drawing.Point(467, 220);
             this.bt_Search.Name = "bt_Search";
-            this.bt_Search.Size = new System.Drawing.Size(174, 27);
+            this.bt_Search.Size = new System.Drawing.Size(261, 30);
             this.bt_Search.TabIndex = 63;
             this.bt_Search.Text = "BUSCAR";
             this.bt_Search.UseVisualStyleBackColor = false;
@@ -167,8 +143,7 @@
             this.datoErroneoComboBox.AutoSize = true;
             this.datoErroneoComboBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datoErroneoComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.datoErroneoComboBox.Location = new System.Drawing.Point(367, 114);
-            this.datoErroneoComboBox.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.datoErroneoComboBox.Location = new System.Drawing.Point(640, 200);
             this.datoErroneoComboBox.Name = "datoErroneoComboBox";
             this.datoErroneoComboBox.Size = new System.Drawing.Size(88, 17);
             this.datoErroneoComboBox.TabIndex = 62;
@@ -181,8 +156,7 @@
             this.dataOfProgram.AutoSize = true;
             this.dataOfProgram.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataOfProgram.ForeColor = System.Drawing.Color.DimGray;
-            this.dataOfProgram.Location = new System.Drawing.Point(186, 92);
-            this.dataOfProgram.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.dataOfProgram.Location = new System.Drawing.Point(346, 171);
             this.dataOfProgram.Name = "dataOfProgram";
             this.dataOfProgram.Size = new System.Drawing.Size(115, 21);
             this.dataOfProgram.TabIndex = 61;
@@ -199,38 +173,72 @@
             "Id persona",
             "Nombre persona",
             "Apellido persona"});
-            this.comboBoxConsulta.Location = new System.Drawing.Point(370, 91);
-            this.comboBoxConsulta.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxConsulta.Location = new System.Drawing.Point(467, 169);
             this.comboBoxConsulta.Name = "comboBoxConsulta";
-            this.comboBoxConsulta.Size = new System.Drawing.Size(294, 21);
+            this.comboBoxConsulta.Size = new System.Drawing.Size(261, 28);
             this.comboBoxConsulta.TabIndex = 60;
             this.comboBoxConsulta.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // bt_volver_chatbot_stock
+            // panel2
             // 
-            this.bt_volver_chatbot_stock.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bt_volver_chatbot_stock.FlatAppearance.BorderSize = 0;
-            this.bt_volver_chatbot_stock.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.bt_volver_chatbot_stock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bt_volver_chatbot_stock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_volver_chatbot_stock.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.bt_volver_chatbot_stock.ForeColor = System.Drawing.Color.LightGray;
-            this.bt_volver_chatbot_stock.Location = new System.Drawing.Point(376, 553);
-            this.bt_volver_chatbot_stock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bt_volver_chatbot_stock.Name = "bt_volver_chatbot_stock";
-            this.bt_volver_chatbot_stock.Size = new System.Drawing.Size(79, 33);
-            this.bt_volver_chatbot_stock.TabIndex = 66;
-            this.bt_volver_chatbot_stock.Text = "VOLVER";
-            this.bt_volver_chatbot_stock.UseVisualStyleBackColor = false;
-            this.bt_volver_chatbot_stock.Click += new System.EventHandler(this.bt_volver_chatbot_stock_Click);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(983, 75);
+            this.panel2.TabIndex = 67;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(2, -45);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(225, 158);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // bt_volver_chatbot
+            // 
+            this.bt_volver_chatbot.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.bt_volver_chatbot.FlatAppearance.BorderSize = 0;
+            this.bt_volver_chatbot.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.bt_volver_chatbot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bt_volver_chatbot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_volver_chatbot.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.bt_volver_chatbot.ForeColor = System.Drawing.Color.LightGray;
+            this.bt_volver_chatbot.Location = new System.Drawing.Point(12, 101);
+            this.bt_volver_chatbot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_volver_chatbot.Name = "bt_volver_chatbot";
+            this.bt_volver_chatbot.Size = new System.Drawing.Size(79, 33);
+            this.bt_volver_chatbot.TabIndex = 68;
+            this.bt_volver_chatbot.Text = "VOLVER";
+            this.bt_volver_chatbot.UseVisualStyleBackColor = false;
+            this.bt_volver_chatbot.Click += new System.EventHandler(this.bt_volver_chatbot_Click);
+            // 
+            // lbl_title
+            // 
+            this.lbl_title.AutoSize = true;
+            this.lbl_title.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_title.ForeColor = System.Drawing.Color.DimGray;
+            this.lbl_title.Location = new System.Drawing.Point(169, 101);
+            this.lbl_title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_title.Name = "lbl_title";
+            this.lbl_title.Size = new System.Drawing.Size(493, 41);
+            this.lbl_title.TabIndex = 69;
+            this.lbl_title.Text = " PROGRAMAS POR PERSONA";
             // 
             // Form_show_program_by_person
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 597);
-            this.Controls.Add(this.bt_volver_chatbot_stock);
+            this.ClientSize = new System.Drawing.Size(834, 611);
+            this.Controls.Add(this.lbl_title);
+            this.Controls.Add(this.bt_volver_chatbot);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.datoErroneoDataProg);
             this.Controls.Add(this.dataProg);
             this.Controls.Add(this.bt_Search);
@@ -238,22 +246,22 @@
             this.Controls.Add(this.dataOfProgram);
             this.Controls.Add(this.comboBoxConsulta);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.panel2);
+            this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form_show_program_by_person";
-            this.Text = "Consulta sobre persona";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Consultar programas por persona";
             this.Load += new System.EventHandler(this.Form_show_program_by_person_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label datoErroneoDataProg;
         private System.Windows.Forms.TextBox dataProg;
@@ -261,6 +269,9 @@
         private System.Windows.Forms.Label datoErroneoComboBox;
         private System.Windows.Forms.Label dataOfProgram;
         private System.Windows.Forms.ComboBox comboBoxConsulta;
-        private System.Windows.Forms.Button bt_volver_chatbot_stock;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button bt_volver_chatbot;
+        private System.Windows.Forms.Label lbl_title;
     }
 }

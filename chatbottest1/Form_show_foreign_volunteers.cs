@@ -29,9 +29,20 @@ namespace chatbottest1
         private void MostrarVoluntareosForaneos()
         {
             dataGridView1.DataSource = voluntario.MostrarVoluntariosDifferentToCountryWithActivePrograms("Colombia");
+            dataGridView1.ClearSelection();
         }
 
         private void bt_saveuser_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void bt_volver_chatbot_Click(object sender, EventArgs e)
         {
             this.Close();
         }

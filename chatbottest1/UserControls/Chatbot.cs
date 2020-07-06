@@ -289,7 +289,7 @@ namespace chatbottest1
                     return false;
                 case "Program_fecha":
                     procesarRespuesta(rta_fin);
-                    Form_InfoPrograma_date formDate = new Form_InfoPrograma_date();
+                    Form_InfoPrograma_date formDate = new Form_InfoPrograma_date(DateTime.Today);
                     formDate.Show();
                     sesion.create_reg_function(5, SesionCache.Id_acceso);
                     return true;

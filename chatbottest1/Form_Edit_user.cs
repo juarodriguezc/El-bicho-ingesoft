@@ -31,6 +31,7 @@ namespace chatbottest1
         private void Edit_user_Load(object sender, EventArgs e)
         {
             MostrarUsuarios();
+            ActiveControl = bt_volver_chatbot;
         }
 
         private void MostrarUsuarios() {
@@ -300,6 +301,11 @@ namespace chatbottest1
             {
                 MessageBox.Show("Seleccione el usuario a editar");
             }
+        }
+
+        private void bt_volver_chatbot_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

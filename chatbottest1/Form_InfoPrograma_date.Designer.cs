@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_InfoPrograma_date));
             this.bt_editar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -40,11 +40,11 @@
             this.panel_prinipal = new System.Windows.Forms.Panel();
             this.lbl_title = new System.Windows.Forms.Label();
             this.panel_busqueda = new System.Windows.Forms.Panel();
-            this.lbl_fecha_seleccionada = new System.Windows.Forms.Label();
-            this.lbl_seleccted_date = new System.Windows.Forms.Label();
-            this.pick_fecha_nacimiento = new System.Windows.Forms.DateTimePicker();
-            this.lbl_seleccionar_fecha = new System.Windows.Forms.Label();
             this.bt_select = new System.Windows.Forms.Button();
+            this.lbl_seleccionar_fecha = new System.Windows.Forms.Label();
+            this.pick_fecha_nacimiento = new System.Windows.Forms.DateTimePicker();
+            this.lbl_seleccted_date = new System.Windows.Forms.Label();
+            this.lbl_fecha_seleccionada = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -75,20 +75,20 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeight = 45;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.EnableHeadersVisualStyles = false;
@@ -99,19 +99,19 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(121)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(121)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(670, 456);
@@ -175,56 +175,6 @@
             this.panel_busqueda.Size = new System.Drawing.Size(283, 617);
             this.panel_busqueda.TabIndex = 55;
             // 
-            // lbl_fecha_seleccionada
-            // 
-            this.lbl_fecha_seleccionada.AutoSize = true;
-            this.lbl_fecha_seleccionada.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_fecha_seleccionada.ForeColor = System.Drawing.Color.White;
-            this.lbl_fecha_seleccionada.Location = new System.Drawing.Point(12, 107);
-            this.lbl_fecha_seleccionada.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_fecha_seleccionada.Name = "lbl_fecha_seleccionada";
-            this.lbl_fecha_seleccionada.Size = new System.Drawing.Size(267, 30);
-            this.lbl_fecha_seleccionada.TabIndex = 10;
-            this.lbl_fecha_seleccionada.Text = "Fecha seleccionada:";
-            // 
-            // lbl_seleccted_date
-            // 
-            this.lbl_seleccted_date.AutoSize = true;
-            this.lbl_seleccted_date.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_seleccted_date.ForeColor = System.Drawing.Color.White;
-            this.lbl_seleccted_date.Location = new System.Drawing.Point(40, 160);
-            this.lbl_seleccted_date.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_seleccted_date.Name = "lbl_seleccted_date";
-            this.lbl_seleccted_date.Size = new System.Drawing.Size(200, 22);
-            this.lbl_seleccted_date.TabIndex = 11;
-            this.lbl_seleccted_date.Text = "01 de enero de 2020";
-            // 
-            // pick_fecha_nacimiento
-            // 
-            this.pick_fecha_nacimiento.CalendarMonthBackground = System.Drawing.Color.White;
-            this.pick_fecha_nacimiento.CalendarTitleBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pick_fecha_nacimiento.CustomFormat = "dd-MM-yyyy";
-            this.pick_fecha_nacimiento.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pick_fecha_nacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.pick_fecha_nacimiento.Location = new System.Drawing.Point(62, 369);
-            this.pick_fecha_nacimiento.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
-            this.pick_fecha_nacimiento.Name = "pick_fecha_nacimiento";
-            this.pick_fecha_nacimiento.Size = new System.Drawing.Size(169, 33);
-            this.pick_fecha_nacimiento.TabIndex = 16;
-            this.pick_fecha_nacimiento.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            // 
-            // lbl_seleccionar_fecha
-            // 
-            this.lbl_seleccionar_fecha.AutoSize = true;
-            this.lbl_seleccionar_fecha.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_seleccionar_fecha.ForeColor = System.Drawing.Color.White;
-            this.lbl_seleccionar_fecha.Location = new System.Drawing.Point(24, 305);
-            this.lbl_seleccionar_fecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_seleccionar_fecha.Name = "lbl_seleccionar_fecha";
-            this.lbl_seleccionar_fecha.Size = new System.Drawing.Size(246, 24);
-            this.lbl_seleccionar_fecha.TabIndex = 17;
-            this.lbl_seleccionar_fecha.Text = "Seleccionar otra fecha";
-            // 
             // bt_select
             // 
             this.bt_select.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
@@ -243,6 +193,56 @@
             this.bt_select.UseVisualStyleBackColor = false;
             this.bt_select.Click += new System.EventHandler(this.bt_select_Click);
             // 
+            // lbl_seleccionar_fecha
+            // 
+            this.lbl_seleccionar_fecha.AutoSize = true;
+            this.lbl_seleccionar_fecha.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_seleccionar_fecha.ForeColor = System.Drawing.Color.White;
+            this.lbl_seleccionar_fecha.Location = new System.Drawing.Point(24, 305);
+            this.lbl_seleccionar_fecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_seleccionar_fecha.Name = "lbl_seleccionar_fecha";
+            this.lbl_seleccionar_fecha.Size = new System.Drawing.Size(246, 24);
+            this.lbl_seleccionar_fecha.TabIndex = 17;
+            this.lbl_seleccionar_fecha.Text = "Seleccionar otra fecha";
+            // 
+            // pick_fecha_nacimiento
+            // 
+            this.pick_fecha_nacimiento.CalendarMonthBackground = System.Drawing.Color.White;
+            this.pick_fecha_nacimiento.CalendarTitleBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pick_fecha_nacimiento.CustomFormat = "dd-MM-yyyy";
+            this.pick_fecha_nacimiento.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pick_fecha_nacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.pick_fecha_nacimiento.Location = new System.Drawing.Point(62, 369);
+            this.pick_fecha_nacimiento.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
+            this.pick_fecha_nacimiento.Name = "pick_fecha_nacimiento";
+            this.pick_fecha_nacimiento.Size = new System.Drawing.Size(169, 33);
+            this.pick_fecha_nacimiento.TabIndex = 16;
+            this.pick_fecha_nacimiento.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            // 
+            // lbl_seleccted_date
+            // 
+            this.lbl_seleccted_date.AutoSize = true;
+            this.lbl_seleccted_date.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_seleccted_date.ForeColor = System.Drawing.Color.White;
+            this.lbl_seleccted_date.Location = new System.Drawing.Point(40, 160);
+            this.lbl_seleccted_date.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_seleccted_date.Name = "lbl_seleccted_date";
+            this.lbl_seleccted_date.Size = new System.Drawing.Size(200, 22);
+            this.lbl_seleccted_date.TabIndex = 11;
+            this.lbl_seleccted_date.Text = "01 de enero de 2020";
+            // 
+            // lbl_fecha_seleccionada
+            // 
+            this.lbl_fecha_seleccionada.AutoSize = true;
+            this.lbl_fecha_seleccionada.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_fecha_seleccionada.ForeColor = System.Drawing.Color.White;
+            this.lbl_fecha_seleccionada.Location = new System.Drawing.Point(12, 107);
+            this.lbl_fecha_seleccionada.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_fecha_seleccionada.Name = "lbl_fecha_seleccionada";
+            this.lbl_fecha_seleccionada.Size = new System.Drawing.Size(267, 30);
+            this.lbl_fecha_seleccionada.TabIndex = 10;
+            this.lbl_fecha_seleccionada.Text = "Fecha seleccionada:";
+            // 
             // Form_InfoPrograma_date
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,10 +253,11 @@
             this.Controls.Add(this.panel_busqueda);
             this.Controls.Add(this.panel_prinipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_InfoPrograma_date";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Informacion de programa";
+            this.Text = "Informacion de programa por fecha";
             this.Load += new System.EventHandler(this.Form_InfoPrograma_date_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);

@@ -18,15 +18,15 @@ namespace chatbottest1
         ModeloPrograma programa = new ModeloPrograma();
 
         DateTime selectedDate;
-        public Form_InfoPrograma_date()
+        public Form_InfoPrograma_date(DateTime fecha)
         {
             InitializeComponent();
-            MostarInformacionDeProgramaSegunFecha();
+            MostarInformacionDeProgramaSegunFecha(fecha);
         }
 
-        private void MostarInformacionDeProgramaSegunFecha()
+        private void MostarInformacionDeProgramaSegunFecha(DateTime fecha)
         {
-            selectedDate = chatbottest1.UserControls.Calendario.dateInfoProgram;
+            selectedDate = fecha;
             dataGridView1.DataSource = programa.MostarInfoProgramaSegunFecha(selectedDate);
         }
 

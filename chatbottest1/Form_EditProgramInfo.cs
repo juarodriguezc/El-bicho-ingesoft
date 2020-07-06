@@ -161,6 +161,11 @@ namespace chatbottest1
             dato_erroneo_fechaFin.Visible = false;
         }
 
+        private void bt_volver_chatbot_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void bt_editar_Click(object sender, EventArgs e)
         {
             txt_ProgramName.ReadOnly = false;

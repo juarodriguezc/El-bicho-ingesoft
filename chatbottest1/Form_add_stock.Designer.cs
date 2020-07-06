@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_add_stock));
             this.lbl_addStock = new System.Windows.Forms.Label();
             this.lbl_errorNombreProducto = new System.Windows.Forms.Label();
             this.txt_producto = new System.Windows.Forms.TextBox();
@@ -225,7 +226,9 @@
             this.Controls.Add(this.txt_producto);
             this.Controls.Add(this.lbl_addStock);
             this.Controls.Add(this.shapeContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_add_stock";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Añadir producto";
             this.Load += new System.EventHandler(this.Form_add_stock_Load);
             this.ResumeLayout(false);

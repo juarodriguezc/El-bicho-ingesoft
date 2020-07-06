@@ -27,6 +27,7 @@ namespace chatbottest1
         private void MostrarProgramasActivos()
         {
             dataGrid_programas.DataSource = programas.programaActivos();
+            dataGrid_programas.ClearSelection();
         }
 
         private void Form_programas_activos_Load(object sender, EventArgs e)
