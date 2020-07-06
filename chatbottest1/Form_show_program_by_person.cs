@@ -82,5 +82,10 @@ namespace chatbottest1
         {
             this.Close();
         }
+
+        private void bt_volver_chatbot_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

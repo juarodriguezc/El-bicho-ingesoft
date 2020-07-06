@@ -323,10 +323,11 @@
             this.ClientSize = new System.Drawing.Size(1262, 673);
             this.Controls.Add(this.panel_principal);
             this.Controls.Add(this.panel_lateral);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form_menu_principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chatbot";
+            this.Text = "Menú Principal YMCA bot";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_menu_principal_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Chatbot_menu_FormClosed);
             this.Load += new System.EventHandler(this.Chatbot_menu_Load);

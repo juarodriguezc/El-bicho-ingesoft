@@ -187,7 +187,7 @@
             this.flowPanel_users.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flowPanel_users.ForeColor = System.Drawing.Color.White;
             this.flowPanel_users.Location = new System.Drawing.Point(38, 344);
-            this.flowPanel_users.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowPanel_users.Margin = new System.Windows.Forms.Padding(2);
             this.flowPanel_users.Name = "flowPanel_users";
             this.flowPanel_users.Size = new System.Drawing.Size(421, 175);
             this.flowPanel_users.TabIndex = 51;
@@ -237,9 +237,10 @@
             this.Controls.Add(this.lbl_asunto);
             this.Controls.Add(this.fecha_evento);
             this.Controls.Add(this.lbl_addUser);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_add_event";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_add_event";
+            this.Text = "Añadir evento empresarial";
             this.Load += new System.EventHandler(this.Form_add_event_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

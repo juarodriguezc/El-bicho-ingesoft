@@ -101,7 +101,7 @@ namespace chatbottest1
             this.txt_correo.Name = "txt_correo";
             this.txt_correo.Size = new System.Drawing.Size(431, 20);
             this.txt_correo.TabIndex = 0;
-            this.txt_correo.Text = "CORREO";
+            this.txt_correo.Text = "CORREO / NOMBRE DE USUARIO";
             this.txt_correo.TextChanged += new System.EventHandler(this.txt_correo_TextChanged);
             this.txt_correo.Enter += new System.EventHandler(this.txt_correo_Enter);
             this.txt_correo.Leave += new System.EventHandler(this.txt_correo_Leave);

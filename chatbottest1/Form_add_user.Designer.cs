@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_add_user));
             this.lbl_addUser = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.ovalShape1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape7 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -60,8 +63,6 @@
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.lbl_pais_origen = new System.Windows.Forms.Label();
             this.comboBox_pais = new System.Windows.Forms.ComboBox();
-            this.ovalShape1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -108,6 +109,22 @@
             this.shapeContainer1.Size = new System.Drawing.Size(494, 591);
             this.shapeContainer1.TabIndex = 9;
             this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 27;
+            this.lineShape1.X2 = 233;
+            this.lineShape1.Y1 = 160;
+            this.lineShape1.Y2 = 160;
+            // 
+            // ovalShape1
+            // 
+            this.ovalShape1.BorderColor = System.Drawing.Color.DimGray;
+            this.ovalShape1.Location = new System.Drawing.Point(28, 115);
+            this.ovalShape1.Name = "ovalShape1";
+            this.ovalShape1.Size = new System.Drawing.Size(200, 1);
             // 
             // lineShape8
             // 
@@ -740,22 +757,6 @@
             this.comboBox_pais.Size = new System.Drawing.Size(227, 29);
             this.comboBox_pais.TabIndex = 51;
             // 
-            // ovalShape1
-            // 
-            this.ovalShape1.BorderColor = System.Drawing.Color.DimGray;
-            this.ovalShape1.Location = new System.Drawing.Point(28, 115);
-            this.ovalShape1.Name = "ovalShape1";
-            this.ovalShape1.Size = new System.Drawing.Size(200, 1);
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 27;
-            this.lineShape1.X2 = 233;
-            this.lineShape1.Y1 = 160;
-            this.lineShape1.Y2 = 160;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -814,6 +815,7 @@
             this.Controls.Add(this.txt_v_contra);
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_add_user";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Añadir usuario";

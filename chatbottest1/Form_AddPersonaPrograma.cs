@@ -103,5 +103,10 @@ namespace chatbottest1
                 MessageBox.Show("Los voluntarios han sido registrados al programa", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
+        private void bt_volver_chatbot_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

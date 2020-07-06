@@ -23,7 +23,8 @@ namespace chatbottest1
 
         private void mostrarInformacionCompanias()
         {
-            dataGridView1.DataSource = usuario.showInfoCompanies();        
+            dataGridView1.DataSource = usuario.showInfoCompanies();
+            dataGridView1.ClearSelection();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -34,6 +35,16 @@ namespace chatbottest1
         private void bt_editar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void bt_volver_chatbot_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Form_ListComp_Load(object sender, EventArgs e)
+        {
+            dataGridView1.ClearSelection();
         }
     }
 }

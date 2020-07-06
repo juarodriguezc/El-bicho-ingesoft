@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_add_program));
             this.lbl_add_program = new System.Windows.Forms.Label();
             this.lbl_errorNombrePrograma = new System.Windows.Forms.Label();
             this.txt_programa = new System.Windows.Forms.TextBox();
@@ -79,13 +80,12 @@
             this.txt_programa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_programa.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_programa.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_programa.Location = new System.Drawing.Point(71, 131);
+            this.txt_programa.Location = new System.Drawing.Point(52, 134);
             this.txt_programa.Margin = new System.Windows.Forms.Padding(2);
             this.txt_programa.Name = "txt_programa";
             this.txt_programa.Size = new System.Drawing.Size(383, 20);
             this.txt_programa.TabIndex = 49;
             this.txt_programa.Text = "NOMBRE DEL PROGRAMA";
-            this.txt_programa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_programa.Enter += new System.EventHandler(this.txt_programa_Enter);
             this.txt_programa.Leave += new System.EventHandler(this.txt_programa_Leave);
             // 
@@ -96,7 +96,7 @@
             this.lineShape4.X1 = 54;
             this.lineShape4.X2 = 434;
             this.lineShape4.Y1 = 158;
-            this.lineShape4.Y2 = 159;
+            this.lineShape4.Y2 = 158;
             // 
             // shapeContainer1
             // 
@@ -319,9 +319,10 @@
             this.Controls.Add(this.txt_programa);
             this.Controls.Add(this.lbl_add_program);
             this.Controls.Add(this.shapeContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_add_program";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_add_program";
+            this.Text = "Añadir un programa";
             this.Load += new System.EventHandler(this.Form_add_program_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

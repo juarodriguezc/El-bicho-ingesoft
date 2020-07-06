@@ -28,6 +28,7 @@ namespace chatbottest1
         private void MostrarProductosStock()
         {
             dataGrid_stock.DataSource = stock.MostrarProductosStock();
+            dataGrid_stock.ClearSelection();
         }
 
         private void Form_show_stock_Load(object sender, EventArgs e)

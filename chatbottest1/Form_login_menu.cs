@@ -59,7 +59,7 @@ namespace chatbottest1
             var validLogin = user.LoginUser(txt_correo.Text, txt_contrasenia.Text);
 
             if (validLogin == true){
-                
+                bot_menu = new Form_menu_principal();
                 bot_menu.Show();
                 this.Hide();
                 bot_menu.FormClosed += Logout;
@@ -83,7 +83,7 @@ namespace chatbottest1
 
         private void txt_correo_Enter(object sender, EventArgs e)
         {
-            if (txt_correo.Text == "CORREO") {
+            if (txt_correo.Text == "CORREO / NOMBRE DE USUARIO") {
                 txt_correo.Text = "";
                 txt_correo.ForeColor = Color.DimGray;
             }
@@ -93,7 +93,7 @@ namespace chatbottest1
         private void txt_correo_Leave(object sender, EventArgs e)
         {
             if (txt_correo.Text == "") {
-                txt_correo.Text = "CORREO";
+                txt_correo.Text = "CORREO / NOMBRE DE USUARIO";
                 txt_correo.ForeColor = Color.DimGray;
             }
         }
@@ -372,7 +372,7 @@ namespace chatbottest1
             btn_volver_login.Visible = false;
             panel_login.Visible = true;
 
-            txt_correo.Text = "CORREO";
+            txt_correo.Text = "CORREO / NOMBRE DE USUARIO";
             txt_correo.ForeColor = Color.DimGray;
 
             txt_contrasenia.Text = "CONTRASEÑA";
@@ -493,7 +493,7 @@ namespace chatbottest1
             panel_cambio_correcto.Visible = false;
             panel_login.Visible = true;
 
-            txt_correo.Text = "CORREO";
+            txt_correo.Text = "CORREO / NOMBRE DE USUARIO";
             txt_correo.ForeColor = Color.DimGray;
 
             txt_contrasenia.Text = "CONTRASEÑA";

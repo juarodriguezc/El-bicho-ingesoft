@@ -25,6 +25,7 @@ namespace chatbottest1
         }
         private void MostrarRegistroConversacion() {
             dataGridView1.DataSource = usuario.MostrarRegistroConversacion();
+            dataGridView1.ClearSelection();
         }
 
         private void Form_registro_conversacion_Load(object sender, EventArgs e)

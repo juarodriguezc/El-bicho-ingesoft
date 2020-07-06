@@ -66,6 +66,7 @@ namespace chatbottest1
         private void bt_prox_events_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = eventos.EventosProximos(UserLoginCache.Id_usuario, DateTime.Today);
+            dataGridView1.ClearSelection();
             dataGridView1.Columns[0].Width = 80;
             dataGridView1.Columns[1].Width = 100;
         }

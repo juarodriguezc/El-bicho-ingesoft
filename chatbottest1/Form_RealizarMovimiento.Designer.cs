@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_RealizarMovimiento));
             this.lbl_addUser = new System.Windows.Forms.Label();
             this.lbl_genero = new System.Windows.Forms.Label();
             this.comboBox_producto = new System.Windows.Forms.ComboBox();
@@ -221,6 +222,7 @@
             this.Controls.Add(this.lbl_genero);
             this.Controls.Add(this.lbl_addUser);
             this.Controls.Add(this.shapeContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_RealizarMovimiento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Realizar Movimiento";

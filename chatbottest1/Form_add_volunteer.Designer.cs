@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_add_volunteer));
             this.dato_erroneo_telefono = new System.Windows.Forms.Label();
             this.txt_telefono = new System.Windows.Forms.TextBox();
             this.comboBox_genero = new System.Windows.Forms.ComboBox();
@@ -697,9 +698,10 @@
             this.Controls.Add(this.txt_apellido);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.shapeContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_add_volunteer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " Añadir voluntario";
+            this.Text = " Añadir persona";
             this.Load += new System.EventHandler(this.Form_add_volunteer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -49,6 +49,7 @@ namespace chatbottest1
 
         private void Form_add_program_Load(object sender, EventArgs e)
         {
+            ActiveControl = backHome;
             llenarCompanias();
         }
 

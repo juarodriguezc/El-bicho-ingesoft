@@ -57,7 +57,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(0, -2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(716, 61);
             this.panel2.TabIndex = 53;
@@ -66,7 +66,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(2, -37);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(169, 128);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -125,10 +125,10 @@
             // 
             this.txt_descripcion.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_descripcion.Location = new System.Drawing.Point(32, 358);
-            this.txt_descripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_descripcion.Margin = new System.Windows.Forms.Padding(2);
             this.txt_descripcion.Multiline = true;
             this.txt_descripcion.Name = "txt_descripcion";
-            this.txt_descripcion.Size = new System.Drawing.Size(608, 210);
+            this.txt_descripcion.Size = new System.Drawing.Size(608, 177);
             this.txt_descripcion.TabIndex = 67;
             // 
             // datoErroneoDescripSoli
@@ -136,7 +136,7 @@
             this.datoErroneoDescripSoli.AutoSize = true;
             this.datoErroneoDescripSoli.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datoErroneoDescripSoli.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.datoErroneoDescripSoli.Location = new System.Drawing.Point(30, 570);
+            this.datoErroneoDescripSoli.Location = new System.Drawing.Point(29, 546);
             this.datoErroneoDescripSoli.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.datoErroneoDescripSoli.Name = "datoErroneoDescripSoli";
             this.datoErroneoDescripSoli.Size = new System.Drawing.Size(224, 17);
@@ -154,7 +154,7 @@
             this.backHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.backHome.ForeColor = System.Drawing.Color.LightGray;
             this.backHome.Location = new System.Drawing.Point(33, 93);
-            this.backHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.backHome.Margin = new System.Windows.Forms.Padding(2);
             this.backHome.Name = "backHome";
             this.backHome.Size = new System.Drawing.Size(85, 27);
             this.backHome.TabIndex = 69;
@@ -171,8 +171,8 @@
             this.bt_addRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_addRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.bt_addRequest.ForeColor = System.Drawing.Color.LightGray;
-            this.bt_addRequest.Location = new System.Drawing.Point(439, 589);
-            this.bt_addRequest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bt_addRequest.Location = new System.Drawing.Point(439, 561);
+            this.bt_addRequest.Margin = new System.Windows.Forms.Padding(2);
             this.bt_addRequest.Name = "bt_addRequest";
             this.bt_addRequest.Size = new System.Drawing.Size(201, 27);
             this.bt_addRequest.TabIndex = 70;
@@ -216,7 +216,7 @@
             this.txt_asunto_solicitud.Location = new System.Drawing.Point(248, 278);
             this.txt_asunto_solicitud.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_asunto_solicitud.Name = "txt_asunto_solicitud";
-            this.txt_asunto_solicitud.Size = new System.Drawing.Size(206, 20);
+            this.txt_asunto_solicitud.Size = new System.Drawing.Size(392, 20);
             this.txt_asunto_solicitud.TabIndex = 74;
             // 
             // lbl_error_directivo
@@ -274,7 +274,7 @@
             this.lineShape4.BorderColor = System.Drawing.Color.DimGray;
             this.lineShape4.Name = "lineShape4";
             this.lineShape4.X1 = 251;
-            this.lineShape4.X2 = 448;
+            this.lineShape4.X2 = 638;
             this.lineShape4.Y1 = 304;
             this.lineShape4.Y2 = 304;
             // 
@@ -312,10 +312,11 @@
             this.Controls.Add(this.reqUser);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.shapeContainer1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_UserRequest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Solicitud de usuario";
+            this.Text = "Crear solicitud";
             this.Load += new System.EventHandler(this.Form_UserRequest_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
