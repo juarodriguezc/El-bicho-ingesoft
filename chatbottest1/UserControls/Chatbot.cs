@@ -238,6 +238,7 @@ namespace chatbottest1
                     sesion.create_reg_function(21, SesionCache.Id_acceso);
                     return true;
                 case "Add_stock":
+                    procesarRespuesta(rta_fin);
                     Form_add_stock addStock = new Form_add_stock();
                     addStock.Show();
                     sesion.create_reg_function(22, SesionCache.Id_acceso);
@@ -286,6 +287,12 @@ namespace chatbottest1
                         return true;
                     }
                     return false;
+                case "Program_fecha":
+                    procesarRespuesta(rta_fin);
+                    Form_InfoPrograma_date formDate = new Form_InfoPrograma_date();
+                    formDate.Show();
+                    sesion.create_reg_function(5, SesionCache.Id_acceso);
+                    return true;
                 case "Search_foreign_volunteers":
                     if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area)
                     {

@@ -304,6 +304,54 @@ namespace Data
             return fecha_nacimiento;
         }
 
-        
+        public bool verificarExistenciaUsuario(string usuario, int id_usuario)
+        {
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+
+            command.Parameters.AddWithValue("@idUsuario", id_usuario);
+            command.Parameters.AddWithValue("@usuario", usuario);
+            command.CommandText = "select * from USUARIO where NICKNAME = @usuario AND ID_PERSONA <> @idUsuario";
+            MySqlDataReader reader = command.ExecuteReader();
+            
+
+            if (reader.HasRows)
+            {
+                connection.Close();
+                return false;
+            }
+            else
+            {
+                connection.Close();
+                return true;
+            }
+        }
+
+        public bool verificarExistenciaEmail(string email, int id_usuario)
+        {
+            var connection = GetConnection();
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@idUsuario", id_usuario);
+            command.Parameters.AddWithValue("@email", email);
+            command.CommandText = "select * from PERSONA where CORREO_PERSONA = @email AND ID_PERSONA <> @idUsuario";
+            MySqlDataReader reader = command.ExecuteReader();
+           
+
+            if (reader.HasRows)
+            {
+                connection.Close();
+                return false;
+            }
+            else
+            {
+                connection.Close();
+                return true;
+            }
+        }
+
     }
 }

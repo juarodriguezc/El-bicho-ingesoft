@@ -65,9 +65,15 @@ namespace Business
             return userDao.getNacimiento(id_persona);
         }
 
+        public bool verificarExistenciaUsuario(string usuario, int id_usuario)
+        {
+            return userDao.verificarExistenciaUsuario(usuario, id_usuario);
+        }
 
-        
-
+        public bool verificarExistenciaEmail(string email, int id_usuario)
+        {
+            return userDao.verificarExistenciaEmail(email, id_usuario);
+        }
 
         public DataTable showProgram()
         {

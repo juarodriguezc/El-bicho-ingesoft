@@ -222,6 +222,7 @@
             this.Controls.Add(this.lbl_addUser);
             this.Controls.Add(this.shapeContainer1);
             this.Name = "Form_RealizarMovimiento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Realizar Movimiento";
             this.Load += new System.EventHandler(this.Form_RealizarMovimiento_Load);
             this.ResumeLayout(false);

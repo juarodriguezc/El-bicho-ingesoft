@@ -133,7 +133,7 @@ namespace chatbottest1
         }
         private void Chatbot_menu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+ 
         }
 
         private void bt_profile_Click(object sender, EventArgs e)
@@ -228,6 +228,15 @@ namespace chatbottest1
             help.Visible = true;
             panel_principal.Controls.Add(help);
 
+        }
+
+        private void Form_menu_principal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("¿Estas seguro que quieres cerrar sesión?", "Warning",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

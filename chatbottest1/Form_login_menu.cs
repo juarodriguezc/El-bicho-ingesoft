@@ -17,8 +17,8 @@ namespace chatbottest1
     {
         //Variables a utilizar
         public String datoErro = "Verficar datos de:";
-
         private string messageData = "1. La contraseña debe tener entre 8 y 25 caracteres,\n almenos una letra mayuscula y al menos un número\n";
+        Form_menu_principal bot_menu = new Form_menu_principal();
 
         static Form_login_menu _login;
         public static Form_login_menu loginInstance
@@ -60,7 +60,6 @@ namespace chatbottest1
 
             if (validLogin == true){
                 
-                Form_menu_principal bot_menu = new Form_menu_principal();
                 bot_menu.Show();
                 this.Hide();
                 bot_menu.FormClosed += Logout;
