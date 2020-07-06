@@ -94,9 +94,9 @@
             this.lineShape4.BorderColor = System.Drawing.Color.DimGray;
             this.lineShape4.Name = "lineShape4";
             this.lineShape4.X1 = 54;
-            this.lineShape4.X2 = 434;
+            this.lineShape4.X2 = 452;
             this.lineShape4.Y1 = 158;
-            this.lineShape4.Y2 = 159;
+            this.lineShape4.Y2 = 160;
             // 
             // shapeContainer1
             // 
