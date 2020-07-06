@@ -160,6 +160,12 @@
     <Compile Include="Form_show_events.Designer.cs">
       <DependentUpon>Form_show_events.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_show_foreign_volunteers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_show_foreign_volunteers.Designer.cs">
+      <DependentUpon>Form_show_foreign_volunteers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_show_program_by_person.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_show_events.resx">
       <DependentUpon>Form_show_events.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_show_foreign_volunteers.resx">
+      <DependentUpon>Form_show_foreign_volunteers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_show_program_by_person.resx">
       <DependentUpon>Form_show_program_by_person.cs</DependentUpon>
