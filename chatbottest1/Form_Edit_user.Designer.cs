@@ -55,15 +55,15 @@
             this.dato_erroneo_apellido = new System.Windows.Forms.Label();
             this.dato_erroneo_email = new System.Windows.Forms.Label();
             this.dato_erroneo_contrasenia = new System.Windows.Forms.Label();
-            this.txt_telefono = new System.Windows.Forms.TextBox();
             this.dato_erroneo_telefono = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox_genero = new System.Windows.Forms.ComboBox();
-            this.txt_usuario = new System.Windows.Forms.TextBox();
             this.dato_erroneo_usuario = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txt_telefono = new System.Windows.Forms.TextBox();
+            this.txt_usuario = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -78,7 +78,8 @@
             this.txt_nombre.Location = new System.Drawing.Point(794, 160);
             this.txt_nombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(280, 25);
+            this.txt_nombre.ReadOnly = true;
+            this.txt_nombre.Size = new System.Drawing.Size(280, 20);
             this.txt_nombre.TabIndex = 1;
             this.txt_nombre.Text = "NOMBRE";
             // 
@@ -91,7 +92,8 @@
             this.txt_apellido.Location = new System.Drawing.Point(796, 198);
             this.txt_apellido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_apellido.Name = "txt_apellido";
-            this.txt_apellido.Size = new System.Drawing.Size(299, 25);
+            this.txt_apellido.ReadOnly = true;
+            this.txt_apellido.Size = new System.Drawing.Size(299, 20);
             this.txt_apellido.TabIndex = 2;
             this.txt_apellido.Text = "APELLIDO";
             // 
@@ -104,7 +106,8 @@
             this.txt_correo.Location = new System.Drawing.Point(794, 240);
             this.txt_correo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_correo.Name = "txt_correo";
-            this.txt_correo.Size = new System.Drawing.Size(299, 25);
+            this.txt_correo.ReadOnly = true;
+            this.txt_correo.Size = new System.Drawing.Size(299, 20);
             this.txt_correo.TabIndex = 3;
             this.txt_correo.Text = "CORREO";
             // 
@@ -117,7 +120,8 @@
             this.txt_contrasenia.Location = new System.Drawing.Point(796, 280);
             this.txt_contrasenia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_contrasenia.Name = "txt_contrasenia";
-            this.txt_contrasenia.Size = new System.Drawing.Size(299, 25);
+            this.txt_contrasenia.ReadOnly = true;
+            this.txt_contrasenia.Size = new System.Drawing.Size(299, 20);
             this.txt_contrasenia.TabIndex = 4;
             this.txt_contrasenia.Text = "CONTRASEÑA";
             // 
@@ -199,7 +203,7 @@
             this.lbl_editUser.Location = new System.Drawing.Point(788, 101);
             this.lbl_editUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_editUser.Name = "lbl_editUser";
-            this.lbl_editUser.Size = new System.Drawing.Size(271, 39);
+            this.lbl_editUser.Size = new System.Drawing.Size(228, 32);
             this.lbl_editUser.TabIndex = 8;
             this.lbl_editUser.Text = "EDITAR USUARIO";
             // 
@@ -212,7 +216,7 @@
             this.pick_fecha_nacimiento.Location = new System.Drawing.Point(1003, 405);
             this.pick_fecha_nacimiento.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.pick_fecha_nacimiento.Name = "pick_fecha_nacimiento";
-            this.pick_fecha_nacimiento.Size = new System.Drawing.Size(116, 32);
+            this.pick_fecha_nacimiento.Size = new System.Drawing.Size(116, 27);
             this.pick_fecha_nacimiento.TabIndex = 16;
             this.pick_fecha_nacimiento.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
@@ -223,7 +227,7 @@
             this.fecha_nacimiento.ForeColor = System.Drawing.Color.DimGray;
             this.fecha_nacimiento.Location = new System.Drawing.Point(792, 410);
             this.fecha_nacimiento.Name = "fecha_nacimiento";
-            this.fecha_nacimiento.Size = new System.Drawing.Size(238, 23);
+            this.fecha_nacimiento.Size = new System.Drawing.Size(199, 21);
             this.fecha_nacimiento.TabIndex = 17;
             this.fecha_nacimiento.Text = "FECHA DE NACIMIENTO";
             // 
@@ -234,7 +238,7 @@
             this.tipo_usuario.ForeColor = System.Drawing.Color.DimGray;
             this.tipo_usuario.Location = new System.Drawing.Point(792, 489);
             this.tipo_usuario.Name = "tipo_usuario";
-            this.tipo_usuario.Size = new System.Drawing.Size(175, 23);
+            this.tipo_usuario.Size = new System.Drawing.Size(147, 21);
             this.tipo_usuario.TabIndex = 36;
             this.tipo_usuario.Text = "TIPO DE USUARIO";
             // 
@@ -250,7 +254,7 @@
             "Administrador"});
             this.comboBox_cargo.Location = new System.Drawing.Point(950, 486);
             this.comboBox_cargo.Name = "comboBox_cargo";
-            this.comboBox_cargo.Size = new System.Drawing.Size(169, 31);
+            this.comboBox_cargo.Size = new System.Drawing.Size(169, 29);
             this.comboBox_cargo.TabIndex = 37;
             // 
             // bt_saveuser
@@ -297,7 +301,7 @@
             this.dato_erroneo_nombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.dato_erroneo_nombre.Location = new System.Drawing.Point(776, 161);
             this.dato_erroneo_nombre.Name = "dato_erroneo_nombre";
-            this.dato_erroneo_nombre.Size = new System.Drawing.Size(23, 30);
+            this.dato_erroneo_nombre.Size = new System.Drawing.Size(19, 22);
             this.dato_erroneo_nombre.TabIndex = 41;
             this.dato_erroneo_nombre.Text = "*";
             this.dato_erroneo_nombre.Visible = false;
@@ -309,7 +313,7 @@
             this.dato_erroneo_apellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.dato_erroneo_apellido.Location = new System.Drawing.Point(778, 199);
             this.dato_erroneo_apellido.Name = "dato_erroneo_apellido";
-            this.dato_erroneo_apellido.Size = new System.Drawing.Size(23, 30);
+            this.dato_erroneo_apellido.Size = new System.Drawing.Size(19, 22);
             this.dato_erroneo_apellido.TabIndex = 42;
             this.dato_erroneo_apellido.Text = "*";
             this.dato_erroneo_apellido.Visible = false;
@@ -321,7 +325,7 @@
             this.dato_erroneo_email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.dato_erroneo_email.Location = new System.Drawing.Point(776, 240);
             this.dato_erroneo_email.Name = "dato_erroneo_email";
-            this.dato_erroneo_email.Size = new System.Drawing.Size(23, 30);
+            this.dato_erroneo_email.Size = new System.Drawing.Size(19, 22);
             this.dato_erroneo_email.TabIndex = 43;
             this.dato_erroneo_email.Text = "*";
             this.dato_erroneo_email.Visible = false;
@@ -333,23 +337,10 @@
             this.dato_erroneo_contrasenia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.dato_erroneo_contrasenia.Location = new System.Drawing.Point(776, 280);
             this.dato_erroneo_contrasenia.Name = "dato_erroneo_contrasenia";
-            this.dato_erroneo_contrasenia.Size = new System.Drawing.Size(23, 30);
+            this.dato_erroneo_contrasenia.Size = new System.Drawing.Size(19, 22);
             this.dato_erroneo_contrasenia.TabIndex = 44;
             this.dato_erroneo_contrasenia.Text = "*";
             this.dato_erroneo_contrasenia.Visible = false;
-            // 
-            // txt_telefono
-            // 
-            this.txt_telefono.BackColor = System.Drawing.Color.White;
-            this.txt_telefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_telefono.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_telefono.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_telefono.Location = new System.Drawing.Point(795, 316);
-            this.txt_telefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_telefono.Name = "txt_telefono";
-            this.txt_telefono.Size = new System.Drawing.Size(299, 25);
-            this.txt_telefono.TabIndex = 45;
-            this.txt_telefono.Text = "TELEFONO";
             // 
             // dato_erroneo_telefono
             // 
@@ -358,7 +349,7 @@
             this.dato_erroneo_telefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.dato_erroneo_telefono.Location = new System.Drawing.Point(778, 314);
             this.dato_erroneo_telefono.Name = "dato_erroneo_telefono";
-            this.dato_erroneo_telefono.Size = new System.Drawing.Size(23, 30);
+            this.dato_erroneo_telefono.Size = new System.Drawing.Size(19, 22);
             this.dato_erroneo_telefono.TabIndex = 46;
             this.dato_erroneo_telefono.Text = "*";
             this.dato_erroneo_telefono.Visible = false;
@@ -370,7 +361,7 @@
             this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(792, 451);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 23);
+            this.label1.Size = new System.Drawing.Size(78, 21);
             this.label1.TabIndex = 47;
             this.label1.Text = "GENERO";
             // 
@@ -385,21 +376,8 @@
             "Femenino"});
             this.comboBox_genero.Location = new System.Drawing.Point(950, 448);
             this.comboBox_genero.Name = "comboBox_genero";
-            this.comboBox_genero.Size = new System.Drawing.Size(169, 31);
+            this.comboBox_genero.Size = new System.Drawing.Size(169, 29);
             this.comboBox_genero.TabIndex = 48;
-            // 
-            // txt_usuario
-            // 
-            this.txt_usuario.BackColor = System.Drawing.Color.White;
-            this.txt_usuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_usuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_usuario.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_usuario.Location = new System.Drawing.Point(797, 354);
-            this.txt_usuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_usuario.Name = "txt_usuario";
-            this.txt_usuario.Size = new System.Drawing.Size(299, 25);
-            this.txt_usuario.TabIndex = 49;
-            this.txt_usuario.Text = "USUARIO";
             // 
             // dato_erroneo_usuario
             // 
@@ -408,7 +386,7 @@
             this.dato_erroneo_usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.dato_erroneo_usuario.Location = new System.Drawing.Point(776, 352);
             this.dato_erroneo_usuario.Name = "dato_erroneo_usuario";
-            this.dato_erroneo_usuario.Size = new System.Drawing.Size(23, 30);
+            this.dato_erroneo_usuario.Size = new System.Drawing.Size(19, 22);
             this.dato_erroneo_usuario.TabIndex = 50;
             this.dato_erroneo_usuario.Text = "*";
             this.dato_erroneo_usuario.Visible = false;
@@ -482,19 +460,47 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // txt_telefono
+            // 
+            this.txt_telefono.BackColor = System.Drawing.Color.White;
+            this.txt_telefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_telefono.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_telefono.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_telefono.Location = new System.Drawing.Point(796, 314);
+            this.txt_telefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_telefono.Name = "txt_telefono";
+            this.txt_telefono.ReadOnly = true;
+            this.txt_telefono.Size = new System.Drawing.Size(299, 20);
+            this.txt_telefono.TabIndex = 53;
+            this.txt_telefono.Text = "TELEFONO";
+            // 
+            // txt_usuario
+            // 
+            this.txt_usuario.BackColor = System.Drawing.Color.White;
+            this.txt_usuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_usuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_usuario.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_usuario.Location = new System.Drawing.Point(794, 352);
+            this.txt_usuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_usuario.Name = "txt_usuario";
+            this.txt_usuario.ReadOnly = true;
+            this.txt_usuario.Size = new System.Drawing.Size(299, 20);
+            this.txt_usuario.TabIndex = 54;
+            this.txt_usuario.Text = "USUARIO";
+            // 
             // Form_Edit_user
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1134, 572);
+            this.Controls.Add(this.txt_usuario);
+            this.Controls.Add(this.txt_telefono);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dato_erroneo_usuario);
-            this.Controls.Add(this.txt_usuario);
             this.Controls.Add(this.comboBox_genero);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dato_erroneo_telefono);
-            this.Controls.Add(this.txt_telefono);
             this.Controls.Add(this.txt_contrasenia);
             this.Controls.Add(this.dato_erroneo_contrasenia);
             this.Controls.Add(this.txt_correo);
@@ -546,15 +552,15 @@
         private System.Windows.Forms.Label dato_erroneo_email;
         private System.Windows.Forms.Label dato_erroneo_contrasenia;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape5;
-        private System.Windows.Forms.TextBox txt_telefono;
         private System.Windows.Forms.Label dato_erroneo_telefono;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox_genero;
-        private System.Windows.Forms.TextBox txt_usuario;
         private System.Windows.Forms.Label dato_erroneo_usuario;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txt_telefono;
+        private System.Windows.Forms.TextBox txt_usuario;
     }
 }

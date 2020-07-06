@@ -35,6 +35,7 @@ namespace chatbottest1
 
         private void MostrarUsuarios() {
             dataGridView1.DataSource = usuario.MostrarUsuarios(UserLoginCache.Correo);
+            dataGridView1.ClearSelection();
         }
 
         private void bt_editar_Click(object sender, EventArgs e)
@@ -45,6 +46,7 @@ namespace chatbottest1
                 txt_apellido.ReadOnly = false;
                 txt_correo.ReadOnly = false;
                 txt_contrasenia.ReadOnly = false;
+                txt_usuario.ReadOnly = false;
                 pick_fecha_nacimiento.Enabled = true;
                 comboBox_genero.Enabled = true;
                 comboBox_cargo.Enabled = true;
@@ -85,11 +87,11 @@ namespace chatbottest1
             else
             {
                 if (txt_nombre.Text.Length != 0 && txt_apellido.Text.Length != 0 && txt_correo.Text.Length != 0
-                && comboBox_cargo.SelectedItem != null)
+                && comboBox_cargo.SelectedItem != null && txt_telefono.Text.Length !=0 && txt_usuario.Text.Length !=0)
                 {
                     //Verifica que los campos no estén vacios -- Codigo traido de Felipe Riaño
                     if (verficarNombre_Apell(txt_nombre.Text) && verficarNombre_Apell(txt_apellido.Text)
-                        && verificarEmail(txt_correo.Text) && verficarPassWordL(txt_contrasenia.Text))
+                        && verificarEmail(txt_correo.Text) && verficarPassWordL(txt_contrasenia.Text) && verificarUsuario(txt_usuario.Text))
                     {
                         try
                         {
@@ -111,6 +113,13 @@ namespace chatbottest1
                         if (!verficarNombre_Apell(txt_apellido.Text)) dato_erroneo_apellido.Visible = true;
                         if (!verificarEmail(txt_correo.Text)) dato_erroneo_email.Visible = true;
                         if (!verficarPassWordL(txt_contrasenia.Text)) dato_erroneo_contrasenia.Visible = true;
+                        if (!verificarUsuario(txt_usuario.Text) || txt_usuario.Text.Length == 0)
+                        {
+                            dato_erroneo_usuario.Visible = true; 
+                            MessageBox.Show("Usuario ya existente en sistema", "Datos erroneos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        if (txt_telefono.Text.Length == 0) dato_erroneo_telefono.Visible = true;
+                        if (!usuario.verificarExistenciaEmail(txt_correo.Text, id_usuario)) MessageBox.Show("Correo ya existente en sistema", "Datos erroneos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         DialogResult datos = MessageBox.Show("Algunos datos ingresados son incorrectos", "Datos erroneos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         MessageBox.Show(messageData, "Tener en cuenta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
@@ -147,6 +156,7 @@ namespace chatbottest1
             dato_erroneo_apellido.Visible = false;
             dato_erroneo_contrasenia.Visible = false;
             dato_erroneo_contrasenia.Visible = false;
+            dato_erroneo_usuario.Visible = false;
         }
 
 
@@ -189,7 +199,7 @@ namespace chatbottest1
                 }
 
             }
-            if (verAt == 1 && verPoint > 0 && verPoint <= 2)
+            if (verAt == 1 && verPoint > 0 && verPoint <= 2 && usuario.verificarExistenciaEmail(email,id_usuario))
             {
                 return true;
             }
@@ -249,6 +259,11 @@ namespace chatbottest1
             }
         }
 
+        public bool verificarUsuario(string user)
+        {
+            return usuario.verificarExistenciaUsuario(user, id_usuario);
+        }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 1)
@@ -257,6 +272,8 @@ namespace chatbottest1
                 txt_apellido.ReadOnly = false;
                 txt_correo.ReadOnly = false;
                 txt_contrasenia.ReadOnly = false;
+                txt_usuario.ReadOnly = false;
+                txt_telefono.ReadOnly = false;
                 pick_fecha_nacimiento.Enabled = true;
                 comboBox_genero.Enabled = true;
                 comboBox_cargo.Enabled = true;

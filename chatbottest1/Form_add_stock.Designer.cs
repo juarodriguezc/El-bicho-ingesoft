@@ -48,12 +48,12 @@
             this.lbl_addStock.AutoSize = true;
             this.lbl_addStock.Font = new System.Drawing.Font("Century Gothic", 28F, System.Drawing.FontStyle.Bold);
             this.lbl_addStock.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_addStock.Location = new System.Drawing.Point(13, 21);
+            this.lbl_addStock.Location = new System.Drawing.Point(49, 31);
             this.lbl_addStock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_addStock.Name = "lbl_addStock";
-            this.lbl_addStock.Size = new System.Drawing.Size(443, 44);
+            this.lbl_addStock.Size = new System.Drawing.Size(379, 44);
             this.lbl_addStock.TabIndex = 9;
-            this.lbl_addStock.Text = "REALIZAR MOVIMIENTO";
+            this.lbl_addStock.Text = "AÑADIR PRODUCTO";
             // 
             // lbl_errorNombreProducto
             // 

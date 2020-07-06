@@ -31,27 +31,27 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_menu_principal));
             this.panel_lateral = new System.Windows.Forms.Panel();
             this.panel_seleccion = new System.Windows.Forms.Panel();
+            this.panel_fondo = new System.Windows.Forms.Panel();
+            this.bt_logout = new System.Windows.Forms.Button();
             this.BtH = new System.Windows.Forms.Button();
             this.bt_calendario = new System.Windows.Forms.Button();
             this.bt_funcionalidad = new System.Windows.Forms.Button();
             this.panel_selected_window = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.lbl_func = new System.Windows.Forms.Label();
             this.bt_profile = new System.Windows.Forms.Button();
             this.bt_chatbot = new System.Windows.Forms.Button();
-            this.bt_logout = new System.Windows.Forms.Button();
             this.panel_info_basica = new System.Windows.Forms.Panel();
+            this.lbl_func = new System.Windows.Forms.Label();
             this.lblCargo = new System.Windows.Forms.Label();
             this.lbl_iniciales = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.elipse_iniciales = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.panel_principal = new System.Windows.Forms.Panel();
-            this.panel_fondo = new System.Windows.Forms.Panel();
             this.panel_lateral.SuspendLayout();
             this.panel_seleccion.SuspendLayout();
-            this.panel_info_basica.SuspendLayout();
             this.panel_fondo.SuspendLayout();
+            this.panel_info_basica.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_lateral
@@ -80,6 +80,36 @@
             this.panel_seleccion.Name = "panel_seleccion";
             this.panel_seleccion.Size = new System.Drawing.Size(295, 385);
             this.panel_seleccion.TabIndex = 10;
+            // 
+            // panel_fondo
+            // 
+            this.panel_fondo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel_fondo.Controls.Add(this.bt_logout);
+            this.panel_fondo.Location = new System.Drawing.Point(0, 324);
+            this.panel_fondo.Name = "panel_fondo";
+            this.panel_fondo.Size = new System.Drawing.Size(295, 62);
+            this.panel_fondo.TabIndex = 1;
+            // 
+            // bt_logout
+            // 
+            this.bt_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bt_logout.FlatAppearance.BorderSize = 0;
+            this.bt_logout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.bt_logout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bt_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_logout.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_logout.ForeColor = System.Drawing.Color.White;
+            this.bt_logout.Image = ((System.Drawing.Image)(resources.GetObject("bt_logout.Image")));
+            this.bt_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_logout.Location = new System.Drawing.Point(14, 2);
+            this.bt_logout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_logout.Name = "bt_logout";
+            this.bt_logout.Size = new System.Drawing.Size(278, 60);
+            this.bt_logout.TabIndex = 6;
+            this.bt_logout.Text = "             Cerrar sesión";
+            this.bt_logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_logout.UseVisualStyleBackColor = false;
+            this.bt_logout.Click += new System.EventHandler(this.bt_logout_Click);
             // 
             // BtH
             // 
@@ -160,18 +190,6 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // lbl_func
-            // 
-            this.lbl_func.AutoSize = true;
-            this.lbl_func.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_func.ForeColor = System.Drawing.Color.White;
-            this.lbl_func.Location = new System.Drawing.Point(86, 271);
-            this.lbl_func.Name = "lbl_func";
-            this.lbl_func.Size = new System.Drawing.Size(86, 16);
-            this.lbl_func.TabIndex = 5;
-            this.lbl_func.Text = "Funcionalidad";
-            this.lbl_func.Visible = false;
-            // 
             // bt_profile
             // 
             this.bt_profile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
@@ -208,27 +226,6 @@
             this.bt_chatbot.UseVisualStyleBackColor = false;
             this.bt_chatbot.Click += new System.EventHandler(this.button_chatbot_Click);
             // 
-            // bt_logout
-            // 
-            this.bt_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bt_logout.FlatAppearance.BorderSize = 0;
-            this.bt_logout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.bt_logout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bt_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_logout.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_logout.ForeColor = System.Drawing.Color.White;
-            this.bt_logout.Image = ((System.Drawing.Image)(resources.GetObject("bt_logout.Image")));
-            this.bt_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_logout.Location = new System.Drawing.Point(14, 2);
-            this.bt_logout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bt_logout.Name = "bt_logout";
-            this.bt_logout.Size = new System.Drawing.Size(278, 60);
-            this.bt_logout.TabIndex = 6;
-            this.bt_logout.Text = "             Cerrar sesión";
-            this.bt_logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_logout.UseVisualStyleBackColor = false;
-            this.bt_logout.Click += new System.EventHandler(this.bt_logout_Click);
-            // 
             // panel_info_basica
             // 
             this.panel_info_basica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -241,6 +238,18 @@
             this.panel_info_basica.Name = "panel_info_basica";
             this.panel_info_basica.Size = new System.Drawing.Size(295, 290);
             this.panel_info_basica.TabIndex = 9;
+            // 
+            // lbl_func
+            // 
+            this.lbl_func.AutoSize = true;
+            this.lbl_func.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_func.ForeColor = System.Drawing.Color.White;
+            this.lbl_func.Location = new System.Drawing.Point(86, 271);
+            this.lbl_func.Name = "lbl_func";
+            this.lbl_func.Size = new System.Drawing.Size(86, 16);
+            this.lbl_func.TabIndex = 5;
+            this.lbl_func.Text = "Funcionalidad";
+            this.lbl_func.Visible = false;
             // 
             // lblCargo
             // 
@@ -307,15 +316,6 @@
             this.panel_principal.TabIndex = 5;
             this.panel_principal.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_principal_Paint);
             // 
-            // panel_fondo
-            // 
-            this.panel_fondo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel_fondo.Controls.Add(this.bt_logout);
-            this.panel_fondo.Location = new System.Drawing.Point(0, 324);
-            this.panel_fondo.Name = "panel_fondo";
-            this.panel_fondo.Size = new System.Drawing.Size(295, 62);
-            this.panel_fondo.TabIndex = 1;
-            // 
             // Form_menu_principal
             // 
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -327,14 +327,15 @@
             this.Name = "Form_menu_principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chatbot";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_menu_principal_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Chatbot_menu_FormClosed);
             this.Load += new System.EventHandler(this.Chatbot_menu_Load);
             this.Leave += new System.EventHandler(this.Chatbot_menu_Leave);
             this.panel_lateral.ResumeLayout(false);
             this.panel_seleccion.ResumeLayout(false);
+            this.panel_fondo.ResumeLayout(false);
             this.panel_info_basica.ResumeLayout(false);
             this.panel_info_basica.PerformLayout();
-            this.panel_fondo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

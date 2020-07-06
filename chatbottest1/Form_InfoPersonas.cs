@@ -24,6 +24,8 @@ namespace chatbottest1
         private void MostrarInformacionDePersonas()
         {
             dataGridView1.DataSource = usuario.MostrarInfoPersonas();
+            dataGridView1.ClearSelection();
+            dataGridView1.ReadOnly = true;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

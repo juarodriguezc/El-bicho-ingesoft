@@ -35,7 +35,7 @@ namespace chatbottest1
 
         public bool verificarNombrePrograma()
         {
-            return txt_ProgramName.Text.ToCharArray().Length != 0 ? true : false;
+            return txt_ProgramName.Text.Length != 0 ? true : false;
         }
 
         public bool verificarTipoPrograma()
@@ -45,7 +45,7 @@ namespace chatbottest1
             return !comboBoxTipoPrograma.SelectedItem.Equals("") ? true : false;
         }
 
-        public bool verficarFechaInicio()
+        public bool verificarFechaInicio()
         {
             return ((pick_fechaIni.Value > DateTime.MinValue) && (pick_fechaIni.Value < DateTime.MaxValue)) ? true : false;
         }
@@ -68,12 +68,14 @@ namespace chatbottest1
         private void mostrarProgramas()
         {
             dataGridView1.DataSource = program.programaNomCompania();
+            dataGridView1.ClearSelection();
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].Visible = false;
             dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns[8].Visible = false;
             dataGridView1.Columns[9].Visible = false;
             dataGridView1.Columns[10].Visible = false;
+            
         }
 
         private bool existeCompania(int idC)
@@ -81,19 +83,20 @@ namespace chatbottest1
             return program.existeCompania(idC);
         }
 
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 1)
             {
-                txt_ProgramName.ReadOnly = true;
-                comboBoxNombresCompan.Enabled = false;
-                comboBoxTipoPrograma.Enabled = false;
-                pick_fechaIni.Enabled = false;
-                pick_fechaFin.Enabled = false;
 
-                bt_editar.Visible = true;
                 bt_saveuser.Visible = true;
+
+                txt_ProgramName.ReadOnly = false;
+                comboBoxNombresCompan.Enabled = true;
+                comboBoxTipoPrograma.Enabled = true;
+
+                txt_ProgramName.Enabled = true;
+                pick_fechaIni.Enabled = true;
+                pick_fechaFin.Enabled = true;
 
                 idProgram = int.Parse(dataGridView1.CurrentRow.Cells["Id_programa"].Value.ToString());
                 idCompania = int.Parse(dataGridView1.CurrentRow.Cells["Id_compania"].Value.ToString());
@@ -103,50 +106,32 @@ namespace chatbottest1
                 pick_fechaIni.Value = DateTime.Parse(dataGridView1.CurrentRow.Cells["Fecha_inicio"].Value.ToString());
                 pick_fechaFin.Value = DateTime.Parse(dataGridView1.CurrentRow.Cells["Fecha_fin"].Value.ToString());
 
+                comboBoxNombresCompan.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                comboBoxTipoPrograma.Text = dataGridView1.CurrentRow.Cells["Tipo_programa"].Value.ToString();
 
-                for(int i = 0; i < comboBoxNombresCompan.Items.Count; i++)
-                {
-                    comboBoxNombresCompan.SelectedIndex = i;
-                    if (comboBoxNombresCompan.SelectedItem.ToString().Equals(nombreCompa))
-                    {
-                        i = comboBoxNombresCompan.Items.Count;
-                    }
-                }
-
-                for (int i = 0; i < comboBoxTipoPrograma.Items.Count; i++)
-                {
-                    comboBoxTipoPrograma.SelectedIndex = i;
-                    if (comboBoxTipoPrograma.SelectedItem.ToString().Equals(nombreCompa))
-                    {
-                        i = comboBoxTipoPrograma.Items.Count;
-                    }
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Seleccione el programa a editar");
             }
         }
 
 
         private void bt_saveuser_Click(object sender, EventArgs e)
         {
-            bool a = verficarFechaInicio(), b = verificarFechaFin(), c = verificarIdCompania(), d = verificarNombrePrograma(), f = verificarTipoPrograma();
 
-            if (a && b && c && d && f)
+            if (verificarFechaInicio() && verificarFechaFin() && verificarIdCompania() && verificarNombrePrograma() && verificarTipoPrograma())
             {
-
                 idCompania = program.buscarIdCompany(comboBoxNombresCompan.SelectedItem.ToString());
                 tipoProg = comboBoxTipoPrograma.SelectedItem.ToString();
                 program.editProgram(idProgram, idCompania, txt_ProgramName.Text, tipoProg, pick_fechaIni.Value, pick_fechaFin.Value);
                 txt_ProgramName.Text = "NOMBRE PROGRAMA";
                 mostrarProgramas();
+                dataGridView1.ClearSelection();
                 MessageBox.Show("Programa Editado!");
             }
             else
             {
-                MessageBox.Show("Verificar datos editados!");
+                if (!verificarNombrePrograma()) dato_erroneo_nombre.Visible = true;
+                if (!verificarFechaInicio()) dato_erroneo_fechaIni.Visible = true;
+                if (!verificarFechaFin()) dato_erroneo_fechaFin.Visible = true;
+
             }
         }
 
@@ -166,6 +151,14 @@ namespace chatbottest1
                 txt_ProgramName.Text = "NOMBRE PROGRAMA";
                 txt_ProgramName.ForeColor = Color.DimGray;
             }
+        }
+
+        private void Form_EditProgramInfo_Load(object sender, EventArgs e)
+        {
+            dataGridView1.ClearSelection();
+            dato_erroneo_nombre.Visible = false;
+            dato_erroneo_fechaIni.Visible = false;
+            dato_erroneo_fechaFin.Visible = false;
         }
 
         private void bt_editar_Click(object sender, EventArgs e)
