@@ -179,6 +179,11 @@ namespace chatbottest1
         public Button getButton_calendario() {
             return bt_calendario;
         }
+        public Button getButton_ayuda()
+        {
+            return BtH;
+        }
+
         private void lbl_iniciales_Click(object sender, EventArgs e)
         {
             
