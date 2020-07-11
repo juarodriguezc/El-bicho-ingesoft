@@ -289,14 +289,14 @@ namespace chatbottest1
                     procesarRespuesta(rta_fin);
                     Form_InfoPrograma_date formDate = new Form_InfoPrograma_date(DateTime.Today);
                     formDate.Show();
-                    sesion.create_reg_function(5, SesionCache.Id_acceso);
+                    sesion.create_reg_function(29, SesionCache.Id_acceso);
                     return true;
                 case "Search_foreign_volunteers":
                     if (UserLoginCache.Rol_empresa == Positions.Administrador || UserLoginCache.Rol_empresa == Positions.Jefe_area)
                     {
                         procesarRespuesta(rta_fin);
                         Form_show_foreign_volunteers voluntariosForaneos= new Form_show_foreign_volunteers();
-                        sesion.create_reg_function(26, SesionCache.Id_acceso);
+                        sesion.create_reg_function(14, SesionCache.Id_acceso);
                         voluntariosForaneos.Show();
                         return true;
                     }
