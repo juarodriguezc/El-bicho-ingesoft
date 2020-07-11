@@ -49,14 +49,12 @@ namespace chatbottest1
         }
         private void Chatbot_Load(object sender, EventArgs e)
         {
-            Image img;
-            img = Image.FromFile("../../Images/icon3.png");
-            bt_sendMessage.Image = img;
+            
             var date = DateTime.Now;
             sesion = new ModeloSesion();
             sesion.createSesion(UserLoginCache.Id_usuario, date);
             lbl_hour.Text = date.ToString("dd/MM/yyyy       hh:mm tt");
-            ActiveControl = textBox1;
+            ActiveControl = bt_sendMessage;
             
         }
 
@@ -313,6 +311,10 @@ namespace chatbottest1
                         return true;
                     }
                     return false;
+                case "Help":
+                    add_respuesta("Para usar el chatbot escribe en la barra de comandos lo que desees realizar." +
+                         System.Environment.NewLine + System.Environment.NewLine+ " Para más información haz clic en el botón de ayuda.");
+                    return true;
                 default:
                     procesarRespuesta(rta_fin);
                     return true;
@@ -408,7 +410,7 @@ namespace chatbottest1
             msgrta.AutoSize = true;
             msgrta.Padding = new Padding(10, 10, 10, 10);
             msgrta.MaximumSize = new Size(350, 1000);
-            msgrta.BackColor = Color.FromArgb(225, 225, 225);
+            msgrta.BackColor = Color.FromArgb(235, 235, 235);
             msgrta.Location = new Point(50, panel_chat.Height + 20);
             panel_chat.Controls.Add(msgrta);
         }
@@ -445,23 +447,24 @@ namespace chatbottest1
         } 
         private void button1_Click(object sender, EventArgs e)
         {
-            String input = textBox1.Text.Trim();
-            textBox1.Clear();
-            if (input.Length > 0)
+            if(textBox1.Text != "Escribe lo que deseas hacer")
             {
-                Activity userMessage = new Activity
+                String input = textBox1.Text.Trim();
+                textBox1.Clear();
+                if (input.Length > 0)
                 {
-                    From = new ChannelAccount(id, fromUser),
-                    Text = input,
-                    Type = ActivityTypes.Message,
-                    TextFormat = "plain"
-                };
-                add_mensaje(input);
-                Client.Conversations.PostActivityAsync(this.conversation.ConversationId, userMessage);
-                
+                    Activity userMessage = new Activity
+                    {
+                        From = new ChannelAccount(id, fromUser),
+                        Text = input,
+                        Type = ActivityTypes.Message,
+                        TextFormat = "plain"
+                    };
+                    add_mensaje(input);
+                    Client.Conversations.PostActivityAsync(this.conversation.ConversationId, userMessage);
+
+                }
             }
-
-
         }
         /*public string SplitBySpace(string str, int chunkSize) //Obsoleto
         {
@@ -536,7 +539,12 @@ namespace chatbottest1
 
         private void textBox1_Enter(object sender, EventArgs e)
         {
-            bt_sendMessage.PerformClick();
+            if (textBox1.Text == "Escribe lo que deseas hacer")
+            {
+                textBox1.Text = "";
+                textBox1.ForeColor = Color.Black;
+            }
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -558,6 +566,47 @@ namespace chatbottest1
         }
 
         private void panel_chat_bar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void bt_sendmessage_ellipse_Click(object sender, EventArgs e)
+        {
+            bt_sendmessage_ellipse.BackColor = Color.FromArgb(27, 131, 185);
+            bt_sendMessage.PerformClick();
+            ActiveControl = textBox1;
+        }
+
+        private void bt_sendmessage_ellipse_MouseDown(object sender, MouseEventArgs e)
+        {
+            bt_sendmessage_ellipse.BackColor = Color.FromArgb(37, 141, 195);
+        }
+
+        private void bt_sendmessage_ellipse_MouseLeave(object sender, EventArgs e)
+        {
+            bt_sendmessage_ellipse.BackColor = Color.FromArgb(27, 131, 185);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_help2_Click(object sender, EventArgs e)
+        {
+            Form_menu_principal.Instance.getButton_ayuda().PerformClick();
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "Escribe lo que deseas hacer";
+                textBox1.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

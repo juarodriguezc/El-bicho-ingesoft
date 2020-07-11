@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ayuda));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bt_volver_chatbot = new System.Windows.Forms.Button();
             this.Bt1 = new System.Windows.Forms.Button();
             this.Bt2 = new System.Windows.Forms.Button();
             this.Bt3 = new System.Windows.Forms.Button();
             this.Bt4 = new System.Windows.Forms.Button();
             this.guia = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guia)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -47,10 +47,21 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, -1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(983, 75);
             this.panel1.TabIndex = 48;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(2, -45);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(225, 158);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // bt_volver_chatbot
             // 
@@ -77,8 +88,8 @@
             this.Bt1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Bt1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bt1.ForeColor = System.Drawing.Color.White;
-            this.Bt1.Location = new System.Drawing.Point(218, 556);
-            this.Bt1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Bt1.Location = new System.Drawing.Point(197, 556);
+            this.Bt1.Margin = new System.Windows.Forms.Padding(2);
             this.Bt1.Name = "Bt1";
             this.Bt1.Size = new System.Drawing.Size(30, 36);
             this.Bt1.TabIndex = 51;
@@ -93,8 +104,8 @@
             this.Bt2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Bt2.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bt2.ForeColor = System.Drawing.Color.White;
-            this.Bt2.Location = new System.Drawing.Point(378, 556);
-            this.Bt2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Bt2.Location = new System.Drawing.Point(405, 556);
+            this.Bt2.Margin = new System.Windows.Forms.Padding(2);
             this.Bt2.Name = "Bt2";
             this.Bt2.Size = new System.Drawing.Size(30, 36);
             this.Bt2.TabIndex = 52;
@@ -109,8 +120,8 @@
             this.Bt3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Bt3.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bt3.ForeColor = System.Drawing.Color.White;
-            this.Bt3.Location = new System.Drawing.Point(557, 556);
-            this.Bt3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Bt3.Location = new System.Drawing.Point(619, 556);
+            this.Bt3.Margin = new System.Windows.Forms.Padding(2);
             this.Bt3.Name = "Bt3";
             this.Bt3.Size = new System.Drawing.Size(30, 36);
             this.Bt3.TabIndex = 53;
@@ -125,8 +136,8 @@
             this.Bt4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Bt4.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bt4.ForeColor = System.Drawing.Color.White;
-            this.Bt4.Location = new System.Drawing.Point(749, 556);
-            this.Bt4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Bt4.Location = new System.Drawing.Point(803, 556);
+            this.Bt4.Margin = new System.Windows.Forms.Padding(2);
             this.Bt4.Name = "Bt4";
             this.Bt4.Size = new System.Drawing.Size(30, 36);
             this.Bt4.TabIndex = 54;
@@ -138,22 +149,11 @@
             // 
             this.guia.Image = global::chatbottest1.Properties.Resources.GuiaInteractivaChatboot_page_00011;
             this.guia.Location = new System.Drawing.Point(133, 106);
-            this.guia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guia.Margin = new System.Windows.Forms.Padding(2);
             this.guia.Name = "guia";
-            this.guia.Size = new System.Drawing.Size(720, 435);
+            this.guia.Size = new System.Drawing.Size(751, 423);
             this.guia.TabIndex = 50;
             this.guia.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(2, -41);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(225, 158);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // Ayuda
             // 
@@ -166,12 +166,12 @@
             this.Controls.Add(this.guia);
             this.Controls.Add(this.bt_volver_chatbot);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Ayuda";
             this.Size = new System.Drawing.Size(983, 674);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guia)).EndInit();
             this.ResumeLayout(false);
 
         }
