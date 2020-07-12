@@ -156,6 +156,7 @@ namespace chatbottest1
             // 
             this.lineShape1.BorderColor = System.Drawing.Color.DimGray;
             this.lineShape1.Name = "lineShape1";
+            this.lineShape1.SelectionColor = System.Drawing.Color.Transparent;
             this.lineShape1.X1 = 120;
             this.lineShape1.X2 = 550;
             this.lineShape1.Y1 = 253;
@@ -165,6 +166,7 @@ namespace chatbottest1
             // 
             this.line_Correo.BorderColor = System.Drawing.Color.DimGray;
             this.line_Correo.Name = "line_Correo";
+            this.line_Correo.SelectionColor = System.Drawing.Color.Transparent;
             this.line_Correo.X1 = 120;
             this.line_Correo.X2 = 550;
             this.line_Correo.Y1 = 183;

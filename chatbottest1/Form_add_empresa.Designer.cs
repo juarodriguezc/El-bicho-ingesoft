@@ -35,12 +35,12 @@
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.lineShape7 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.txt_direccion = new System.Windows.Forms.TextBox();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.txt_nit = new System.Windows.Forms.TextBox();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.txt_telefono = new System.Windows.Forms.TextBox();
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.txt_direccion = new System.Windows.Forms.TextBox();
+            this.txt_nit = new System.Windows.Forms.TextBox();
+            this.txt_telefono = new System.Windows.Forms.TextBox();
             this.error_nombre = new System.Windows.Forms.Label();
             this.error_direccion = new System.Windows.Forms.Label();
             this.error_nit = new System.Windows.Forms.Label();
@@ -134,6 +134,33 @@
             this.shapeContainer1.TabIndex = 44;
             this.shapeContainer1.TabStop = false;
             // 
+            // lineShape3
+            // 
+            this.lineShape3.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape3.Name = "lineShape3";
+            this.lineShape3.X1 = 61;
+            this.lineShape3.X2 = 421;
+            this.lineShape3.Y1 = 360;
+            this.lineShape3.Y2 = 360;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 64;
+            this.lineShape2.X2 = 424;
+            this.lineShape2.Y1 = 300;
+            this.lineShape2.Y2 = 300;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 63;
+            this.lineShape1.X2 = 423;
+            this.lineShape1.Y1 = 240;
+            this.lineShape1.Y2 = 238;
+            // 
             // txt_direccion
             // 
             this.txt_direccion.BackColor = System.Drawing.Color.White;
@@ -149,15 +176,6 @@
             this.txt_direccion.Text = "DIRECCIÓN";
             this.txt_direccion.Enter += new System.EventHandler(this.txt_direccion_Enter);
             this.txt_direccion.Leave += new System.EventHandler(this.txt_direccion_Leave);
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 63;
-            this.lineShape1.X2 = 423;
-            this.lineShape1.Y1 = 240;
-            this.lineShape1.Y2 = 238;
             // 
             // txt_nit
             // 
@@ -175,15 +193,6 @@
             this.txt_nit.Enter += new System.EventHandler(this.txt_nit_Enter);
             this.txt_nit.Leave += new System.EventHandler(this.txt_nit_Leave);
             // 
-            // lineShape2
-            // 
-            this.lineShape2.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 64;
-            this.lineShape2.X2 = 424;
-            this.lineShape2.Y1 = 300;
-            this.lineShape2.Y2 = 300;
-            // 
             // txt_telefono
             // 
             this.txt_telefono.BackColor = System.Drawing.Color.White;
@@ -199,15 +208,6 @@
             this.txt_telefono.Text = "TELÉFONO DE CONTACTO";
             this.txt_telefono.Enter += new System.EventHandler(this.txt_telefono_Enter);
             this.txt_telefono.Leave += new System.EventHandler(this.txt_telefono_Leave);
-            // 
-            // lineShape3
-            // 
-            this.lineShape3.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 61;
-            this.lineShape3.X2 = 421;
-            this.lineShape3.Y1 = 360;
-            this.lineShape3.Y2 = 360;
             // 
             // error_nombre
             // 
@@ -276,8 +276,10 @@
             this.Controls.Add(this.backHome);
             this.Controls.Add(this.shapeContainer1);
             this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
             this.Name = "Form_add_empresa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Añadir empresa";

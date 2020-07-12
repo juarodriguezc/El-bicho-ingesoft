@@ -22,7 +22,15 @@ namespace chatbottest1
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            if (txt_correo.Text == "" && txt_nombre.Text == "NOMBRE")
+            {
+                dataGridView1.DataSource = dt.DefaultView;
+            }
+            if (txt_correo.Text == "CORREO" && txt_nombre.Text == "")
+            {
+                dataGridView1.DataSource = dt.DefaultView;
+            }
+
         }
         private void MostrarRegistroConversacion() {
             dt = usuario.MostrarRegistroConversacion();
@@ -53,43 +61,43 @@ namespace chatbottest1
 
         private void txt_correo_Enter(object sender, EventArgs e)
         {
-            if (txt_correo.Text == "CORREO")
+            /*if (txt_correo.Text == "CORREO")
             {
                 txt_correo.Text = "";
                 txt_correo.ForeColor = Color.DimGray;
-            }
+            }*/
         }
 
         private void txt_correo_Leave(object sender, EventArgs e)
         {
-            if (txt_correo.Text == "")
+            /*if (txt_correo.Text == "")
             {
                 txt_correo.Text = "CORREO";
                 txt_correo.ForeColor = Color.DimGray;
-            }
+            }*/
         }
 
         private void txt_nombre_Enter(object sender, EventArgs e)
         {
-            if (txt_nombre.Text == "NOMBRE")
+            /*if (txt_nombre.Text == "NOMBRE")
             {
                 txt_nombre.Text = "";
                 txt_nombre.ForeColor = Color.DimGray;
-            }
+            }*/
         }
 
         private void txt_nombre_Leave(object sender, EventArgs e)
         {
-            if (txt_nombre.Text == "")
+            /*if (txt_nombre.Text == "")
             {
                 txt_nombre.Text = "NOMBRE";
                 txt_nombre.ForeColor = Color.DimGray;
-            }
+            }*/
         }
 
         private void txt_correo_TextChanged(object sender, EventArgs e)
         {
-            if(txt_nombre.Text == "NOMBRE")
+            if(txt_nombre.Text == "")
             {
                 dt.DefaultView.RowFilter = ("Correo like '%" + txt_correo.Text + "%'");
                 dataGridView1.DataSource = dt.DefaultView;
@@ -104,7 +112,7 @@ namespace chatbottest1
 
         private void txt_nombre_TextChanged(object sender, EventArgs e)
         {
-            if(txt_correo.Text == "CORREO")
+            if(txt_correo.Text == "")
             {
                 dt.DefaultView.RowFilter = ("Nombre like '%" + txt_nombre.Text + "%'");
                 dataGridView1.DataSource = dt.DefaultView;
@@ -115,5 +123,6 @@ namespace chatbottest1
                 dataGridView1.DataSource = dt.DefaultView;
             }
         }
+
     }
 }

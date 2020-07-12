@@ -33,6 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_contenido = new System.Windows.Forms.Panel();
+            this.bt_modificar_eventos = new System.Windows.Forms.Button();
             this.lbl_seleccione = new System.Windows.Forms.Label();
             this.BtnInfoProgramDate = new System.Windows.Forms.Button();
             this.bt_todos_eventos = new System.Windows.Forms.Button();
@@ -56,7 +57,6 @@
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.bt_volver_chatbot = new System.Windows.Forms.Button();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
-            this.bt_modificar_eventos = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_contenido.SuspendLayout();
@@ -103,6 +103,24 @@
             this.panel_contenido.Size = new System.Drawing.Size(983, 591);
             this.panel_contenido.TabIndex = 48;
             this.panel_contenido.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_contenido_Paint);
+            // 
+            // bt_modificar_eventos
+            // 
+            this.bt_modificar_eventos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
+            this.bt_modificar_eventos.FlatAppearance.BorderSize = 0;
+            this.bt_modificar_eventos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.bt_modificar_eventos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bt_modificar_eventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_modificar_eventos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_modificar_eventos.ForeColor = System.Drawing.Color.White;
+            this.bt_modificar_eventos.Location = new System.Drawing.Point(634, 536);
+            this.bt_modificar_eventos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_modificar_eventos.Name = "bt_modificar_eventos";
+            this.bt_modificar_eventos.Size = new System.Drawing.Size(268, 33);
+            this.bt_modificar_eventos.TabIndex = 67;
+            this.bt_modificar_eventos.Text = "MODIFICAR EVENTOS";
+            this.bt_modificar_eventos.UseVisualStyleBackColor = false;
+            this.bt_modificar_eventos.Click += new System.EventHandler(this.bt_modificar_eventos_Click);
             // 
             // lbl_seleccione
             // 
@@ -271,6 +289,7 @@
             this.panel_eventos_dia.Size = new System.Drawing.Size(357, 145);
             this.panel_eventos_dia.TabIndex = 7;
             this.panel_eventos_dia.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.panel_eventos_dia_ControlAdded);
+            this.panel_eventos_dia.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_eventos_dia_Paint);
             // 
             // lbl_no_eventos
             // 
@@ -385,24 +404,6 @@
             // 
             this.horafecha.Enabled = true;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
-            // 
-            // bt_modificar_eventos
-            // 
-            this.bt_modificar_eventos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(131)))), ((int)(((byte)(185)))));
-            this.bt_modificar_eventos.FlatAppearance.BorderSize = 0;
-            this.bt_modificar_eventos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.bt_modificar_eventos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bt_modificar_eventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_modificar_eventos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_modificar_eventos.ForeColor = System.Drawing.Color.White;
-            this.bt_modificar_eventos.Location = new System.Drawing.Point(634, 536);
-            this.bt_modificar_eventos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bt_modificar_eventos.Name = "bt_modificar_eventos";
-            this.bt_modificar_eventos.Size = new System.Drawing.Size(268, 33);
-            this.bt_modificar_eventos.TabIndex = 67;
-            this.bt_modificar_eventos.Text = "MODIFICAR EVENTOS";
-            this.bt_modificar_eventos.UseVisualStyleBackColor = false;
-            this.bt_modificar_eventos.Click += new System.EventHandler(this.bt_modificar_eventos_Click);
             // 
             // Calendario
             // 
