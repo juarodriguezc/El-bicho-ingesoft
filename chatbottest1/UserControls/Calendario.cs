@@ -136,8 +136,11 @@ namespace chatbottest1.UserControls
             b_lateral.BackColor = Color.FromArgb(27, 131, 185);
             b_lateral.Location = new Point(0, position);
             Label evento_panel = new Label();
-            evento_panel.AutoSize = false;
-            evento_panel.Size = new Size(250, 20);
+            evento_panel.AutoSize = true;
+            evento_panel.MaximumSize = new Size(300, 50);
+            //evento_panel.BackColor = Color.White;
+            //evento_panel.ForeColor = Color.Black;
+            //evento_panel.Text = "Evento para poder cuadrar con todos los aspectos necesarios de configuracion del bot service, de esta forma lograr una aplicacion permanente sin la necesidad de actualizar la cuenta";
             evento_panel.Text = evento;
             //evento_panel.Text = evento;
             //evento_panel.Location = new Point(20, panel_eventos_dia.Height - 10);
@@ -200,6 +203,11 @@ namespace chatbottest1.UserControls
         {
             Form_modificar_evento modificar_evento = new Form_modificar_evento();
             modificar_evento.Show();
+        }
+
+        private void panel_eventos_dia_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

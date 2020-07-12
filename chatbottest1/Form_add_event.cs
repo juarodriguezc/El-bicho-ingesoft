@@ -79,7 +79,8 @@ namespace chatbottest1
                 //Configuracion panel
                 panel_user.Controls.Add(user_info);
                 panel_user.BackColor = Color.FromArgb(27, 131, 185);
-                panel_user.Size = new Size(flowPanel_users.ClientSize.Width - 30, 40);
+                //Console.WriteLine("Widthhhh: " + flowPanel_users.ClientSize.Width);
+                panel_user.Size = new Size(391, 40);
                 flowPanel_users.Controls.Add(panel_user);
                 //Imgaen del usuario a mostrar
                 PictureBox img = new PictureBox();

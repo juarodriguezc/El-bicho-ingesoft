@@ -237,7 +237,9 @@
             this.Controls.Add(this.lbl_asunto);
             this.Controls.Add(this.fecha_evento);
             this.Controls.Add(this.lbl_addUser);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form_add_event";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Añadir evento empresarial";

@@ -91,7 +91,8 @@ namespace chatbottest1
             //Configuracion panel
             panel_user.Controls.Add(user_info);
             panel_user.BackColor = Color.FromArgb(27, 131, 185);
-            panel_user.Size = new Size(flowPanel_users.ClientSize.Width - 30, 40);
+            //Console.WriteLine("Widthhh: " +(int)( flowPanel_users.ClientSize.Width - 30));
+            panel_user.Size = new Size(325, 40);
             flowPanel_users.Controls.Add(panel_user);
             //Imgaen del usuario a mostrar
             PictureBox img = new PictureBox();
@@ -100,11 +101,12 @@ namespace chatbottest1
             img.Location = new Point(10, 4);
             panel_user.Controls.Add(img);
             //Configuracion label
+            //user_info.BackColor = Color.Black;
             user_info.BorderStyle = System.Windows.Forms.BorderStyle.None;
             user_info.AutoSize = true;
-            user_info.MaximumSize = new Size(275, 25);
+            user_info.MaximumSize = new Size(230, 50);
             user_info.Text = userToshow;
-            user_info.Location = new Point(40, 10);
+            user_info.Location = new Point(40, 5);
             //COnfiguracion boton
             bt_delete.Location = new Point(285, 0);
             bt_delete.Size = new Size(40, 40);
@@ -143,7 +145,7 @@ namespace chatbottest1
                 //Configuracion panel
                 panel_user.Controls.Add(user_info);
                 panel_user.BackColor = Color.FromArgb(27, 131, 185);
-                panel_user.Size = new Size(flowPanel_users.ClientSize.Width - 30, 40);
+                panel_user.Size = new Size(325, 40); //Modificado-corregido
                 flowPanel_users.Controls.Add(panel_user);
                 //Imgaen del usuario a mostrar
                 PictureBox img = new PictureBox();
@@ -154,9 +156,9 @@ namespace chatbottest1
                 //Configuracion label
                 user_info.BorderStyle = System.Windows.Forms.BorderStyle.None;
                 user_info.AutoSize = true;
-                user_info.MaximumSize = new Size(275, 25);
+                user_info.MaximumSize = new Size(230, 50);
                 user_info.Text = participantes.SelectedItem.ToString();
-                user_info.Location = new Point(40, 10);
+                user_info.Location = new Point(40, 5);
                 //COnfiguracion boton
                 bt_delete.Location = new Point(285, 0);
                 bt_delete.Size = new Size(40, 40);

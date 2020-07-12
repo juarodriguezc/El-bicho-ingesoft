@@ -150,6 +150,8 @@
             this.Controls.Add(this.lbl_title_stock);
             this.Controls.Add(this.bt_volver_chatbot_stock);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form_programas_activos";
             this.Text = "Form_programas_activos";
             this.Load += new System.EventHandler(this.Form_programas_activos_Load);

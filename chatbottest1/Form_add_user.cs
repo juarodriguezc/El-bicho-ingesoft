@@ -304,12 +304,7 @@ namespace chatbottest1
 
         private void txt_contrasenia_Leave(object sender, EventArgs e)
         {
-            if (txt_contrasenia.Text == "")
-            {
-                txt_contrasenia.Text = "CONTRASEÑA";
-                txt_contrasenia.ForeColor = Color.DimGray;
-                txt_contrasenia.UseSystemPasswordChar = false;
-            }
+           
         }
 
         private void txt_v_contra_Leave(object sender, EventArgs e)

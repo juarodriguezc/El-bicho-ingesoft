@@ -36,6 +36,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lbl_title = new System.Windows.Forms.Label();
             this.panel_busqueda = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -117,6 +118,7 @@
             // panel_busqueda
             // 
             this.panel_busqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel_busqueda.Controls.Add(this.label2);
             this.panel_busqueda.Controls.Add(this.panel4);
             this.panel_busqueda.Controls.Add(this.label1);
             this.panel_busqueda.Controls.Add(this.panel3);
@@ -126,13 +128,25 @@
             this.panel_busqueda.Size = new System.Drawing.Size(298, 606);
             this.panel_busqueda.TabIndex = 9;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 181);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(280, 28);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "FILTRAR INFORMACIÓN";
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.txt_nombre);
-            this.panel4.Location = new System.Drawing.Point(26, 322);
+            this.panel4.Location = new System.Drawing.Point(25, 443);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(260, 25);
+            this.panel4.Size = new System.Drawing.Size(260, 30);
             this.panel4.TabIndex = 14;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -142,12 +156,11 @@
             this.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_nombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nombre.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_nombre.Location = new System.Drawing.Point(6, 3);
+            this.txt_nombre.Location = new System.Drawing.Point(3, 5);
             this.txt_nombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(254, 20);
             this.txt_nombre.TabIndex = 11;
-            this.txt_nombre.Text = "NOMBRE";
             this.txt_nombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_nombre.TextChanged += new System.EventHandler(this.txt_nombre_TextChanged);
             this.txt_nombre.Enter += new System.EventHandler(this.txt_nombre_Enter);
@@ -158,21 +171,21 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(96, 258);
+            this.label1.Location = new System.Drawing.Point(155, 407);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 24);
+            this.label1.Size = new System.Drawing.Size(130, 24);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Filtrar por nombre";
+            this.label1.Text = "Por nombre";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.txt_correo);
-            this.panel3.Location = new System.Drawing.Point(26, 198);
+            this.panel3.Location = new System.Drawing.Point(25, 332);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(260, 25);
+            this.panel3.Size = new System.Drawing.Size(260, 30);
             this.panel3.TabIndex = 12;
             // 
             // txt_correo
@@ -181,12 +194,11 @@
             this.txt_correo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_correo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_correo.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_correo.Location = new System.Drawing.Point(3, 0);
+            this.txt_correo.Location = new System.Drawing.Point(3, 5);
             this.txt_correo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_correo.Name = "txt_correo";
             this.txt_correo.Size = new System.Drawing.Size(254, 20);
             this.txt_correo.TabIndex = 11;
-            this.txt_correo.Text = "CORREO";
             this.txt_correo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_correo.TextChanged += new System.EventHandler(this.txt_correo_TextChanged);
             this.txt_correo.Enter += new System.EventHandler(this.txt_correo_Enter);
@@ -197,12 +209,12 @@
             this.lbl_busca.AutoSize = true;
             this.lbl_busca.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_busca.ForeColor = System.Drawing.Color.White;
-            this.lbl_busca.Location = new System.Drawing.Point(110, 135);
+            this.lbl_busca.Location = new System.Drawing.Point(169, 294);
             this.lbl_busca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_busca.Name = "lbl_busca";
-            this.lbl_busca.Size = new System.Drawing.Size(175, 24);
+            this.lbl_busca.Size = new System.Drawing.Size(116, 24);
             this.lbl_busca.TabIndex = 10;
-            this.lbl_busca.Text = "Filtrar por correo";
+            this.lbl_busca.Text = "Por correo";
             // 
             // bt_volver_chatbot
             // 
@@ -263,8 +275,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "Form_registro_conversacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro conversación";
@@ -299,5 +313,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label2;
     }
 }

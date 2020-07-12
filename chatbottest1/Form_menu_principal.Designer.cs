@@ -306,6 +306,7 @@
             this.elipse_iniciales.BorderColor = System.Drawing.Color.White;
             this.elipse_iniciales.Location = new System.Drawing.Point(44, 16);
             this.elipse_iniciales.Name = "elipse_iniciales";
+            this.elipse_iniciales.SelectionColor = System.Drawing.Color.Transparent;
             this.elipse_iniciales.Size = new System.Drawing.Size(200, 200);
             // 
             // panel_principal

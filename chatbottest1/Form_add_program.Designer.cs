@@ -319,7 +319,9 @@
             this.Controls.Add(this.txt_programa);
             this.Controls.Add(this.lbl_add_program);
             this.Controls.Add(this.shapeContainer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form_add_program";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Añadir un programa";
