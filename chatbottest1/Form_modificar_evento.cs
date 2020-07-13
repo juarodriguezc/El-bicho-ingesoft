@@ -37,7 +37,7 @@ namespace chatbottest1
             column.Width = 60;
             dataGridView1.Columns[1].Width = 90;
             dataGridView1.Columns[3].Width = 80;
-            pick_fecha_evento.MinDate = DateTime.Today.AddDays(1);
+            pick_fecha_evento.MinDate = DateTime.Today;
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
