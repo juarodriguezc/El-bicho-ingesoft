@@ -211,6 +211,7 @@ namespace chatbottest1
                         Form_add_event add_event = new Form_add_event();
                         sesion.create_reg_function(19, SesionCache.Id_acceso);
                         add_event.Show();
+                        return true;
                     }
                     return false;
                  case "Add_volunteer":
