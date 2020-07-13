@@ -209,7 +209,9 @@ namespace Data
             connection.Open();
             var command = new MySqlCommand();
             command.Connection = connection;
-            command.CommandText = "SELECT * FROM PERSONA";
+            command.CommandText = "SELECT ID_PERSONA as 'IDENTIFICACION',NOMBRE_PERSONA AS 'NOMBRE', APELLIDO_PERSONA AS 'APELLIDO', TELEFONO_PERSONA AS 'TELEFONO', " +
+                "CORREO_PERSONA AS 'CORREO ELECTRONICO', FECHA_NACIMIENTO as 'FECHA NACIMIENTO', GENERO as 'GENERO', PAIS_ORIGEN as 'PAIS ORIGEN', "+
+                "ROL_PERSONA as 'ROL PERSONA' FROM PERSONA";
             MySqlDataReader reader = command.ExecuteReader();
             tabla.Load(reader);
             connection.Close();
