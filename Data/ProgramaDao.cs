@@ -136,7 +136,7 @@ namespace Data
 
             var sql = "SELECT * FROM PROGRAMA WHERE Nombre_Programa = @nombrePrograma";
             var command = new MySqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@nombrePrograma", nombrePrograma + fechaInicio.ToString());
+            command.Parameters.AddWithValue("@nombrePrograma", nombrePrograma + " - " + fechaInicio.ToShortDateString());
             command.Parameters.AddWithValue("@IdCompania", idCompany);
             command.Parameters.AddWithValue("@fechaInicio", fechaInicio);
             command.Parameters.AddWithValue("@fechaFin", fechaFin);

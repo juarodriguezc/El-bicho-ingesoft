@@ -74,6 +74,8 @@ namespace chatbottest1
         private bool verificarFechaInicio(DateTime fechaInicio)
         {
             DateTime now = DateTime.Now;
+            return true;
+            /*
             if(fechaInicio >= now)
             {
                 return true;
@@ -82,7 +84,7 @@ namespace chatbottest1
             {
                 lbl_fechaInicioErronea.Visible = true;
                 return false;
-            }
+            }*/
         }
 
         private bool verificarFechaFin(DateTime fechaInicio, DateTime fechaFin)
