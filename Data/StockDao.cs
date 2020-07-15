@@ -104,7 +104,7 @@ namespace Data
                 }
             }
             reader.Close();
-
+            connection.Close();
             return productos;
         }
 

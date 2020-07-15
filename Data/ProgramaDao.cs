@@ -62,7 +62,7 @@ namespace Data
                 }
             }
             reader.Close();
-
+            connection.Close();
             return companies;
         }
 
@@ -170,7 +170,8 @@ namespace Data
             command.Parameters.AddWithValue("@tipo", tipo);
             command.Parameters.AddWithValue("@fechaIni", fechaIni);
             command.Parameters.AddWithValue("@fechaFin", fechaFin);
-            MySqlDataReader reader = command.ExecuteReader();
+            
+            command.ExecuteNonQuery();
 
             connection.Close();
         }
@@ -253,7 +254,7 @@ namespace Data
                 }
             }
             reader.Close();
-
+            connection.Close();
             return programas;
         }
     }

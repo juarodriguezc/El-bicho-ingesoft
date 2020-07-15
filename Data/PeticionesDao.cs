@@ -29,7 +29,7 @@ namespace Data
                 }
             }
             reader.Close();
-
+            connection.Close();
             return directivos;
         }
 
@@ -57,6 +57,7 @@ namespace Data
             }
 
             reader.Close();
+            connection.Close();
             return idDirectivo;
 
         }
@@ -101,6 +102,7 @@ namespace Data
                     mailD = reader.GetString(0);
                 }
             }
+            connection.Close();
             return mailD;
         }
     }
