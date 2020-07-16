@@ -130,6 +130,7 @@ namespace Data
             }
             reader.Close();
             foreach (string id_invitado in list_invitados) {
+                Boolean existsData = false;
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@id_invitado", id_invitado);
                 command.Parameters.AddWithValue("@id_evento", id_evento);
@@ -137,11 +138,18 @@ namespace Data
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
+                    Console.WriteLine("Reader: " + reader.GetString(0));
                     command.Parameters.AddWithValue("@id_usuario_invitado", reader.GetString(0));
+                    existsData = true;
+                    
                 }
                 reader.Close();
-                command.CommandText = "INSERT INTO P_EVENTOS VALUES (@id_evento, @id_usuario_invitado)";
-                command.ExecuteNonQuery();
+                if (existsData)
+                {
+                    command.CommandText = "INSERT INTO P_EVENTOS VALUES (@id_evento, @id_usuario_invitado)";
+                    command.ExecuteNonQuery();
+                }
+                
             }
             connection.Close();
         }
