@@ -141,7 +141,7 @@ namespace Data
             return tabla;
         }
 
-        public void EditarUsuario(int id_persona, string correo, string nombre, string apellido, DateTime fecha_nacimiento, string contrasenia, string rol_empresa, string genero, string telefono, string nickname)
+        public void EditarUsuario(string id_persona, string correo, string nombre, string apellido, DateTime fecha_nacimiento, string contrasenia, string rol_empresa, string genero, string telefono, string nickname)
         {
             var connection = GetConnection();
             connection.Open();
@@ -306,7 +306,7 @@ namespace Data
             return fecha_nacimiento;
         }
 
-        public bool verificarExistenciaUsuario(string usuario, int id_usuario)
+        public bool verificarExistenciaUsuario(string usuario, string id_usuario)
         {
             var connection = GetConnection();
             connection.Open();
@@ -331,7 +331,7 @@ namespace Data
             }
         }
 
-        public bool verificarExistenciaEmail(string email, int id_usuario)
+        public bool verificarExistenciaEmail(string email, string id_usuario)
         {
             var connection = GetConnection();
             connection.Open();

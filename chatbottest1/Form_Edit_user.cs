@@ -16,7 +16,7 @@ namespace chatbottest1
     {
         //Atributos
         ModeloUsuario usuario = new ModeloUsuario();
-        int id_usuario = 0;
+        string id_usuario = "";
         bool editar = false;
         private string messageData = "Recuerde que:\n"
                 + "1. Diligenciar nombre y apellido solo con caracteres alfabeticos.\n"
@@ -59,7 +59,7 @@ namespace chatbottest1
                 dato_erroneo_contrasenia.Visible = false;
 
 
-                id_usuario = int.Parse(dataGridView1.CurrentRow.Cells["Id_persona"].Value.ToString());
+                id_usuario = dataGridView1.CurrentRow.Cells["Id_persona"].Value.ToString();
                 txt_nombre.Text = dataGridView1.CurrentRow.Cells["Nombre"].Value.ToString();
                 txt_apellido.Text = dataGridView1.CurrentRow.Cells["Apellido"].Value.ToString();
                 txt_contrasenia.Text = dataGridView1.CurrentRow.Cells["Password"].Value.ToString();
@@ -286,7 +286,7 @@ namespace chatbottest1
                 dato_erroneo_contrasenia.Visible = false;
 
 
-                id_usuario = int.Parse(dataGridView1.CurrentRow.Cells["Id_persona"].Value.ToString());
+                id_usuario = dataGridView1.CurrentRow.Cells["Id_persona"].Value.ToString();
                 txt_nombre.Text = dataGridView1.CurrentRow.Cells["Nombre"].Value.ToString();
                 txt_apellido.Text = dataGridView1.CurrentRow.Cells["Apellido"].Value.ToString();
                 txt_contrasenia.Text = dataGridView1.CurrentRow.Cells["Password"].Value.ToString();

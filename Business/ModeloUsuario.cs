@@ -28,7 +28,7 @@ namespace Business
             return userDao.MostrarUsuarios(correo);
         }
 
-        public void EditarUsuario(int id_persona, string correo, string nombre, string apellido, DateTime fecha_nacimiento, string contrasenia, string rol_empresa, string genero, string telefono, string nickname)
+        public void EditarUsuario(string id_persona, string correo, string nombre, string apellido, DateTime fecha_nacimiento, string contrasenia, string rol_empresa, string genero, string telefono, string nickname)
         {
             userDao.EditarUsuario(id_persona, correo, nombre, apellido, fecha_nacimiento, contrasenia, rol_empresa, genero, telefono, nickname);
         }
@@ -65,12 +65,12 @@ namespace Business
             return userDao.getNacimiento(id_persona);
         }
 
-        public bool verificarExistenciaUsuario(string usuario, int id_usuario)
+        public bool verificarExistenciaUsuario(string usuario, string id_usuario)
         {
             return userDao.verificarExistenciaUsuario(usuario, id_usuario);
         }
 
-        public bool verificarExistenciaEmail(string email, int id_usuario)
+        public bool verificarExistenciaEmail(string email, string id_usuario)
         {
             return userDao.verificarExistenciaEmail(email, id_usuario);
         }
